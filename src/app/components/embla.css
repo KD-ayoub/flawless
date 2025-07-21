@@ -1,0 +1,25 @@
+.embla {
+  overflow: hidden;
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla--vertical .embla__container {
+  flex-direction: column;
+  height: 240px;
+}
+
+.embla__slide {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+}
+
+.embla--vertical .embla__slide {
+  padding: 0.5rem 0;
+}
