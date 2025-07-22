@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
             priority
           />
         </div>
-        <div className="absolute w-[400px] h-[400px] -top-20 right-0 min-[2500px]:hidden">
+        <div className="absolute w-[400px] h-[400px] -top-20 right-0 min-[2500px]:w-[2000px] min-[2500px]:top-0 min-[2500px]:right-20">
           <Image
             className=" w-full h-full  object-fill"
             fill
