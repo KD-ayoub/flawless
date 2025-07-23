@@ -12,7 +12,7 @@ gsap.registerPlugin(useGSAP);
 export default function Header() {
   return (
     <>
-      <div className="sticky hidden min-[1000px]:block top-0 z-10 py-5 px-[60px] h-20">
+      <div className="sticky hidden min-[1000px]:block top-0 z-20 py-5 px-[60px] h-20">
         <div className="relative h-20">
           {/* Blurred background layer */}
           <div className="absolute inset-0 rounded-full bg-[#FAFAFB]/20 backdrop-blur-md border border-white z-0" />
@@ -94,7 +94,7 @@ function MobileHeader() {
   );
   return (
     <>
-      <div className="sticky block min-[1000px]:hidden top-0 z-10 w-full max-w-[1640px] py-5 px-3 min-[900px]:px-20 h-14">
+      <div className="sticky block min-[1000px]:hidden top-0 z-20 w-full max-w-[1640px] py-5 px-3 min-[900px]:px-20 h-14">
         <div className="relative h-14">
           {/* Blurred background layer */}
           <div className="absolute inset-0 rounded-full bg-[#FAFAFB]/20 backdrop-blur-md border border-white z-0" />
