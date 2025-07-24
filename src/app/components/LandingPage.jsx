@@ -15,6 +15,7 @@ export default function LandingPage() {
       {/* <VideoSection/> */}
       <GreatIdeas/>
       <WhatWedoSection/>
+      <GreatIdeas/>
     </div>
   );
 }

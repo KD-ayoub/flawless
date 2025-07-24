@@ -1,5 +1,9 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import fullbg from "@/app/assets/svg/fullbg.svg";
 import number1 from "@/app/assets/svg/number1.svg";
 import number2 from "@/app/assets/svg/number2.svg";
@@ -8,7 +12,12 @@ import number4 from "@/app/assets/svg/number4.svg";
 import markicon from "@/app/assets/svg/markicon.svg";
 import { geistSans, instrumentSerif } from "../layout";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function HorizontalCards() {
+  const wrapperRef = useRef(null);
+  const racesRef = useRef(null);
+
   const cards = [
     {
       icon: number1,
@@ -63,65 +72,158 @@ export default function HorizontalCards() {
       ],
     },
   ];
+
+  useGSAP(
+    () => {
+      const races = racesRef.current;
+      const wrapper = wrapperRef.current;
+
+      if (!races || !wrapper) return;
+
+      function getScrollAmount() {
+        const screenWidth = window.innerWidth;
+        let cardWidth, padding;
+
+        // Define responsive values
+        if (screenWidth < 640) {
+          // Mobile
+          cardWidth = 350; // w-[350px]
+          padding = 32; // p-4 = 16px each side = 32px total
+        } else if (screenWidth < 768) {
+          // Small tablets
+          cardWidth = 400;
+          padding = 64; // p-8 = 32px each side = 64px total
+        } else if (screenWidth < 1024) {
+          // Tablets
+          cardWidth = 450; // md:w-[450px]
+          padding = 64;
+        } else if (screenWidth < 1280) {
+          // Small desktop
+          cardWidth = 500;
+          padding = 64;
+        } else if (screenWidth < 2280) {
+          // Large desktop
+          cardWidth = 630;
+          padding = 64;
+        } else {
+          // Larger desktop
+          cardWidth = 950;
+          padding = 64;
+        }
+
+        const totalWidth = (cardWidth + padding) * cards.length;
+        return -(totalWidth - screenWidth);
+      }
+
+      function getStartPosition() {
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth < 640) return "top 5%"; // Mobile
+        if (screenWidth < 768) return "top 10%"; // SM
+        if (screenWidth < 1024) return "top 10%"; // MD
+        if (screenWidth < 1280) return "top 15%"; // LG
+        return "top 10%"; // XL+
+      }
+
+      const tween = gsap.to(races, {
+        x: getScrollAmount,
+        duration: 3,
+        ease: "none",
+      });
+
+      ScrollTrigger.create({
+        trigger: wrapper,
+        start: getStartPosition(),
+        end: () => `+=${getScrollAmount() * -1}`,
+        pin: true,
+        animation: tween,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        // markers: true // Enable for debugging
+      });
+    },
+    { scope: wrapperRef }
+  );
+
   return (
-    <div>
-      {cards.map((val, idx) => {
-        return (
-          <div
-            key={val.title}
-            className="bg-gradient-to-b from-[#d3a7d0af] to-[#7f7ffe58] rounded-[20px] p-1 w-[450px]"
-          >
-            <div className="relative bg-[#F9F9FB] rounded-[16px]">
-              <Image
-                className="w-full h-auto rounded-[16px] object-fill"
-                src={fullbg}
-                alt="full bg"
-              />
-              <div className="absolute inset-0 flex flex-col justify-between p-4 rounded-2xl">
-                <div className="flex items-center gap-2">
-                  <Image
-                    src={val.icon}
-                    width={60}
-                    height={60}
-                    alt="number1 logo"
-                  />
-                  <p
-                    className={`${instrumentSerif.className} text-5xl font-normal text-black`}
-                  >
-                    {val.title}
-                  </p>
-                </div>
-                <div>
-                  <p
-                    className={`${geistSans.className} uppercase font-normal text-base text-[#585858]`}
-                  >
-                    {val.subtitle}
-                  </p>
-                </div>
-                {val.details.map((txt, idx) => {
-                  return (
-                    <div key={txt} className="flex flex-col gap-2">
-                      <div className="flex items-center gap-2">
-                        <Image
-                          src={markicon}
-                          width={20}
-                          height={20}
-                          alt="markicon"
-                        />
-                        <p
-                          className={`${geistSans.className} text-[#454545] tracking-[-0.01em] text-[20px] font-normal`}
-                        >
-                          {txt}
-                        </p>
-                      </div>
+    <div className="overflow-x-hidden">
+      {/* Races Wrapper */}
+      <div ref={wrapperRef} className="racesWrapper overflow-hidden">
+        <div
+          ref={racesRef}
+          className="races flex flex-nowrap h-[90vh] lg:h-[85vh]"
+        >
+          {cards.map((val, idx) => {
+            return (
+              <div
+                key={val.title}
+                className="flex-shrink-0 h-full flex items-center justify-center p-4 sm:p-8"
+              >
+                <div className="bg-gradient-to-b from-[#d3a7d0af] to-[#7f7ffe58] rounded-[16px] sm:rounded-[20px] p-1 w-[350px] md:w-[450px]">
+                  <div className="relative bg-[#F9F9FB] rounded-[12px] sm:rounded-[16px] p-4 sm:p-6 overflow-hidden">
+                    {/* Background image - now fully visible behind text */}
+                    <Image
+                      className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[16px] object-cover "
+                      src={fullbg}
+                      alt="background pattern"
+                    />
+
+                    {/* Header */}
+                    <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 relative z-10">
+                      <Image
+                        src={val.icon}
+                        width={50}
+                        height={50}
+                        alt={`${val.title} icon`}
+                        className="sm:w-[60px] sm:h-[60px]"
+                      />
+                      <h3
+                        className={`${instrumentSerif.className} text-2xl sm:text-3xl lg:text-4xl font-normal text-black`}
+                      >
+                        {val.title}
+                      </h3>
                     </div>
-                  );
-                })}
+
+                    {/* Subtitle */}
+                    <div className="mb-4 sm:mb-8 relative z-10">
+                      <p
+                        className={`${geistSans.className} uppercase font-normal text-sm md:text-[14px] text-[#585858]`}
+                      >
+                        {val.subtitle}
+                      </p>
+                    </div>
+
+                    {/* Details */}
+                    <div className="space-y-3 sm:space-y-4 relative z-10">
+                      {val.details.map((txt, detailIdx) => {
+                        return (
+                          <div
+                            key={txt}
+                            className="flex items-start gap-2 sm:gap-3"
+                          >
+                            <Image
+                              src={markicon}
+                              width={16}
+                              height={16}
+                              alt="check mark"
+                              className="flex-shrink-0 mt-1 sm:w-[20px] sm:h-[20px]"
+                            />
+                            <p
+                              className={`${geistSans.className} text-[#454545] tracking-[-0.01em] text-sm sm:text-base lg:text-lg font-normal leading-relaxed`}
+                            >
+                              {txt}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        );
-      })}
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
