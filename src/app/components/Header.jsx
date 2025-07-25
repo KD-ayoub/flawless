@@ -157,7 +157,7 @@ function MobileHeader() {
 
                       {/* Button Text */}
                       <button
-                        className={`tracking-[-0.02em] cursor-pointer relative z-10 ml-1.5 sm:ml-2 ${geistSans.className} text-white text-sm sm:text-2xl font-semibold`}
+                        className={`tracking-[-0.02em] cursor-pointer relative z-10 ml-1.5 sm:ml-2 ${geistSans.className} text-white text-sm sm:text-xl font-semibold`}
                       >
                         Let's work together
                       </button>

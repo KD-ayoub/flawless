@@ -6,6 +6,7 @@ import Trusted from "./Trusted";
 import VideoSection from "./VideoSection";
 import GreatIdeas from "./GreatIdeas";
 import WhatWedoSection from "./WhatWedoSection";
+import HowitWorksSection from "./HowitWorksSection";
 
 export default function LandingPage() {
   return (
@@ -14,8 +15,9 @@ export default function LandingPage() {
       <Trusted />
       {/* <VideoSection/> */}
       <GreatIdeas/>
-      <WhatWedoSection/>
-      <GreatIdeas/>
+      {/* <WhatWedoSection/> */}
+      <HowitWorksSection/>
+      {/* <GreatIdeas/> */}
     </div>
   );
 }
