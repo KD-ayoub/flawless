@@ -7,6 +7,7 @@ import VideoSection from "./VideoSection";
 import GreatIdeas from "./GreatIdeas";
 import WhatWedoSection from "./WhatWedoSection";
 import HowitWorksSection from "./HowitWorksSection";
+import TestimonialSection from "./TestimonialSection";
 
 export default function LandingPage() {
   return (
@@ -17,7 +18,8 @@ export default function LandingPage() {
       <GreatIdeas/>
       {/* <WhatWedoSection/> */}
       <HowitWorksSection/>
-      {/* <GreatIdeas/> */}
+      <TestimonialSection/>
+      <GreatIdeas/>
     </div>
   );
 }
