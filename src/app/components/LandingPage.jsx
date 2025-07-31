@@ -8,6 +8,7 @@ import GreatIdeas from "./GreatIdeas";
 import WhatWedoSection from "./WhatWedoSection";
 import HowitWorksSection from "./HowitWorksSection";
 import TestimonialSection from "./TestimonialSection";
+import PricingSection from "./PricingSection";
 
 export default function LandingPage() {
   return (
@@ -18,8 +19,8 @@ export default function LandingPage() {
       <GreatIdeas/>
       {/* <WhatWedoSection/> */}
       <HowitWorksSection/>
-      <TestimonialSection/>
-      <GreatIdeas/>
+      {/* <TestimonialSection/> */}
+      <PricingSection/>
     </div>
   );
 }

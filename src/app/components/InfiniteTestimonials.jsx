@@ -80,7 +80,7 @@ export default function InfiniteTestimonials() {
   };
 
   return (
-    <div className="w-full my-2 my-5 max-w-7xl mx-auto h-[400px] sm:h-[500px] lg:h-[700px] relative overflow-hidden">
+    <div className="w-full my-2 lg:my-5 max-w-7xl mx-auto h-[400px] sm:h-[500px] lg:h-[700px] relative overflow-hidden">
       {/* Blured top  */}
       <div className="w-[94%] h-10 bg-gradient-to-b from-[#f7f6fc] to-transparent absolute blur-[10px] top-0 left-1/2 -translate-x-1/2 z-10 pointer-events-none" />
       <div className="w-[94%] h-10 bg-gradient-to-b from-[#f7f6fc] to-transparent absolute blur-[10px] bottom-0 left-1/2 -translate-x-1/2 z-10 pointer-events-none" />
