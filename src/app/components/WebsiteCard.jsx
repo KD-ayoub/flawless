@@ -22,7 +22,7 @@ export default function WebsiteCard() {
   ];
   return (
     <>
-      <div className="relative flex items-center justify-center">
+      <div className="relative flex items-center justify-center mt-6">
         {isChecked && (
           <Image
             className="absolute object-cover rounded-3xl left-0 right-0 z-[-1] shadow-[#0FA9EE] shadow-xl"
@@ -149,7 +149,7 @@ export default function WebsiteCard() {
         </div>
         {!isChecked && (
           <Image
-            className="absolute object-cover rounded-3xl -z-1"
+            className="absolute object-cover rounded-3xl -bottom-2 -z-1"
             src={designblue}
             width={380}
             height={100}

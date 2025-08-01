@@ -17,9 +17,9 @@ export default function EcosystemCard() {
   ];
   return (
     <>
-      <div className="relative flex items-center justify-center">
+      <div className="relative flex items-center justify-center mt-6">
         <div
-          className={`bg-[#F9F9FB] w-[380px] h-[500px] md:h-[550px] mx-2 mb-3 mt-8 rounded-3xl shadow-lg relative overflow-visible`}
+          className={`bg-[#F9F9FB] w-[380px] h-[500px] md:h-[550px] rounded-3xl shadow-lg relative overflow-visible`}
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
@@ -34,7 +34,7 @@ export default function EcosystemCard() {
               >
                 Ecosystem
                 <span
-                  className={`${instrumentSerif.className} text-black text-base italic`}
+                  className={`${instrumentSerif.className} ml-1 text-black text-base italic`}
                 >
                   Unlimited
                 </span>
@@ -128,7 +128,7 @@ export default function EcosystemCard() {
           </div>
         </div>
         <Image
-          className="absolute object-cover rounded-3xl -z-1"
+          className="absolute object-cover rounded-3xl -bottom-2 -z-1"
           src={design4}
           width={380}
           height={100}

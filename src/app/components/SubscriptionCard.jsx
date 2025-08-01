@@ -37,7 +37,7 @@ export default function SubscriptionCard() {
           />
         </div>
         <div
-          className={`bg-[#F9F9FB] w-[380px] h-[500px] md:h-[550px] mx-2 mb-3 mt-8 rounded-3xl shadow-lg relative overflow-visible`}
+          className={`bg-[#F9F9FB] w-[380px] h-[500px] md:h-[550px] mx-2 mb-2 mt-8 rounded-3xl shadow-lg relative overflow-visible`}
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
@@ -52,7 +52,7 @@ export default function SubscriptionCard() {
               >
                 Retainer
                 <span
-                  className={`${instrumentSerif.className} text-black text-base italic`}
+                  className={`${instrumentSerif.className} ml-1 text-black text-base italic`}
                 >
                   Unlimited
                 </span>
