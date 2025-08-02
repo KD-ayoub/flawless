@@ -17,9 +17,24 @@ import testimonial10 from "@/app/assets/svg/testimonial10.svg";
 import testimonial11 from "@/app/assets/svg/testimonial11.svg";
 import testimonial12 from "@/app/assets/svg/testimonial12.svg";
 
-const columns1 = [testimonial1, testimonial2, testimonial3, testimonial4];
-const columns2 = [testimonial5, testimonial6, testimonial7, testimonial8];
-const columns3 = [testimonial9, testimonial10, testimonial11, testimonial12];
+const columns1 = [
+  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147700/samples/testimonial8_ozqirf.svg",
+  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147689/samples/testimonial5_dr0plz.svg",
+  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147699/samples/testimonial6_d8qt21.svg",
+  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147692/samples/testimonial10_gfnsia.svg",
+];
+const columns2 = [
+  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147690/samples/testimonial4_j8heyg.svg",
+  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147690/samples/testimonial7_schxts.svg",
+  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147690/samples/testimonial9_onqcom.svg",
+  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147682/samples/testimonial11_lrcop2.svg",
+];
+const columns3 = [
+  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147681/samples/testimonial3_mjglgv.svg",
+  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147678/samples/testimonial2_obnsrh.svg",
+  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147678/samples/testimonial2_obnsrh.svg",
+  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147677/samples/testimonial12_ffjzc5.svg",
+];
 
 export default function InfiniteTestimonials() {
   const col1Ref = useRef(null);
@@ -96,6 +111,8 @@ export default function InfiniteTestimonials() {
               {col.map((testimonial, index) => (
                 <div key={index} className="flex justify-center items-center">
                   <Image
+                    width={100}
+                    height={100}
                     src={testimonial}
                     alt={`Testimonial ${index + 1}`}
                     className="w-[90%] h-full object-cover rounded-xl lg:rounded-3xl shadow-lg opacity-90"

@@ -13,7 +13,7 @@ export default function VideoSection() {
   const containerRef = useRef(null);
   const videoRef = useRef(null);
 
-  const videoUrl = `https://res.cloudinary.com/do4rm9mc4/video/upload/v1753193389/Axel_mbmsdp.mp4`;
+  const videoUrl = `https://res.cloudinary.com/do4rm9mc4/video/upload/v1753193389/samples/Axel_mbmsdp.mp4`;
 
   useGSAP(
     () => {
