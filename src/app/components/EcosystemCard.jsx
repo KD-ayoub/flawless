@@ -19,7 +19,7 @@ export default function EcosystemCard() {
     <>
       <div className="relative flex items-center justify-center mt-6">
         <div
-          className={`bg-[#F9F9FB] w-[380px] h-[500px] md:h-[550px] rounded-3xl shadow-lg relative overflow-visible`}
+          className={`bg-[#F9F9FB] w-[350px] min-[400px]:w-[380px] h-[500px] md:h-[550px] rounded-3xl shadow-lg relative overflow-visible`}
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"

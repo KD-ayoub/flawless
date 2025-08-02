@@ -20,7 +20,7 @@ export default function SubscriptionCard() {
   ];
   return (
     <>
-      <div className="relative flex items-center justify-center  ">
+      <div className="relative flex items-center justify-center  mt-6 min-[900px]:mt-0">
         <div className="absolute inset-0 flex justify-center p-2">
           <p
             className={`${geistSans.className} font-medium text-sm text-[#ECD9FF]`}
@@ -37,7 +37,7 @@ export default function SubscriptionCard() {
           />
         </div>
         <div
-          className={`bg-[#F9F9FB] w-[380px] h-[500px] md:h-[550px] mx-2 mb-2 mt-8 rounded-3xl shadow-lg relative overflow-visible`}
+          className={`bg-[#F9F9FB] w-[350px] min-[400px]:w-[380px] h-[500px] md:h-[550px] mx-2 mb-2 mt-8 rounded-3xl shadow-lg relative overflow-visible`}
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
