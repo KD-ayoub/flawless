@@ -15,7 +15,7 @@ export default function HeroSection() {
   const heading3Ref = useRef(null);
   const paragraphRef = useRef(null);
   const buttonRef = useRef(null);
-
+  const month = new Date().toLocaleString("default", { month: "long" });
   useGSAP(
     () => {
       const tl = gsap.timeline();
@@ -128,7 +128,7 @@ export default function HeroSection() {
           <p
             className={`${geistSans.className} text-xs sm:text-sm text-[#306C3A] font-medium`}
           >
-            Accepting new projects for July
+            Accepting new projects for {month}
           </p>
         </div>
 

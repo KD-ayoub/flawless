@@ -106,32 +106,32 @@ export default function HowitWorksSection() {
       <div ref={containerRef}>
         <div ref={subtitleRef} className="flex justify-center items-center">
           <p
-            className={`${geistSans.className} mt-3 lg:mt-6 uppercase font-normal text-xs sm:text-sm md:text-base text-[#818181]`}
+            className={`${geistSans.className} mt-3 lg:mt-6 uppercase font-normal text-xs sm:text-sm md:text-[18px] text-[#818181]`}
           >
             How it works
           </p>
         </div>
         <div
           ref={titleRef}
-          className="my-1 sm:my-3 mx-4 flex flex-col justify-center items-center text-center tracking-[-0.04em]"
+          className="my-1 sm:my-3 mx-4 flex flex-col justify-center items-center text-center "
         >
           <p
-            className={`${geistSans.className} font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black leading-tight`}
+            className={`${geistSans.className} tracking-[-0.04em] leading-[100%] font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl  text-black`}
           >
             Design that moves
           </p>
           <p
-            className={`${geistSans.className} font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black leading-tight`}
+            className={`${geistSans.className} tracking-[-0.04em] leading-[100%] font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl  text-black `}
           >
             fast and feels easy.
           </p>
         </div>
         <div
           ref={descriptionRef}
-          className="mx-4 sm:mx-6 lg:mx-8 flex justify-center items-center text-center tracking-[-0.04em]"
+          className="mx-4 sm:mx-6 lg:mx-8 flex justify-center items-center text-center "
         >
           <p
-            className={`${geistSans.className} text-[#585858] text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-4xl leading-relaxed`}
+            className={`${geistSans.className} text-[#585858] tracking-[-0.04em] text-lg sm:text-xl md:text-2xl max-w-4xl leading-[120%]`}
           >
             A simple 3-step process that gets you from
             <span className="hidden sm:inline">
@@ -143,7 +143,7 @@ export default function HowitWorksSection() {
         </div>
         <div
           ref={cardsRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-6 max-w-7xl mx-auto px-4 sm:px-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-10 max-w-7xl mx-auto px-4 sm:px-6"
         >
           {/* card 1 */}
           <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-2xl lg:rounded-4xl overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">

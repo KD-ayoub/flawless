@@ -15,7 +15,7 @@ export default function Header() {
       <div className="sticky hidden min-[1000px]:block top-0 z-20 py-5 px-[60px] h-20">
         <div className="relative h-20">
           {/* Blurred background layer */}
-          <div className="absolute inset-0 rounded-full bg-[#FAFAFB]/20 backdrop-blur-md border border-white z-0" />
+          <div className="absolute inset-0 rounded-full bg-[#FAFAFB]/40 backdrop-blur-[10px] border border-white z-0" />
           {/* Content layer */}
           <div className="relative z-10 flex items-center p-5 h-full text-white">
             <div className="flex items-center justify-between w-full">

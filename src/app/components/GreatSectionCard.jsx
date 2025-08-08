@@ -211,7 +211,7 @@ export default function GreatSectionCard() {
                     </div>
                     <div className="card-content">
                       <h3
-                        className={`${geistSans.className} mt-2 text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-medium mb-2`}
+                        className={`${geistSans.className} mt-2 text-black tracking-[-0.04em] text-lg sm:text-xl lg:text-2xl xl:text-3xl font-medium mb-2`}
                       >
                         {value.title}{" "}
                         <span className={`${instrumentSerif.className} italic`}>
@@ -219,7 +219,7 @@ export default function GreatSectionCard() {
                         </span>
                       </h3>
                       <p
-                        className={`${geistSans.className} leading-[120%] tracking-[0.04em] text-black text-sm sm:text-base lg:text-base font-normal group-hover:text-gray-700 transition-colors duration-300`}
+                        className={`${geistSans.className} leading-[120%] tracking-[-0.04em] text-black text-sm sm:text-base lg:text-base font-normal group-hover:text-gray-700 transition-colors duration-300`}
                       >
                         {value.description}
                       </p>

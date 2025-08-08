@@ -15,11 +15,11 @@ export default function LandingPage() {
     <div>
       <HeroSection />
       <Trusted />
-      {/* <VideoSection/> */}
+      <VideoSection/>
       <GreatIdeas/>
-      {/* <WhatWedoSection/> */}
+      <WhatWedoSection/>
       <HowitWorksSection/>
-      {/* <TestimonialSection/> */}
+      <TestimonialSection/>
       <PricingSection/>
     </div>
   );

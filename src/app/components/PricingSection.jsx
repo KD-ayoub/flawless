@@ -48,7 +48,7 @@ export default function PricingSection() {
         <h1 className={`${geistSans.className} font-normal tracking-[-0.04em] text-3xl md:text-4xl lg:text-5xl text-left`}>
           Clear, transparent pricing.
         </h1>
-        <p className={`${geistSans.className} text-[#585858] mt-2 tracking-[-0.04em] text-lg sm:text-xl leading-relaxed`}>
+        <p className={`${geistSans.className} text-[#585858] mt-2 tracking-[-0.04em] text-lg sm:text-xl leading-[120%]`}>
           You tell us what you need. We'll handle the rest, no overthinking, no
           overbilling.
         </p>

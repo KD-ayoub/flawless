@@ -64,27 +64,27 @@ export default function TestimonialSection() {
       <div ref={containerRef}>
         <div ref={subtitleRef} className="flex justify-center items-center">
           <p
-            className={`${geistSans.className} mt-3 lg:mt-6 uppercase font-normal text-xs sm:text-sm md:text-base text-[#818181]`}
+            className={`${geistSans.className} mt-3 lg:mt-6 uppercase font-normal text-xs sm:text-sm md:text-[18px] text-[#818181]`}
           >
             Proof &#62; Promises
           </p>
         </div>
-        <div ref={titleRef} className="my-1 sm:my-3 mx-4 flex flex-col justify-center items-center text-center tracking-[-0.04em]">
+        <div ref={titleRef} className="my-1 sm:my-3 mx-4 flex flex-col justify-center items-center text-center ]">
           <p
-            className={`${geistSans.className} font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black leading-tight`}
+            className={`${geistSans.className} tracking-[-0.04em] font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black leading-[100%]`}
           >
             What it's like working with us
           </p>
         </div>
-        <div ref={descriptionRef} className="mx-4 sm:mx-6 lg:mx-8 flex justify-center items-center text-center tracking-[-0.04em]">
+        <div ref={descriptionRef} className="mx-4 sm:mx-6 lg:mx-8 flex justify-center items-center text-center ">
           <p
-            className={`${geistSans.className} text-[#585858] text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-4xl leading-relaxed`}
+            className={`${geistSans.className} text-[#585858] tracking-[-0.04em] text-lg sm:text-xl md:text-2xl max-w-4xl leading-[120%]`}
           >
             Unfiltered thoughts from clients who've seen the process and the
             results.
           </p>
         </div>
-        <div>
+        <div className="mt-10 md:mt-14">
           <InfiniteTestimonials />
         </div>
       </div>

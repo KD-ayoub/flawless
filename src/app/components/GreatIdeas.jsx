@@ -67,26 +67,26 @@ export default function GreatIdeas() {
       <div ref={containerRef} className="">
         <div ref={subtitleRef} className="flex justify-center items-center">
           <p
-            className={`${geistSans.className} mt-3 lg:mt-6 uppercase font-normal text-xs sm:text-sm md:text-base text-[#818181]`}
+            className={`${geistSans.className} mt-3 lg:mt-6 uppercase font-normal text-xs sm:text-sm md:text-[18px] text-[#818181]`}
           >
             In a scroll-first world
           </p>
         </div>
-        <div ref={titleRef} className="my-4 sm:my-8 mx-4 flex flex-col justify-center items-center text-center tracking-[-0.04em]">
+        <div ref={titleRef} className="my-4 sm:my-6 mx-4 flex flex-col justify-center items-center text-center ">
           <p
-            className={`${geistSans.className} font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black leading-tight`}
+            className={`${geistSans.className} leading-[100%] font-normal tracking-[-0.04em] text-3xl sm:text-4xl md:text-5xl lg:text-6xl  text-black`}
           >
             Great ideas start the story.
           </p>
           <p
-            className={`${geistSans.className} font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black leading-tight`}
+            className={`${geistSans.className} font-normal tracking-[-0.04em] text-3xl sm:text-4xl md:text-5xl lg:text-6xl  text-black leading-tight`}
           >
             Results seal the deal.
           </p>
         </div>
-        <div ref={descriptionRef} className="mx-4 sm:mx-6 lg:mx-8 flex justify-center items-center text-center tracking-[-0.04em]">
+        <div ref={descriptionRef} className="mx-4 sm:mx-6 lg:mx-8 flex justify-center items-center text-center ">
           <p
-            className={`${geistSans.className} text-[#585858] text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-4xl leading-relaxed`}
+            className={`${geistSans.className} tracking-[-0.04em] text-[#585858] leading-[120%] text-lg sm:text-xl md:text-2xl  max-w-4xl`}
           >
             We craft fast-loading, conversion-ready experiences that turn
             <span className="hidden sm:inline">
