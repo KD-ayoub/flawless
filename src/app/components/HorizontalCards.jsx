@@ -151,19 +151,19 @@ export default function HorizontalCards() {
       <div ref={wrapperRef} className="racesWrapper overflow-hidden">
         <div
           ref={racesRef}
-          className="races flex flex-nowrap h-[90vh] lg:h-[85vh]"
+          className="races flex flex-nowrap h-[90vh] lg:h-[85vh] ml-[7%]"
         >
           {cards.map((val, idx) => {
             return (
               <div
                 key={val.title}
-                className="flex-shrink-0 h-full flex items-center justify-center p-4 sm:p-8"
+                className="flex-shrink-0 h-full flex items-center justify-center p-4 sm:p-4"
               >
-                <div className="bg-gradient-to-b from-[#d3a7d0af] to-[#7f7ffe58] rounded-[16px] sm:rounded-[20px] p-1 w-[350px] md:w-[450px]">
-                  <div className="relative bg-[#F9F9FB] rounded-[12px] sm:rounded-[16px] p-4 sm:p-6 overflow-hidden">
+                <div className="bg-gradient-to-b from-[#d3a7d0af] to-[#7f7ffe58] rounded-[16px] sm:rounded-[25px] p-0.5 w-[350px] md:w-[500px] shadow-lg">
+                  <div className="relative bg-[#F9F9FB] rounded-[12px] sm:rounded-[24px] p-4 sm:p-6 overflow-hidden">
                     {/* Background image - now fully visible behind text */}
                     <Image
-                      className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[16px] object-cover "
+                      className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[24px] object-cover "
                       src={fullbg}
                       alt="background pattern"
                     />
@@ -178,7 +178,7 @@ export default function HorizontalCards() {
                         className="sm:w-[60px] sm:h-[60px]"
                       />
                       <h3
-                        className={`${instrumentSerif.className} text-2xl sm:text-3xl lg:text-4xl font-normal text-black`}
+                        className={`${instrumentSerif.className} text-2xl sm:text-3xl lg:text-[54px] font-normal text-black`}
                       >
                         {val.title}
                       </h3>
@@ -187,7 +187,7 @@ export default function HorizontalCards() {
                     {/* Subtitle */}
                     <div className="mb-4 sm:mb-8 relative z-10">
                       <p
-                        className={`${geistSans.className} uppercase font-normal text-sm md:text-[14px] text-[#585858]`}
+                        className={`${geistSans.className} uppercase font-normal text-sm md:text-[17px] text-[#585858]`}
                       >
                         {val.subtitle}
                       </p>

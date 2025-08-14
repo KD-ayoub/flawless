@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
           />
         </div>
         {/* Foreground content */}
-        <div className="relative z-10 mx-auto max-w-[1640px] text-black">
+        <div className="relative z-10 mx-auto max-w-[1840px] text-black">
           <Header />
           {children}
         </div>
