@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import fullbg from "@/app/assets/svg/fullbg.svg";
+import bgofcarousel from "@/app/assets/svg/bgofcarousel.svg";
 import number1 from "@/app/assets/svg/number1.svg";
 import number2 from "@/app/assets/svg/number2.svg";
 import number3 from "@/app/assets/svg/number3.svg";
@@ -164,7 +165,7 @@ export default function HorizontalCards() {
                     {/* Background image - now fully visible behind text */}
                     <Image
                       className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[24px] object-cover "
-                      src={fullbg}
+                      src={bgofcarousel}
                       alt="background pattern"
                     />
 

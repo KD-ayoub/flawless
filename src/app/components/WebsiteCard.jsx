@@ -109,7 +109,7 @@ export default function WebsiteCard() {
         <div
           ref={cardRef}
           className={`bg-[#F9F9FB] w-[350px] min-[400px]:w-[380px] h-[500px] md:h-[550px] ${
-            isChecked && "m-2"
+            isChecked && "m-2 "
           } rounded-3xl shadow-lg relative overflow-visible`}
         >
           <Image
