@@ -34,7 +34,7 @@ export default function EcosystemCard() {
               >
                 Ecosystem
                 <span
-                  className={`${instrumentSerif.className} ml-1 text-black text-base italic`}
+                  className={`${instrumentSerif.className} ml-1 text-black italic`}
                 >
                   Unlimited
                 </span>

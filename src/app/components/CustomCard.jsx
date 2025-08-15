@@ -32,7 +32,7 @@ export default function CustomCard() {
                 >
                   Custom
                   <span
-                    className={`${instrumentSerif.className} ml-1 text-black text-xl italic`}
+                    className={`${instrumentSerif.className} ml-1 text-black italic`}
                   >
                     Package
                   </span>
@@ -166,7 +166,7 @@ function SmallVersion({ values }) {
               >
                 Custom
                 <span
-                  className={`${instrumentSerif.className} ml-1 text-black text-base italic`}
+                  className={`${instrumentSerif.className} ml-1 text-black italic`}
                 >
                   Package
                 </span>

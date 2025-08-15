@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { geistSans, instrumentSerif } from "../layout";
 import fullbg from "@/app/assets/svg/fullbg.svg";
 import design1 from "@/app/assets/svg/design1.svg";
@@ -7,10 +7,16 @@ import markicon2 from "@/app/assets/svg/markicon2.svg";
 import ToogleSwitch from "./ToogleSwitch";
 import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function SubscriptionCard() {
   const [isChecked, setIsChecked] = useState(false);
-  const values = [
+  const cardRef = useRef(null);
+  const backgroundRef = useRef(null);
+  const priceWheelRef = useRef(null);
+  const valuesRef = useRef(null);
+  const values1 = [
     "Dedicated designer.",
     "Unlimited Design Access",
     "Unlimited Requests",
@@ -18,9 +24,119 @@ export default function SubscriptionCard() {
     "Daily & Weekly updates",
     "1 request is processed at a time",
   ];
+  const values2 = [
+    "Dedicated Designer & Dev.",
+    "Unlimited Design & Dev Access",
+    "Unlimited Requests",
+    "Unlimited revisions.",
+    "Daily & Weekly updates",
+    "1 request is processed at a time",
+  ];
+  const [values, setValues] = useState(values1);
+
+  useGSAP(() => {
+    if (isChecked) {
+      // Animate in when checked
+      gsap
+        .timeline()
+        .set(backgroundRef.current, {
+          opacity: 0,
+          scale: 0.9,
+        })
+        .to(backgroundRef.current, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          ease: "power2.out",
+        })
+        .to(
+          cardRef.current,
+          {
+            scale: 1.05,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          "-=0.4"
+        )
+        .to(
+          priceWheelRef.current,
+          {
+            y: "-50%",
+            duration: 0.5,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        )
+        // Fade out current values
+        .to(
+          valuesRef.current,
+          {
+            opacity: 0,
+            duration: 0.2,
+            ease: "power2.out",
+          },
+          "-=0.2"
+        )
+        // Change values and fade in
+        .call(() => setValues(values2))
+        .to(valuesRef.current, {
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+    } else {
+      // Animate out when unchecked
+      gsap
+        .timeline()
+        .to(priceWheelRef.current, {
+          y: "0%",
+          duration: 0.5,
+          ease: "power2.out",
+        })
+        .to(
+          cardRef.current,
+          {
+            scale: 1,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        )
+        .to(
+          backgroundRef.current,
+          {
+            opacity: 0,
+            scale: 0.9,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          "-=0.2"
+        ) // Fade out current values
+        .to(
+          valuesRef.current,
+          {
+            opacity: 0,
+            duration: 0.2,
+            ease: "power2.out",
+          },
+          "-=0.2"
+        )
+        // Change values and fade in
+        .call(() => setValues(values1))
+        .to(valuesRef.current, {
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+    }
+  }, [isChecked]);
+
   return (
     <>
-      <div className="relative flex items-center justify-center  mt-6 min-[900px]:mt-0">
+      <div
+        ref={cardRef}
+        className="relative flex items-center justify-center  mt-6 min-[900px]:mt-0"
+      >
         <div className="absolute inset-0 flex justify-center p-2">
           <p
             className={`${geistSans.className} font-medium text-sm text-[#ECD9FF]`}
@@ -28,9 +144,12 @@ export default function SubscriptionCard() {
             Best Value To Price
           </p>
           <Image
-            className={`absolute object-cover rounded-4xl left-0 right-0 z-[-1] ${
-              isChecked && "shadow-[#9F66F1] shadow-xl"
-            }`}
+            className={`absolute object-cover rounded-4xl left-0 right-0 z-[-1]`}
+            style={{
+              boxShadow:
+                isChecked &&
+                "rgba(159, 102, 241, 0.5) 0px 8px 24px, rgba(159, 102, 241, 0.5) 0px 16px 56px, rgba(159, 102, 241, 0.5) 0px 24px 80px, rgba(159, 102, 241, 0.5) 0px 32px 120px",
+            }}
             src={design1}
             fill
             alt="design1"
@@ -50,20 +169,15 @@ export default function SubscriptionCard() {
               <h3
                 className={`text-black ${geistSans.className} text-2xl font-normal`}
               >
-                Retainer
-                <span
-                  className={`${instrumentSerif.className} ml-1 text-black text-base italic`}
-                >
-                  Unlimited
-                </span>
+                Subscription
               </h3>
               <div className="flex items-center gap-2">
                 <p className={`${geistSans.className} text-base`}>
-                  Design{" "}
+                  Design {isChecked && "+"}
                   <span
                     className={`${instrumentSerif.className} text-black italic`}
                   >
-                    Only
+                    {isChecked ? "Dev" : "Only"}
                   </span>
                 </p>
                 <ToogleSwitch
@@ -79,20 +193,40 @@ export default function SubscriptionCard() {
               >
                 Starting at <span className="text-black">$</span>
               </p>
-              <span
-                className={`${instrumentSerif.className} tracking-[-0.04em] leading-[50px] text-black text-[53px]`}
-              >
-                {isChecked ? "4999" : "2999"}
-              </span>
-              <p
-                className={`self-start ${geistSans.className}  text-[#57576E]`}
-              >
-                /Month
-              </p>
+              <div className="flex items-center">
+                {/* First digit wheel (1 -> 2) */}
+                <div
+                  className={`${instrumentSerif.className} tracking-[-0.04em] text-black leading-[40px] text-[53px] relative overflow-hidden h-[40px]`}
+                >
+                  <div
+                    ref={priceWheelRef}
+                    className="transition-transform duration-500 ease-out"
+                  >
+                    {/* First Number (1) */}
+                    <div className="h-[41.5px]">2</div>
+                    {/* Second Number (2) */}
+                    <div className="h-[41.5px]">4</div>
+                  </div>
+                </div>
+                {/* Static digits (999) */}
+                <span
+                  className={`${instrumentSerif.className} tracking-[-0.04em] text-black leading-[40px] text-[53px]`}
+                >
+                  999
+                </span>
+              </div>
+                <p
+                  className={`self-start ${geistSans.className}  text-[#57576E]`}
+                >
+                  /Month
+                </p>
             </div>
             <div className="mt-4">
               {/* Details */}
-              <div className="space-y-3 sm:space-y-4 relative z-10">
+              <div
+                ref={valuesRef}
+                className="space-y-3 sm:space-y-4 relative z-10"
+              >
                 {values.map((txt, detailIdx) => {
                   return (
                     <div key={txt} className="flex items-start gap-2 sm:gap-3">

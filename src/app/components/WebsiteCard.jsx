@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import fullbg from "@/app/assets/svg/fullbg.svg";
 import designblue from "@/app/assets/svg/designblue.svg";
 import design2w from "@/app/assets/svg/design2w.svg";
@@ -9,9 +9,16 @@ import { geistSans, instrumentSerif } from "../layout";
 import markicon1 from "@/app/assets/svg/markicon1.svg";
 import { FaArrowRight } from "react-icons/fa6";
 import ToogleSwitch from "./ToogleSwitch";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
+// ...existing code...
 export default function WebsiteCard() {
   const [isChecked, setIsChecked] = useState(false);
+  const cardRef = useRef(null);
+  const backgroundRef = useRef(null);
+  const priceWheelRef = useRef(null);
+
   const values = [
     "Custom Figma design",
     "Fast, reliable turnaround",
@@ -20,18 +27,87 @@ export default function WebsiteCard() {
     "Clear, async communication",
     "Milestone check-ins if needed",
   ];
+
+  useGSAP(() => {
+    if (isChecked) {
+      // Animate in when checked
+      gsap
+        .timeline()
+        .set(backgroundRef.current, {
+          opacity: 0,
+          scale: 0.9,
+        })
+        .to(backgroundRef.current, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          ease: "power2.out",
+        })
+        .to(
+          cardRef.current,
+          {
+            scale: 1.05,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          "-=0.4"
+        )
+        .to(
+          priceWheelRef.current,
+          {
+            y: "-50%",
+            duration: 0.5,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        );
+    } else {
+      // Animate out when unchecked
+      gsap
+        .timeline()
+        .to(priceWheelRef.current, {
+          y: "0%",
+          duration: 0.5,
+          ease: "power2.out",
+        })
+        .to(
+          cardRef.current,
+          {
+            scale: 1,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        )
+        .to(
+          backgroundRef.current,
+          {
+            opacity: 0,
+            scale: 0.9,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          "-=0.2"
+        );
+    }
+  }, [isChecked]);
+
   return (
     <>
       <div className="relative flex items-center justify-center mt-6">
-        {isChecked && (
-          <Image
-            className="absolute object-cover rounded-3xl left-0 right-0 z-[-1] shadow-[#0FA9EE] shadow-xl"
-            src={design2w}
-            fill
-            alt="design2"
-          />
-        )}
+        <Image
+          ref={backgroundRef}
+          className="absolute object-cover rounded-3xl left-0 right-0 z-[-1] opacity-0"
+          src={design2w}
+          style={{
+            boxShadow:
+              "rgba(15, 169, 238, 0.5) 0px 8px 24px, rgba(15, 169, 238, 0.5) 0px 16px 56px, rgba(15, 169, 238, 0.5) 0px 24px 80px, rgba(15, 169, 238, 0.5) 0px 32px 120px",
+          }}
+          fill
+          alt="design2"
+        />
         <div
+          ref={cardRef}
           className={`bg-[#F9F9FB] w-[350px] min-[400px]:w-[380px] h-[500px] md:h-[550px] ${
             isChecked && "m-2"
           } rounded-3xl shadow-lg relative overflow-visible`}
@@ -51,11 +127,11 @@ export default function WebsiteCard() {
               </h3>
               <div className="flex items-center gap-2">
                 <p className={`${geistSans.className} text-base`}>
-                  Design{" "}
+                  Design {isChecked && "+"}
                   <span
                     className={`${instrumentSerif.className} text-black italic`}
                   >
-                    Only
+                    {isChecked ? "Dev" : "Only"}
                   </span>
                 </p>
                 <ToogleSwitch
@@ -71,12 +147,30 @@ export default function WebsiteCard() {
               >
                 Starting at <span className="text-black">$</span>
               </p>
-              <span
-                className={`${instrumentSerif.className} tracking-[-0.04em] text-black leading-[50px] text-[53px]`}
-              >
-                { isChecked ? "2999" : "1999" }
-              </span>
+              <div className="flex items-center">
+                {/* First digit wheel (1 -> 2) */}
+                <div
+                  className={`${instrumentSerif.className} tracking-[-0.04em] text-black leading-[40px] text-[53px] relative overflow-hidden h-[40px]`}
+                >
+                  <div
+                    ref={priceWheelRef}
+                    className="transition-transform duration-500 ease-out"
+                  >
+                    {/* First Number (1) */}
+                    <div className="h-[41.5px] ml-2">1</div>
+                    {/* Second Number (2) */}
+                    <div className="h-[41.5px]">2</div>
+                  </div>
+                </div>
+                {/* Static digits (999) */}
+                <span
+                  className={`${instrumentSerif.className} tracking-[-0.04em] text-black leading-[40px] text-[53px]`}
+                >
+                  999
+                </span>
+              </div>
             </div>
+            {/* ...rest of the component remains the same... */}
             <div className="mt-4">
               {/* Details */}
               <div className="space-y-3 sm:space-y-4 relative z-10">
@@ -124,9 +218,6 @@ export default function WebsiteCard() {
                       className="object-cover rounded-full"
                     />
                   </div>
-
-                  {/* Moving blur on hover
-                  <div className="absolute z-[1] cursor-pointer -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-6 sm:h-8 bg-[#A6CFFF] blur-lg rounded-full transition-all duration-500 group-hover:bottom-0 group-hover:blur-[32px]" /> */}
 
                   {/* Button Text */}
                   <button
