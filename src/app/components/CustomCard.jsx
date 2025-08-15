@@ -17,7 +17,7 @@ export default function CustomCard() {
   ];
   return (
     <>
-      <div className="relative hidden min-[1200px]:flex items-center justify-center mt-6  ">
+      <div className="relative hidden min-[1300px]:flex items-center justify-center mt-6  ">
         <div className="bg-[#F9F9FB] w-full h-[220px] rounded-3xl shadow-lg relative overflow-visible">
           <Image
             className="w-full h-full rounded-3xl object-cover"
@@ -139,7 +139,7 @@ export default function CustomCard() {
           />
         </div>
       </div>
-      <div className="block min-[1200px]:hidden">
+      <div className="block min-[1300px]:hidden">
         <SmallVersion values={values}/>
       </div>
     </>

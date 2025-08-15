@@ -14,7 +14,7 @@ export default function PricingCards() {
       <WebsiteCard />
       <SubscriptionCard />
       <EcosystemCard />
-      <div className="min-[1200px]:col-span-full min-[1200px]:w-full">
+      <div className="min-[1300px]:col-span-full min-[1300px]:w-full">
         <CustomCard/>
       </div>
     </div>

@@ -97,14 +97,14 @@ export default function GreatIdeas() {
           </p>
         </div>
         <div className="relative">
-          <div className="absolute left-10 -z-10">
-            <Image src={shape3} width={200} height={200} alt="shape3" />
+          <div className="absolute left-16 lg:-top-20 -z-10">
+            <Image src={shape3} width={300} height={300} alt="shape3" />
           </div>
           <div>
             <GreatSectionCard/>
           </div>
-          <div className="absolute right-10 bottom-0 -z-10">
-            <Image src={shape4} width={200} height={200} alt="shape3" />
+          <div className="absolute right-20 -bottom-10 -z-10">
+            <Image src={shape4} width={300} height={300} alt="shape3" />
           </div>
         </div>
       </div>
