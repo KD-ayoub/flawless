@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
         <div className="fixed inset-0 -z-10">
           <Image
             className="object-cover w-full h-full -scale-y-100"
-            src={fullbg}
+            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"}
             alt="Background"
             fill
             priority
@@ -41,8 +41,8 @@ export default function RootLayout({ children }) {
           <Image
             className=" w-full h-full  object-fill"
             fill
-            src={shape1}
-            alt="shape2"
+            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705870/shape1_kkfg5l.svg"}
+            alt="shape1"
             priority
           />
         </div>
@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
           <Image
             className=" w-full h-full  object-fill"
             fill
-            src={shape2}
+            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705937/shape2_kaovqp.svg"}
             alt="shape2"
             priority
           />

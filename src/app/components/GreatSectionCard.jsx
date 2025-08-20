@@ -22,42 +22,42 @@ export default function GreatSectionCard() {
 
   const cards = [
     {
-      icon: icon1,
+      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705218/icon1_xdgdox.svg",
       title: "ROI-Driven",
       span: "Design",
       description:
         "We aim to drive conversions and revenue, not just look pretty. Every pixel is optimized to turn visitors into customers.",
     },
     {
-      icon: icon2,
+      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705247/icon2_nbupqh.svg",
       title: "Integrated",
       span: "Team",
       description:
         "We're not just another freelancer, and we act as an extension of your team—fully invested in your goals as if they were our own.",
     },
     {
-      icon: icon3,
+      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705198/icon3_ot3nzk.svg",
       title: "Tech-Savvy",
       span: "Expertise",
       description:
         "Years of working with Web3, AI, and other tech companies means we speak your language, and solve your toughest product challenges.",
     },
     {
-      icon: icon4,
+      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705333/icon4_b3wf74.svg",
       title: "Rapid",
       span: "Delivery",
       description:
         "Fast turn-arounds without cutting corners, so you can iterate quickly and stay ahead in today's breakneck markets.",
     },
     {
-      icon: icon5,
+      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705328/icon5_cr5fr0.svg",
       title: "Beautiful & Intuitive",
       span: "Design",
       description:
         "Clean, on-brand interfaces backed by user-centered flows that guide and delight your audience at every step.",
     },
     {
-      icon: icon6,
+      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705332/icon6_qcvml8.svg",
       title: "Daily",
       span: "Collaboration",
       description:
@@ -191,9 +191,12 @@ export default function GreatSectionCard() {
               >
                 <div className="relative">
                   <Image
-                    className="rounded-[19px] xl:w-full h-auto opacity-10 group-hover:opacity-20 transition-opacity duration-300"
-                    src={greatcardbg}
+                    className="rounded-[19px] w-[90%] xl:w-full h-auto opacity-10 group-hover:opacity-20 transition-opacity duration-300"
+                    src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705178/greatcardbg_ze4zwy.svg"}
                     alt="greatcardbg"
+                    width={100}
+                    height={100}
+                    // fill
                   />
 
                   {/* Text overlay */}

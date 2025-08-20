@@ -4,18 +4,6 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import testimonial1 from "@/app/assets/svg/testimonial1.svg";
-import testimonial2 from "@/app/assets/svg/testimonial2.svg";
-import testimonial3 from "@/app/assets/svg/testimonial3.svg";
-import testimonial4 from "@/app/assets/svg/testimonial4.svg";
-import testimonial5 from "@/app/assets/svg/testimonial5.svg";
-import testimonial6 from "@/app/assets/svg/testimonial6.svg";
-import testimonial7 from "@/app/assets/svg/testimonial7.svg";
-import testimonial8 from "@/app/assets/svg/testimonial8.svg";
-import testimonial9 from "@/app/assets/svg/testimonial9.svg";
-import testimonial10 from "@/app/assets/svg/testimonial10.svg";
-import testimonial11 from "@/app/assets/svg/testimonial11.svg";
-import testimonial12 from "@/app/assets/svg/testimonial12.svg";
 
 const columns1 = [
   "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147700/samples/testimonial8_ozqirf.svg",

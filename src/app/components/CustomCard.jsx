@@ -21,8 +21,9 @@ export default function CustomCard() {
         <div className="bg-[#F9F9FB] w-full h-[220px] rounded-3xl shadow-lg relative overflow-visible">
           <Image
             className="w-full h-full rounded-3xl object-cover"
-            src={fullbg}
+            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"}
             alt="design 3w"
+            fill
           />
           <div className="absolute inset-0 flex p-6  z-10">
             <div className="w-2/3">
@@ -57,7 +58,9 @@ export default function CustomCard() {
                           className="flex items-start gap-2 sm:gap-3"
                         >
                           <Image
-                            src={markicon4}
+                            src={
+                              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705925/markicon4_wokumj.svg"
+                            }
                             width={16}
                             height={16}
                             alt="check mark"
@@ -101,7 +104,7 @@ export default function CustomCard() {
                     {/* Background Image */}
                     <div className="absolute inset-0  rounded-full overflow-hidden z-0">
                       <Image
-                        src={design3}
+                        src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"}
                         alt="button background"
                         fill
                         className="object-cover rounded-full"
@@ -132,7 +135,7 @@ export default function CustomCard() {
           </div>
           <Image
             className="absolute w-full h-[200px] object-cover rounded-3xl -bottom-2 -z-1"
-            src={design3}
+            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"}
             width={380}
             height={100}
             alt="design4"
@@ -140,7 +143,7 @@ export default function CustomCard() {
         </div>
       </div>
       <div className="block min-[1300px]:hidden">
-        <SmallVersion values={values}/>
+        <SmallVersion values={values} />
       </div>
     </>
   );
@@ -155,8 +158,9 @@ function SmallVersion({ values }) {
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
-            src={fullbg}
+            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"}
             alt="full bg"
+            fill
           />
           {/* Text Overlay */}
           <div className="absolute inset-0 flex flex-col pt-4 px-6 text-center z-10">
@@ -230,7 +234,7 @@ function SmallVersion({ values }) {
                   {/* Background Image */}
                   <div className="absolute inset-0  rounded-full overflow-hidden z-0">
                     <Image
-                      src={design3}
+                      src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"}
                       alt="button background"
                       fill
                       className="object-cover rounded-full"
@@ -261,7 +265,7 @@ function SmallVersion({ values }) {
         </div>
         <Image
           className="absolute object-cover rounded-3xl -bottom-2 -z-1"
-          src={design3}
+          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"}
           width={380}
           height={90}
           alt="design4"

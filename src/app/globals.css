@@ -28,7 +28,7 @@ html.lenis body {
 }
 
 #transition-element {
-  background-image: url("../app/assets/svg/fullbg.svg");
+  background-image: url("https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

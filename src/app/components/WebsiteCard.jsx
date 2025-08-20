@@ -48,6 +48,7 @@ export default function WebsiteCard() {
           {
             scale: 1.05,
             duration: 0.4,
+            border: "8px solid #4176F0",
             ease: "power2.out",
           },
           "-=0.4"
@@ -75,6 +76,7 @@ export default function WebsiteCard() {
           {
             scale: 1,
             duration: 0.4,
+            border: "0px solid transparent",
             ease: "power2.out",
           },
           "-=0.3"
@@ -98,7 +100,7 @@ export default function WebsiteCard() {
         <Image
           ref={backgroundRef}
           className="absolute object-cover rounded-3xl left-0 right-0 z-[-1] opacity-0"
-          src={design2w}
+          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705034/design2w_sfwwsd.svg"}
           style={{
             boxShadow:
               "rgba(15, 169, 238, 0.5) 0px 8px 24px, rgba(15, 169, 238, 0.5) 0px 16px 56px, rgba(15, 169, 238, 0.5) 0px 24px 80px, rgba(15, 169, 238, 0.5) 0px 32px 120px",
@@ -114,8 +116,9 @@ export default function WebsiteCard() {
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
-            src={fullbg}
+            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"}
             alt="full bg"
+            fill
           />
           {/* Text Overlay */}
           <div className="absolute inset-0 flex flex-col pt-4 px-6 text-center z-10">
@@ -178,7 +181,7 @@ export default function WebsiteCard() {
                   return (
                     <div key={txt} className="flex items-start gap-2 sm:gap-3">
                       <Image
-                        src={markicon1}
+                        src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705930/markicon1_zuzihk.svg"}
                         width={16}
                         height={16}
                         alt="check mark"
@@ -212,7 +215,7 @@ export default function WebsiteCard() {
                   {/* Background Image */}
                   <div className="absolute inset-0  rounded-full overflow-hidden z-0">
                     <Image
-                      src={designblue}
+                      src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705123/designblue_scnjef.svg"}
                       alt="button background"
                       fill
                       className="object-cover rounded-full"

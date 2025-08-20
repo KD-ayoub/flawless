@@ -2,8 +2,8 @@
 import React, { useRef } from "react";
 import { geistSans } from "../layout";
 import Image from "next/image";
-import shape3 from "@/app/assets/svg/shape3.svg"
-import shape4 from "@/app/assets/svg/shape4.svg"
+import shape3 from "@/app/assets/svg/shape3.svg";
+import shape4 from "@/app/assets/svg/shape4.svg";
 import GreatSectionCard from "./GreatSectionCard";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -17,50 +17,60 @@ export default function GreatIdeas() {
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
 
-  useGSAP(() => {
-    const subtitle = subtitleRef.current;
-    const title = titleRef.current;
-    const description = descriptionRef.current;
+  useGSAP(
+    () => {
+      const subtitle = subtitleRef.current;
+      const title = titleRef.current;
+      const description = descriptionRef.current;
 
-    if (!subtitle || !title || !description) return;
+      if (!subtitle || !title || !description) return;
 
-    // Set initial states
-    gsap.set([subtitle, title, description], {
-      opacity: 0,
-      y: 30
-    });
+      // Set initial states
+      gsap.set([subtitle, title, description], {
+        opacity: 0,
+        y: 30,
+      });
 
-    // Create animation timeline
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse"
-      }
-    });
+      // Create animation timeline
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        },
+      });
 
-    // Animate elements in sequence
-    tl.to(subtitle, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    })
-    .to(title, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    }, "-=0.4") // Start 0.4s before previous animation ends
-    .to(description, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    }, "-=0.4");
-
-  }, { scope: containerRef });
+      // Animate elements in sequence
+      tl.to(subtitle, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      })
+        .to(
+          title,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.4"
+        ) // Start 0.4s before previous animation ends
+        .to(
+          description,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.4"
+        );
+    },
+    { scope: containerRef }
+  );
 
   return (
     <>
@@ -72,7 +82,10 @@ export default function GreatIdeas() {
             In a scroll-first world
           </p>
         </div>
-        <div ref={titleRef} className="my-4 sm:my-6 mx-4 flex flex-col justify-center items-center text-center ">
+        <div
+          ref={titleRef}
+          className="my-4 sm:my-6 mx-4 flex flex-col justify-center items-center text-center "
+        >
           <p
             className={`${geistSans.className} leading-[100%] font-normal tracking-[-0.04em] text-3xl sm:text-4xl md:text-5xl lg:text-6xl  text-black`}
           >
@@ -84,7 +97,10 @@ export default function GreatIdeas() {
             Results seal the deal.
           </p>
         </div>
-        <div ref={descriptionRef} className="mx-4 sm:mx-6 lg:mx-8 flex justify-center items-center text-center ">
+        <div
+          ref={descriptionRef}
+          className="mx-4 sm:mx-6 lg:mx-8 flex justify-center items-center text-center "
+        >
           <p
             className={`${geistSans.className} tracking-[-0.04em] text-[#585858] leading-[120%] text-lg sm:text-xl md:text-2xl  max-w-4xl`}
           >
@@ -98,13 +114,27 @@ export default function GreatIdeas() {
         </div>
         <div className="relative">
           <div className="absolute left-16 lg:-top-20 -z-10">
-            <Image src={shape3} width={300} height={300} alt="shape3" />
+            <Image
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705927/shape3_t33vqt.svg"
+              }
+              width={300}
+              height={300}
+              alt="shape3"
+            />
           </div>
           <div>
-            <GreatSectionCard/>
+            <GreatSectionCard />
           </div>
           <div className="absolute right-20 -bottom-10 -z-10">
-            <Image src={shape4} width={300} height={300} alt="shape3" />
+            <Image
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705942/shape4_uo7rcs.svg"
+              }
+              width={300}
+              height={300}
+              alt="shape4"
+            />
           </div>
         </div>
       </div>

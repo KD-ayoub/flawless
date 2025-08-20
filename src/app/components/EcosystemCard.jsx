@@ -23,8 +23,9 @@ export default function EcosystemCard() {
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
-            src={fullbg}
+            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"}
             alt="full bg"
+            fill
           />
           {/* Text Overlay */}
           <div className="absolute inset-0 flex flex-col pt-4 px-6 text-center z-10">
@@ -64,7 +65,9 @@ export default function EcosystemCard() {
                   return (
                     <div key={txt} className="flex items-start gap-2 sm:gap-3">
                       <Image
-                        src={markicon3}
+                        src={
+                          "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705919/markicon3_jwbnns.svg"
+                        }
                         width={16}
                         height={16}
                         alt="check mark"
@@ -80,7 +83,7 @@ export default function EcosystemCard() {
                 })}
               </div>
             </div>
-            <div className="mt-6">
+            <div className="mt-3 lg:mt-6">
               <div className="bg-[#F4F6FE] p-2 rounded-xl border border-[#E9E9FF]">
                 <p
                   className={`${geistSans.className} font-normal text-[10px] text-[#737394]`}
@@ -98,7 +101,7 @@ export default function EcosystemCard() {
                   {/* Background Image */}
                   <div className="absolute inset-0  rounded-full overflow-hidden z-0">
                     <Image
-                      src={design4}
+                      src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704992/design4_tad1ma.svg"}
                       alt="button background"
                       fill
                       className="object-cover rounded-full"
@@ -129,7 +132,7 @@ export default function EcosystemCard() {
         </div>
         <Image
           className="absolute object-cover rounded-3xl -bottom-2 -z-1"
-          src={design4}
+          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704992/design4_tad1ma.svg"}
           width={380}
           height={100}
           alt="design4"

@@ -29,11 +29,11 @@ export default function LandingPage() {
     <div>
       <HeroSection />
       <Trusted />
-      {/* <VideoSection/> */}
+      <VideoSection/>
       <GreatIdeas/>
       {/* <WhatWedoSection/> */}
       <HowitWorksSection/>
-      {/* <TestimonialSection/> */}
+      <TestimonialSection/>
       <PricingSection/>
     </div>
   );

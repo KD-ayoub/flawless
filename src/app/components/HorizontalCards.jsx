@@ -21,7 +21,7 @@ export default function HorizontalCards() {
 
   const cards = [
     {
-      icon: number1,
+      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705872/number1_itbgnn.svg",
       title: "Branding",
       subtitle: "We build identities that stick and scale.",
       details: [
@@ -34,7 +34,7 @@ export default function HorizontalCards() {
       ],
     },
     {
-      icon: number2,
+      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705868/number2_oulx1l.svg",
       title: "Product & UX",
       subtitle: "UI people love and understand AT first SIGHT.",
       details: [
@@ -47,7 +47,7 @@ export default function HorizontalCards() {
       ],
     },
     {
-      icon: number3,
+      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705849/number3_hxcn5g.svg",
       title: "Web & Front-End",
       subtitle: "execution that stays fast, clean, and flexible.",
       details: [
@@ -60,7 +60,7 @@ export default function HorizontalCards() {
       ],
     },
     {
-      icon: number4,
+      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705844/number4_jg2fb0.svg",
       title: "Motion",
       subtitle: "Movement with meaning, not just decoration.",
       details: [
@@ -165,8 +165,9 @@ export default function HorizontalCards() {
                     {/* Background image - now fully visible behind text */}
                     <Image
                       className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[24px] object-cover "
-                      src={bgofcarousel}
+                      src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704936/bgofcarousel_o6y2t8.svg"}
                       alt="background pattern"
+                      fill
                     />
 
                     {/* Header */}
@@ -203,7 +204,7 @@ export default function HorizontalCards() {
                             className="flex items-start gap-2 sm:gap-3"
                           >
                             <Image
-                              src={markicon}
+                              src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705830/markicon_g7w5fi.svg"}
                               width={16}
                               height={16}
                               alt="check mark"

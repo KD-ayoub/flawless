@@ -160,8 +160,9 @@ export default function SubscriptionCard() {
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
-            src={fullbg}
+            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"}
             alt="full bg"
+            fill
           />
           {/* Text Overlay */}
           <div className="absolute inset-0 flex flex-col pt-4 px-6 text-center z-10">
@@ -215,11 +216,11 @@ export default function SubscriptionCard() {
                   999
                 </span>
               </div>
-                <p
-                  className={`self-start ${geistSans.className}  text-[#57576E]`}
-                >
-                  /Month
-                </p>
+              <p
+                className={`self-start ${geistSans.className}  text-[#57576E]`}
+              >
+                /Month
+              </p>
             </div>
             <div className="mt-4">
               {/* Details */}
@@ -231,7 +232,9 @@ export default function SubscriptionCard() {
                   return (
                     <div key={txt} className="flex items-start gap-2 sm:gap-3">
                       <Image
-                        src={markicon2}
+                        src={
+                          "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705932/markicon2_k1tipj.svg"
+                        }
                         width={16}
                         height={16}
                         alt="check mark"
