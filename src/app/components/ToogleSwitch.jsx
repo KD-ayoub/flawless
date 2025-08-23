@@ -7,6 +7,7 @@ import devtoogle from "@/app/assets/svg/devtoogle.svg";
 import design1 from "@/app/assets/svg/design1.svg";
 import brush2 from "@/app/assets/svg/brush2.svg";
 import devtoogle2 from "@/app/assets/svg/devtoogle2.svg";
+import { CldImage } from "next-cloudinary";
 
 export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
   if (card === "subscription") {
@@ -27,7 +28,9 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
             } transition-all duration-500 overflow-hidden`}
           >
             <Image
-              src={design1}
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"
+              }
               alt="background"
               fill
               className={`absolute ${
@@ -43,7 +46,9 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
             >
               {isChecked ? (
                 <Image
-                  src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705052/devtoogle2_vmhsze.svg"}
+                  src={
+                    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705052/devtoogle2_vmhsze.svg"
+                  }
                   alt="brush icon"
                   width={20}
                   height={20}
@@ -51,7 +56,9 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
                 />
               ) : (
                 <Image
-                  src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704943/brush2_vchraa.svg"}
+                  src={
+                    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704943/brush2_vchraa.svg"
+                  }
                   alt="brush icon"
                   width={20}
                   height={20}
@@ -82,7 +89,9 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
           } transition-all duration-500 overflow-hidden`}
         >
           <Image
-            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705123/designblue_scnjef.svg"}
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705123/designblue_scnjef.svg"
+            }
             alt="background"
             fill
             className={`absolute ${
@@ -98,7 +107,9 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
           >
             {isChecked ? (
               <Image
-                src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705031/devtoogle_rfdhs8.svg"}
+                src={
+                  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705031/devtoogle_rfdhs8.svg"
+                }
                 alt="brush icon"
                 width={20}
                 height={20}
@@ -106,7 +117,9 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
               />
             ) : (
               <Image
-                src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704938/brush_snpuov.svg"}
+                src={
+                  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704938/brush_snpuov.svg"
+                }
                 alt="brush icon"
                 width={20}
                 height={20}

@@ -11,6 +11,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import ToogleSwitch from "./ToogleSwitch";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { CldImage } from "next-cloudinary";
 
 // ...existing code...
 export default function WebsiteCard() {
@@ -100,7 +101,9 @@ export default function WebsiteCard() {
         <Image
           ref={backgroundRef}
           className="absolute object-cover rounded-3xl left-0 right-0 z-[-1] opacity-0"
-          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705034/design2w_sfwwsd.svg"}
+          src={
+            "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705034/design2w_sfwwsd.svg"
+          }
           style={{
             boxShadow:
               "rgba(15, 169, 238, 0.5) 0px 8px 24px, rgba(15, 169, 238, 0.5) 0px 16px 56px, rgba(15, 169, 238, 0.5) 0px 24px 80px, rgba(15, 169, 238, 0.5) 0px 32px 120px",
@@ -116,7 +119,9 @@ export default function WebsiteCard() {
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
-            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"}
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"
+            }
             alt="full bg"
             fill
           />
@@ -181,7 +186,9 @@ export default function WebsiteCard() {
                   return (
                     <div key={txt} className="flex items-start gap-2 sm:gap-3">
                       <Image
-                        src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705930/markicon1_zuzihk.svg"}
+                        src={
+                          "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705930/markicon1_zuzihk.svg"
+                        }
                         width={16}
                         height={16}
                         alt="check mark"
@@ -215,7 +222,9 @@ export default function WebsiteCard() {
                   {/* Background Image */}
                   <div className="absolute inset-0  rounded-full overflow-hidden z-0">
                     <Image
-                      src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705123/designblue_scnjef.svg"}
+                      src={
+                        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705123/designblue_scnjef.svg"
+                      }
                       alt="button background"
                       fill
                       className="object-cover rounded-full"
@@ -244,7 +253,9 @@ export default function WebsiteCard() {
         {!isChecked && (
           <Image
             className="absolute object-cover rounded-3xl -bottom-2 -z-1"
-            src={designblue}
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705123/designblue_scnjef.svg"
+            }
             width={380}
             height={100}
             alt="design2"

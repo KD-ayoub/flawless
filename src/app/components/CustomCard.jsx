@@ -5,6 +5,7 @@ import markicon4 from "@/app/assets/svg/markicon4.svg";
 import design3 from "@/app/assets/svg/design3.svg";
 import { geistSans, instrumentSerif } from "../layout";
 import { FaArrowRight } from "react-icons/fa6";
+import { CldImage } from "next-cloudinary";
 
 export default function CustomCard() {
   const values = [
@@ -21,7 +22,9 @@ export default function CustomCard() {
         <div className="bg-[#F9F9FB] w-full h-[220px] rounded-3xl shadow-lg relative overflow-visible">
           <Image
             className="w-full h-full rounded-3xl object-cover"
-            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"}
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"
+            }
             alt="design 3w"
             fill
           />
@@ -104,7 +107,9 @@ export default function CustomCard() {
                     {/* Background Image */}
                     <div className="absolute inset-0  rounded-full overflow-hidden z-0">
                       <Image
-                        src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"}
+                        src={
+                          "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"
+                        }
                         alt="button background"
                         fill
                         className="object-cover rounded-full"
@@ -135,7 +140,9 @@ export default function CustomCard() {
           </div>
           <Image
             className="absolute w-full h-[200px] object-cover rounded-3xl -bottom-2 -z-1"
-            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"}
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"
+            }
             width={380}
             height={100}
             alt="design4"
@@ -158,7 +165,9 @@ function SmallVersion({ values }) {
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
-            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"}
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"
+            }
             alt="full bg"
             fill
           />
@@ -200,7 +209,9 @@ function SmallVersion({ values }) {
                   return (
                     <div key={txt} className="flex items-start gap-2 sm:gap-3">
                       <Image
-                        src={markicon4}
+                        src={
+                          "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705925/markicon4_wokumj.svg"
+                        }
                         width={16}
                         height={16}
                         alt="check mark"
@@ -234,7 +245,9 @@ function SmallVersion({ values }) {
                   {/* Background Image */}
                   <div className="absolute inset-0  rounded-full overflow-hidden z-0">
                     <Image
-                      src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"}
+                      src={
+                        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"
+                      }
                       alt="button background"
                       fill
                       className="object-cover rounded-full"
@@ -265,7 +278,9 @@ function SmallVersion({ values }) {
         </div>
         <Image
           className="absolute object-cover rounded-3xl -bottom-2 -z-1"
-          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"}
+          src={
+            "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"
+          }
           width={380}
           height={90}
           alt="design4"

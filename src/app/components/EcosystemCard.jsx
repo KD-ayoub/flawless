@@ -5,6 +5,7 @@ import fullbg from "@/app/assets/svg/fullbg.svg";
 import markicon3 from "@/app/assets/svg/markicon3.svg";
 import design4 from "@/app/assets/svg/design4.svg";
 import { FaArrowRight } from "react-icons/fa6";
+import { CldImage } from "next-cloudinary";
 
 export default function EcosystemCard() {
   const values = [
@@ -23,7 +24,9 @@ export default function EcosystemCard() {
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
-            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"}
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"
+            }
             alt="full bg"
             fill
           />
@@ -101,7 +104,9 @@ export default function EcosystemCard() {
                   {/* Background Image */}
                   <div className="absolute inset-0  rounded-full overflow-hidden z-0">
                     <Image
-                      src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704992/design4_tad1ma.svg"}
+                      src={
+                        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704992/design4_tad1ma.svg"
+                      }
                       alt="button background"
                       fill
                       className="object-cover rounded-full"
@@ -132,7 +137,9 @@ export default function EcosystemCard() {
         </div>
         <Image
           className="absolute object-cover rounded-3xl -bottom-2 -z-1"
-          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704992/design4_tad1ma.svg"}
+          src={
+            "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704992/design4_tad1ma.svg"
+          }
           width={380}
           height={100}
           alt="design4"

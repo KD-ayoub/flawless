@@ -17,8 +17,7 @@ import logo10 from "@/app/assets/svg/logo10.svg";
 import logo11 from "@/app/assets/svg/logo11.svg";
 import logo12 from "@/app/assets/svg/logo12.svg";
 import { geistSans } from "../layout";
-import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from "embla-carousel-auto-scroll";
+import { CldImage } from "next-cloudinary";
 
 gsap.registerPlugin(ScrollTrigger);
 

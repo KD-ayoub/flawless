@@ -12,6 +12,7 @@ import design2 from "@/app/assets/svg/design2.svg";
 import design22 from "@/app/assets/svg/design22.svg";
 import design3 from "@/app/assets/svg/design3.svg";
 import design33 from "@/app/assets/svg/design33.svg";
+import { CldImage } from "next-cloudinary";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -149,7 +150,9 @@ export default function HowitWorksSection() {
           <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-2xl lg:rounded-4xl overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
             {/* Top image with drop shadow */}
             <Image
-              src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705001/design11_m9qlan.svg"}
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705001/design11_m9qlan.svg"
+              }
               alt="design11"
               width={10}
               height={10}
@@ -158,7 +161,9 @@ export default function HowitWorksSection() {
 
             {/* Background image */}
             <Image
-              src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"}
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"
+              }
               fill
               alt="design1"
               className="object-cover transition-transform duration-300 ease-out group-hover:scale-110"
@@ -190,14 +195,18 @@ export default function HowitWorksSection() {
           {/* card 2 */}
           <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-2xl lg:rounded-4xl overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
             <Image
-              src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705020/design22_i5l5hq.svg"}
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705020/design22_i5l5hq.svg"
+              }
               alt="design22"
               width={10}
               height={10}
               className="w-[75%] h-[75%] lg:w-[90%] lg:h-[90%] absolute z-10 -top-[0] lg:-top-[12%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
             />
             <Image
-              src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704982/design2_zpx3mf.svg"}
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704982/design2_zpx3mf.svg"
+              }
               fill
               alt="design2"
               className="object-cover transition-transform duration-300 ease-out group-hover:scale-110"
@@ -227,14 +236,18 @@ export default function HowitWorksSection() {
           {/* card 3 */}
           <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] col-span-1 sm:col-span-2 lg:col-span-1 w-full rounded-2xl lg:rounded-4xl overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
             <Image
-              src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705283/design33_he09xm.svg"}
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705283/design33_he09xm.svg"
+              }
               alt="design33"
               width={10}
               height={10}
               className="w-[75%] h-[75%] lg:w-[90%] lg:h-[90%] absolute z-10 -top-[0] lg:-top-[12%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
             />
             <Image
-              src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"}
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"
+              }
               fill
               alt="design3"
               className="object-cover transition-transform duration-300 ease-out group-hover:scale-110"

@@ -12,6 +12,7 @@ import number3 from "@/app/assets/svg/number3.svg";
 import number4 from "@/app/assets/svg/number4.svg";
 import markicon from "@/app/assets/svg/markicon.svg";
 import { geistSans, instrumentSerif } from "../layout";
+import { CldImage } from "next-cloudinary";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,7 +93,7 @@ export default function HorizontalCards() {
           padding = 32; // p-4 = 16px each side = 32px total
         } else if (screenWidth < 768) {
           // Small tablets
-          cardWidth = 400;
+          cardWidth = 500;
           padding = 64; // p-8 = 32px each side = 64px total
         } else if (screenWidth < 1024) {
           // Tablets
@@ -160,12 +161,14 @@ export default function HorizontalCards() {
                 key={val.title}
                 className="flex-shrink-0 h-full flex items-center justify-center p-4 sm:p-4"
               >
-                <div className="bg-gradient-to-b from-[#d3a7d0af] to-[#7f7ffe58] rounded-[16px] sm:rounded-[25px] p-0.5 w-[350px] md:w-[500px] shadow-lg">
+                <div className="bg-gradient-to-b from-[#d3a7d0af] to-[#7f7ffe58] rounded-[16px] sm:rounded-[25px] p-0.5 w-[350px] md:w-[480px] shadow-lg">
                   <div className="relative bg-[#F9F9FB] rounded-[12px] sm:rounded-[24px] p-4 sm:p-6 overflow-hidden">
                     {/* Background image - now fully visible behind text */}
                     <Image
                       className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[24px] object-cover "
-                      src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704936/bgofcarousel_o6y2t8.svg"}
+                      src={
+                        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704936/bgofcarousel_o6y2t8.svg"
+                      }
                       alt="background pattern"
                       fill
                     />
@@ -204,7 +207,9 @@ export default function HorizontalCards() {
                             className="flex items-start gap-2 sm:gap-3"
                           >
                             <Image
-                              src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705830/markicon_g7w5fi.svg"}
+                              src={
+                                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705830/markicon_g7w5fi.svg"
+                              }
                               width={16}
                               height={16}
                               alt="check mark"

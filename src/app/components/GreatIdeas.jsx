@@ -8,6 +8,7 @@ import GreatSectionCard from "./GreatSectionCard";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CldImage } from "next-cloudinary";
 
 gsap.registerPlugin(ScrollTrigger);
 

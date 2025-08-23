@@ -2,8 +2,10 @@
 import VideoSection from "@/app/components/VideoSection";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Lenis from "lenis";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import { CldImage } from "next-cloudinary";
 
 export default function WorkPage() {
   const containerRef = useRef(null);
@@ -51,6 +53,18 @@ export default function WorkPage() {
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629577/work39_fueut4.svg",
   ];
 
+  useEffect(() => {
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   useGSAP(() => {
     const tl = gsap.timeline();
 
@@ -82,7 +96,7 @@ export default function WorkPage() {
     <div className="py-8 sm:py-12 lg:py-16">
       <div
         ref={containerRef}
-        className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="max-w-7xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         {/* Responsive Image Container */}
         <div className="relative w-full  mx-auto">

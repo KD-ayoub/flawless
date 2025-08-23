@@ -9,6 +9,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { CldImage } from "next-cloudinary";
 
 export default function SubscriptionCard() {
   const [isChecked, setIsChecked] = useState(false);
@@ -150,7 +151,9 @@ export default function SubscriptionCard() {
                 isChecked &&
                 "rgba(159, 102, 241, 0.5) 0px 8px 24px, rgba(159, 102, 241, 0.5) 0px 16px 56px, rgba(159, 102, 241, 0.5) 0px 24px 80px, rgba(159, 102, 241, 0.5) 0px 32px 120px",
             }}
-            src={design1}
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"
+            }
             fill
             alt="design1"
           />
@@ -160,7 +163,9 @@ export default function SubscriptionCard() {
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
-            src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"}
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"
+            }
             alt="full bg"
             fill
           />
@@ -268,7 +273,9 @@ export default function SubscriptionCard() {
                   {/* Background Image */}
                   <div className="absolute inset-0  rounded-full overflow-hidden z-0">
                     <Image
-                      src={design1}
+                      src={
+                        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"
+                      }
                       alt="button background"
                       fill
                       className="object-cover rounded-full"

@@ -13,6 +13,7 @@ import icon4 from "@/app/assets/svg/icon4.svg";
 import icon5 from "@/app/assets/svg/icon5.svg";
 import icon6 from "@/app/assets/svg/icon6.svg";
 import { geistSans, instrumentSerif } from "../layout";
+import { CldImage } from "next-cloudinary";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -192,7 +193,9 @@ export default function GreatSectionCard() {
                 <div className="relative">
                   <Image
                     className="rounded-[19px] w-[90%] xl:w-full h-auto opacity-10 group-hover:opacity-20 transition-opacity duration-300"
-                    src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705178/greatcardbg_ze4zwy.svg"}
+                    src={
+                      "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705178/greatcardbg_ze4zwy.svg"
+                    }
                     alt="greatcardbg"
                     width={100}
                     height={100}
