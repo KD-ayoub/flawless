@@ -4,20 +4,25 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Lenis from "lenis";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { CldImage } from "next-cloudinary";
+import { IoClose } from "react-icons/io5";
 
 export default function WorkPage() {
   const containerRef = useRef(null);
   const imageRef = useRef(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const modalRef = useRef(null);
+  const lenisRef = useRef(null); // Add Lenis ref
 
   const images = [
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533448/work1_bt5jmc.svg",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1756294638/ikonshop_kshbju.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533644/work2_zgyuzk.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533610/work3_qeuj5c.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533406/work4_mqbpgp.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533738/work5_jass8i.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533823/work6_zggqgu.svg",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1756295364/Landing2_zez8nq.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533463/work7_oggbgp.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755534013/work8_dgqcpm.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533754/work9_fbhauk.svg",
@@ -25,6 +30,7 @@ export default function WorkPage() {
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755534003/work11_ggese4.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755534004/work12_rnvozh.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533946/work13_zrrjav.svg",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1756295655/Landing3_nj29dz.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625448/work14_xc6azk.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625194/work15_tmvqxj.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625174/work16_obu3so.svg",
@@ -41,6 +47,7 @@ export default function WorkPage() {
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755628769/work27_ssb0nl.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755628746/work28_ynnmwl.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755628852/work29_ucq5bz.svg",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1756303402/Landing4_shfapi.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629295/work30_ujdd6u.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629311/work31_hp6qei.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755628943/work32_lrdixu.svg",
@@ -48,13 +55,16 @@ export default function WorkPage() {
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629269/work34_poetur.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629228/work35_mhmugo.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629153/work36_zzuuau.svg",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1756303699/Landing7_fgjpb9.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629349/work37_v2mkzn.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629424/work38_xwz8xv.svg",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629577/work39_fueut4.svg",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1756304009/Landing9_swgfco.svg",
   ];
 
   useEffect(() => {
     const lenis = new Lenis();
+    lenisRef.current = lenis;
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -92,34 +102,99 @@ export default function WorkPage() {
     ); // Start 0.4s before previous animation ends
   }, []);
 
+  const openModal = (img, index) => {
+    setSelectedImage({ src: img, index });
+    if (lenisRef.current) {
+      lenisRef.current.stop();
+    }
+    containerRef.current.style.overflow = "hidden"; // Prevent background scroll
+    document.documentElement.style.overflow = "hidden"; // Also set on html element
+  };
+
+  const closeModal = () => {
+    if (modalRef.current) {
+      gsap.to(modalRef.current, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.2,
+        ease: "power2.in",
+        onComplete: () => {
+          setSelectedImage(null);
+          if (lenisRef.current) {
+            lenisRef.current.start();
+          }
+          containerRef.current.style.overflow = "unset"; // Prevent background scroll
+          document.documentElement.style.overflow = "unset"; // Also set on html element
+        },
+      });
+    }
+  };
+
+  // Close modal on escape key
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape" && selectedImage) {
+        closeModal();
+      }
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [selectedImage]);
+
   return (
-    <div className="py-8 sm:py-12 lg:py-16">
-      <div
-        ref={containerRef}
-        className="max-w-7xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-      >
-        {/* Responsive Image Container */}
-        <div className="relative w-full  mx-auto">
-          {/* Aspect ratio container */}
-          {images.map((img) => {
-            return (
-              <div
-                key={Math.random() * 2}
-                ref={imageRef}
-                className="relative aspect-video w-full rounded-xl overflow-hidden mt-4"
-              >
-                <Image
-                  src={img}
-                  fill
-                  alt="Work Background"
-                  className="object-cover hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                />
-              </div>
-            );
-          })}
+    <>
+      <div className="py-8 sm:py-12 lg:py-16">
+        <div
+          ref={containerRef}
+          className="max-w-7xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
+          {/* Responsive Image Container */}
+          <div className="relative w-full  mx-auto">
+            {/* Aspect ratio container */}
+            {images.map((img, index) => {
+              return (
+                <div
+                  key={Math.random() * 2}
+                  ref={imageRef}
+                  className="relative cursor-pointer aspect-video w-full rounded-xl overflow-hidden mt-4"
+                  onClick={() => openModal(img, index)}
+                >
+                  <CldImage
+                    src={img}
+                    width={1440}
+                    height={1080}
+                    alt="Work Background"
+                    className="object-fill hover:scale-105 transition-transform duration-300"
+                    sizes="max(min(min(100vw, 1680px), 1440px) - 40px, 1px)"
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+      {/* Modal Popup */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center  justify-center p-4"
+          onClick={closeModal}
+        >
+          <div
+            ref={modalRef}
+            className="relative max-w-[95vw] max-h-[90vh] overflow-auto w-full h-full flex flex-col rounded-2xl"
+            // onClick={(e) => e.stopPropagation()}
+          >
+            <div className="">
+              <Image
+                className="object-contain rounded-2xl"
+                src={selectedImage.src}
+                fill
+                alt={`clicked img ${selectedImage.index}`}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
