@@ -148,9 +148,11 @@ export default function HorizontalCards() {
   );
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden relative"> {/* //bg-[#f2f2fd]// */}
       {/* Races Wrapper */}
       <div ref={wrapperRef} className="racesWrapper overflow-hidden">
+      <div className="w-8 h-[60%] top-1/2 -translate-y-1/2 -left-3 bg-[#f2f2fd] absolute blur-[10px] rounded-full z-10 pointer-events-none" />
+      <div className="w-8 h-[60%] top-1/2 -translate-y-1/2 -right-3 bg-[#e9e8ff] absolute blur-[10px] rounded-full z-10 pointer-events-none" />
         <div
           ref={racesRef}
           className="races flex flex-nowrap h-[90vh] lg:h-[85vh] ml-[7%]"

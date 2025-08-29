@@ -40,7 +40,7 @@ export const animatePageOut = (href, router) => {
     })
       .to(animationWrapper, {
         xPercent: 0,
-        duration: 0.8,
+        duration: 0.4,
         onComplete: () => {
           router.push(href);
         },
@@ -50,7 +50,7 @@ export const animatePageOut = (href, router) => {
         {
           borderTopRightRadius: "0",
           borderBottomRightRadius: "0",
-          duration: 0.4,
+          duration: 0.2,
         },
         "<"
       );

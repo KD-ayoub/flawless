@@ -156,16 +156,16 @@ export default function WorkPage() {
                 <div
                   key={Math.random() * 2}
                   ref={imageRef}
-                  className="relative cursor-pointer aspect-video w-full rounded-xl overflow-hidden mt-4"
+                  className="relative cursor-pointer w-full rounded-xl overflow-hidden mt-4"
                   onClick={() => openModal(img, index)}
                 >
                   <CldImage
                     src={img}
                     width={1440}
-                    height={1080}
+                    height={0}
                     alt="Work Background"
-                    className="object-fill hover:scale-105 transition-transform duration-300"
-                    sizes="max(min(min(100vw, 1680px), 1440px) - 40px, 1px)"
+                    className=" h-full "
+                    sizes=""
                   />
                 </div>
               );
