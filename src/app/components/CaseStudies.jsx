@@ -3,6 +3,7 @@ import { geistSans } from "../layout";
 import Image from "next/image";
 import case1 from "@/app/assets/svg/case1.svg";
 import { FaArrowRight } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function CaseStudies() {
   return (
@@ -60,24 +61,26 @@ export default function CaseStudies() {
                 </span>{" "}
                 Followers with Design People Believe In
               </p>
-              <div className="max-[992px]:mt-2 bg-gradient-to-b from-white to-[#C1C1C1] w-fit rounded-full p-0.5 overflow-hidden transition-transform duration-300 hover:scale-[1.03] group">
-                <div className="relative cursor-pointer w-fit flex items-center gap-1 px-1.5 py-1 sm:px-4 sm:py-2 rounded-full bg-gradient-to-b from-[#C1C1C1] to-white ">
-                  {/* Button Text */}
-                  <button
-                    className={`tracking-[-0.04em]  leading-[130%] cursor-pointer relative z-10 ${geistSans.className} text-black text-sm sm:text-base font-medium`}
-                  >
-                    Read Case Study
-                  </button>
+              <Link href={"/arch"}>
+                <div className="max-[992px]:mt-2 bg-gradient-to-b from-white to-[#C1C1C1] w-fit rounded-full p-0.5 overflow-hidden transition-transform duration-300 hover:scale-[1.03] group">
+                  <div className="relative cursor-pointer w-fit flex items-center gap-1 px-1.5 py-1 sm:px-4 sm:py-2 rounded-full bg-gradient-to-b from-[#C1C1C1] to-white ">
+                    {/* Button Text */}
+                    <button
+                      className={`tracking-[-0.04em]  leading-[130%] cursor-pointer relative z-10 ${geistSans.className} text-black text-sm sm:text-base font-medium`}
+                    >
+                      Read Case Study
+                    </button>
 
-                  {/* Arrow Bubble with hover nudge */}
-                  <div className=" cursor-pointer relative z-10 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
-                    <FaArrowRight
-                      color="#000000"
-                      className="w-3 h-3 sm:w-4 sm:h-4"
-                    />
+                    {/* Arrow Bubble with hover nudge */}
+                    <div className=" cursor-pointer relative z-10 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
+                      <FaArrowRight
+                        color="#000000"
+                        className="w-3 h-3 sm:w-4 sm:h-4"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
