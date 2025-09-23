@@ -28,11 +28,11 @@ export const instrumentSerif = Instrument_Serif({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="">
-      <body className={`bg-[#FAFAFB] antialiased relative`}>
+      <body className={`bg-[#0E0E0F] antialiased relative`}>
         <BackgroundLayoutContent />
         {/* Foreground content */}
 
-        <div className="relative z-10 mx-auto max-w-[1840px] text-black">
+        <div className={`relative z-10 mx-auto max-w-[1840px] text-black`}>
           <Header />
           {children}
         </div>

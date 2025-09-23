@@ -11,6 +11,7 @@ import HowitWorksSection from "./HowitWorksSection";
 import TestimonialSection from "./TestimonialSection";
 import PricingSection from "./PricingSection";
 import Lenis from "lenis";
+import CaseStudies from "./CaseStudies";
 
 export default function LandingPage() {
   useEffect(() => {
@@ -31,10 +32,11 @@ export default function LandingPage() {
       <Trusted />
       {/* <VideoSection/> */}
       <GreatIdeas/>
-      <WhatWedoSection/>
+      {/* <WhatWedoSection/> */}
       <HowitWorksSection/>
       {/* <TestimonialSection/> */}
       <PricingSection/>
+      <CaseStudies/>
     </div>
   );
 }

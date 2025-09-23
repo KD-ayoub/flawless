@@ -21,24 +21,48 @@ export default function Header() {
       <div className="sticky hidden min-[1000px]:block top-0 z-20 py-5 px-[60px] h-20">
         <div className="relative h-20">
           {/* Blurred background layer */}
-          <div className="absolute inset-0 rounded-full bg-[#FAFAFB]/40 backdrop-blur-[10px] border border-white z-0" />
+          <div
+            className={`absolute inset-0 rounded-full ${
+              pathName === "/arch"
+                ? "bg-[#171717]/60 border border-[#0C0C0C]"
+                : "bg-[#FAFAFB]/40 border border-white"
+            }  backdrop-blur-[10px] z-0`}
+          />
           {/* Content layer */}
-          <div className="relative z-10 flex items-center p-5 h-full text-white">
+          <div
+            className={`relative z-10 flex items-center p-5 h-full text-white`}
+          >
             <div className="flex items-center justify-between w-full">
-              <p
-                className={`${instrumentSerif.className} text-black text-2xl font-normal`}
-              >
-                flawless <span className="italic">Design</span>
-              </p>
+              <Link href={"/"}>
+                <p
+                  className={`${instrumentSerif.className} ${
+                    pathName === "/arch" ? "text-white" : "text-black"
+                  } text-2xl font-normal`}
+                >
+                  flawless <span className="italic">Design</span>
+                </p>
+              </Link>
               <div className="flex gap-8">
                 <p
-                  className={`${geistSans.className} text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text bg-gradient-to-r from-black to-black hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
+                  className={`${
+                    geistSans.className
+                  } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
+                    pathName === "/arch"
+                      ? "bg-gradient-to-r from-white to-white"
+                      : "bg-gradient-to-r from-black to-black"
+                  } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                 >
                   Services
                 </p>
 
                 <p
-                  className={`${geistSans.className} text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text bg-gradient-to-r from-black to-black hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
+                  className={`${
+                    geistSans.className
+                  } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
+                    pathName === "/arch"
+                      ? "bg-gradient-to-r from-white to-white"
+                      : "bg-gradient-to-r from-black to-black"
+                  } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                 >
                   Case Studies
                 </p>
@@ -52,7 +76,13 @@ export default function Header() {
                       animatePageOut("/work", router);
                     }
                   }}
-                  className={`${geistSans.className} text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text bg-gradient-to-r from-black to-black hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
+                  className={`${
+                    geistSans.className
+                  } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
+                    pathName === "/arch"
+                      ? "bg-gradient-to-r from-white to-white"
+                      : "bg-gradient-to-r from-black to-black"
+                  } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                 >
                   Work
                 </p>
@@ -81,12 +111,12 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <MobileHeader />
+      <MobileHeader pathName={pathName} />
     </>
   );
 }
 
-function MobileHeader() {
+function MobileHeader({ pathName }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
   const router = useRouter();
@@ -114,16 +144,26 @@ function MobileHeader() {
       <div className="sticky block min-[1000px]:hidden top-0 z-20 w-full max-w-[1640px] py-5 px-3 min-[900px]:px-20 h-14">
         <div className="relative h-14">
           {/* Blurred background layer */}
-          <div className="absolute inset-0 rounded-full bg-[#FAFAFB]/20 backdrop-blur-md border border-white z-0" />
+          <div
+            className={`absolute inset-0 rounded-full ${
+              pathName === "/arch"
+                ? "bg-[#171717]/60 border border-[#0C0C0C]"
+                : "bg-[#FAFAFB]/40 border border-white"
+            }  backdrop-blur-md z-0`}
+          />
           {/* Content layer */}
           <div className="relative z-10 flex items-center px-2 h-full text-black">
             <div className="flex items-center justify-between w-full">
               <div className="flex items-center">
-                <p
-                  className={`${instrumentSerif.className} text-black text-xl font-normal`}
-                >
-                  flawless <span className="italic">Design</span>
-                </p>
+                <Link href={"/"}>
+                  <p
+                    className={`${instrumentSerif.className} ${
+                      pathName === "/arch" ? "text-white" : "text-black"
+                    } text-xl font-normal`}
+                  >
+                    flawless <span className="italic">Design</span>
+                  </p>
+                </Link>
               </div>
               <button
                 className="cursor-pointer"
@@ -143,25 +183,51 @@ function MobileHeader() {
               <div className="sticky block min-[1000px]:hidden top-16 z-10 w-full max-w-[1640px] py-3 px-3 h-14">
                 <div className="relative p-2">
                   {/* Blurred background layer */}
-                  <div className="absolute inset-0 rounded-2xl bg-[#FAFAFB]/20 backdrop-blur-md border border-white z-0" />
+                  <div
+                    className={`absolute inset-0 rounded-2xl ${
+                      pathName === "/arch"
+                        ? "bg-[#171717]/60 border border-[#0C0C0C]"
+                        : "bg-[#FAFAFB]/40 border border-white"
+                    } backdrop-blur-md z-0`}
+                  />
                   <div
                     ref={dropdownRef}
                     className="relative z-10 flex flex-col gap-3 justify-center items-center p-2 h-full text-black"
                   >
                     <p
-                      className={`${geistSans.className} text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text bg-gradient-to-r from-black to-black hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
+                      className={`${
+                        geistSans.className
+                      } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
+                        pathName === "/arch"
+                          ? "bg-gradient-to-r from-white to-white"
+                          : "bg-gradient-to-r from-black to-black"
+                      } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                       onClick={() => setMenuOpen(false)}
                     >
                       Services
                     </p>
-                    <div className="h-px w-10 bg-[#818181]" />
+                    <div
+                      className={`h-px w-10 ${
+                        pathName === "/arch" ? "bg-[#F1F1F1]" : "bg-[#818181]"
+                      }`}
+                    />
                     <p
-                      className={`${geistSans.className} text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text bg-gradient-to-r from-black to-black hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
+                      className={`${
+                        geistSans.className
+                      } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
+                        pathName === "/arch"
+                          ? "bg-gradient-to-r from-white to-white"
+                          : "bg-gradient-to-r from-black to-black"
+                      } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                       onClick={() => setMenuOpen(false)}
                     >
                       Case Studies
                     </p>
-                    <div className="h-px w-10 bg-[#818181]" />
+                    <div
+                      className={`h-px w-10 ${
+                        pathName === "/arch" ? "bg-[#F1F1F1]" : "bg-[#818181]"
+                      }`}
+                    />
 
                     <p
                       onClick={() => {
@@ -169,7 +235,13 @@ function MobileHeader() {
                           animatePageOut("/work", router);
                         }
                       }}
-                      className={`${geistSans.className} text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text bg-gradient-to-r from-black to-black hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
+                      className={`${
+                        geistSans.className
+                      } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
+                        pathName === "/arch"
+                          ? "bg-gradient-to-r from-white to-white"
+                          : "bg-gradient-to-r from-black to-black"
+                      } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                     >
                       Work
                     </p>

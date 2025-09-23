@@ -19,6 +19,7 @@ export default function WebsiteCard() {
   const cardRef = useRef(null);
   const backgroundRef = useRef(null);
   const priceWheelRef = useRef(null);
+  const bottomImageRef = useRef(null);
 
   const values = [
     "Custom Figma design",
@@ -29,85 +30,95 @@ export default function WebsiteCard() {
     "Milestone check-ins if needed",
   ];
 
-  useGSAP(() => {
-    if (isChecked) {
-      // Animate in when checked
-      gsap
-        .timeline()
-        .set(backgroundRef.current, {
-          opacity: 0,
-          scale: 0.9,
-        })
-        .to(backgroundRef.current, {
-          opacity: 1,
-          scale: 1,
-          duration: 0.6,
-          ease: "power2.out",
-        })
-        .to(
-          cardRef.current,
-          {
-            scale: 1.05,
-            duration: 0.4,
-            border: "8px solid #4176F0",
-            ease: "power2.out",
-          },
-          "-=0.4"
-        )
-        .to(
-          priceWheelRef.current,
-          {
-            y: "-50%",
-            duration: 0.5,
-            ease: "power2.out",
-          },
-          "-=0.3"
-        );
-    } else {
-      // Animate out when unchecked
-      gsap
-        .timeline()
-        .to(priceWheelRef.current, {
-          y: "0%",
-          duration: 0.5,
-          ease: "power2.out",
-        })
-        .to(
-          cardRef.current,
-          {
-            scale: 1,
-            duration: 0.4,
-            border: "0px solid transparent",
-            ease: "power2.out",
-          },
-          "-=0.3"
-        )
-        .to(
-          backgroundRef.current,
-          {
-            opacity: 0,
-            scale: 0.9,
-            duration: 0.4,
-            ease: "power2.out",
-          },
-          "-=0.2"
-        );
-    }
-  }, [isChecked]);
+  // useGSAP(() => {
+  //   if (isChecked) {
+  //     // Animate in when checked
+  //     gsap
+  //       .timeline()
+  //       .set(backgroundRef.current, {
+  //         opacity: 0,
+  //         scale: 0.9,
+  //       })
+  //       .to(backgroundRef.current, {
+  //         opacity: 1,
+  //         scale: 1,
+  //         duration: 0.3,
+  //         ease: "power2.out",
+  //       })
+  //       // .to(
+  //       //   cardRef.current,
+  //       //   {
+  //       //     scale: 1.05,
+  //       //     duration: 0.4,
+  //       //     // borderBottom: "8px solid #4176F0",
+  //       //     ease: "power2.out",
+  //       //   },
+  //       //   "-=0.4"
+  //       // )
+  //     //   .to(
+  //     //   bottomImageRef.current,
+  //     //   { scale: 1.05, duration: 0.4, ease: "power2.out" },
+  //     //   "-=0.4"
+  //     // )
+  //       .to(
+  //         priceWheelRef.current,
+  //         {
+  //           y: "-50%",
+  //           duration: 0.5,
+  //           ease: "power2.out",
+  //         },
+  //         "-=0.3"
+  //       );
+  //   } else {
+  //     // Animate out when unchecked
+  //     gsap
+  //       .timeline()
+  //       .to(priceWheelRef.current, {
+  //         y: "0%",
+  //         duration: 0.5,
+  //         ease: "power2.out",
+  //       })
+  //       // .to(
+  //       //   cardRef.current,
+  //       //   {
+  //       //     scale: 1,
+  //       //     duration: 0.4,
+  //       //     border: "0px solid transparent",
+  //       //     ease: "power2.out",
+  //       //   },
+  //       //   "-=0.3"
+  //       // )
+  //     //   .to(
+  //     //   bottomImageRef.current,
+  //     //   { scale: 1, duration: 0.4, ease: "power2.out" },
+  //     //   "-=0.4"
+  //     // )
+  //       .to(
+  //         backgroundRef.current,
+  //         {
+  //           opacity: 0,
+  //           scale: 0.9,
+  //           duration: 0.4,
+  //           ease: "power2.out",
+  //         },
+  //         "-=0.2"
+  //       );
+  //   }
+  // }, [isChecked]);
 
   return (
     <>
-      <div className="relative flex items-center justify-center mt-6">
+      <div className="relative flex items-center justify-center mt-6 hover:scale-[1.05] transition-transform duration-200">
         <Image
           ref={backgroundRef}
           className="absolute object-cover rounded-3xl left-0 right-0 z-[-1] opacity-0"
           src={
             "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705034/design2w_sfwwsd.svg"
           }
-          style={{
-            boxShadow:
-              "rgba(15, 169, 238, 0.5) 0px 8px 24px, rgba(15, 169, 238, 0.5) 0px 16px 56px, rgba(15, 169, 238, 0.5) 0px 24px 80px, rgba(15, 169, 238, 0.5) 0px 32px 120px",
-          }}
+          // style={{
+          //   boxShadow:
+          //     "rgba(15, 169, 238, 0.5) 0px 8px 24px, rgba(15, 169, 238, 0.5) 0px 16px 56px, rgba(15, 169, 238, 0.5) 0px 24px 80px, rgba(15, 169, 238, 0.5) 0px 32px 120px",
+          // }}
           fill
           alt="design2"
         />
@@ -162,7 +173,7 @@ export default function WebsiteCard() {
                 >
                   <div
                     ref={priceWheelRef}
-                    className="transition-transform duration-500 ease-out"
+                    className="transition-transform duration-200 ease-out"
                   >
                     {/* First Number (1) */}
                     <div className="h-[41.5px] ml-2">1</div>
@@ -250,9 +261,10 @@ export default function WebsiteCard() {
             </div>
           </div>
         </div>
-        {!isChecked && (
+        {/* {!isChecked && ( */}
           <Image
-            className="absolute object-cover rounded-3xl -bottom-2 -z-1"
+            ref={bottomImageRef}
+            className={`absolute object-cover rounded-3xl -bottom-2 -z-1`}
             src={
               "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705123/designblue_scnjef.svg"
             }
@@ -260,7 +272,7 @@ export default function WebsiteCard() {
             height={100}
             alt="design2"
           />
-        )}
+        {/* )} */}
       </div>
     </>
   );

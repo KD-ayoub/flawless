@@ -146,11 +146,11 @@ export default function SubscriptionCard() {
           </p>
           <Image
             className={`absolute object-cover rounded-4xl left-0 right-0 z-[-1]`}
-            style={{
-              boxShadow:
-                isChecked &&
-                "rgba(159, 102, 241, 0.5) 0px 8px 24px, rgba(159, 102, 241, 0.5) 0px 16px 56px, rgba(159, 102, 241, 0.5) 0px 24px 80px, rgba(159, 102, 241, 0.5) 0px 32px 120px",
-            }}
+            // style={{
+            //   boxShadow:
+            //     isChecked &&
+            //     "rgba(159, 102, 241, 0.5) 0px 8px 24px, rgba(159, 102, 241, 0.5) 0px 16px 56px, rgba(159, 102, 241, 0.5) 0px 24px 80px, rgba(159, 102, 241, 0.5) 0px 32px 120px",
+            // }}
             src={
               "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"
             }
