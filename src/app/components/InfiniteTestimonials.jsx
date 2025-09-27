@@ -4,112 +4,129 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CldImage } from "next-cloudinary";
 
-const columns1 = [
-  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147700/samples/testimonial8_ozqirf.svg",
-  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147689/samples/testimonial5_dr0plz.svg",
-  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147699/samples/testimonial6_d8qt21.svg",
-  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147692/samples/testimonial10_gfnsia.svg",
-];
-const columns2 = [
-  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147690/samples/testimonial4_j8heyg.svg",
-  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147690/samples/testimonial7_schxts.svg",
-  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147690/samples/testimonial9_onqcom.svg",
-  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147682/samples/testimonial11_lrcop2.svg",
-];
-const columns3 = [
-  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147681/samples/testimonial3_mjglgv.svg",
-  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147678/samples/testimonial2_obnsrh.svg",
-  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147678/samples/testimonial2_obnsrh.svg",
-  "https://res.cloudinary.com/do4rm9mc4/image/upload/v1754147677/samples/testimonial12_ffjzc5.svg",
+gsap.registerPlugin(ScrollTrigger);
+
+const testimonials = [
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994346/testimonial1_uom0pp.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994347/testimonial2_bpckwf.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994347/testimonial3_pbdvtj.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994348/testimonial4_bsali9.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994350/testimonial5_bqk5au.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994351/testimonial6_gtgexp.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994354/testimonial7_hdgq5y.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994353/testimonial8_byupmv.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994352/testimonial9_swhwtv.png",
 ];
 
-export default function InfiniteTestimonials() {
-  const col1Ref = useRef(null);
-  const col2Ref = useRef(null);
-  const col3Ref = useRef(null);
-  const tweenRefs = useRef([]);
-
-  const startMarquee = (ref, duration, reverse = false, index) => {
-    const container = ref.current;
-    if (!container) return;
-
-    const animate = () => {
-      const first = reverse
-        ? container.children[container.children.length - 1]
-        : container.children[0];
-
-      const height = first.offsetHeight + 16;
-
-      if (reverse) {
-        container.insertBefore(first, container.firstChild);
-        gsap.set(container, { y: `-${height}px` });
-        const tween = gsap.to(container, {
-          y: 0,
-          duration,
-          ease: "none",
-          onComplete: animate,
-        });
-        tweenRefs.current[index] = tween;
-      } else {
-        const tween = gsap.to(container, {
-          y: `-=${height}`,
-          duration,
-          ease: "none",
-          onComplete: () => {
-            container.appendChild(first);
-            gsap.set(container, { y: 0 });
-            animate();
-          },
-        });
-        tweenRefs.current[index] = tween;
-      }
-    };
-
-    animate();
-  };
+export default function TestimonialGrid() {
+  const containerRef = useRef(null);
+  const imageRefs = useRef([]);
 
   useGSAP(() => {
-    startMarquee(col1Ref, 10, false, 0);
-    startMarquee(col2Ref, 10, true, 1);
-    startMarquee(col3Ref, 10, false, 2);
+    // Animate images on scroll
+    imageRefs.current.forEach((img, index) => {
+      if (img) {
+        gsap.fromTo(
+          img,
+          {
+            opacity: 0,
+            y: 50,
+            scale: 0.9,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: img,
+              start: "top 85%",
+              end: "bottom 20%",
+              toggleActions: "play none none none",
+            },
+            delay: index * 0.1, // Stagger effect
+          }
+        );
+      }
+    });
+
+    // Container entrance animation
+    gsap.fromTo(
+      containerRef.current,
+      {
+        opacity: 0,
+        y: 30,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 90%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
   }, []);
 
-  const handleHover = (index, action) => {
-    const tween = tweenRefs.current[index];
-    if (tween) {
-      action === "pause" ? tween.pause() : tween.resume();
-    }
-  };
-
   return (
-    <div className="w-full my-2 lg:my-5 max-w-7xl mx-auto h-[400px] sm:h-[500px] lg:h-[700px] relative overflow-hidden">
-      {/* Blured top  */}
-      <div className="w-[94%] h-10 bg-gradient-to-b from-[#f7f6fc] to-transparent absolute blur-[10px] top-0 left-1/2 -translate-x-1/2 z-10 pointer-events-none" />
-      <div className="w-[94%] h-10 bg-gradient-to-b from-[#f7f6fc] to-transparent absolute blur-[10px] bottom-0 left-1/2 -translate-x-1/2 z-10 pointer-events-none" />
-      <div className="w-full h-full grid grid-cols-3 gap-3 px-4">
-        {[columns1, columns2, columns3].map((col, i) => (
-          <div key={i} className="h-full overflow-hidden">
+    <div
+      ref={containerRef}
+      className="w-full my-8 lg:my-12 max-w-7xl mt- mx-auto mt- px-4 sm:px-6 lg:px-8"
+    >
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
+        {testimonials.map((testimonial, index) => {
+          let margin = "";
+          switch (index) {
+            case 1:
+              margin = "lg:mt-10"
+              break;
+            case 2:
+              margin = "sm:-mt-28 md:mt-0"
+              break;
+            case 3:
+              margin = "lg:-mt-42"
+              break;
+            case 5:
+              margin = "lg:-mt-32"
+              break;
+            case 6:
+              margin = "lg:-mt-32"
+              break;
+            case 8:
+              margin = "lg:-mt-32"
+              break;
+          }
+          return (
             <div
-              ref={i === 0 ? col1Ref : i === 1 ? col2Ref : col3Ref}
-              onMouseEnter={() => handleHover(i, "pause")}
-              onMouseLeave={() => handleHover(i, "resume")}
-              className="flex flex-col gap-4"
+              key={index}
+              ref={(el) => (imageRefs.current[index] = el)}
+              className={`group cursor-pointer ${margin}`}
             >
-              {col.map((testimonial, index) => (
-                <div key={index} className="flex justify-center items-center">
-                  <Image
-                    width={100}
-                    height={100}
-                    src={testimonial}
-                    alt={`Testimonial ${index + 1}`}
-                    className="w-[90%] h-full object-cover rounded-xl lg:rounded-3xl shadow-lg opacity-90"
-                  />
-                </div>
-              ))}
+              <div className="relative overflow-hidden rounded-[20px] shadow-lg ">
+                <CldImage
+                  width={400}
+                  height={600}
+                  src={testimonial}
+                  alt={`Testimonial ${index + 1}`}
+                  className="w-full h-auto object-cover"
+                  quality="auto"
+                  format="auto"
+                />
+
+                {/* Hover overlay */}
+                {/* <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 rounded-xl lg:rounded-2xl" /> */}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

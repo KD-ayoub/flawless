@@ -7,7 +7,7 @@ import { IoClose, IoReorderThree } from "react-icons/io5";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
-import { animatePageIn, animatePageOut } from "@/animations";
+// import { animatePageIn, animatePageOut } from "@/animations";
 import { usePathname, useRouter } from "next/navigation";
 
 gsap.registerPlugin(useGSAP);
@@ -66,27 +66,24 @@ export default function Header() {
                 >
                   Case Studies
                 </p>
-                {/* <Link
-                  href="/work"
-                  
-                > */}
-                <p
-                  onClick={() => {
-                    if (pathName !== "/work") {
-                      animatePageOut("/work", router);
-                    }
-                  }}
-                  className={`${
-                    geistSans.className
-                  } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
-                    pathName === "/arch"
-                      ? "bg-gradient-to-r from-white to-white"
-                      : "bg-gradient-to-r from-black to-black"
-                  } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
-                >
-                  Work
-                </p>
-                {/* </Link> */}
+                <Link href="/work">
+                  <p
+                    // onClick={() => {
+                    //   if (pathName !== "/work") {
+                    //     animatePageOut("/work", router);
+                    //   }
+                    // }}
+                    className={`${
+                      geistSans.className
+                    } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
+                      pathName === "/arch"
+                        ? "bg-gradient-to-r from-white to-white"
+                        : "bg-gradient-to-r from-black to-black"
+                    } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
+                  >
+                    Work
+                  </p>
+                </Link>
               </div>
               <div className="relative cursor-pointer w-fit flex items-center gap-2 sm:gap-3 border border-[#0070F3] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-[#0070F3] overflow-hidden transition-transform duration-300 hover:scale-[1.03] group">
                 {/* Moving blur on hover */}
@@ -228,24 +225,24 @@ function MobileHeader({ pathName }) {
                         pathName === "/arch" ? "bg-[#F1F1F1]" : "bg-[#818181]"
                       }`}
                     />
-
-                    <p
-                      onClick={() => {
-                        if (pathName !== "/work") {
-                          animatePageOut("/work", router);
-                        }
-                      }}
-                      className={`${
-                        geistSans.className
-                      } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
-                        pathName === "/arch"
-                          ? "bg-gradient-to-r from-white to-white"
-                          : "bg-gradient-to-r from-black to-black"
-                      } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
-                    >
-                      Work
-                    </p>
-
+                    <Link href={"/work"}>
+                      <p
+                        // onClick={() => {
+                        //   if (pathName !== "/work") {
+                        //     animatePageOut("/work", router);
+                        //   }
+                        // }}
+                        className={`${
+                          geistSans.className
+                        } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
+                          pathName === "/arch"
+                            ? "bg-gradient-to-r from-white to-white"
+                            : "bg-gradient-to-r from-black to-black"
+                        } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
+                      >
+                        Work
+                      </p>
+                    </Link>
                     <div className="relative cursor-pointer w-fit flex items-center gap-2 sm:gap-3 border border-[#0070F3] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-[#0070F3] overflow-hidden transition-transform duration-300 hover:scale-[1.03] group">
                       {/* Moving blur on hover */}
                       <div className="absolute z-0 cursor-pointer -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-6 sm:h-8 bg-[#A6CFFF] blur-lg rounded-full transition-all duration-500 group-hover:bottom-0 group-hover:blur-[32px]" />

@@ -108,7 +108,7 @@ export default function WebsiteCard() {
 
   return (
     <>
-      <div className="relative flex items-center justify-center mt-6 hover:scale-[1.05] transition-transform duration-200">
+      <div className="relative flex items-center justify-center mt-6 transition-transform duration-200">
         <Image
           ref={backgroundRef}
           className="absolute object-cover rounded-3xl left-0 right-0 z-[-1] opacity-0"
@@ -124,9 +124,7 @@ export default function WebsiteCard() {
         />
         <div
           ref={cardRef}
-          className={`bg-[#F9F9FB] w-[350px] min-[400px]:w-[380px] h-[500px] md:h-[550px] ${
-            isChecked && "m-2 "
-          } rounded-3xl shadow-lg relative overflow-visible`}
+          className={`bg-[#F9F9FB] w-[350px] min-[400px]:w-[380px] h-[500px] md:h-[550px] rounded-3xl shadow-lg relative overflow-visible`}
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"

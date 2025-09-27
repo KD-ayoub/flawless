@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -179,10 +179,12 @@ export default function GreatSectionCard() {
           return (
             <div
               key={idx}
-              className="w-full max-w-none mx-auto md:max-w-none relative rounded-[20px] overflow-hidden"
+              className="w-full max-w-none mx-auto md:max-w-none relative rounded-[20px] overflow-hidden "
             >
               {/* Blur background - SEPARATE, always visible */}
-              <div className="absolute inset-0 bg-[#FAFAFB]/20 rounded-[20px] backdrop-blur-md border-2 border-[#acacff] z-0 hover:border-[#7F7FFE] hover:shadow-2xl hover:shadow-[#7F7FFE]/20 transition-all duration-300" />
+
+              <div className="absolute inset-0 bg-[#FAFAFB]/20 rounded-[20px] backdrop-blur-md border-2 border-[#E6E3FB] z-0 hover:border-[#E6E3FB] hover:shadow-2xl hover:shadow-[#7F7FFE]/20 transition-all duration-300" />
+
               <div className="absolute w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-[#7F7FFE] -top-12 sm:-top-16 lg:-top-20 right-0 rounded-full blur-3xl z-0" />
 
               {/* Animated content - ONLY this gets animated */}
@@ -190,7 +192,7 @@ export default function GreatSectionCard() {
                 ref={(el) => (cardsRef.current[idx] = el)}
                 className="relative z-10 rounded-[20px] overflow-hidden group"
               >
-                <div className="relative">
+                <div className="relative max-[376px]:h-[240px] h-[225px] md:h-[250px] lg:h-[230px]">
                   <Image
                     className="rounded-[19px] w-[90%] xl:w-full h-auto opacity-10 group-hover:opacity-20 transition-opacity duration-300"
                     src={
@@ -203,7 +205,7 @@ export default function GreatSectionCard() {
                   />
 
                   {/* Text overlay */}
-                  <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-5 lg:p-6 rounded-2xl">
+                  <div className="absolute inset-0 flex flex-col gap-2 p-4 sm:p-5 lg:p-6 rounded-2xl">
                     <div>
                       <Image
                         className={`card-icon shadow-lg rounded-xl ${
@@ -217,7 +219,7 @@ export default function GreatSectionCard() {
                     </div>
                     <div className="card-content">
                       <h3
-                        className={`${geistSans.className} mt-2 text-black tracking-[-0.04em] text-lg sm:text-xl lg:text-2xl xl:text-3xl font-medium mb-2`}
+                        className={`${geistSans.className} mt-2 text-black tracking-[-0.04em] text-3xl font-medium mb-2`}
                       >
                         {value.title}{" "}
                         <span className={`${instrumentSerif.className} italic`}>
@@ -225,7 +227,7 @@ export default function GreatSectionCard() {
                         </span>
                       </h3>
                       <p
-                        className={`${geistSans.className} leading-[120%] tracking-[-0.04em] text-black text-sm sm:text-base lg:text-base font-normal group-hover:text-gray-700 transition-colors duration-300`}
+                        className={`${geistSans.className} leading-[120%] tracking-[-0.04em] text-black text-base font-normal group-hover:text-gray-700 transition-colors duration-300`}
                       >
                         {value.description}
                       </p>

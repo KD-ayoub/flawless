@@ -1,3 +1,5 @@
+"use client";
+
 import { Geist, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
@@ -7,6 +9,7 @@ import shape1 from "@/app/assets/svg/shape1.svg";
 import shape2 from "@/app/assets/svg/shape2.svg";
 import { CldImage } from "next-cloudinary";
 import BackgroundLayoutContent from "./components/BackgroundLayoutContent";
+import { usePathname } from "next/navigation";
 
 export const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,15 +29,22 @@ export const instrumentSerif = Instrument_Serif({
 // };
 
 export default function RootLayout({ children }) {
+  const pathName = usePathname();
   return (
     <html lang="en" className="">
-      <body className={`bg-[#0E0E0F] antialiased relative`}>
-        <BackgroundLayoutContent />
-        {/* Foreground content */}
+      <body
+        className={`${
+          pathName === "/arch" ? "bg-[#0E0E0F]" : "bg-[#FAFAFB]"
+        } antialiased relative`}
+      >
+        <div className="">
+          <BackgroundLayoutContent />
+          {/* Foreground content */}
 
-        <div className={`relative z-10 mx-auto max-w-[1840px] text-black`}>
-          <Header />
-          {children}
+          <div className={`relative z-10 mx-auto max-w-[1840px] text-black`}>
+            <Header />
+            {children}
+          </div>
         </div>
       </body>
     </html>

@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        remotePatterns: [
-            new URL("https://res.cloudinary.com"),
-            new URL("https://pbs.twimg.com/media/Gc2GKajXoAA2pc8?format=jpg&name=4096x4096") // Add this line
-        ]
-    }
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/dvaeb0mxy/**", // only allow your account's images
+      },
+    ],
+  },
 };
 
 export default nextConfig;

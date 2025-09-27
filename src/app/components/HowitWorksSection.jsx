@@ -156,7 +156,7 @@ export default function HowitWorksSection() {
               alt="design11"
               width={10}
               height={10}
-              className="w-[75%] h-[75%] lg:w-[90%] lg:h-[90%] absolute z-10 -top-[0] lg:-top-[12%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
+              className="w-[75%] h-[75%] lg:w-[80%] lg:h-[80%] absolute z-10 -top-[0] lg:-top-[5%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
             />
 
             {/* Background image */}
@@ -201,7 +201,7 @@ export default function HowitWorksSection() {
               alt="design22"
               width={10}
               height={10}
-              className="w-[75%] h-[75%] lg:w-[90%] lg:h-[90%] absolute z-10 -top-[0] lg:-top-[12%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
+              className="w-[75%] h-[75%] lg:w-[80%] lg:h-[80%] absolute z-10 -top-[0] lg:-top-[2%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
             />
             <Image
               src={
@@ -242,7 +242,7 @@ export default function HowitWorksSection() {
               alt="design33"
               width={10}
               height={10}
-              className="w-[75%] h-[75%] lg:w-[90%] lg:h-[90%] absolute z-10 -top-[0] lg:-top-[12%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
+              className="w-[75%] h-[75%] lg:w-[80%] lg:h-[80%] absolute z-10 -top-[0] lg:-top-[2%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
             />
             <Image
               src={
