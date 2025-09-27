@@ -70,7 +70,7 @@ export default function TestimonialGrid() {
           trigger: containerRef.current,
           start: "top 90%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         },
       }
     );

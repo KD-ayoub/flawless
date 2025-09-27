@@ -51,7 +51,7 @@ export default function HowitWorksSection() {
           trigger: containerRef.current,
           start: "top 80%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         },
       });
 
@@ -95,7 +95,7 @@ export default function HowitWorksSection() {
         scrollTrigger: {
           trigger: cardsRef.current,
           start: "top 85%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         },
       });
     },
@@ -107,7 +107,7 @@ export default function HowitWorksSection() {
       <div ref={containerRef}>
         <div ref={subtitleRef} className="flex justify-center items-center">
           <p
-            className={`${geistSans.className} mt-3 lg:mt-6 uppercase font-normal text-xs sm:text-sm md:text-[18px] text-[#818181]`}
+            className={`${geistSans.className} uppercase font-normal text-xs sm:text-sm md:text-[18px] text-[#818181]`}
           >
             How it works
           </p>

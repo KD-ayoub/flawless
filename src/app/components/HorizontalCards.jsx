@@ -114,7 +114,7 @@ export default function HorizontalCards() {
         }
 
         const totalWidth = (cardWidth + padding) * cards.length;
-        return -(totalWidth - screenWidth);
+        return -(totalWidth - screenWidth) * 0.7;
       }
 
       function getStartPosition() {
@@ -136,7 +136,7 @@ export default function HorizontalCards() {
       ScrollTrigger.create({
         trigger: wrapper,
         start: getStartPosition(),
-        end: () => `+=${getScrollAmount() * -1}`,
+        end: () => `+=${(getScrollAmount()) * -1}`,
         pin: true,
         animation: tween,
         scrub: 1,
@@ -155,7 +155,7 @@ export default function HorizontalCards() {
       <div className="w-8 h-[60%] top-1/2 -translate-y-1/2 -right-3 bg-[#e9e8ff] absolute blur-[10px] rounded-full z-10 pointer-events-none" />
         <div
           ref={racesRef}
-          className="races flex flex-nowrap h-[90vh] lg:h-[85vh] ml-[7%]"
+          className="races flex flex-nowrap h-[80vh] ml-[7%]"
         >
           {cards.map((val, idx) => {
             return (
