@@ -13,122 +13,150 @@ import { CldImage } from "next-cloudinary";
 
 export default function SubscriptionCard() {
   const [isChecked, setIsChecked] = useState(false);
+  const [currentPrice, setCurrentPrice] = useState("2999");
+  const [currentLabel, setCurrentLabel] = useState("Only");
+  const [currentPrefix, setCurrentPrefix] = useState("Design ");
   const cardRef = useRef(null);
   const backgroundRef = useRef(null);
-  const priceWheelRef = useRef(null);
+  const priceRef = useRef(null);
+  const labelRef = useRef(null);
+  const prefixRef = useRef(null);
   const valuesRef = useRef(null);
-  const values1 = [
-    "Dedicated designer.",
-    "Unlimited Design Access",
+
+  // Static items that never change
+  const baseValues = [
     "Unlimited Requests",
     "Unlimited revisions.",
     "Daily & Weekly updates",
     "1 request is processed at a time",
   ];
-  const values2 = [
-    "Dedicated Designer & Dev.",
-    "Unlimited Design & Dev Access",
-    "Unlimited Requests",
-    "Unlimited revisions.",
-    "Daily & Weekly updates",
-    "1 request is processed at a time",
-  ];
-  const [values, setValues] = useState(values1);
+
+  // Dynamic first two items based on isChecked state
+  const getFirstTwoItems = () => {
+    if (isChecked) {
+      return ["Dedicated Designer & Dev.", "Unlimited Design & Dev Access"];
+    } else {
+      return ["Dedicated designer.", "Unlimited Design Access"];
+    }
+  };
+
+  // Combined array that updates automatically
+  const values = [...getFirstTwoItems(), ...baseValues];
 
   useGSAP(() => {
     if (isChecked) {
       // Animate in when checked
       gsap
         .timeline()
-        .set(backgroundRef.current, {
-          opacity: 0,
-          scale: 0.9,
-        })
-        .to(backgroundRef.current, {
-          opacity: 1,
-          scale: 1,
-          duration: 0.6,
-          ease: "power2.out",
-        })
+        // .set(backgroundRef.current, {
+        //   opacity: 1,
+        // })
+        // Fade out current text (price, prefix, label) and values
         .to(
-          cardRef.current,
-          {
-            scale: 1.05,
-            duration: 0.4,
-            ease: "power2.out",
-          },
-          "-=0.4"
-        )
-        .to(
-          priceWheelRef.current,
-          {
-            y: "-50%",
-            duration: 0.5,
-            ease: "power2.out",
-          },
-          "-=0.3"
-        )
-        // Fade out current values
-        .to(
-          valuesRef.current,
+          [
+            priceRef.current,
+            prefixRef.current,
+            labelRef.current,
+            // valuesRef.current,
+          ],
           {
             opacity: 0,
-            duration: 0.2,
-            ease: "power2.out",
-          },
-          "-=0.2"
+            duration: 0.3,
+            ease: "power1.out",
+          }
         )
-        // Change values and fade in
-        .call(() => setValues(values2))
-        .to(valuesRef.current, {
-          opacity: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        });
+        // .to(backgroundRef.current, {
+        //   opacity: 1,
+        //   duration: 0.6,
+        //   ease: "power2.out",
+        // })
+        // .to(
+        //   cardRef.current,
+        //   {
+        //     duration: 0.4,
+        //     ease: "power2.out",
+        //   },
+        // )
+
+        // Change all text values
+        .call(() => {
+          setCurrentPrice("4999");
+          setCurrentLabel("Dev");
+          setCurrentPrefix("Design + ");
+          // setValues(values2);
+        })
+        // Fade in new text and values with slight delay
+        .to(
+          [
+            priceRef.current,
+            prefixRef.current,
+            labelRef.current,
+            // valuesRef.current,
+          ],
+          {
+            opacity: 1,
+            duration: 0.4,
+            delay: 0.1,
+            ease: "power1.out",
+          }
+        );
     } else {
       // Animate out when unchecked
       gsap
         .timeline()
-        .to(priceWheelRef.current, {
-          y: "0%",
-          duration: 0.5,
-          ease: "power2.out",
+        // Fade out current text (price, prefix, label) and values
+        .to(
+          [
+            priceRef.current,
+            prefixRef.current,
+            labelRef.current,
+            // valuesRef.current,
+          ],
+          {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power1.out",
+          }
+        )
+        // .to(
+        //   cardRef.current,
+        //   {
+        //     scale: 1,
+        //     duration: 0.4,
+        //     ease: "power2.out",
+        //   },
+        // )
+        // .to(
+        //   backgroundRef.current,
+        //   {
+        //     opacity: 1,
+        //     duration: 0.4,
+        //     ease: "power2.out",
+        //   },
+        // )
+
+        // Change all text values
+        .call(() => {
+          setCurrentPrice("2999");
+          setCurrentLabel("Only");
+          setCurrentPrefix("Design ");
+          // setValues(values1);
         })
+        // Fade in new text and values with slight delay
         .to(
-          cardRef.current,
+          [
+            priceRef.current,
+            prefixRef.current,
+            labelRef.current,
+            // valuesRef.current,
+          ],
           {
-            scale: 1,
+            opacity: 1,
             duration: 0.4,
-            ease: "power2.out",
-          },
-          "-=0.3"
-        )
-        .to(
-          backgroundRef.current,
-          {
-            opacity: 0,
-            scale: 0.9,
-            duration: 0.4,
-            ease: "power2.out",
-          },
-          "-=0.2"
-        ) // Fade out current values
-        .to(
-          valuesRef.current,
-          {
-            opacity: 0,
-            duration: 0.2,
-            ease: "power2.out",
-          },
-          "-=0.2"
-        )
-        // Change values and fade in
-        .call(() => setValues(values1))
-        .to(valuesRef.current, {
-          opacity: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        });
+            delay: 0.1,
+            ease: "power1.out",
+          }
+        );
     }
   }, [isChecked]);
 
@@ -136,7 +164,7 @@ export default function SubscriptionCard() {
     <>
       <div
         ref={cardRef}
-        className="relative flex items-center justify-center  mt-6 min-[900px]:mt-0"
+        className="relative flex items-center justify-center mt-6 min-[900px]:mt-0"
       >
         <div className="absolute inset-0 flex justify-center p-2">
           <p
@@ -145,12 +173,8 @@ export default function SubscriptionCard() {
             Best Value To Price
           </p>
           <Image
+            ref={backgroundRef}
             className={`absolute object-cover rounded-4xl left-0 right-0 z-[-1]`}
-            // style={{
-            //   boxShadow:
-            //     isChecked &&
-            //     "rgba(159, 102, 241, 0.5) 0px 8px 24px, rgba(159, 102, 241, 0.5) 0px 16px 56px, rgba(159, 102, 241, 0.5) 0px 24px 80px, rgba(159, 102, 241, 0.5) 0px 32px 120px",
-            // }}
             src={
               "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"
             }
@@ -178,12 +202,17 @@ export default function SubscriptionCard() {
                 Subscription
               </h3>
               <div className="flex items-center gap-2">
-                <p className={`${geistSans.className} text-base`}>
-                  Design {isChecked && "+"}
+                <p
+                  className={`${geistSans.className} text-base will-change-opacity`}
+                >
+                  <span ref={prefixRef} className="will-change-opacity">
+                    {currentPrefix}
+                  </span>
                   <span
-                    className={`${instrumentSerif.className} text-black italic`}
+                    ref={labelRef}
+                    className={`${instrumentSerif.className} text-black italic will-change-opacity`}
                   >
-                    {isChecked ? "Dev" : "Only"}
+                    {currentLabel}
                   </span>
                 </p>
                 <ToogleSwitch
@@ -200,38 +229,22 @@ export default function SubscriptionCard() {
                 Starting at <span className="text-black">$</span>
               </p>
               <div className="flex items-center">
-                {/* First digit wheel (1 -> 2) */}
-                <div
-                  className={`${instrumentSerif.className} tracking-[-0.04em] text-black leading-[40px] text-[53px] relative overflow-hidden h-[40px]`}
-                >
-                  <div
-                    ref={priceWheelRef}
-                    className="transition-transform duration-500 ease-out"
-                  >
-                    {/* First Number (1) */}
-                    <div className="h-[41.5px]">2</div>
-                    {/* Second Number (2) */}
-                    <div className="h-[41.5px]">4</div>
-                  </div>
-                </div>
-                {/* Static digits (999) */}
                 <span
-                  className={`${instrumentSerif.className} tracking-[-0.04em] text-black leading-[40px] text-[53px]`}
+                  ref={priceRef}
+                  className={`${instrumentSerif.className} tracking-[-0.04em] text-black leading-[40px] text-[53px] will-change-opacity`}
                 >
-                  999
+                  {currentPrice}
                 </span>
               </div>
-              <p
-                className={`self-start ${geistSans.className}  text-[#57576E]`}
-              >
+              <p className={`self-start ${geistSans.className} text-[#57576E]`}>
                 /Month
               </p>
             </div>
             <div className="mt-4">
               {/* Details */}
               <div
-                ref={valuesRef}
-                className="space-y-3 sm:space-y-4 relative z-10"
+                // ref={valuesRef}
+                className="space-y-3 sm:space-y-4 relative z-10 will-change-opacity"
               >
                 {values.map((txt, detailIdx) => {
                   return (
@@ -269,9 +282,9 @@ export default function SubscriptionCard() {
               {/* Gradient Border Container */}
               <div className="relative cursor-pointer w-full p-[1.5px] rounded-full bg-gradient-to-r from-[#9F66F1] to-[#A06EDD] transition-transform duration-300 hover:scale-[1.03] group shadow-[#9F66F1] shadow-md">
                 {/* Inner Button Container */}
-                <div className="relative w-full flex justify-center items-center gap-2 sm:gap-3  px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-transparent overflow-hidden">
+                <div className="relative w-full flex justify-center items-center gap-2 sm:gap-3 px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-transparent overflow-hidden">
                   {/* Background Image */}
-                  <div className="absolute inset-0  rounded-full overflow-hidden z-0">
+                  <div className="absolute inset-0 rounded-full overflow-hidden z-0">
                     <Image
                       src={
                         "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"
@@ -281,9 +294,6 @@ export default function SubscriptionCard() {
                       className="object-cover rounded-full"
                     />
                   </div>
-
-                  {/* Moving blur on hover
-                     <div className="absolute z-[1] cursor-pointer -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-6 sm:h-8 bg-[#A6CFFF] blur-lg rounded-full transition-all duration-500 group-hover:bottom-0 group-hover:blur-[32px]" /> */}
 
                   {/* Button Text */}
                   <button

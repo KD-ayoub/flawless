@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,11 +16,7 @@ import { CldImage } from "next-cloudinary";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function HorizontalCards() {
-  const wrapperRef = useRef(null);
-  const racesRef = useRef(null);
-
-  const cards = [
+ const cards = [
     {
       icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705872/number1_itbgnn.svg",
       title: "Branding",
@@ -74,6 +70,13 @@ export default function HorizontalCards() {
       ],
     },
   ];
+
+
+export default function HorizontalCards() {
+  const wrapperRef = useRef(null);
+  const racesRef = useRef(null);
+
+ 
 
   useGSAP(
     () => {
@@ -136,7 +139,7 @@ export default function HorizontalCards() {
       ScrollTrigger.create({
         trigger: wrapper,
         start: getStartPosition(),
-        end: () => `+=${(getScrollAmount()) * -1}`,
+        end: () => `+=${getScrollAmount() * -1}`,
         pin: true,
         animation: tween,
         scrub: 1,
@@ -148,91 +151,232 @@ export default function HorizontalCards() {
   );
 
   return (
-    <div className="overflow-x-hidden relative"> {/* //bg-[#f2f2fd]// */}
-      {/* Races Wrapper */}
-      <div ref={wrapperRef} className="racesWrapper overflow-hidden">
-      <div className="w-8 h-[60%] top-1/2 -translate-y-1/2 -left-3 bg-[#f2f2fd] absolute blur-[10px] rounded-full z-10 pointer-events-none" />
-      <div className="w-8 h-[60%] top-1/2 -translate-y-1/2 -right-3 bg-[#e9e8ff] absolute blur-[10px] rounded-full z-10 pointer-events-none" />
-        <div
-          ref={racesRef}
-          className="races flex flex-nowrap h-[80vh] ml-[7%]"
-        >
-          {cards.map((val, idx) => {
-            return (
-              <div
-                key={val.title}
-                className="flex-shrink-0 h-full flex items-center justify-center p-4 sm:p-4"
-              >
-                <div className="bg-gradient-to-b from-[#d3a7d0af] to-[#7f7ffe58] rounded-[16px] sm:rounded-[25px] p-0.5 w-[350px] md:w-[480px] shadow-lg">
-                  <div className="relative bg-[#F9F9FB] rounded-[12px] sm:rounded-[24px] p-4 sm:p-6 overflow-hidden">
-                    {/* Background image - now fully visible behind text */}
-                    <Image
-                      className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[24px] object-cover "
-                      src={
-                        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704936/bgofcarousel_o6y2t8.svg"
-                      }
-                      alt="background pattern"
-                      fill
-                    />
-
-                    {/* Header */}
-                    <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 relative z-10">
+    <>
+      <div className="overflow-x-hidden relative hidden xl:block">
+        {" "}
+        {/* //bg-[#f2f2fd]// */}
+        {/* Races Wrapper */}
+        <div ref={wrapperRef} className="racesWrapper overflow-hidden">
+          <div className="w-8 h-[60%] top-1/2 -translate-y-1/2 -left-3 bg-[#f2f2fd] absolute blur-[10px] rounded-full z-10 pointer-events-none" />
+          <div className="w-8 h-[60%] top-1/2 -translate-y-1/2 -right-3 bg-[#e9e8ff] absolute blur-[10px] rounded-full z-10 pointer-events-none" />
+          <div
+            ref={racesRef}
+            className="races flex flex-nowrap h-[80vh] min-[2500px]:h-[60vh] ml-[7%]"
+          >
+            {cards.map((val, idx) => {
+              return (
+                <div
+                  key={val.title}
+                  className="flex-shrink-0 h-full flex items-center justify-center p-4 sm:p-4"
+                >
+                  <div className="bg-gradient-to-b from-[#d3a7d0af] to-[#7f7ffe58] rounded-[16px] sm:rounded-[25px] p-0.5 w-[350px] md:w-[480px] shadow-lg">
+                    <div className="relative bg-[#F9F9FB] rounded-[12px] sm:rounded-[24px] p-4 sm:p-6 overflow-hidden">
+                      {/* Background image - now fully visible behind text */}
                       <Image
-                        src={val.icon}
-                        width={50}
-                        height={50}
-                        alt={`${val.title} icon`}
-                        className="sm:w-[60px] sm:h-[60px]"
+                        className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[24px] object-cover "
+                        src={
+                          "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704936/bgofcarousel_o6y2t8.svg"
+                        }
+                        alt="background pattern"
+                        fill
                       />
-                      <h3
-                        className={`${instrumentSerif.className} text-2xl sm:text-3xl lg:text-[54px] font-normal text-black`}
-                      >
-                        {val.title}
-                      </h3>
-                    </div>
 
-                    {/* Subtitle */}
-                    <div className="mb-4 sm:mb-8 relative z-10">
-                      <p
-                        className={`${geistSans.className} uppercase font-normal text-sm md:text-[17px] text-[#585858]`}
-                      >
-                        {val.subtitle}
-                      </p>
-                    </div>
+                      {/* Header */}
+                      <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 relative z-10">
+                        <Image
+                          src={val.icon}
+                          width={50}
+                          height={50}
+                          alt={`${val.title} icon`}
+                          className="sm:w-[60px] sm:h-[60px]"
+                        />
+                        <h3
+                          className={`${instrumentSerif.className} text-2xl sm:text-3xl lg:text-[54px] font-normal text-black`}
+                        >
+                          {val.title}
+                        </h3>
+                      </div>
 
-                    {/* Details */}
-                    <div className="space-y-3 sm:space-y-4 relative z-10">
-                      {val.details.map((txt, detailIdx) => {
-                        return (
-                          <div
-                            key={txt}
-                            className="flex items-start gap-2 sm:gap-3"
-                          >
-                            <Image
-                              src={
-                                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705830/markicon_g7w5fi.svg"
-                              }
-                              width={16}
-                              height={16}
-                              alt="check mark"
-                              className="flex-shrink-0 mt-1 sm:w-[20px] sm:h-[20px]"
-                            />
-                            <p
-                              className={`${geistSans.className} text-[#454545] tracking-[-0.01em] text-sm sm:text-base lg:text-lg font-normal leading-relaxed`}
+                      {/* Subtitle */}
+                      <div className="mb-4 sm:mb-8 relative z-10">
+                        <p
+                          className={`${geistSans.className} uppercase font-normal text-sm md:text-[17px] text-[#585858]`}
+                        >
+                          {val.subtitle}
+                        </p>
+                      </div>
+
+                      {/* Details */}
+                      <div className="space-y-3 sm:space-y-4 relative z-10">
+                        {val.details.map((txt, detailIdx) => {
+                          return (
+                            <div
+                              key={txt}
+                              className="flex items-start gap-2 sm:gap-3"
                             >
-                              {txt}
-                            </p>
-                          </div>
-                        );
-                      })}
+                              <Image
+                                src={
+                                  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705830/markicon_g7w5fi.svg"
+                                }
+                                width={16}
+                                height={16}
+                                alt="check mark"
+                                className="flex-shrink-0 mt-1 sm:w-[20px] sm:h-[20px]"
+                              />
+                              <p
+                                className={`${geistSans.className} text-[#454545] tracking-[-0.01em] text-sm sm:text-base lg:text-lg font-normal leading-relaxed`}
+                              >
+                                {txt}
+                              </p>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
+      <HorizontalCardsMobile/>
+    </>
+  );
+}
+
+function HorizontalCardsMobile() {
+  const scrollRef = useRef(null);
+
+
+  // Smooth scroll behavior
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    // Add smooth scrolling with momentum
+    scrollContainer.style.scrollBehavior = "smooth";
+
+    // Optional: Add scroll snap for better UX
+    scrollContainer.style.scrollSnapType = "x mandatory";
+
+    // Add scroll indicators (optional)
+    const cards = scrollContainer.children;
+    Array.from(cards).forEach((card) => {
+      card.style.scrollSnapAlign = "center";
+    });
+  }, []);
+
+  return (
+    <div className="relative py-8 lg:py-12 block xl:hidden">
+      {/* Horizontal Scroll Container */}
+      <div className="relative">
+        {/* Left fade */}
+        <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+
+        {/* Right fade */}
+        <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+        {/* Scrollable Cards Container */}
+        <div
+          ref={scrollRef}
+          className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 px-4 sm:px-6 scrollbar-hide"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch",
+          }}
+        >
+          {cards.map((val, idx) => (
+            <div
+              key={val.title}
+              className="flex-shrink-0 w-[300px] sm:w-[350px] md:w-[400px]"
+            >
+              <div className="bg-gradient-to-b from-[#d3a7d0af] to-[#7f7ffe58] rounded-[16px] sm:rounded-[20px] p-0.5 h-full shadow-lg">
+                <div className="relative bg-[#F9F9FB] rounded-[12px] sm:rounded-[18px] p-4 sm:p-6 h-full overflow-hidden">
+                  {/* Background image */}
+                  <Image
+                    className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[18px] object-cover"
+                    src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704936/bgofcarousel_o6y2t8.svg"
+                    alt="background pattern"
+                    fill
+                  />
+
+                  {/* Header */}
+                  <div className="flex items-center gap-3 mb-4 sm:mb-6 relative z-10">
+                    <Image
+                      src={val.icon}
+                      width={45}
+                      height={45}
+                      alt={`${val.title} icon`}
+                      className="sm:w-[50px] sm:h-[50px]"
+                    />
+                    <h3
+                      className={`${instrumentSerif.className} text-xl sm:text-2xl md:text-3xl font-normal text-black`}
+                    >
+                      {val.title}
+                    </h3>
+                  </div>
+
+                  {/* Subtitle */}
+                  <div className="mb-4 sm:mb-6 relative z-10">
+                    <p
+                      className={`${geistSans.className} uppercase font-normal text-xs sm:text-sm text-[#585858]`}
+                    >
+                      {val.subtitle}
+                    </p>
+                  </div>
+
+                  {/* Details */}
+                  <div className="space-y-2 sm:space-y-3 relative z-10">
+                    {val.details.map((txt, detailIdx) => (
+                      <div
+                        key={txt}
+                        className="flex items-start gap-2 sm:gap-3"
+                      >
+                        <Image
+                          src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705830/markicon_g7w5fi.svg"
+                          width={14}
+                          height={14}
+                          alt="check mark"
+                          className="flex-shrink-0 mt-1 sm:w-[16px] sm:h-[16px]"
+                        />
+                        <p
+                          className={`${geistSans.className} text-[#454545] tracking-[-0.01em] text-sm sm:text-base font-normal leading-relaxed`}
+                        >
+                          {txt}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Scroll Indicators (Optional) */}
+        <div className="flex justify-center mt-4 gap-2">
+          {cards.map((_, idx) => (
+            <div
+              key={idx}
+              className="w-2 h-2 rounded-full bg-gray-300 transition-colors duration-300"
+              data-indicator={idx}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Custom styles to hide scrollbar */}
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
 }

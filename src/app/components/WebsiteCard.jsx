@@ -13,12 +13,16 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { CldImage } from "next-cloudinary";
 
-// ...existing code...
 export default function WebsiteCard() {
   const [isChecked, setIsChecked] = useState(false);
+  const [currentPrice, setCurrentPrice] = useState("1999");
+  const [currentLabel, setCurrentLabel] = useState("Only");
+  const [currentPrefix, setCurrentPrefix] = useState("Design ");
   const cardRef = useRef(null);
   const backgroundRef = useRef(null);
-  const priceWheelRef = useRef(null);
+  const priceRef = useRef(null);
+  const labelRef = useRef(null);
+  const prefixRef = useRef(null);
   const bottomImageRef = useRef(null);
 
   const values = [
@@ -30,81 +34,55 @@ export default function WebsiteCard() {
     "Milestone check-ins if needed",
   ];
 
-  // useGSAP(() => {
-  //   if (isChecked) {
-  //     // Animate in when checked
-  //     gsap
-  //       .timeline()
-  //       .set(backgroundRef.current, {
-  //         opacity: 0,
-  //         scale: 0.9,
-  //       })
-  //       .to(backgroundRef.current, {
-  //         opacity: 1,
-  //         scale: 1,
-  //         duration: 0.3,
-  //         ease: "power2.out",
-  //       })
-  //       // .to(
-  //       //   cardRef.current,
-  //       //   {
-  //       //     scale: 1.05,
-  //       //     duration: 0.4,
-  //       //     // borderBottom: "8px solid #4176F0",
-  //       //     ease: "power2.out",
-  //       //   },
-  //       //   "-=0.4"
-  //       // )
-  //     //   .to(
-  //     //   bottomImageRef.current,
-  //     //   { scale: 1.05, duration: 0.4, ease: "power2.out" },
-  //     //   "-=0.4"
-  //     // )
-  //       .to(
-  //         priceWheelRef.current,
-  //         {
-  //           y: "-50%",
-  //           duration: 0.5,
-  //           ease: "power2.out",
-  //         },
-  //         "-=0.3"
-  //       );
-  //   } else {
-  //     // Animate out when unchecked
-  //     gsap
-  //       .timeline()
-  //       .to(priceWheelRef.current, {
-  //         y: "0%",
-  //         duration: 0.5,
-  //         ease: "power2.out",
-  //       })
-  //       // .to(
-  //       //   cardRef.current,
-  //       //   {
-  //       //     scale: 1,
-  //       //     duration: 0.4,
-  //       //     border: "0px solid transparent",
-  //       //     ease: "power2.out",
-  //       //   },
-  //       //   "-=0.3"
-  //       // )
-  //     //   .to(
-  //     //   bottomImageRef.current,
-  //     //   { scale: 1, duration: 0.4, ease: "power2.out" },
-  //     //   "-=0.4"
-  //     // )
-  //       .to(
-  //         backgroundRef.current,
-  //         {
-  //           opacity: 0,
-  //           scale: 0.9,
-  //           duration: 0.4,
-  //           ease: "power2.out",
-  //         },
-  //         "-=0.2"
-  //       );
-  //   }
-  // }, [isChecked]);
+  useGSAP(() => {
+    if (isChecked) {
+      // Animation when switching to "Design + Dev" (2999)
+      gsap
+        .timeline()
+        // Fade out current price, label, and prefix simultaneously
+        .to([priceRef.current, labelRef.current, prefixRef.current], {
+          opacity: 0,
+          duration: 0.3,
+          ease: "power1.out",
+        })
+        // Change price, label, and prefix text
+        .call(() => {
+          setCurrentPrice("2999");
+          setCurrentLabel("Dev");
+          setCurrentPrefix("Design + ");
+        })
+        // Fade in new price, label, and prefix with slight delay
+        .to([priceRef.current, labelRef.current, prefixRef.current], {
+          opacity: 1,
+          duration: 0.4,
+          ease: "power1.out",
+          delay: 0.1,
+        });
+    } else {
+      // Animation when switching back to "Design Only" (1999)
+      gsap
+        .timeline()
+        // Fade out current price, label, and prefix simultaneously
+        .to([priceRef.current, labelRef.current, prefixRef.current], {
+          opacity: 0,
+          duration: 0.3,
+          ease: "power1.out",
+        })
+        // Change price, label, and prefix text
+        .call(() => {
+          setCurrentPrice("1999");
+          setCurrentLabel("Only");
+          setCurrentPrefix("Design ");
+        })
+        // Fade in new price, label, and prefix with slight delay
+        .to([priceRef.current, labelRef.current, prefixRef.current], {
+          opacity: 1,
+          duration: 0.4,
+          ease: "power1.out",
+          delay: 0.1,
+        });
+    }
+  }, [isChecked]);
 
   return (
     <>
@@ -115,10 +93,6 @@ export default function WebsiteCard() {
           src={
             "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705034/design2w_sfwwsd.svg"
           }
-          // style={{
-          //   boxShadow:
-          //     "rgba(15, 169, 238, 0.5) 0px 8px 24px, rgba(15, 169, 238, 0.5) 0px 16px 56px, rgba(15, 169, 238, 0.5) 0px 24px 80px, rgba(15, 169, 238, 0.5) 0px 32px 120px",
-          // }}
           fill
           alt="design2"
         />
@@ -143,12 +117,18 @@ export default function WebsiteCard() {
                 Website
               </h3>
               <div className="flex items-center gap-2">
-                <p className={`${geistSans.className} text-base`}>
-                  Design {isChecked && "+"}
+                <p className={`${geistSans.className} text-base will-change-opacity`}>
                   <span
-                    className={`${instrumentSerif.className} text-black italic`}
+                    ref={prefixRef}
+                    className="will-change-opacity"
                   >
-                    {isChecked ? "Dev" : "Only"}
+                    {currentPrefix}
+                  </span>
+                  <span
+                    ref={labelRef}
+                    className={`${instrumentSerif.className} text-black italic will-change-opacity`}
+                  >
+                    {currentLabel}
                   </span>
                 </p>
                 <ToogleSwitch
@@ -165,29 +145,14 @@ export default function WebsiteCard() {
                 Starting at <span className="text-black">$</span>
               </p>
               <div className="flex items-center">
-                {/* First digit wheel (1 -> 2) */}
-                <div
-                  className={`${instrumentSerif.className} tracking-[-0.04em] text-black leading-[40px] text-[53px] relative overflow-hidden h-[40px]`}
-                >
-                  <div
-                    ref={priceWheelRef}
-                    className="transition-transform duration-200 ease-out"
-                  >
-                    {/* First Number (1) */}
-                    <div className="h-[41.5px] ml-2">1</div>
-                    {/* Second Number (2) */}
-                    <div className="h-[41.5px]">2</div>
-                  </div>
-                </div>
-                {/* Static digits (999) */}
                 <span
-                  className={`${instrumentSerif.className} tracking-[-0.04em] text-black leading-[40px] text-[53px]`}
+                  ref={priceRef}
+                  className={`${instrumentSerif.className} tracking-[-0.04em] text-black leading-[40px] text-[53px] will-change-opacity`}
                 >
-                  999
+                  {currentPrice}
                 </span>
               </div>
             </div>
-            {/* ...rest of the component remains the same... */}
             <div className="mt-4">
               {/* Details */}
               <div className="space-y-3 sm:space-y-4 relative z-10">
@@ -259,18 +224,16 @@ export default function WebsiteCard() {
             </div>
           </div>
         </div>
-        {/* {!isChecked && ( */}
-          <Image
-            ref={bottomImageRef}
-            className={`absolute object-cover rounded-3xl -bottom-2 -z-1`}
-            src={
-              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705123/designblue_scnjef.svg"
-            }
-            width={380}
-            height={100}
-            alt="design2"
-          />
-        {/* )} */}
+        <Image
+          ref={bottomImageRef}
+          className={`absolute object-cover rounded-3xl -bottom-2 -z-1`}
+          src={
+            "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705123/designblue_scnjef.svg"
+          }
+          width={380}
+          height={100}
+          alt="design2"
+        />
       </div>
     </>
   );
