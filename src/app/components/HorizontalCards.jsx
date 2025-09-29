@@ -117,16 +117,16 @@ export default function HorizontalCards() {
         }
 
         const totalWidth = (cardWidth + padding) * cards.length;
-        return -(totalWidth - screenWidth) * 0.7;
+        return -(totalWidth - screenWidth) * 0.6;
       }
 
       function getStartPosition() {
         const screenWidth = window.innerWidth;
 
-        if (screenWidth < 640) return "top 5%"; // Mobile
-        if (screenWidth < 768) return "top 10%"; // SM
-        if (screenWidth < 1024) return "top 10%"; // MD
-        if (screenWidth < 1280) return "top 15%"; // LG
+        // if (screenWidth < 640) return "top 5%"; // Mobile
+        // if (screenWidth < 768) return "top 10%"; // SM
+        // if (screenWidth < 1024) return "top 10%"; // MD
+        if (screenWidth > 1536) return "top 20%"; // LG
         return "top 10%"; // XL+
       }
 
@@ -161,7 +161,7 @@ export default function HorizontalCards() {
           <div className="w-8 h-[60%] top-1/2 -translate-y-1/2 -right-3 bg-[#e9e8ff] absolute blur-[10px] rounded-full z-10 pointer-events-none" />
           <div
             ref={racesRef}
-            className="races flex flex-nowrap h-[80vh] min-[2500px]:h-[60vh] ml-[7%]"
+            className="races flex flex-nowrap h-[80vh] 2xl:h-[60vh] ml-[7%]"
           >
             {cards.map((val, idx) => {
               return (
