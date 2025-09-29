@@ -21,6 +21,7 @@ export default function LandingPage() {
         requestAnimationFrame(raf)
       }
       requestAnimationFrame(raf)
+      window.lenis = lenis;
       return () => {
         lenis.destroy()
       }

@@ -61,7 +61,7 @@ export default function WhatWedoSection() {
 
   return (
     <>
-      <div ref={containerRef}>
+      <div id="services" ref={containerRef}>
         <div ref={subtitleRef} className="flex justify-center items-center">
           <p
             className={`${geistSans.className} uppercase font-normal text-xs sm:text-sm md:text-[18px] text-[#818181]`}

@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function CaseStudies() {
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4">
+      <div id="case-studies" className="max-w-7xl mx-auto px-4">
         <div className="flex justify-center items-center">
           <p
             className={`${geistSans.className} mt-3 lg:mt-6 uppercase font-normal text-xs sm:text-sm md:text-[18px] text-[#818181]`}
@@ -39,9 +39,9 @@ export default function CaseStudies() {
         <div className="mb-4">
           <div className="flex justify-center items-center mt-2 md:mt-4 relative">
             <Image
-              className="w-full h-1/3 rounded-[20px]"
+              className="w-full h-full lg:h-1/3 rounded-[12px] md:rounded-[20px]"
               src={case1}
-              width={undefined}
+              width={200}
               height={200}
               alt="case1"
             />

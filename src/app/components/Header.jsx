@@ -9,8 +9,26 @@ import gsap from "gsap";
 import Link from "next/link";
 // import { animatePageIn, animatePageOut } from "@/animations";
 import { usePathname, useRouter } from "next/navigation";
+import { ScrollToPlugin } from "gsap/all";
+import Lenis from "lenis";
 
 gsap.registerPlugin(useGSAP);
+
+const handleScrollCase = () => {
+  window.lenis.scrollTo("#case-studies", {
+    offset: 0, // optional offset
+    duration: 2.5,
+    easing: (t) => 1 - Math.pow(1 - t, 3), // custom ease
+  });
+};
+
+const handleScrollService = () => {
+  window.lenis.scrollTo("#services", {
+    offset: -80, // optional offset
+    duration: 2.5,
+    easing: (t) => 1 - Math.pow(1 - t, 3), // custom ease
+  });
+};
 
 export default function Header() {
   const router = useRouter();
@@ -44,6 +62,7 @@ export default function Header() {
               </Link>
               <div className="flex gap-8">
                 <p
+                  onClick={handleScrollService}
                   className={`${
                     geistSans.className
                   } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
@@ -56,6 +75,7 @@ export default function Header() {
                 </p>
 
                 <p
+                  onClick={handleScrollCase}
                   className={`${
                     geistSans.className
                   } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
@@ -199,7 +219,10 @@ function MobileHeader({ pathName }) {
                           ? "bg-gradient-to-r from-white to-white"
                           : "bg-gradient-to-r from-black to-black"
                       } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
-                      onClick={() => setMenuOpen(false)}
+                      onClick={() => {
+                        setMenuOpen(false);
+                        handleScrollService();
+                      }}
                     >
                       Services
                     </p>
@@ -216,7 +239,10 @@ function MobileHeader({ pathName }) {
                           ? "bg-gradient-to-r from-white to-white"
                           : "bg-gradient-to-r from-black to-black"
                       } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
-                      onClick={() => setMenuOpen(false)}
+                      onClick={() => {
+                        setMenuOpen(false);
+                        handleScrollCase();
+                      }}
                     >
                       Case Studies
                     </p>
@@ -225,7 +251,7 @@ function MobileHeader({ pathName }) {
                         pathName === "/arch" ? "bg-[#F1F1F1]" : "bg-[#818181]"
                       }`}
                     />
-                    <Link href={"/work"}>
+                    <Link onClick={() => setMenuOpen(false)} href={"/work"}>
                       <p
                         // onClick={() => {
                         //   if (pathName !== "/work") {

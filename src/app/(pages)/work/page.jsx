@@ -102,44 +102,44 @@ export default function WorkPage() {
     ); // Start 0.4s before previous animation ends
   }, []);
 
-  const openModal = (img, index) => {
-    setSelectedImage({ src: img, index });
-    if (lenisRef.current) {
-      lenisRef.current.stop();
-    }
-    containerRef.current.style.overflow = "hidden"; // Prevent background scroll
-    document.documentElement.style.overflow = "hidden"; // Also set on html element
-  };
+  // const openModal = (img, index) => {
+  //   setSelectedImage({ src: img, index });
+  //   if (lenisRef.current) {
+  //     lenisRef.current.stop();
+  //   }
+  //   containerRef.current.style.overflow = "hidden"; // Prevent background scroll
+  //   document.documentElement.style.overflow = "hidden"; // Also set on html element
+  // };
 
-  const closeModal = () => {
-    if (modalRef.current) {
-      gsap.to(modalRef.current, {
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.2,
-        ease: "power2.in",
-        onComplete: () => {
-          setSelectedImage(null);
-          if (lenisRef.current) {
-            lenisRef.current.start();
-          }
-          containerRef.current.style.overflow = "unset"; // Prevent background scroll
-          document.documentElement.style.overflow = "unset"; // Also set on html element
-        },
-      });
-    }
-  };
+  // const closeModal = () => {
+  //   if (modalRef.current) {
+  //     gsap.to(modalRef.current, {
+  //       opacity: 0,
+  //       scale: 0.8,
+  //       duration: 0.2,
+  //       ease: "power2.in",
+  //       onComplete: () => {
+  //         setSelectedImage(null);
+  //         if (lenisRef.current) {
+  //           lenisRef.current.start();
+  //         }
+  //         containerRef.current.style.overflow = "unset"; // Prevent background scroll
+  //         document.documentElement.style.overflow = "unset"; // Also set on html element
+  //       },
+  //     });
+  //   }
+  // };
 
-  // Close modal on escape key
-  useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.key === "Escape" && selectedImage) {
-        closeModal();
-      }
-    };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, [selectedImage]);
+  // // Close modal on escape key
+  // useEffect(() => {
+  //   const handleEsc = (e) => {
+  //     if (e.key === "Escape" && selectedImage) {
+  //       closeModal();
+  //     }
+  //   };
+  //   window.addEventListener("keydown", handleEsc);
+  //   return () => window.removeEventListener("keydown", handleEsc);
+  // }, [selectedImage]);
 
   return (
     <>
@@ -156,8 +156,8 @@ export default function WorkPage() {
                 <div
                   key={Math.random() * 2}
                   ref={imageRef}
-                  className="relative cursor-pointer w-full rounded-xl overflow-hidden mt-4"
-                  onClick={() => openModal(img, index)}
+                  className="relative w-full rounded-xl overflow-hidden mt-4"
+                  // onClick={() => openModal(img, index)}
                 >
                   <CldImage
                     src={img}
@@ -173,7 +173,7 @@ export default function WorkPage() {
           </div>
         </div>
       </div>
-      {/* Modal Popup */}
+      {/* Modal Popup
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center  justify-center p-4"
@@ -194,7 +194,7 @@ export default function WorkPage() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 }
