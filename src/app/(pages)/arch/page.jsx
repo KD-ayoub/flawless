@@ -14,6 +14,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
+import { CldImage } from "next-cloudinary";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +30,7 @@ export default function page() {
   const lenisRef = useRef(null);
 
   const videoUrl =
-    "https://res.cloudinary.com/dvaeb0mxy/video/upload/v1758660791/arch-video_u6meh3.mp4";
+    "https://res.cloudinary.com/dvaeb0mxy/video/upload/c_limit,w_3840/f_auto/q_auto/v1758660791/arch-video_u6meh3.mp4";
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -249,13 +250,15 @@ export default function page() {
 
       {/* First Image */}
       <div className="my-10">
-        <Image
+        <CldImage
           ref={(el) => (imageRefs.current[0] = el)}
           className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
-          src={casep1}
-          width={undefined}
-          height={200}
+          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759241664/case1_fc0ahk.png"}
+          width={1000}
+          height={600}
           alt="case p1"
+          quality="auto"
+          format="auto"
         />
       </div>
 
@@ -280,33 +283,39 @@ export default function page() {
 
       {/* Grid Images */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
-        <Image
+        <CldImage
           ref={(el) => (imageRefs.current[1] = el)}
           className="w-full h-full rounded-[16px] md:rounded-[20px]"
-          src={casep2}
-          width={undefined}
+          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242091/case2_xbcxpf.png"}
+          width={1000}
           height={200}
           alt="case p2"
+          quality="auto"
+          format="auto"
         />
-        <Image
+        <CldImage
           ref={(el) => (imageRefs.current[2] = el)}
           className="w-full h-full rounded-[16px] md:rounded-[20px]"
-          src={casep3}
-          width={undefined}
+          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242230/case3_pqicn7.png"}
+          width={1000}
           height={200}
           alt="case p3"
+          quality="auto"
+          format="auto"
         />
       </div>
 
       {/* Full Width Image */}
       <div className="">
-        <Image
+        <CldImage
           ref={(el) => (imageRefs.current[3] = el)}
           className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
-          src={casep4}
-          width={undefined}
+          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242450/case4_suke5i.png"}
+          width={1200}
           height={200}
           alt="case p4"
+          quality="auto"
+          format="auto"
         />
       </div>
 
@@ -409,28 +418,32 @@ export default function page() {
 
       {/* More Images */}
       <div className="my-10">
-        <Image
+        <CldImage
           ref={(el) => (imageRefs.current[4] = el)}
           className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
-          src={casep5}
-          width={undefined}
+          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242651/case5_taimn8.png"}
+          width={1200}
           height={200}
           alt="case p5"
+          quality="auto"
+          format="auto"
         />
       </div>
       <div className="my-10">
-        <Image
+        <CldImage
           ref={(el) => (imageRefs.current[5] = el)}
           className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
-          src={casep6}
-          width={undefined}
+          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242795/case6_av26v4.png"}
+          width={1200}
           height={200}
           alt="case p6"
+          quality="auto"
+          format="auto"
         />
       </div>
 
       {/* Video Section */}
-      {/* <div ref={containerRef} className="">
+      <div ref={containerRef} className="">
         <div className="mx-auto">
           <div className="relative aspect-[20/9] rounded-2xl overflow-hidden shadow-2xl bg-black group">
             <video
@@ -446,7 +459,7 @@ export default function page() {
             </video>
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Results Section */}
       <div className="my-10" ref={resultsRef}>

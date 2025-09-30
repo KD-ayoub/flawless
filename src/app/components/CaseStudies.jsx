@@ -4,6 +4,7 @@ import Image from "next/image";
 import case1 from "@/app/assets/svg/case1.svg";
 import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
+import { CldImage } from "next-cloudinary";
 
 export default function CaseStudies() {
   return (
@@ -23,7 +24,7 @@ export default function CaseStudies() {
             Results that speak for themselves
           </p>
         </div>
-        <div className="mx-4 sm:mx-6 lg:mx-8 flex justify-center items-center text-center ">
+        <div className="mb-2 sm:mb-8 mx-4 sm:mx-6 lg:mx-8 flex justify-center items-center text-center ">
           <p
             className={`${geistSans.className} text-[#585858] tracking-[-0.04em] text-lg sm:text-xl md:text-[21px] max-w-4xl leading-[120%]`}
           >
@@ -38,12 +39,14 @@ export default function CaseStudies() {
         </div>
         <div className="mb-4">
           <div className="flex justify-center items-center mt-2 md:mt-4 relative">
-            <Image
-              className="w-full h-full lg:h-1/3 rounded-[12px] md:rounded-[20px]"
-              src={case1}
-              width={200}
+            <CldImage
+              className="w-full h-[240px] sm:h-full lg:h-1/3 rounded-[12px] md:rounded-[20px] object-cover"
+              src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759244054/case0_x9yaf0.png"}
+              width={1000}
               height={200}
               alt="case1"
+              quality="auto"
+              format="auto"
             />
             <div className="absolute w-full bottom-0 left-0 p-6 flex flex-col min-[992px]:flex-row min-[992px]:items-end items-start ">
               <p

@@ -14,7 +14,7 @@ const testimonials = [
   "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994347/testimonial2_bpckwf.png",
   "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994347/testimonial3_pbdvtj.png",
   "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994348/testimonial4_bsali9.png",
-  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994350/testimonial5_bqk5au.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759240530/testimonial5_ovbhlo.png",
   "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994351/testimonial6_gtgexp.png",
   "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994354/testimonial7_hdgq5y.png",
   "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994353/testimonial8_byupmv.png",
