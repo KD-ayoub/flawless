@@ -24,40 +24,41 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Trusted() {
   // Desktop layout: 6 logos per row
   const firstRowLogos = [
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705256/logo1_bhsow2.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705262/logo2_qhgkrn.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705269/logo3_l3yyco.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705267/logo4_expm4a.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705269/logo5_zlpc9u.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705264/logo6_gh1pwe.svg",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252551/logo1_w1ruxk.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252611/logo2_laaa1g.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252672/logo3_inxvay.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252720/logo4_hgzecc.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252772/logo5_mcjlb2.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252816/logo6_iljsuh.png",
   ];
   const secondRowLogos = [
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705265/logo7_yb5gsi.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705271/logo8_kykagq.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705271/logo9_f0kwkr.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705273/logo10_pkw0wl.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705278/logo11_vfrj6w.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705277/logo12_f9htoa.svg",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252897/logo7_mhiujo.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252936/logo8_vl5olv.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252993/logo9_qb5lyq.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253036/logo10_ismv5d.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253077/logo11_ggnlkd.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253156/logo12_mapmhe.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253212/logo13_tz8me6.png",
   ];
 
   // Mobile layout: 4 logos per row, 3 rows total
   const mobileFirstRow = [
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705256/logo1_bhsow2.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705262/logo2_qhgkrn.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705269/logo3_l3yyco.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705267/logo4_expm4a.svg",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252551/logo1_w1ruxk.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252611/logo2_laaa1g.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252672/logo3_inxvay.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252720/logo4_hgzecc.png",
   ];
   const mobileSecondRow = [
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705269/logo5_zlpc9u.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705264/logo6_gh1pwe.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705265/logo7_yb5gsi.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705271/logo8_kykagq.svg",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252772/logo5_mcjlb2.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252816/logo6_iljsuh.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252897/logo7_mhiujo.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252936/logo8_vl5olv.png",
   ];
   const mobileThirdRow = [
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705271/logo9_f0kwkr.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705273/logo10_pkw0wl.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705278/logo11_vfrj6w.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705277/logo12_f9htoa.svg",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252993/logo9_qb5lyq.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253036/logo10_ismv5d.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253077/logo11_ggnlkd.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253156/logo12_mapmhe.png",
   ];
 
   const containerRef = useRef(null);
@@ -168,12 +169,14 @@ export default function Trusted() {
         >
           {firstRowLogos.map((logo, index) => (
             <div key={index} className="w-20 h-10 md:w-24 md:h-12 opacity-0">
-              <Image
+              <CldImage
                 src={logo}
                 alt={`Logo ${index + 1}`}
                 className="w-full h-full object-contain"
-                width={96}
-                height={48}
+                width={1000}
+                height={1000}
+                quality="auto"
+                format="auto"
               />
             </div>
           ))}
@@ -189,12 +192,14 @@ export default function Trusted() {
               key={index + 6}
               className="w-20 h-10 md:w-24 md:h-12 opacity-0"
             >
-              <Image
+              <CldImage
                 src={logo}
                 alt={`Logo ${index + 7}`}
                 className="w-full h-full object-contain"
-                width={96}
-                height={48}
+                width={1000}
+                height={1000}
+                quality="auto"
+                format="auto"
               />
             </div>
           ))}
@@ -210,12 +215,14 @@ export default function Trusted() {
         <div className="flex items-center justify-between w-full">
           {mobileFirstRow.map((logo, index) => (
             <div key={index} className="mobile-logo w-16 h-8 opacity-0">
-              <Image
+              <CldImage
                 src={logo}
                 alt={`Logo ${index + 1}`}
                 className="w-full h-full object-contain"
-                width={64}
-                height={32}
+                width={1000}
+                height={1000}
+                quality="auto"
+                format="auto"
               />
             </div>
           ))}
@@ -225,12 +232,14 @@ export default function Trusted() {
         <div className="flex items-center justify-between w-full">
           {mobileSecondRow.map((logo, index) => (
             <div key={index + 4} className="mobile-logo w-16 h-8 opacity-0">
-              <Image
+              <CldImage
                 src={logo}
                 alt={`Logo ${index + 5}`}
                 className="w-full h-full object-contain"
-                width={64}
-                height={32}
+                width={1000}
+                height={1000}
+                quality="auto"
+                format="auto"
               />
             </div>
           ))}
@@ -240,15 +249,32 @@ export default function Trusted() {
         <div className="flex items-center justify-between w-full">
           {mobileThirdRow.map((logo, index) => (
             <div key={index + 8} className="mobile-logo w-16 h-8 opacity-0">
-              <Image
+              <CldImage
                 src={logo}
                 alt={`Logo ${index + 9}`}
                 className="w-full h-full object-contain"
-                width={64}
-                height={32}
+                width={1000}
+                height={1000}
+                quality="auto"
+                format="auto"
               />
             </div>
           ))}
+        </div>
+        <div className="flex items-center justify-center w-full">
+          <div className="mobile-logo w-16 h-8 opacity-0">
+            <CldImage
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253212/logo13_tz8me6.png"
+              }
+              alt={`Logo 13`}
+              className="w-full h-full object-contain"
+              width={1000}
+              height={1000}
+              quality="auto"
+              format="auto"
+            />
+          </div>
         </div>
       </div>
     </div>

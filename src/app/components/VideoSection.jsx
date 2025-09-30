@@ -9,11 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function VideoSection() {
   const [isInView, setIsInView] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
   const containerRef = useRef(null);
   const videoRef = useRef(null);
 
-  const videoUrl = `https://res.cloudinary.com/do4rm9mc4/video/upload/v1753193389/samples/Axel_mbmsdp.mp4`;
+  const videoUrl = `https://res.cloudinary.com/dvaeb0mxy/video/upload/c_limit,w_3840/f_auto/q_auto/v1759248102/Axel_nvax53.mp4`;
 
   useGSAP(
     () => {
@@ -75,13 +74,6 @@ export default function VideoSection() {
     { scope: containerRef }
   );
 
-  const toggleMute = () => {
-    if (videoRef.current) {
-      const newMutedState = !isMuted;
-      videoRef.current.muted = newMutedState;
-      setIsMuted(newMutedState);
-    }
-  };
 
   return (
     <div ref={containerRef} className="py-5 sm:py-7 lg:py-10">
@@ -100,7 +92,7 @@ export default function VideoSection() {
             Your browser does not support the video tag.
           </video>
 
-          {/* Mute/Unmute indicator - clickable */}
+          {/* Mute/Unmute indicator - clickable
           <div
             onClick={toggleMute}
             className="absolute top-4 left-4 bg-black/60 text-white px-3 py-1 rounded-lg text-sm backdrop-blur-sm border border-white/20 cursor-pointer hover:bg-black/80 transition-all duration-300"
@@ -111,9 +103,8 @@ export default function VideoSection() {
               ) : (
                 <HiVolumeUp className="w-4 h-4" />
               )}
-              {/* <span>{isMuted ? "Click to unmute" : "Click to mute"}</span> */}
             </div>
-          </div>
+          </div> */}
 
           {/* Video state indicator
           <div className="absolute top-4 right-4">

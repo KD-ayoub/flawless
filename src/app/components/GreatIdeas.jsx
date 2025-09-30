@@ -115,13 +115,15 @@ export default function GreatIdeas() {
         </div>
         <div className="relative">
           <div className="absolute left-16 lg:-top-20 -z-10">
-            <Image
+            <CldImage
               src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705927/shape3_t33vqt.svg"
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253926/shape3_xeyqj4.png"
               }
               width={300}
               height={300}
               alt="shape3"
+              quality="auto"
+              format="auto"
             />
           </div>
           <div>
@@ -130,11 +132,13 @@ export default function GreatIdeas() {
           <div className="absolute right-20 -bottom-10 -z-10">
             <Image
               src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705942/shape4_uo7rcs.svg"
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759254055/shape4_damo4c.png"
               }
               width={300}
               height={300}
               alt="shape4"
+              quality="auto"
+              format="auto"
             />
           </div>
         </div>

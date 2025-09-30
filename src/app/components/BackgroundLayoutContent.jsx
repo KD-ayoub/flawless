@@ -13,28 +13,32 @@ export default function BackgroundLayoutContent() {
       {pathName !== "/arch" && (
         <>
           <div className="fixed inset-0 -z-10">
-            <Image
+            <CldImage
               className="object-cover w-full h-full -scale-y-100"
+              width={1000}
+              height={1000}
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"
               }
               alt="Background"
-              fill
-              priority
+              quality="auto"
+              format="auto"
             />
           </div>
-          <div className="absolute w-[400px] h-[400px] -top-20 right-0 min-[2500px]:w-[2000px] min-[2500px]:top-0 min-[2500px]:right-20">
-            <Image
-              className=" w-full h-full  object-fill"
-              fill
+          <div className="absolute w-[400px] h-[200px] min-[2500px]:w-[1000px]! min-[2500px]:h-[500px]! lg:w-[500px] lg:h-[300px]  right-0">
+            <CldImage
+              className=" w-full h-full object-cover"
+              width={2000}
+              height={200}
               src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705870/shape1_kkfg5l.svg"
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759249445/shape1_gnjglp.png"
               }
               alt="shape1"
-              priority
+              quality="auto"
+              format="auto"
             />
           </div>
-          <div className=" absolute hidden min-[1000px]:block  w-[200px] h-[400px]  2xl:h-[600px]  md:top-60 xl:top-52  -left-5 min-[2500px]:hidden ">
+          {/* <div className=" absolute hidden min-[1000px]:block  w-[200px] h-[400px]  2xl:h-[600px]  md:top-60 xl:top-52  -left-5 min-[2500px]:hidden ">
             <Image
               className=" w-full h-full  object-fill"
               fill
@@ -43,6 +47,19 @@ export default function BackgroundLayoutContent() {
               }
               alt="shape2"
               priority
+            />
+          </div> */}
+          <div className=" absolute hidden min-[1000px]:block  w-[150px] h-[400px]  2xl:h-[600px]  md:top-20 xl:top-28  -left-5 min-[2500px]:hidden ">
+            <CldImage
+              className=" w-full h-auto object-cover"
+              width={1200}
+              height={220}
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759249229/Rectangle_nimvst.png"
+              }
+              alt="shape2"
+              quality="auto"
+              format="auto"
             />
           </div>
         </>
