@@ -130,7 +130,7 @@ export default function GreatIdeas() {
             <GreatSectionCard />
           </div>
           <div className="absolute right-20 -bottom-10 -z-10">
-            <Image
+            <CldImage
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759254055/shape4_damo4c.png"
               }

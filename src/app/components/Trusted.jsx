@@ -185,12 +185,12 @@ export default function Trusted() {
         {/* Second row - 6 logos */}
         <div
           ref={secondRowRef}
-          className="flex gap-[8%] items-center w-full max-w-3xl mx-auto"
+          className="flex gap-[8%] items-center w-full max-w-5xl mx-auto"
         >
           {secondRowLogos.map((logo, index) => (
             <div
               key={index + 6}
-              className="w-20 h-10 md:w-24 md:h-12 opacity-0"
+              className="w-20 h-10 md:w-28 md:h-14 opacity-0"
             >
               <CldImage
                 src={logo}

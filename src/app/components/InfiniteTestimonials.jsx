@@ -108,7 +108,7 @@ export default function TestimonialGrid() {
             <div
               key={index}
               ref={(el) => (imageRefs.current[index] = el)}
-              className={`group cursor-pointer ${margin}`}
+              className={`group ${margin}`}
             >
               <div className="relative overflow-hidden rounded-[20px] shadow-lg ">
                 <CldImage

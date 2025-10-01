@@ -16,67 +16,64 @@ import { CldImage } from "next-cloudinary";
 
 gsap.registerPlugin(ScrollTrigger);
 
- const cards = [
-    {
-      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705872/number1_itbgnn.svg",
-      title: "Branding",
-      subtitle: "We build identities that stick and scale.",
-      details: [
-        "Logo design",
-        "Visual identity & color system",
-        "Brand guidelines & asset kit",
-        "Pitch-deck / investor slides",
-        "Social media brand assets",
-        "Full rebrand & refresh",
-      ],
-    },
-    {
-      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705868/number2_oulx1l.svg",
-      title: "Product & UX",
-      subtitle: "UI people love and understand AT first SIGHT.",
-      details: [
-        "UX research & discovery",
-        "User flows & wireframes",
-        "High-fidelity UI design",
-        "Design systems in Figma",
-        "Dashboard & data-viz UX",
-        "dApp / AI product patterns",
-      ],
-    },
-    {
-      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705849/number3_hxcn5g.svg",
-      title: "Web & Front-End",
-      subtitle: "execution that stays fast, clean, and flexible.",
-      details: [
-        "React / Next.js front-end apps",
-        "UI Implementation",
-        "Modern Frameworks & Tools",
-        "API Integration & State Logic",
-        "Performance Optimization",
-        "Animations & Interactions",
-      ],
-    },
-    {
-      icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705844/number4_jg2fb0.svg",
-      title: "Motion",
-      subtitle: "Movement with meaning, not just decoration.",
-      details: [
-        "Logo & brand animations",
-        "Promo / explainer videos",
-        "Social teaser reels",
-        "Product Walkthroughs",
-        "Animated Visual Identities",
-        "Onboarding Animations",
-      ],
-    },
-  ];
-
+const cards = [
+  {
+    icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759328427/num1_plyj4m.png",
+    title: "Branding",
+    subtitle: "We build identities that stick and scale.",
+    details: [
+      "Logo design",
+      "Visual identity & color system",
+      "Brand guidelines & asset kit",
+      "Pitch-deck / investor slides",
+      "Social media brand assets",
+      "Full rebrand & refresh",
+    ],
+  },
+  {
+    icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759328430/num2_tth4en.png",
+    title: "Product & UX",
+    subtitle: "UI people love and understand AT first SIGHT.",
+    details: [
+      "UX research & discovery",
+      "User flows & wireframes",
+      "High-fidelity UI design",
+      "Design systems in Figma",
+      "Dashboard & data-viz UX",
+      "dApp / AI product patterns",
+    ],
+  },
+  {
+    icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759328435/num3_w4a0d5.png",
+    title: "Web & Front-End",
+    subtitle: "execution that stays fast, clean, and flexible.",
+    details: [
+      "React / Next.js front-end apps",
+      "UI Implementation",
+      "Modern Frameworks & Tools",
+      "API Integration & State Logic",
+      "Performance Optimization",
+      "Animations & Interactions",
+    ],
+  },
+  {
+    icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759328439/num4_a7aadi.png",
+    title: "Motion",
+    subtitle: "Movement with meaning, not just decoration.",
+    details: [
+      "Logo & brand animations",
+      "Promo / explainer videos",
+      "Social teaser reels",
+      "Product Walkthroughs",
+      "Animated Visual Identities",
+      "Onboarding Animations",
+    ],
+  },
+];
 
 export default function HorizontalCards() {
   const wrapperRef = useRef(null);
   const racesRef = useRef(null);
-
- 
 
   useGSAP(
     () => {
@@ -172,24 +169,31 @@ export default function HorizontalCards() {
                   <div className="bg-gradient-to-b from-[#d3a7d0af] to-[#7f7ffe58] rounded-[16px] sm:rounded-[25px] p-0.5 w-[350px] md:w-[480px] shadow-lg">
                     <div className="relative bg-[#F9F9FB] rounded-[12px] sm:rounded-[24px] p-4 sm:p-6 overflow-hidden">
                       {/* Background image - now fully visible behind text */}
-                      <Image
+                      <CldImage
                         className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[24px] object-cover "
                         src={
                           "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704936/bgofcarousel_o6y2t8.svg"
                         }
                         alt="background pattern"
-                        fill
+                        width={1200}
+                        height={1200}
+                        quality="auto"
+                        format="auto"
                       />
 
                       {/* Header */}
                       <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 relative z-10">
-                        <Image
-                          src={val.icon}
-                          width={50}
-                          height={50}
-                          alt={`${val.title} icon`}
-                          className="sm:w-[60px] sm:h-[60px]"
-                        />
+                        <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] flex items-center">
+                          <CldImage
+                            src={val.icon}
+                            width={1500}
+                            height={1500}
+                            alt={`${val.title} icon`}
+                            className=""
+                            quality="auto"
+                            format="auto"
+                          />
+                        </div>
                         <h3
                           className={`${instrumentSerif.className} text-2xl sm:text-3xl lg:text-[54px] font-normal text-black`}
                         >
@@ -214,15 +218,19 @@ export default function HorizontalCards() {
                               key={txt}
                               className="flex items-start gap-2 sm:gap-3"
                             >
-                              <Image
-                                src={
-                                  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705830/markicon_g7w5fi.svg"
-                                }
-                                width={16}
-                                height={16}
-                                alt="check mark"
-                                className="flex-shrink-0 mt-1 sm:w-[20px] sm:h-[20px]"
-                              />
+                              <div className="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px]">
+                                <CldImage
+                                  src={
+                                    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759329235/markicon_tsgm0j.png"
+                                  }
+                                  width={1600}
+                                  height={1600}
+                                  alt="check mark"
+                                  className="flex-shrink-0 mt-1 "
+                                  quality="auto"
+                                  format="auto"
+                                />
+                              </div>
                               <p
                                 className={`${geistSans.className} text-[#454545] tracking-[-0.01em] text-sm sm:text-base lg:text-lg font-normal leading-relaxed`}
                               >
@@ -240,14 +248,13 @@ export default function HorizontalCards() {
           </div>
         </div>
       </div>
-      <HorizontalCardsMobile/>
+      <HorizontalCardsMobile />
     </>
   );
 }
 
 function HorizontalCardsMobile() {
   const scrollRef = useRef(null);
-
 
   // Smooth scroll behavior
   useEffect(() => {
@@ -295,21 +302,26 @@ function HorizontalCardsMobile() {
               <div className="bg-gradient-to-b from-[#d3a7d0af] to-[#7f7ffe58] rounded-[16px] sm:rounded-[20px] p-0.5 h-full shadow-lg">
                 <div className="relative bg-[#F9F9FB] rounded-[12px] sm:rounded-[18px] p-4 sm:p-6 h-full overflow-hidden">
                   {/* Background image */}
-                  <Image
+                  <CldImage
                     className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[18px] object-cover"
                     src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704936/bgofcarousel_o6y2t8.svg"
                     alt="background pattern"
-                    fill
+                    width={1200}
+                    height={1200}
+                    quality="auto"
+                    format="auto"
                   />
 
                   {/* Header */}
                   <div className="flex items-center gap-3 mb-4 sm:mb-6 relative z-10">
-                    <Image
+                    <CldImage
                       src={val.icon}
                       width={45}
                       height={45}
                       alt={`${val.title} icon`}
                       className="sm:w-[50px] sm:h-[50px]"
+                      quality="auto"
+                      format="auto"
                     />
                     <h3
                       className={`${instrumentSerif.className} text-xl sm:text-2xl md:text-3xl font-normal text-black`}
@@ -334,12 +346,14 @@ function HorizontalCardsMobile() {
                         key={txt}
                         className="flex items-start gap-2 sm:gap-3"
                       >
-                        <Image
-                          src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705830/markicon_g7w5fi.svg"
+                        <CldImage
+                          src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759329235/markicon_tsgm0j.png"
                           width={14}
                           height={14}
                           alt="check mark"
                           className="flex-shrink-0 mt-1 sm:w-[16px] sm:h-[16px]"
+                          quality="auto"
+                          format="auto"
                         />
                         <p
                           className={`${geistSans.className} text-[#454545] tracking-[-0.01em] text-sm sm:text-base font-normal leading-relaxed`}

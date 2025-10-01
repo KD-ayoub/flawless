@@ -2,7 +2,7 @@
 
 import { geistSans } from "@/app/layout";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import casep1 from "@/app/assets/svg/case-p1.svg";
 import casep2 from "@/app/assets/svg/case-p2.svg";
 import casep3 from "@/app/assets/svg/case-p3.svg";
@@ -15,12 +15,13 @@ import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
 import { CldImage } from "next-cloudinary";
+import ArchVideoSection from "@/app/components/ArchVideoSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function page() {
-  const videoRef = useRef(null);
-  const containerRef = useRef(null);
+ 
+  
   const heroRef = useRef(null);
   const challengeRef = useRef(null);
   const approachRef = useRef(null);
@@ -29,8 +30,6 @@ export default function page() {
   const checklistRef = useRef(null);
   const lenisRef = useRef(null);
 
-  const videoUrl =
-    "https://res.cloudinary.com/dvaeb0mxy/video/upload/c_limit,w_3840/f_auto/q_auto/v1758660791/arch-video_u6meh3.mp4";
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -40,6 +39,7 @@ export default function page() {
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+    lenis.on('scroll', ScrollTrigger.update);
     return () => {
       lenis.destroy();
     };
@@ -176,54 +176,7 @@ export default function page() {
       }
     });
 
-    // Video container animation and play/pause logic
-    ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: "top 60%",
-      end: "bottom 40%",
-      onEnter: () => {
-        // Animate video container
-        gsap.fromTo(
-          containerRef.current,
-          {
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out",
-          }
-        );
-
-        // Play video
-        if (videoRef.current) {
-          videoRef.current.play().catch((error) => {
-            console.log("Video autoplay failed:", error);
-          });
-        }
-      },
-      onLeave: () => {
-        if (videoRef.current) {
-          videoRef.current.pause();
-        }
-      },
-      onEnterBack: () => {
-        if (videoRef.current) {
-          videoRef.current.play().catch((error) => {
-            console.log("Video autoplay failed:", error);
-          });
-        }
-      },
-      onLeaveBack: () => {
-        if (videoRef.current) {
-          videoRef.current.pause();
-        }
-      },
-    });
+    
   });
 
   return (
@@ -442,24 +395,7 @@ export default function page() {
         />
       </div>
 
-      {/* Video Section */}
-      <div ref={containerRef} className="">
-        <div className="mx-auto">
-          <div className="relative aspect-[20/9] rounded-2xl overflow-hidden shadow-2xl bg-black group">
-            <video
-              ref={videoRef}
-              className="w-full h-full object-cover"
-              loop
-              muted
-              playsInline
-              preload="metadata"
-            >
-              <source src={videoUrl} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </div>
+      <ArchVideoSection/>
 
       {/* Results Section */}
       <div className="my-10" ref={resultsRef}>
