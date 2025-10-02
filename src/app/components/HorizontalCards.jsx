@@ -163,9 +163,9 @@ export default function HorizontalCards() {
                     <div className="relative bg-[#F9F9FB] rounded-[12px] sm:rounded-[24px] p-4 sm:p-6 overflow-hidden">
                       {/* Background image - now fully visible behind text */}
                       <CldImage
-                        className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[24px] object-cover "
+                        className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[24px]  "
                         src={
-                          "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704936/bgofcarousel_o6y2t8.svg"
+                          "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759423971/bg-carousel_oyzp6u.png"
                         }
                         alt="background pattern"
                         width={1200}
@@ -296,8 +296,8 @@ function HorizontalCardsMobile() {
                 <div className="relative bg-[#F9F9FB] rounded-[12px] sm:rounded-[18px] p-4 sm:p-6 h-full overflow-hidden">
                   {/* Background image */}
                   <CldImage
-                    className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[18px] object-cover"
-                    src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704936/bgofcarousel_o6y2t8.svg"
+                    className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[18px]"
+                    src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759423971/bg-carousel_oyzp6u.png"
                     alt="background pattern"
                     width={1200}
                     height={1200}
