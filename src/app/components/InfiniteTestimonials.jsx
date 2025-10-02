@@ -40,7 +40,7 @@ export default function TestimonialGrid() {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 0.6,
+            duration: 0.3,
             ease: "power2.out",
             scrollTrigger: {
               trigger: img,
