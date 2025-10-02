@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -248,6 +248,7 @@ export default function HorizontalCards() {
 
 function HorizontalCardsMobile() {
   const scrollRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   // Smooth scroll behavior
   useEffect(() => {
@@ -266,6 +267,50 @@ function HorizontalCardsMobile() {
       card.style.scrollSnapAlign = "center";
     });
   }, []);
+
+  // Sneak peek animation
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer || hasAnimated) return;
+
+    const sneakPeekAnimation = () => {
+      // Wait 2 seconds after component mounts
+      setTimeout(() => {
+        if (!scrollContainer) return;
+
+        // Calculate peek distance (show part of second card)
+        const cardWidth = 300; // Base card width
+        const gap = 16; // gap-4 = 16px
+        const peekDistance = cardWidth * 0.3; // Show 30% of next card
+
+        // Temporarily disable scroll snap for smooth animation
+        scrollContainer.style.scrollSnapType = "none";
+        scrollContainer.style.scrollBehavior = "smooth";
+
+        // Scroll to peek at second card
+        scrollContainer.scrollTo({
+          left: peekDistance,
+          behavior: "smooth",
+        });
+
+        // Return to original position after 1.5 seconds
+        setTimeout(() => {
+          scrollContainer.scrollTo({
+            left: 0,
+            behavior: "smooth",
+          });
+
+          // Re-enable scroll snap after animation
+          setTimeout(() => {
+            scrollContainer.style.scrollSnapType = "x mandatory";
+            setHasAnimated(true);
+          }, 500);
+        }, 1500);
+      }, 2000);
+    };
+
+    sneakPeekAnimation();
+  });
 
   return (
     <div className="relative py-8 lg:py-12 block xl:hidden">
@@ -362,15 +407,21 @@ function HorizontalCardsMobile() {
           ))}
         </div>
 
-        {/* Scroll Indicators (Optional) */}
+        {/* Enhanced Scroll Indicators with animation hint */}
         <div className="flex justify-center mt-4 gap-2">
           {cards.map((_, idx) => (
             <div
               key={idx}
-              className="w-2 h-2 rounded-full bg-gray-300 transition-colors duration-300"
+              className={`w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300 `}
               data-indicator={idx}
             />
           ))}
+        </div>
+
+        <div className="flex justify-center mt-2 opacity-60">
+          <p className={`${geistSans.className} text-xs text-gray-500`}>
+            Swipe to explore more →
+          </p>
         </div>
       </div>
 
