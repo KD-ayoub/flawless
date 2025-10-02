@@ -42,7 +42,7 @@ export default function WebsiteCard() {
         // Fade out current price, label, and prefix simultaneously
         .to([priceRef.current, labelRef.current, prefixRef.current], {
           opacity: 0,
-          duration: 0.3,
+          duration: 0.1,
           ease: "power1.out",
         })
         // Change price, label, and prefix text
@@ -54,7 +54,7 @@ export default function WebsiteCard() {
         // Fade in new price, label, and prefix with slight delay
         .to([priceRef.current, labelRef.current, prefixRef.current], {
           opacity: 1,
-          duration: 0.4,
+          duration: 0.2,
           ease: "power1.out",
           delay: 0.1,
         });
@@ -65,7 +65,7 @@ export default function WebsiteCard() {
         // Fade out current price, label, and prefix simultaneously
         .to([priceRef.current, labelRef.current, prefixRef.current], {
           opacity: 0,
-          duration: 0.3,
+          duration: 0.1,
           ease: "power1.out",
         })
         // Change price, label, and prefix text
@@ -77,7 +77,7 @@ export default function WebsiteCard() {
         // Fade in new price, label, and prefix with slight delay
         .to([priceRef.current, labelRef.current, prefixRef.current], {
           opacity: 1,
-          duration: 0.4,
+          duration: 0.2,
           ease: "power1.out",
           delay: 0.1,
         });

@@ -149,22 +149,27 @@ export default function HowitWorksSection() {
           {/* card 1 */}
           <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-2xl lg:rounded-4xl overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
             {/* Top image with drop shadow */}
-            <Image
+            <CldImage
               src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705001/design11_m9qlan.svg"
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759338554/design11_tvujva.png"
               }
               alt="design11"
-              width={10}
-              height={10}
-              className="w-[75%] h-[75%] lg:w-[80%] lg:h-[80%] absolute z-10 -top-[0] lg:-top-[5%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
+              width={1000}
+              height={1000}
+              quality="auto"
+              format="auto"
+              className="w-[75%] h-[75%] lg:w-[80%] lg:h-[50%] absolute z-10 -top-[0] lg:top-[5%] left-1/2 -translate-x-1/2 brightness-[80.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
             />
 
             {/* Background image */}
-            <Image
+            <CldImage
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"
               }
-              fill
+              width={1000}
+              height={1000}
+              quality="auto"
+              format="auto"
               alt="design1"
               className="object-cover transition-transform duration-300 ease-out group-hover:scale-110"
             />
@@ -194,20 +199,25 @@ export default function HowitWorksSection() {
 
           {/* card 2 */}
           <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-2xl lg:rounded-4xl overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
-            <Image
+            <CldImage
               src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705020/design22_i5l5hq.svg"
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759338845/design22_q7ygff.png"
               }
               alt="design22"
-              width={10}
-              height={10}
-              className="w-[75%] h-[75%] lg:w-[80%] lg:h-[80%] absolute z-10 -top-[0] lg:-top-[2%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
+              width={1000}
+              height={1000}
+              quality="auto"
+              format="auto"
+              className="w-[75%] h-[75%] lg:w-[80%] lg:h-[60%] absolute z-10 -top-[0] lg:top-[4%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
             />
-            <Image
+            <CldImage
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704982/design2_zpx3mf.svg"
               }
-              fill
+              width={1000}
+              height={1000}
+              quality="auto"
+              format="auto"
               alt="design2"
               className="object-cover transition-transform duration-300 ease-out group-hover:scale-110"
             />
@@ -235,20 +245,25 @@ export default function HowitWorksSection() {
 
           {/* card 3 */}
           <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] col-span-1 sm:col-span-2 lg:col-span-1 w-full rounded-2xl lg:rounded-4xl overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
-            <Image
+            <CldImage
               src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705283/design33_he09xm.svg"
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759339022/design33_kvoh1a.png"
               }
               alt="design33"
-              width={10}
-              height={10}
-              className="w-[75%] h-[75%] lg:w-[80%] lg:h-[80%] absolute z-10 -top-[0] lg:-top-[2%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
+              width={1000}
+              height={1000}
+              quality="auto"
+              format="auto"
+              className="w-[55%] h-[75%] lg:w-[80%] lg:h-[60%] absolute z-10 -top-[0] lg:top-[4%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
             />
-            <Image
+            <CldImage
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705005/design3_vulu99.svg"
               }
-              fill
+              width={1000}
+              height={1000}
+              quality="auto"
+              format="auto"
               alt="design3"
               className="object-cover transition-transform duration-300 ease-out group-hover:scale-110"
             />

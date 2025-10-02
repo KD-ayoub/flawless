@@ -61,7 +61,7 @@ export default function SubscriptionCard() {
           ],
           {
             opacity: 0,
-            duration: 0.3,
+            duration: 0.1,
             ease: "power1.out",
           }
         )
@@ -95,7 +95,7 @@ export default function SubscriptionCard() {
           ],
           {
             opacity: 1,
-            duration: 0.4,
+            duration: 0.2,
             delay: 0.1,
             ease: "power1.out",
           }
@@ -114,7 +114,7 @@ export default function SubscriptionCard() {
           ],
           {
             opacity: 0,
-            duration: 0.3,
+            duration: 0.1,
             ease: "power1.out",
           }
         )
@@ -152,7 +152,7 @@ export default function SubscriptionCard() {
           ],
           {
             opacity: 1,
-            duration: 0.4,
+            duration: 0.2,
             delay: 0.1,
             ease: "power1.out",
           }

@@ -16,50 +16,58 @@ export default function WorkPage() {
   const lenisRef = useRef(null); // Add Lenis ref
 
   const images = [
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1756294638/ikonshop_kshbju.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533644/work2_zgyuzk.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533610/work3_qeuj5c.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533406/work4_mqbpgp.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533738/work5_jass8i.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533823/work6_zggqgu.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1756295364/Landing2_zez8nq.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533463/work7_oggbgp.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755534013/work8_dgqcpm.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533754/work9_fbhauk.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533857/work10_fonygf.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755534003/work11_ggese4.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755534004/work12_rnvozh.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755533946/work13_zrrjav.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1756295655/Landing3_nj29dz.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625448/work14_xc6azk.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625194/work15_tmvqxj.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625174/work16_obu3so.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625425/work17_w9nmds.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625326/work18_kgar9h.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625335/work19_h1cjo1.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625373/work20_l7nglb.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625435/work21_iplenz.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625224/work22_fwf9wl.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755625338/work23_ulgm3l.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629380/work24_iehft5.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755628824/work25_qy92px.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755628876/work26_cj8bcm.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755628769/work27_ssb0nl.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755628746/work28_ynnmwl.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755628852/work29_ucq5bz.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1756303402/Landing4_shfapi.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629295/work30_ujdd6u.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629311/work31_hp6qei.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755628943/work32_lrdixu.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755628956/work33_xizwz3.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629269/work34_poetur.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629228/work35_mhmugo.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629153/work36_zzuuau.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1756303699/Landing7_fgjpb9.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629349/work37_v2mkzn.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629424/work38_xwz8xv.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755629577/work39_fueut4.svg",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1756304009/Landing9_swgfco.svg",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759339695/IkonShopdark_yh0mxx.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759339794/IkonShop_rxm2ks.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759340288/work0_dhy4ar.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759340437/work1_q2htdk.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759340561/work2_m9skgd.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759340691/work3_et12gq.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759341604/work4_za2rfd.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759341741/work5_vkxg5a.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759341859/work6_jurvtr.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759341957/work7_hdwkhf.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759342062/work8_seaujv.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759342164/work9_iswxmb.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759342357/work10_b56isc.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759342615/work11_r85pmd.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759342754/work12_b7ilhs.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759342872/work13_f1myz6.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759343004/work14_wnxo8q.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759343189/work15_vncvbc.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759343295/work16_cchsdk.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759343384/work17_ynqm4s.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759400454/work18_kkktkd.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759400603/work19_dl71l1.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759400739/work20_bs5ewj.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759400908/work21_s3ebdw.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759401856/work22_foytjj.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759402034/work23_fgxynn.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759402318/work24_snvjpz.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759402685/work25_kclwqb.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759402860/work26_thvf6f.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759403147/work27_bgqdbt.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759403528/work28_f2n8ex.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759403844/work29_ucglhm.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759403921/work30_krk7or.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759407251/work31_ylfpco.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759407654/work32_g9fp7k.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759407871/work33_p3ne8x.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759408081/work34_vaz3x6.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759408243/work35_si6zi9.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759409427/work36_j9c6b6.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759409681/work37_ximlna.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759410079/work38_bqiutt.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759410587/work39_m0g0w4.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759410805/work40_bg1mwf.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759411031/work41_zffgsu.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759411166/work42_qqcuxp.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759411325/work43_jpxcwz.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759411496/work44_dpppgm.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759411806/work45_dok2rk.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759412303/work46_x04rvq.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759412513/work47_lvoetn.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759412698/work48_d9uydn.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759412827/work49_bmaj8z.png",
   ];
 
   useEffect(() => {
@@ -156,7 +164,7 @@ export default function WorkPage() {
                 <div
                   key={Math.random() * 2}
                   ref={imageRef}
-                  className="relative w-full rounded-xl overflow-hidden mt-4"
+                  className="relative w-full rounded-[16px] md:rounded-[28px] lg:rounded-[32px] overflow-hidden mt-4"
                   // onClick={() => openModal(img, index)}
                 >
                   <CldImage
@@ -166,6 +174,8 @@ export default function WorkPage() {
                     alt="Work Background"
                     className=" h-full "
                     sizes=""
+                    quality="auto"
+                    format="auto"
                   />
                 </div>
               );
