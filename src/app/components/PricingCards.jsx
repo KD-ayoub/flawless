@@ -1,8 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import fullbg from "@/app/assets/svg/fullbg.svg";
-import designblue from "@/app/assets/svg/designblue.svg";
-import { geistSans, instrumentSerif } from "../layout";
 import WebsiteCard from "./WebsiteCard";
 import SubscriptionCard from "./SubscriptionCard";
 import EcosystemCard from "./EcosystemCard";

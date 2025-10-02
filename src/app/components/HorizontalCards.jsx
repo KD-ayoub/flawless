@@ -4,13 +4,6 @@ import React, { useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import fullbg from "@/app/assets/svg/fullbg.svg";
-import bgofcarousel from "@/app/assets/svg/bgofcarousel.svg";
-import number1 from "@/app/assets/svg/number1.svg";
-import number2 from "@/app/assets/svg/number2.svg";
-import number3 from "@/app/assets/svg/number3.svg";
-import number4 from "@/app/assets/svg/number4.svg";
-import markicon from "@/app/assets/svg/markicon.svg";
 import { geistSans, instrumentSerif } from "../layout";
 import { CldImage } from "next-cloudinary";
 

@@ -2,12 +2,7 @@
 
 import { Geist, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import Image from "next/image";
-import fullbg from "@/app/assets/svg/fullbg.svg";
 import Header from "./components/Header";
-import shape1 from "@/app/assets/svg/shape1.svg";
-import shape2 from "@/app/assets/svg/shape2.svg";
-import { CldImage } from "next-cloudinary";
 import BackgroundLayoutContent from "./components/BackgroundLayoutContent";
 import { usePathname } from "next/navigation";
 

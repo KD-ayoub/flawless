@@ -2,11 +2,7 @@
 
 import Image from "next/image";
 import React, { useState, useRef } from "react";
-import fullbg from "@/app/assets/svg/fullbg.svg";
-import designblue from "@/app/assets/svg/designblue.svg";
-import design2w from "@/app/assets/svg/design2w.svg";
 import { geistSans, instrumentSerif } from "../layout";
-import markicon1 from "@/app/assets/svg/markicon1.svg";
 import { FaArrowRight } from "react-icons/fa6";
 import ToogleSwitch from "./ToogleSwitch";
 import { useGSAP } from "@gsap/react";

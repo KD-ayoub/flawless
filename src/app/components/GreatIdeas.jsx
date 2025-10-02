@@ -1,9 +1,6 @@
 "use client";
 import React, { useRef } from "react";
 import { geistSans } from "../layout";
-import Image from "next/image";
-import shape3 from "@/app/assets/svg/shape3.svg";
-import shape4 from "@/app/assets/svg/shape4.svg";
 import GreatSectionCard from "./GreatSectionCard";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";

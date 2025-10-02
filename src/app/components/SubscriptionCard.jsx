@@ -1,9 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { geistSans, instrumentSerif } from "../layout";
-import fullbg from "@/app/assets/svg/fullbg.svg";
-import design1 from "@/app/assets/svg/design1.svg";
-import markicon2 from "@/app/assets/svg/markicon2.svg";
 import ToogleSwitch from "./ToogleSwitch";
 import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";

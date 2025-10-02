@@ -4,18 +4,6 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import logo1 from "@/app/assets/svg/logo1.svg";
-import logo2 from "@/app/assets/svg/logo2.svg";
-import logo3 from "@/app/assets/svg/logo3.svg";
-import logo4 from "@/app/assets/svg/logo4.svg";
-import logo5 from "@/app/assets/svg/logo5.svg";
-import logo6 from "@/app/assets/svg/logo6.svg";
-import logo7 from "@/app/assets/svg/logo7.svg";
-import logo8 from "@/app/assets/svg/logo8.svg";
-import logo9 from "@/app/assets/svg/logo9.svg";
-import logo10 from "@/app/assets/svg/logo10.svg";
-import logo11 from "@/app/assets/svg/logo11.svg";
-import logo12 from "@/app/assets/svg/logo12.svg";
 import { geistSans } from "../layout";
 import { CldImage } from "next-cloudinary";
 

@@ -5,13 +5,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-
-import design1 from "@/app/assets/svg/design1.svg";
-import design11 from "@/app/assets/svg/design11.svg";
-import design2 from "@/app/assets/svg/design2.svg";
-import design22 from "@/app/assets/svg/design22.svg";
-import design3 from "@/app/assets/svg/design3.svg";
-import design33 from "@/app/assets/svg/design33.svg";
 import { CldImage } from "next-cloudinary";
 
 gsap.registerPlugin(ScrollTrigger);

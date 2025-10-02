@@ -1,13 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import designblue from "@/app/assets/svg/designblue.svg";
-import brush from "@/app/assets/svg/brush.svg";
-import devtoogle from "@/app/assets/svg/devtoogle.svg";
-import design1 from "@/app/assets/svg/design1.svg";
-import brush2 from "@/app/assets/svg/brush2.svg";
-import devtoogle2 from "@/app/assets/svg/devtoogle2.svg";
-import { CldImage } from "next-cloudinary";
 
 export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
   if (card === "subscription") {

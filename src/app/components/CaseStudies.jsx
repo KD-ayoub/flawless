@@ -1,7 +1,6 @@
 import React from "react";
 import { geistSans } from "../layout";
 import Image from "next/image";
-import case1 from "@/app/assets/svg/case1.svg";
 import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";

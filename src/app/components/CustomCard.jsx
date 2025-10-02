@@ -1,8 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import fullbg from "@/app/assets/svg/fullbg.svg";
-import markicon4 from "@/app/assets/svg/markicon4.svg";
-import design3 from "@/app/assets/svg/design3.svg";
 import { geistSans, instrumentSerif } from "../layout";
 import { FaArrowRight } from "react-icons/fa6";
 import { CldImage } from "next-cloudinary";

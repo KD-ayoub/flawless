@@ -3,12 +3,6 @@
 import { geistSans } from "@/app/layout";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import casep1 from "@/app/assets/svg/case-p1.svg";
-import casep2 from "@/app/assets/svg/case-p2.svg";
-import casep3 from "@/app/assets/svg/case-p3.svg";
-import casep4 from "@/app/assets/svg/case-p4.svg";
-import casep5 from "@/app/assets/svg/case-p5.svg";
-import casep6 from "@/app/assets/svg/case-p6.svg";
 import { FaCircleCheck } from "react-icons/fa6";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";

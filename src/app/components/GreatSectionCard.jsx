@@ -5,13 +5,6 @@ import React, { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import greatcardbg from "@/app/assets/svg/greatcardbg.svg";
-import icon1 from "@/app/assets/svg/icon1.svg";
-import icon2 from "@/app/assets/svg/icon2.svg";
-import icon3 from "@/app/assets/svg/icon3.svg";
-import icon4 from "@/app/assets/svg/icon4.svg";
-import icon5 from "@/app/assets/svg/icon5.svg";
-import icon6 from "@/app/assets/svg/icon6.svg";
 import { geistSans, instrumentSerif } from "../layout";
 import { CldImage } from "next-cloudinary";
 
