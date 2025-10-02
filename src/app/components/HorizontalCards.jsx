@@ -248,6 +248,7 @@ export default function HorizontalCards() {
 
 function HorizontalCardsMobile() {
   const scrollRef = useRef(null);
+  const containerRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
   // Smooth scroll behavior
@@ -268,52 +269,65 @@ function HorizontalCardsMobile() {
     });
   }, []);
 
-  // Sneak peek animation
-  useEffect(() => {
+  // ScrollTrigger for in-view animation
+  useGSAP(() => {
     const scrollContainer = scrollRef.current;
-    if (!scrollContainer || hasAnimated) return;
+    const container = containerRef.current;
+    
+    if (!scrollContainer || !container || hasAnimated) return;
 
-    const sneakPeekAnimation = () => {
-      // Wait 2 seconds after component mounts
-      setTimeout(() => {
-        if (!scrollContainer) return;
-
-        // Calculate peek distance (show part of second card)
-        const cardWidth = 300; // Base card width
-        const gap = 16; // gap-4 = 16px
-        const peekDistance = cardWidth * 0.3; // Show 30% of next card
-
-        // Temporarily disable scroll snap for smooth animation
-        scrollContainer.style.scrollSnapType = "none";
-        scrollContainer.style.scrollBehavior = "smooth";
-
-        // Scroll to peek at second card
-        scrollContainer.scrollTo({
-          left: peekDistance,
-          behavior: "smooth",
-        });
-
-        // Return to original position after 1.5 seconds
-        setTimeout(() => {
-          scrollContainer.scrollTo({
-            left: 0,
-            behavior: "smooth",
-          });
-
-          // Re-enable scroll snap after animation
+    ScrollTrigger.create({
+      trigger: container,
+      start: "top 80%", // Trigger when component is 80% visible
+      onEnter: () => {
+        if (hasAnimated) return;
+        
+        const sneakPeekAnimation = () => {
+          // Wait 1 second after entering view
           setTimeout(() => {
-            scrollContainer.style.scrollSnapType = "x mandatory";
-            setHasAnimated(true);
-          }, 500);
-        }, 1500);
-      }, 2000);
-    };
+            if (!scrollContainer) return;
 
-    sneakPeekAnimation();
-  });
+            // Calculate peek distance (show part of second card)
+            const cardWidth = window.innerWidth < 640 ? 300 : window.innerWidth < 768 ? 350 : 400;
+            const gap = window.innerWidth < 640 ? 16 : 24; // gap-4 sm:gap-6
+            const peekDistance = cardWidth * 0.25; // Show 25% of next card
+
+            // Temporarily disable scroll snap for smooth animation
+            scrollContainer.style.scrollSnapType = "none";
+            scrollContainer.style.scrollBehavior = "smooth";
+
+            // Scroll to peek at second card
+            scrollContainer.scrollTo({
+              left: peekDistance,
+              behavior: "smooth",
+            });
+
+            // Return to original position after 1.5 seconds
+            setTimeout(() => {
+              scrollContainer.scrollTo({
+                left: 0,
+                behavior: "smooth",
+              });
+
+              // Re-enable scroll snap after animation
+              setTimeout(() => {
+                if (scrollContainer) {
+                  scrollContainer.style.scrollSnapType = "x mandatory";
+                  setHasAnimated(true);
+                }
+              }, 500);
+            }, 1500);
+          }, 1000); // 1 second delay after entering view
+        };
+
+        sneakPeekAnimation();
+      },
+      once: true, // Only trigger once
+    });
+  }, { scope: containerRef });
 
   return (
-    <div className="relative py-8 lg:py-12 block xl:hidden">
+    <div ref={containerRef} className="relative py-8 lg:py-12 block xl:hidden">
       {/* Horizontal Scroll Container */}
       <div className="relative">
         {/* Left fade */}
@@ -412,7 +426,7 @@ function HorizontalCardsMobile() {
           {cards.map((_, idx) => (
             <div
               key={idx}
-              className={`w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300 `}
+              className={`w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300`}
               data-indicator={idx}
             />
           ))}
