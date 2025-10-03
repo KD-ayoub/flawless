@@ -21,14 +21,24 @@ export default function WebsiteCard() {
   const prefixRef = useRef(null);
   const bottomImageRef = useRef(null);
 
-  const values = [
-    "Custom Figma design",
+  const baseValues = [
     "Fast, reliable turnaround",
     "Built for clarity & conversion",
     "Unlimited revisions",
     "Clear, async communication",
     "Milestone check-ins if needed",
   ];
+
+  // Dynamic first two items based on isChecked state
+  const getFirstItem = () => {
+    if (isChecked) {
+      return ["Custom Design & Dev"];
+    } else {
+      return ["Custom Figma Design"];
+    }
+  };
+
+  const values = [...getFirstItem(), ...baseValues];
 
   useGSAP(() => {
     if (isChecked) {

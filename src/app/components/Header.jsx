@@ -169,7 +169,7 @@ function MobileHeader({ pathName }) {
             }  backdrop-blur-md z-0`}
           />
           {/* Content layer */}
-          <div className="relative z-10 flex items-center px-2 h-full text-black">
+          <div className="relative z-10 flex items-center px-3 h-full text-black">
             <div className="flex items-center justify-between w-full">
               <div className="flex items-center">
                 <Link href={"/"}>
@@ -187,9 +187,9 @@ function MobileHeader({ pathName }) {
                 onClick={() => setMenuOpen(!menuOpen)}
               >
                 {menuOpen ? (
-                  <IoClose className="text-[#818181] text-4xl" />
+                  <IoClose className="text-[#000000] text-3xl" />
                 ) : (
-                  <IoReorderThree className="text-[#818181] text-4xl" />
+                  <IoReorderThree className="text-[#000000] text-3xl" />
                 )}
               </button>
             </div>
