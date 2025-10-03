@@ -187,9 +187,17 @@ function MobileHeader({ pathName }) {
                 onClick={() => setMenuOpen(!menuOpen)}
               >
                 {menuOpen ? (
-                  <IoClose className="text-[#000000] text-3xl" />
+                  <IoClose
+                    className={`${
+                      pathName === "/arch" ? "text-white" : "text-black"
+                    } text-3xl`}
+                  />
                 ) : (
-                  <IoReorderThree className="text-[#000000] text-3xl" />
+                  <IoReorderThree
+                    className={`${
+                      pathName === "/arch" ? "text-white" : "text-black"
+                    } text-3xl`}
+                  />
                 )}
               </button>
             </div>
