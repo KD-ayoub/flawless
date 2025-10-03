@@ -192,7 +192,7 @@ export default function SubscriptionCard() {
             fill
           />
           {/* Text Overlay */}
-          <div className="absolute inset-0 flex flex-col pt-4 px-6 text-center z-10">
+          <div className="absolute inset-0 flex justify-between flex-col p-6 text-center z-10">
             <div className="flex items-center justify-between mb-4">
               <h3
                 className={`text-black ${geistSans.className} text-2xl font-normal`}

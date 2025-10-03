@@ -41,19 +41,19 @@ export default function TestimonialSection() {
     tl.to(subtitle, {
       opacity: 1,
       y: 0,
-      duration: 0.8,
+      duration: 0.1,
       ease: "power2.out"
     })
     .to(title, {
       opacity: 1,
       y: 0,
-      duration: 0.8,
+      duration: 0.1,
       ease: "power2.out"
     }, "-=0.4") // Start 0.4s before previous animation ends
     .to(description, {
       opacity: 1,
       y: 0,
-      duration: 0.8,
+      duration: 0.1,
       ease: "power2.out"
     }, "-=0.4");
 

@@ -27,32 +27,32 @@ export default function TestimonialGrid() {
 
   useGSAP(() => {
     // Animate images on scroll
-    imageRefs.current.forEach((img, index) => {
-      if (img) {
-        gsap.fromTo(
-          img,
-          {
-            opacity: 0,
-            y: 50,
-            scale: 0.9,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.3,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: img,
-              start: "top 85%",
-              end: "bottom 20%",
-              toggleActions: "play none none none",
-            },
-            delay: index * 0.1, // Stagger effect
-          }
-        );
-      }
-    });
+    // imageRefs.current.forEach((img, index) => {
+    //   if (img) {
+    //     gsap.fromTo(
+    //       img,
+    //       {
+    //         opacity: 0,
+    //         y: 50,
+    //         scale: 0.9,
+    //       },
+    //       {
+    //         opacity: 1,
+    //         y: 0,
+    //         scale: 1,
+    //         duration: 0.3,
+    //         ease: "power2.out",
+    //         scrollTrigger: {
+    //           trigger: img,
+    //           start: "top 85%",
+    //           end: "bottom 20%",
+    //           toggleActions: "play none none none",
+    //         },
+    //         delay: index * 0.1, // Stagger effect
+    //       }
+    //     );
+    //   }
+    // });
 
     // Container entrance animation
     gsap.fromTo(
@@ -81,7 +81,7 @@ export default function TestimonialGrid() {
       ref={containerRef}
       className="w-full my-8 lg:my-12 max-w-7xl mt- mx-auto mt- px-4 sm:px-6 lg:px-8"
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center gap-4 lg:gap-6">
         {testimonials.map((testimonial, index) => {
           let margin = "";
           switch (index) {
@@ -89,7 +89,7 @@ export default function TestimonialGrid() {
               margin = "lg:mt-10"
               break;
             case 2:
-              margin = "sm:-mt-28 md:mt-0"
+              margin = "sm:-mt-16 md:mt-0"
               break;
             case 3:
               margin = "lg:-mt-42"
@@ -98,7 +98,7 @@ export default function TestimonialGrid() {
               margin = "lg:-mt-32"
               break;
             case 6:
-              margin = "lg:-mt-32"
+              margin = "lg:-mt-24"
               break;
             case 8:
               margin = "lg:-mt-32"
@@ -110,7 +110,7 @@ export default function TestimonialGrid() {
               ref={(el) => (imageRefs.current[index] = el)}
               className={`group ${margin}`}
             >
-              <div className="relative overflow-hidden rounded-[20px] shadow-lg ">
+              <div className="relative w-[280px] sm:w-full overflow-hidden rounded-[16px] md:rounded-[16px] lg:rounded-[20px] shadow-lg ">
                 <CldImage
                   width={400}
                   height={600}
