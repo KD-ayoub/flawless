@@ -316,8 +316,8 @@ function HorizontalCardsMobile() {
                   setHasAnimated(true);
                 }
               }, 500);
-            }, 1500);
-          }, 1000); // 1 second delay after entering view
+            }, 300);
+          }, 900); // 1 second delay after entering view
         };
 
         sneakPeekAnimation();
@@ -352,7 +352,7 @@ function HorizontalCardsMobile() {
               className="flex-shrink-0 w-[300px] sm:w-[350px] md:w-[400px]"
             >
               <div className="bg-gradient-to-b from-[#d3a7d0af] to-[#7f7ffe58] rounded-[16px] sm:rounded-[20px] p-0.5 h-full shadow-lg">
-                <div className="relative bg-[#F9F9FB] rounded-[12px] sm:rounded-[18px] p-4 sm:p-6 h-full overflow-hidden">
+                <div className="relative bg-[#F9F9FB] rounded-[15px] sm:rounded-[18px] p-4 sm:p-6 h-full overflow-hidden">
                   {/* Background image */}
                   <CldImage
                     className="absolute inset-0 w-full h-full rounded-[12px] sm:rounded-[18px]"

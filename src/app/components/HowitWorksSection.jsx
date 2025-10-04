@@ -140,7 +140,7 @@ export default function HowitWorksSection() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-10 max-w-7xl mx-auto px-4 sm:px-6"
         >
           {/* card 1 */}
-          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-2xl lg:rounded-4xl overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
+          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
             {/* Top image with drop shadow */}
             <CldImage
               src={
@@ -191,7 +191,7 @@ export default function HowitWorksSection() {
           </div>
 
           {/* card 2 */}
-          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-2xl lg:rounded-4xl overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
+          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
             <CldImage
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759338845/design22_q7ygff.png"
@@ -237,7 +237,7 @@ export default function HowitWorksSection() {
           </div>
 
           {/* card 3 */}
-          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] col-span-1 sm:col-span-2 lg:col-span-1 w-full rounded-2xl lg:rounded-4xl overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
+          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] col-span-1 sm:col-span-2 lg:col-span-1 w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
             <CldImage
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759339022/design33_kvoh1a.png"
@@ -247,7 +247,7 @@ export default function HowitWorksSection() {
               height={1000}
               quality="auto"
               format="auto"
-              className="w-[290px] h-[230px] sm:w-[320px] sm:h-[240px] md:w-[350px] md:h-[260px] lg:w-[300px] lg:h-[240px] xl:w-[320px] xl:h-[260px] absolute z-10 top-[6%] lg:top-[8%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
+              className="w-[290px] h-[240px] sm:w-[320px] sm:h-[240px] md:w-[350px] md:h-[260px] lg:w-[300px] lg:h-[240px] xl:w-[320px] xl:h-[260px] absolute z-10 top-[6%] lg:top-[8%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
             />
             <CldImage
               src={
