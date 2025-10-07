@@ -165,7 +165,7 @@ export default function SubscriptionCard() {
       >
         <div className="absolute inset-0 flex justify-center p-2">
           <p
-            className={`${geistSans.className} font-medium text-sm text-[#ECD9FF]`}
+            className={`${geistSans.className} leading-[180%] font-medium text-sm text-[#ECD9FF]`}
           >
             Best Value To Price
           </p>

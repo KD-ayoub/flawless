@@ -17,8 +17,8 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
             className={`w-20 h-10 relative rounded-2xl ${
               isChecked
                 ? "border-2 border-[#DA94EF]"
-                : "border-2 border-[#D3A7D0]"
-            } transition-all duration-500 overflow-hidden`}
+                : "border-2 border-[#d7d6e3]"
+            } transition-all duration-500 bg-[#efeef6] overflow-hidden`}
           >
             <Image
               src={
@@ -27,7 +27,7 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
               alt="background"
               fill
               className={`absolute ${
-                isChecked ? "opacity-100" : "opacity-60"
+                isChecked ? "opacity-100" : "opacity-0"
               } inset-0 object-cover rounded-xl`}
             />
 
