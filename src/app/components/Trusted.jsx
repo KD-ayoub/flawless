@@ -75,7 +75,7 @@ export default function Trusted() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 0.4,
           ease: "power2.out",
         }
       )
@@ -91,7 +91,7 @@ export default function Trusted() {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 0.5,
+            duration: 0.3,
             ease: "power2.out",
             stagger: 0.08,
           },
@@ -109,7 +109,7 @@ export default function Trusted() {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 0.5,
+            duration: 0.3,
             ease: "power2.out",
             stagger: 0.08,
           },
@@ -127,7 +127,7 @@ export default function Trusted() {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 0.5,
+            duration: 0.3,
             ease: "power2.out",
             stagger: 0.08,
           },

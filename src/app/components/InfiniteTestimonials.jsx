@@ -62,19 +62,19 @@ export default function TestimonialGrid() {
                 margin = "lg:mt-10";
                 break;
               case 2:
-                margin = "sm:-mt-16 md:mt-0";
+                margin = "sm:-mt-16 md:mt-0 lg:mt-10";
                 break;
               case 3:
-                margin = "lg:-mt-42";
+                margin = "lg:-mt-34";
                 break;
               case 5:
-                margin = "lg:-mt-32";
-                break;
-              case 6:
                 margin = "lg:-mt-24";
                 break;
+              case 6:
+                margin = "lg:-mt-12";
+                break;
               case 8:
-                margin = "lg:-mt-32";
+                margin = "lg:-mt-12";
                 break;
             }
             return (

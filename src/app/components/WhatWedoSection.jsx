@@ -1,19 +1,25 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { geistSans } from "../layout";
 import HorizontalCards from "./HorizontalCards";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLenisScrollOnHash } from "./LandingPage";
 
 gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+
 
 export default function WhatWedoSection() {
   const containerRef = useRef(null);
   const subtitleRef = useRef(null);
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
-
+  // useLenisScrollOnHash();
   useGSAP(() => {
     const subtitle = subtitleRef.current;
     const title = titleRef.current;
@@ -41,19 +47,19 @@ export default function WhatWedoSection() {
     tl.to(subtitle, {
       opacity: 1,
       y: 0,
-      duration: 0.8,
+      duration: 0.6,
       ease: "power2.out"
     })
     .to(title, {
       opacity: 1,
       y: 0,
-      duration: 0.8,
+      duration: 0.6,
       ease: "power2.out"
     }, "-=0.4") // Start 0.4s before previous animation ends
     .to(description, {
       opacity: 1,
       y: 0,
-      duration: 0.8,
+      duration: 0.6,
       ease: "power2.out"
     }, "-=0.4");
 

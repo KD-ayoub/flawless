@@ -4,8 +4,10 @@ import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
+import { useLenisScrollOnHash } from "./LandingPage";
 
 export default function CaseStudies() {
+  // useLenisScrollOnHash();
   return (
     <>
       <div id="case-studies" className="max-w-7xl mx-auto px-4">

@@ -14,20 +14,40 @@ import Lenis from "lenis";
 
 gsap.registerPlugin(useGSAP);
 
-const handleScrollCase = () => {
-  window.lenis.scrollTo("#case-studies", {
-    offset: 0, // optional offset
-    duration: 2.5,
-    easing: (t) => 1 - Math.pow(1 - t, 3), // custom ease
-  });
+const handleScrollService = (e, pathName, router) => {
+  e.preventDefault();
+  const onHome = pathName === "/";
+  const hash = "#services";
+
+  if (onHome) {
+    // same page → scroll now
+    window.lenis?.scrollTo(hash, {
+      offset: -80,
+      duration: 2.5,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+    });
+  } else {
+    // different page → navigate with hash, scrolling happens on mount
+    router.push(`/${hash}`);
+  }
 };
 
-const handleScrollService = () => {
-  window.lenis.scrollTo("#services", {
-    offset: -80, // optional offset
-    duration: 2.5,
-    easing: (t) => 1 - Math.pow(1 - t, 3), // custom ease
-  });
+const handleScrollCase = (e, pathName, router) => {
+  e.preventDefault();
+  const onHome = pathName === "/";
+  const hash = "#case-studies";
+
+  if (onHome) {
+    // same page → scroll now
+    window.lenis?.scrollTo(hash, {
+      offset: -80,
+      duration: 2.5,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+    });
+  } else {
+    // different page → navigate with hash, scrolling happens on mount
+    router.push(`/${hash}`);
+  }
 };
 
 export default function Header() {
@@ -61,8 +81,11 @@ export default function Header() {
                 </p>
               </Link>
               <div className="flex gap-8">
-                <p
-                  onClick={handleScrollService}
+                <a
+                  href="/#services"
+                  onClick={(e) => {
+                    handleScrollService(e, pathName, router);
+                  }}
                   className={`${
                     geistSans.className
                   } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
@@ -72,10 +95,13 @@ export default function Header() {
                   } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                 >
                   Services
-                </p>
+                </a>
 
-                <p
-                  onClick={handleScrollCase}
+                <a
+                  href="/#case-studies"
+                  onClick={(e) => {
+                    handleScrollCase(e, pathName, router);
+                  }}
                   className={`${
                     geistSans.className
                   } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
@@ -85,7 +111,7 @@ export default function Header() {
                   } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                 >
                   Case Studies
-                </p>
+                </a>
                 <Link href="/work">
                   <p
                     // onClick={() => {
@@ -219,7 +245,8 @@ function MobileHeader({ pathName }) {
                     ref={dropdownRef}
                     className="relative z-10 flex flex-col gap-3 justify-center items-center p-2 h-full text-black"
                   >
-                    <p
+                    <a
+                      href="/#services"
                       className={`${
                         geistSans.className
                       } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
@@ -227,19 +254,20 @@ function MobileHeader({ pathName }) {
                           ? "bg-gradient-to-r from-white to-white"
                           : "bg-gradient-to-r from-black to-black"
                       } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
-                      onClick={() => {
+                      onClick={(e) => {
                         setMenuOpen(false);
-                        handleScrollService();
+                        handleScrollService(e, pathName, router);
                       }}
                     >
                       Services
-                    </p>
+                    </a>
                     <div
                       className={`h-px w-10 ${
                         pathName === "/arch" ? "bg-[#F1F1F1]" : "bg-[#818181]"
                       }`}
                     />
-                    <p
+                    <a
+                      href="/#case-studies"
                       className={`${
                         geistSans.className
                       } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
@@ -247,13 +275,13 @@ function MobileHeader({ pathName }) {
                           ? "bg-gradient-to-r from-white to-white"
                           : "bg-gradient-to-r from-black to-black"
                       } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
-                      onClick={() => {
+                      onClick={(e) => {
                         setMenuOpen(false);
-                        handleScrollCase();
+                        handleScrollCase(e, pathName, router);
                       }}
                     >
                       Case Studies
-                    </p>
+                    </a>
                     <div
                       className={`h-px w-10 ${
                         pathName === "/arch" ? "bg-[#F1F1F1]" : "bg-[#818181]"

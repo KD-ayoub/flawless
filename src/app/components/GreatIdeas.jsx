@@ -43,7 +43,7 @@ export default function GreatIdeas() {
       tl.to(subtitle, {
         opacity: 1,
         y: 0,
-        duration: 0.8,
+        duration: 0.4,
         ease: "power2.out",
       })
         .to(
@@ -51,7 +51,7 @@ export default function GreatIdeas() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.4,
             ease: "power2.out",
           },
           "-=0.4"
@@ -61,7 +61,7 @@ export default function GreatIdeas() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.4,
             ease: "power2.out",
           },
           "-=0.4"

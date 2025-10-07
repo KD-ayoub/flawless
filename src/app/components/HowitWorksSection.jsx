@@ -53,7 +53,7 @@ export default function HowitWorksSection() {
         .to(subtitle, {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.6,
           ease: "power2.out",
         })
         .to(
@@ -61,7 +61,7 @@ export default function HowitWorksSection() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.6,
             ease: "power2.out",
           },
           "-=0.4"
@@ -71,7 +71,7 @@ export default function HowitWorksSection() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.6,
             ease: "power2.out",
           },
           "-=0.4"

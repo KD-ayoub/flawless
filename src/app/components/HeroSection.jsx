@@ -30,7 +30,7 @@ export default function HeroSection() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.6,
           ease: "power2.out",
         }
       )
@@ -43,7 +43,7 @@ export default function HeroSection() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.6,
             ease: "power2.out",
           },
           "-=0.4"
@@ -57,7 +57,7 @@ export default function HeroSection() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.6,
             ease: "power2.out",
           },
           "-=0.4"
@@ -71,7 +71,7 @@ export default function HeroSection() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.6,
             ease: "power2.out",
           },
           "-=0.4"
@@ -85,7 +85,7 @@ export default function HeroSection() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.6,
             ease: "power2.out",
           },
           "-=0.4"
