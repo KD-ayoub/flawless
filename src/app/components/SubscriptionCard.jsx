@@ -171,7 +171,7 @@ export default function SubscriptionCard() {
           </p>
           <Image
             ref={backgroundRef}
-            className={`absolute w-full h-[535px] md:h-[585px] object-cover rounded-4xl left-0 right-0 z-[-1]`}
+            className={`absolute w-full h-[535px] md:h-[585px] object-cover brightness-125 rounded-4xl left-0 right-0 z-[-1]`}
             src={
               "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"
             }
