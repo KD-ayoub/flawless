@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import BackgroundLayoutContent from "./components/BackgroundLayoutContent";
 import { usePathname } from "next/navigation";
+import { CldImage } from "next-cloudinary";
 
 export const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,21 @@ export default function RootLayout({ children }) {
             : "bg-[#FAFAFB]"
         } antialiased relative`}
       >
+        {pathName === "/trustybite" && (
+          <div className="absolute inset-0">
+            <CldImage
+              className="w-full h-[20%]"
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760005162/bg-trusty_bes5vv.png"
+              }
+              width={1000}
+              height={600}
+              alt="trusty pg"
+              quality="auto"
+              format="auto"
+            />
+          </div>
+        )}
         <div className="">
           <BackgroundLayoutContent />
           {/* Foreground content */}

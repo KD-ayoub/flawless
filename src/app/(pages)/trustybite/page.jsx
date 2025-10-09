@@ -9,17 +9,10 @@ import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
 import { CldImage } from "next-cloudinary";
-import ArchVideoSection from "@/app/components/ArchVideoSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function page() {
-  const heroRef = useRef(null);
-  const challengeRef = useRef(null);
-  const approachRef = useRef(null);
-  const resultsRef = useRef(null);
-  const imageRefs = useRef([]);
-  const checklistRef = useRef(null);
   const lenisRef = useRef(null);
 
   useEffect(() => {
@@ -36,142 +29,12 @@ export default function page() {
     };
   }, []);
 
-  useGSAP(() => {
-    // Hero section animation
-    gsap.fromTo(
-      heroRef.current,
-      {
-        opacity: 0,
-        y: 60,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-      }
-    );
-
-    // Challenge section animation
-    gsap.fromTo(
-      challengeRef.current,
-      {
-        opacity: 0,
-        y: 50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: challengeRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-
-    // Approach section animation
-    gsap.fromTo(
-      approachRef.current,
-      {
-        opacity: 0,
-        y: 50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: approachRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-
-    // Checklist items staggered animation
-    if (checklistRef.current) {
-      const checkItems = checklistRef.current.children;
-      gsap.fromTo(
-        checkItems,
-        {
-          opacity: 0,
-          x: -30,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.6,
-          ease: "power2.out",
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: checklistRef.current,
-            start: "top 85%",
-            end: "bottom 20%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    }
-
-    // Results section animation
-    gsap.fromTo(
-      resultsRef.current,
-      {
-        opacity: 0,
-        y: 50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: resultsRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-
-    // Images staggered animation
-    imageRefs.current.forEach((image, index) => {
-      if (image) {
-        gsap.fromTo(
-          image,
-          {
-            opacity: 0,
-            y: 40,
-            scale: 0.95,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: image,
-              start: "top 85%",
-              end: "bottom 20%",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      }
-    });
-  });
+  
   return (
     <>
       <div className="text-white mt-10 lg:mt-16 mx-3 md:mx-10 xl:mx-20">
         {/* Hero Section */}
-        <div ref={heroRef}>
+        <div >
           <p
             className={`${geistSans.className} font-semibold text-white leading-[100%] tracking-[-0.04em] text-[30px] sm:text-[40px] md:text-[55px] lg:text-[63px]`}
           >
@@ -191,7 +54,6 @@ export default function page() {
         {/* First Image */}
         <div className="my-10">
           <CldImage
-            ref={(el) => (imageRefs.current[0] = el)}
             className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
             src={
               "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760007777/trusty1_wlmlws.png"
@@ -204,7 +66,7 @@ export default function page() {
           />
         </div>
         {/* Challenge Section */}
-        <div ref={challengeRef}>
+        <div>
           <h1
             className={`${geistSans.className} font-semibold text-black tracking-[-0.04em] text-[25px] sm:text-[30px] md:text-[40px]`}
           >
@@ -287,7 +149,6 @@ export default function page() {
           </p>
           <div className="mt-4">
             <CldImage
-              ref={(el) => (imageRefs.current[0] = el)}
               className="w-full h-1/2 rounded-[16px] md:rounded-[20px]"
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760032435/trusty2_focefm.png"
@@ -314,7 +175,6 @@ export default function page() {
           </p>
           <div className="mt-4">
             <CldImage
-              ref={(el) => (imageRefs.current[0] = el)}
               className="w-full h-1/2 rounded-[16px] md:rounded-[20px]"
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760033169/trusty3_avz9zf.png"
@@ -342,7 +202,6 @@ export default function page() {
           </p>
           <div className="mt-4">
             <CldImage
-              ref={(el) => (imageRefs.current[0] = el)}
               className="w-full h-1/2 rounded-[16px] md:rounded-[20px]"
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760033411/trusty4_dl4ttx.png"
@@ -370,7 +229,6 @@ export default function page() {
           </p>
           <div className="mt-4">
             <CldImage
-              ref={(el) => (imageRefs.current[0] = el)}
               className="w-full h-1/2 rounded-[16px] md:rounded-[20px]"
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760033629/trusty5_bc5my0.png"

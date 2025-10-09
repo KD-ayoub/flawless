@@ -34,22 +34,13 @@ html.lenis body {
   background-repeat: no-repeat;
   border-radius: 18px;
 }
-
+/* 
 .bg-trustybite {
-  position: relative;
-  /* overflow: hidden; */
-  isolation: isolate;         /* new stacking context */
-  max-height: 1200px;
-}
+  background-image: url("https://res.cloudinary.com/dvaeb0mxy/image/upload/c_limit,w_1920/f_auto/q_auto/v1760005162/bg-trusty_bes5vv.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 1200px;
+} */
 
-/* Move the background image to a pseudo-element and blur it */
-.bg-trustybite::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("https://res.cloudinary.com/dvaeb0mxy/image/upload/c_limit,w_3840/f_auto/q_auto/v1760005162/bg-trusty_bes5vv.png")
-              center / cover no-repeat;
-  /* filter: blur(1px);       */
-  /* transform: scale(1.05);     avoid visible edges after blur */
-  z-index: -1;               
-}
+
