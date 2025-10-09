@@ -34,7 +34,11 @@ export default function RootLayout({ children }) {
       </head>
       <body
         className={`${
-          pathName === "/arch" ? "bg-[#0E0E0F]" : "bg-[#FAFAFB]"
+          pathName === "/arch"
+            ? "bg-[#0E0E0F]"
+            : pathName === "/trustybite"
+            ? "bg-trustybite bg-[#FAFAFB]"
+            : "bg-[#FAFAFB]"
         } antialiased relative`}
       >
         <div className="">

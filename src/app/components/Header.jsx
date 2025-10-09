@@ -56,13 +56,15 @@ export default function Header() {
 
   return (
     <>
-      <div className="sticky hidden min-[1000px]:block top-0 z-20 py-5 px-[60px] h-20">
+      <div className="sticky  hidden min-[1000px]:block top-0 z-20 py-5 px-[60px] h-20">
         <div className="relative h-20">
           {/* Blurred background layer */}
           <div
-            className={`absolute inset-0 rounded-full ${
+            className={`absolute inset-0  rounded-full ${
               pathName === "/arch"
                 ? "bg-[#171717]/60 border border-[#0C0C0C]"
+                : pathName === "/trustybite"
+                ? "bg-white/6 border border-white/14 [box-shadow:0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(255,255,255,0.1),inset_0_0_2px_1px_rgba(255,255,255,0.1)]"
                 : "bg-[#FAFAFB]/40 border border-white"
             }  backdrop-blur-[10px] z-0`}
           />
@@ -74,7 +76,11 @@ export default function Header() {
               <Link href={"/"}>
                 <p
                   className={`${instrumentSerif.className} ${
-                    pathName === "/arch" ? "text-white" : "text-black"
+                    pathName === "/arch"
+                      ? "text-white"
+                      : pathName === "/trustybite"
+                      ? "text-white"
+                      : "text-black"
                   } text-2xl font-normal`}
                 >
                   flawless <span className="italic">Design</span>
@@ -90,6 +96,8 @@ export default function Header() {
                     geistSans.className
                   } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
                     pathName === "/arch"
+                      ? "bg-gradient-to-r from-white to-white"
+                      : pathName === "/trustybite"
                       ? "bg-gradient-to-r from-white to-white"
                       : "bg-gradient-to-r from-black to-black"
                   } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
@@ -107,6 +115,8 @@ export default function Header() {
                   } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
                     pathName === "/arch"
                       ? "bg-gradient-to-r from-white to-white"
+                      : pathName === "/trustybite"
+                      ? "bg-gradient-to-r from-white to-white"
                       : "bg-gradient-to-r from-black to-black"
                   } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                 >
@@ -123,6 +133,8 @@ export default function Header() {
                       geistSans.className
                     } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
                       pathName === "/arch"
+                        ? "bg-gradient-to-r from-white to-white"
+                        : pathName === "/trustybite"
                         ? "bg-gradient-to-r from-white to-white"
                         : "bg-gradient-to-r from-black to-black"
                     } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
@@ -191,6 +203,8 @@ function MobileHeader({ pathName }) {
             className={`absolute inset-0 rounded-full ${
               pathName === "/arch"
                 ? "bg-[#171717]/60 border border-[#0C0C0C]"
+                : pathName === "/trustybite"
+                ? "bg-white/6 border border-white/14 [box-shadow:0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(255,255,255,0.1),inset_0_0_2px_1px_rgba(255,255,255,0.1)]"
                 : "bg-[#FAFAFB]/40 border border-white"
             }  backdrop-blur-md z-0`}
           />
@@ -201,7 +215,11 @@ function MobileHeader({ pathName }) {
                 <Link href={"/"}>
                   <p
                     className={`${instrumentSerif.className} ${
-                      pathName === "/arch" ? "text-white" : "text-black"
+                      pathName === "/arch"
+                        ? "text-white"
+                        : pathName === "/trustybite"
+                        ? "text-white"
+                        : "text-black"
                     } text-xl font-normal`}
                   >
                     flawless <span className="italic">Design</span>
@@ -215,13 +233,21 @@ function MobileHeader({ pathName }) {
                 {menuOpen ? (
                   <IoClose
                     className={`${
-                      pathName === "/arch" ? "text-white" : "text-black"
+                      pathName === "/arch"
+                        ? "text-white"
+                        : pathName === "/trustybite"
+                        ? "text-white"
+                        : "text-black"
                     } text-3xl`}
                   />
                 ) : (
                   <IoReorderThree
                     className={`${
-                      pathName === "/arch" ? "text-white" : "text-black"
+                      pathName === "/arch"
+                        ? "text-white"
+                        : pathName === "/trustybite"
+                        ? "text-white"
+                        : "text-black"
                     } text-3xl`}
                   />
                 )}
@@ -238,6 +264,8 @@ function MobileHeader({ pathName }) {
                     className={`absolute inset-0 rounded-2xl ${
                       pathName === "/arch"
                         ? "bg-[#171717]/60 border border-[#0C0C0C]"
+                        : pathName === "/trustybite"
+                        ? "bg-white/6 border border-white/14 [box-shadow:0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(255,255,255,0.1),inset_0_0_2px_1px_rgba(255,255,255,0.1)]"
                         : "bg-[#FAFAFB]/40 border border-white"
                     } backdrop-blur-md z-0`}
                   />
@@ -252,6 +280,8 @@ function MobileHeader({ pathName }) {
                       } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
                         pathName === "/arch"
                           ? "bg-gradient-to-r from-white to-white"
+                          : pathName === "/trustybite"
+                          ? "bg-gradient-to-r from-white to-white"
                           : "bg-gradient-to-r from-black to-black"
                       } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                       onClick={(e) => {
@@ -263,7 +293,11 @@ function MobileHeader({ pathName }) {
                     </a>
                     <div
                       className={`h-px w-10 ${
-                        pathName === "/arch" ? "bg-[#F1F1F1]" : "bg-[#818181]"
+                        pathName === "/arch"
+                          ? "bg-[#F1F1F1]"
+                          : pathName === "/trustybite"
+                          ? "bg-[#F1F1F1]"
+                          : "bg-[#818181]"
                       }`}
                     />
                     <a
@@ -272,6 +306,8 @@ function MobileHeader({ pathName }) {
                         geistSans.className
                       } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
                         pathName === "/arch"
+                          ? "bg-gradient-to-r from-white to-white"
+                          : pathName === "/trustybite"
                           ? "bg-gradient-to-r from-white to-white"
                           : "bg-gradient-to-r from-black to-black"
                       } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
@@ -284,7 +320,11 @@ function MobileHeader({ pathName }) {
                     </a>
                     <div
                       className={`h-px w-10 ${
-                        pathName === "/arch" ? "bg-[#F1F1F1]" : "bg-[#818181]"
+                        pathName === "/arch"
+                          ? "bg-[#F1F1F1]"
+                          : pathName === "/trustybite"
+                          ? "bg-[#F1F1F1]"
+                          : "bg-[#818181]"
                       }`}
                     />
                     <Link onClick={() => setMenuOpen(false)} href={"/work"}>
@@ -298,6 +338,8 @@ function MobileHeader({ pathName }) {
                           geistSans.className
                         } text-xl cursor-pointer tracking-[-0.04em] text-transparent bg-clip-text ${
                           pathName === "/arch"
+                            ? "bg-gradient-to-r from-white to-white"
+                            : pathName === "/trustybite"
                             ? "bg-gradient-to-r from-white to-white"
                             : "bg-gradient-to-r from-black to-black"
                         } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}

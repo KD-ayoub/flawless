@@ -10,7 +10,7 @@ export default function BackgroundLayoutContent() {
   return (
     <>
       {/* Background image */}
-      {pathName !== "/arch" && (
+      {pathName !== "/arch" && pathName !== "/trustybite" && (
         <>
           <div className="fixed inset-0 -z-10">
             <CldImage
