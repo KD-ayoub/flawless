@@ -29,12 +29,11 @@ export default function page() {
     };
   }, []);
 
-  
   return (
     <>
       <div className="text-white mt-10 lg:mt-16 mx-3 md:mx-10 xl:mx-20">
         {/* Hero Section */}
-        <div >
+        <div>
           <p
             className={`${geistSans.className} font-semibold text-white leading-[100%] tracking-[-0.04em] text-[30px] sm:text-[40px] md:text-[55px] lg:text-[63px]`}
           >
@@ -160,6 +159,19 @@ export default function page() {
               format="auto"
             />
           </div>
+          <div className="mt-4">
+            <CldImage
+              className="w-full h-1/2 rounded-[8px] md:rounded-[20px]"
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760118873/snippet1_wjxsfr.png"
+              }
+              width={1000}
+              height={600}
+              alt="snipet p1"
+              quality="auto"
+              format="auto"
+            />
+          </div>
         </div>
         <div>
           <h2
@@ -182,6 +194,19 @@ export default function page() {
               width={1000}
               height={600}
               alt="trusty p3"
+              quality="auto"
+              format="auto"
+            />
+          </div>
+          <div className="mt-4">
+            <CldImage
+              className="w-full h-1/2 rounded-[8px] md:rounded-[20px]"
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760119539/snippet2_hxzdbz.png"
+              }
+              width={1000}
+              height={600}
+              alt="snipet p2"
               quality="auto"
               format="auto"
             />
@@ -209,6 +234,19 @@ export default function page() {
               width={1000}
               height={600}
               alt="trusty p3"
+              quality="auto"
+              format="auto"
+            />
+          </div>
+          <div className="mt-4">
+            <CldImage
+              className="w-full h-1/2 rounded-[8px] md:rounded-[20px]"
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760119873/snippet3_lxc7do.png"
+              }
+              width={1000}
+              height={600}
+              alt="snipet p3"
               quality="auto"
               format="auto"
             />
