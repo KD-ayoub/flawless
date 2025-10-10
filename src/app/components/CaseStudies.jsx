@@ -50,6 +50,7 @@ export default function CaseStudies() {
               alt="case1"
               quality="auto"
               format="auto"
+              draggable={false}
             />
             <div className="absolute w-full bottom-0 left-0 p-6 flex flex-col min-[992px]:flex-row min-[992px]:items-end items-start ">
               <p
@@ -102,6 +103,7 @@ export default function CaseStudies() {
               alt="case1"
               quality="auto"
               format="auto"
+              draggable={false}
             />
             <div className="absolute w-1/2 h-full top-0 right-0 p-6 flex flex-col items-start ">
               <p
@@ -155,6 +157,7 @@ function MobileCaseStudie() {
               alt="case1"
               quality="auto"
               format="auto"
+              draggable={false}
             />
             <div className="absolute w-full top-0 flex justify-between">
               <div className="w-40 sm:w-44 h-6 p-4">
@@ -168,6 +171,7 @@ function MobileCaseStudie() {
                   alt="logo-arch"
                   quality="auto"
                   format="auto"
+                  draggable={false}
                 />
               </div>
               <Link href={"/arch"} className="p-4">
@@ -222,6 +226,7 @@ function MobileCaseStudie() {
               alt="case1"
               quality="auto"
               format="auto"
+              draggable={false}
             />
             <div className="absolute w-full top-0 flex justify-between">
               <div className="w-40 sm:w-44 h-6 p-4">
@@ -235,6 +240,7 @@ function MobileCaseStudie() {
                   alt="logo-arch"
                   quality="auto"
                   format="auto"
+                  draggable={false}
                 />
               </div>
               <Link href={"/trustybite"} className="p-4">

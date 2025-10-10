@@ -206,6 +206,7 @@ export default function page() {
           alt="case p1"
           quality="auto"
           format="auto"
+          draggable={false}
         />
       </div>
 
@@ -239,6 +240,7 @@ export default function page() {
           alt="case p2"
           quality="auto"
           format="auto"
+          draggable={false}
         />
         <CldImage
           ref={(el) => (imageRefs.current[2] = el)}
@@ -249,6 +251,7 @@ export default function page() {
           alt="case p3"
           quality="auto"
           format="auto"
+          draggable={false}
         />
       </div>
 
@@ -263,6 +266,7 @@ export default function page() {
           alt="case p4"
           quality="auto"
           format="auto"
+          draggable={false}
         />
       </div>
 
@@ -374,6 +378,7 @@ export default function page() {
           alt="case p5"
           quality="auto"
           format="auto"
+          draggable={false}
         />
       </div>
       <div className="my-10">
@@ -386,6 +391,7 @@ export default function page() {
           alt="case p6"
           quality="auto"
           format="auto"
+          draggable={false}
         />
       </div>
 

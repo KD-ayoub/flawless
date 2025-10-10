@@ -176,6 +176,7 @@ export default function WorkPage() {
                     sizes=""
                     quality="auto"
                     format="auto"
+                    draggable={false}
                   />
                 </div>
               );

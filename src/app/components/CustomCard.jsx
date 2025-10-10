@@ -24,6 +24,7 @@ export default function CustomCard() {
             }
             alt="design 3w"
             fill
+            draggable={false}
           />
           <div className="absolute inset-0 flex p-6  z-10">
             <div className="w-2/3">
@@ -65,6 +66,7 @@ export default function CustomCard() {
                             height={16}
                             alt="check mark"
                             className="flex-shrink-0 mt-1 sm:w-[20px] sm:h-[20px]"
+                            draggable={false}
                           />
                           <p
                             className={`${geistSans.className} text-[#454545] tracking-[-0.01em] text-sm sm:text-base lg:text-lg font-normal leading-relaxed`}
@@ -110,6 +112,7 @@ export default function CustomCard() {
                         alt="button background"
                         fill
                         className="object-cover rounded-full"
+                        draggable={false}
                       />
                     </div>
 
@@ -143,6 +146,7 @@ export default function CustomCard() {
             width={380}
             height={100}
             alt="design4"
+            draggable={false}
           />
         </div>
       </div>
@@ -167,6 +171,7 @@ function SmallVersion({ values }) {
             }
             alt="full bg"
             fill
+            draggable={false}
           />
           {/* Text Overlay */}
           <div className="absolute inset-0 flex justify-between flex-col p-6 text-center z-10">
@@ -213,6 +218,7 @@ function SmallVersion({ values }) {
                         height={16}
                         alt="check mark"
                         className="flex-shrink-0 mt-1 sm:w-[20px] sm:h-[20px]"
+                        draggable={false}
                       />
                       <p
                         className={`${geistSans.className} text-[#454545] tracking-[-0.01em] text-sm sm:text-base lg:text-lg font-normal leading-relaxed`}
@@ -248,6 +254,7 @@ function SmallVersion({ values }) {
                       alt="button background"
                       fill
                       className="object-cover rounded-full"
+                      draggable={false}
                     />
                   </div>
 
@@ -281,6 +288,7 @@ function SmallVersion({ values }) {
           width={380}
           height={90}
           alt="design4"
+          draggable={false}
         />
       </div>
     </>

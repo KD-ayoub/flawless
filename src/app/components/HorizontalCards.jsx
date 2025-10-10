@@ -172,6 +172,7 @@ export default function HorizontalCards() {
                         height={1200}
                         quality="auto"
                         format="auto"
+                        draggable={false}
                       />
 
                       {/* Header */}
@@ -185,6 +186,7 @@ export default function HorizontalCards() {
                             className=""
                             quality="auto"
                             format="auto"
+                            draggable={false}
                           />
                         </div>
                         <h3
@@ -222,6 +224,7 @@ export default function HorizontalCards() {
                                   className="flex-shrink-0 mt-1 "
                                   quality="auto"
                                   format="auto"
+                                  draggable={false}
                                 />
                               </div>
                               <p
@@ -362,6 +365,7 @@ function HorizontalCardsMobile() {
                     height={1200}
                     quality="auto"
                     format="auto"
+                    draggable={false}
                   />
 
                   {/* Header */}
@@ -374,6 +378,7 @@ function HorizontalCardsMobile() {
                       className="sm:w-[50px] sm:h-[50px]"
                       quality="auto"
                       format="auto"
+                      draggable={false}
                     />
                     <h3
                       className={`${instrumentSerif.className} text-xl sm:text-2xl md:text-3xl font-normal text-black`}
@@ -406,6 +411,7 @@ function HorizontalCardsMobile() {
                           className="flex-shrink-0 mt-1 sm:w-[16px] sm:h-[16px]"
                           quality="auto"
                           format="auto"
+                          draggable={false}
                         />
                         <p
                           className={`${geistSans.className} text-[#454545] tracking-[-0.01em] text-sm sm:text-base font-normal leading-relaxed`}

@@ -121,6 +121,7 @@ export default function GreatIdeas() {
               alt="shape3"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
           <div>
@@ -136,6 +137,7 @@ export default function GreatIdeas() {
               alt="shape4"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
         </div>

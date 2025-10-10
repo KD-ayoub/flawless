@@ -178,6 +178,7 @@ export default function SubscriptionCard() {
             width={100}
             height={400}
             alt="design1"
+            draggable={false}
           />
         </div>
         <div
@@ -190,6 +191,7 @@ export default function SubscriptionCard() {
             }
             alt="full bg"
             fill
+            draggable={false}
           />
           {/* Text Overlay */}
           <div className="absolute inset-0 flex justify-between flex-col p-6 text-center z-10">
@@ -255,6 +257,7 @@ export default function SubscriptionCard() {
                         height={16}
                         alt="check mark"
                         className="flex-shrink-0 mt-1 sm:w-[20px] sm:h-[20px]"
+                        draggable={false}
                       />
                       <p
                         className={`${geistSans.className} text-[#454545] tracking-[-0.01em] text-sm sm:text-base lg:text-lg font-normal leading-relaxed`}
@@ -290,6 +293,7 @@ export default function SubscriptionCard() {
                       alt="button background"
                       fill
                       className="object-cover rounded-full"
+                      draggable={false}
                     />
                   </div>
 

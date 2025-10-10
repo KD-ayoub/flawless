@@ -152,6 +152,7 @@ export default function HowitWorksSection() {
               quality="auto"
               format="auto"
               className="w-[290px] h-[230px] sm:w-[320px] sm:h-[240px] md:w-[350px] md:h-[260px] lg:w-[300px] lg:h-[240px] xl:w-[320px] xl:h-[260px] absolute z-10 top-2 sm:top-4 lg:top-6 left-1/2 -translate-x-1/2 brightness-[80.5%] drop-shadow-[0_35px_35px_rgba(0,0,0,0.4)] object-cover rounded-2xl lg:rounded-3xl transition-transform duration-300 ease-out group-hover:scale-105"
+              draggable={false}
             />
 
             {/* Background image */}
@@ -165,6 +166,7 @@ export default function HowitWorksSection() {
               format="auto"
               alt="design1"
               className="object-cover h-full transition-transform duration-300 ease-out group-hover:scale-110"
+              draggable={false}
             />
 
             {/* Text content with blurred backdrop */}
@@ -202,6 +204,7 @@ export default function HowitWorksSection() {
               quality="auto"
               format="auto"
               className="w-[290px] h-[230px] sm:w-[320px] sm:h-[240px] md:w-[350px] md:h-[260px] lg:w-[300px] lg:h-[240px] xl:w-[320px] xl:h-[260px] absolute z-10 top-[6%] lg:top-[8%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
+              draggable={false}
             />
             <CldImage
               src={
@@ -212,6 +215,7 @@ export default function HowitWorksSection() {
               quality="auto"
               format="auto"
               alt="design2"
+              draggable={false}
               className="object-cover h-full transition-transform duration-300 ease-out group-hover:scale-110"
             />
             <div className="absolute h-full w-full bottom-0 bg-black/20 blur-[15px]" />
@@ -247,6 +251,7 @@ export default function HowitWorksSection() {
               height={1000}
               quality="auto"
               format="auto"
+              draggable={false}
               className="w-[290px] h-[240px] sm:w-[320px] sm:h-[240px] md:w-[350px] md:h-[260px] lg:w-[300px] lg:h-[240px] xl:w-[320px] xl:h-[260px] absolute z-10 top-[6%] lg:top-[8%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
             />
             <CldImage
@@ -258,6 +263,7 @@ export default function HowitWorksSection() {
               quality="auto"
               format="auto"
               alt="design3"
+              draggable={false}
               className="object-cover h-full transition-transform duration-300 ease-out group-hover:scale-110"
             />
             <div className="absolute h-full w-full bottom-0 bg-black/20 blur-[15px]" />

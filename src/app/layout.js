@@ -54,6 +54,7 @@ export default function RootLayout({ children }) {
               alt="trusty pg"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
         )}

@@ -29,6 +29,7 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
               className={`absolute ${
                 isChecked ? "opacity-100" : "opacity-0"
               } inset-0 object-cover rounded-xl`}
+              draggable={false}
             />
 
             {/* Toggle Button with Icon */}
@@ -46,6 +47,7 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
                   width={20}
                   height={20}
                   className="object-contain"
+                  draggable={false}
                 />
               ) : (
                 <Image
@@ -56,6 +58,7 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
                   width={20}
                   height={20}
                   className="object-contain"
+                  draggable={false}
                 />
               )}
             </div>
@@ -90,6 +93,7 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
             className={`absolute ${
               isChecked ? "opacity-100" : "opacity-0"
             } inset-0 object-cover rounded-xl`}
+            draggable={false}
           />
 
           {/* Toggle Button with Icon */}
@@ -107,6 +111,7 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
                 width={20}
                 height={20}
                 className="object-contain"
+                draggable={false}
               />
             ) : (
               <Image
@@ -117,6 +122,7 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
                 width={20}
                 height={20}
                 className="object-contain"
+                draggable={false}
               />
             )}
           </div>

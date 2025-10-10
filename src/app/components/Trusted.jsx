@@ -165,6 +165,7 @@ export default function Trusted() {
                 height={1000}
                 quality="auto"
                 format="auto"
+                draggable={false}
               />
             </div>
           ))}
@@ -188,6 +189,7 @@ export default function Trusted() {
                 height={1000}
                 quality="auto"
                 format="auto"
+                draggable={false}
               />
             </div>
           ))}
@@ -211,6 +213,7 @@ export default function Trusted() {
                 height={1000}
                 quality="auto"
                 format="auto"
+                draggable={false}
               />
             </div>
           ))}
@@ -228,6 +231,7 @@ export default function Trusted() {
                 height={1000}
                 quality="auto"
                 format="auto"
+                draggable={false}
               />
             </div>
           ))}
@@ -245,6 +249,7 @@ export default function Trusted() {
                 height={1000}
                 quality="auto"
                 format="auto"
+                draggable={false}
               />
             </div>
           ))}
@@ -261,6 +266,7 @@ export default function Trusted() {
               height={1000}
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
         </div>

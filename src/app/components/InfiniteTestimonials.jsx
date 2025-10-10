@@ -92,6 +92,7 @@ export default function TestimonialGrid() {
                     className="w-full h-auto object-cover"
                     quality="auto"
                     format="auto"
+                    draggable={false}
                   />
 
                   {/* Hover overlay */}
@@ -200,6 +201,7 @@ function MobileTestimonials() {
                         alt="testimo image1"
                         quality="auto"
                         format="auto"
+                        draggable={false}
                       />
                     </div>
                     <div className="">
@@ -225,6 +227,7 @@ function MobileTestimonials() {
                         alt="quotes"
                         quality="auto"
                         format="auto"
+                        draggable={false}
                       />
                     </div>
                     <div className="mt-2">
@@ -245,6 +248,7 @@ function MobileTestimonials() {
                         alt="quotes"
                         quality="auto"
                         format="auto"
+                        draggable={false}
                       />
                     </div>
                   </div>

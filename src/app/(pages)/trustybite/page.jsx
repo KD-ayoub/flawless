@@ -62,6 +62,7 @@ export default function page() {
             alt="trusty p1"
             quality="auto"
             format="auto"
+            draggable={false}
           />
         </div>
         {/* Challenge Section */}
@@ -157,6 +158,7 @@ export default function page() {
               alt="trusty p2"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
           <div className="mt-4">
@@ -170,6 +172,7 @@ export default function page() {
               alt="snipet p1"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
         </div>
@@ -196,6 +199,7 @@ export default function page() {
               alt="trusty p3"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
           <div className="mt-4">
@@ -209,6 +213,7 @@ export default function page() {
               alt="snipet p2"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
         </div>
@@ -236,6 +241,7 @@ export default function page() {
               alt="trusty p3"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
           <div className="mt-4">
@@ -249,6 +255,7 @@ export default function page() {
               alt="snipet p3"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
         </div>
@@ -276,6 +283,7 @@ export default function page() {
               alt="trusty p3"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
         </div>

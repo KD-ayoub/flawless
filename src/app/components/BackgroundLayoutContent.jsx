@@ -23,6 +23,7 @@ export default function BackgroundLayoutContent() {
               alt="Background"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
           <div className="absolute w-[400px] h-[200px] min-[2500px]:w-[1000px]! min-[2500px]:h-[500px]! lg:w-[500px] lg:h-[300px]  right-0">
@@ -36,6 +37,7 @@ export default function BackgroundLayoutContent() {
               alt="shape1"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
           {/* <div className=" absolute hidden min-[1000px]:block  w-[200px] h-[400px]  2xl:h-[600px]  md:top-60 xl:top-52  -left-5 min-[2500px]:hidden ">
@@ -60,6 +62,7 @@ export default function BackgroundLayoutContent() {
               alt="shape2"
               quality="auto"
               format="auto"
+              draggable={false}
             />
           </div>
         </>

@@ -101,6 +101,7 @@ export default function WebsiteCard() {
           }
           fill
           alt="design2"
+          draggable={false}
         />
         <div
           ref={cardRef}
@@ -113,6 +114,7 @@ export default function WebsiteCard() {
             }
             alt="full bg"
             fill
+            draggable={false}
           />
           {/* Text Overlay */}
           <div className="absolute inset-0 flex justify-between flex-col p-6 text-center z-10">
@@ -173,6 +175,7 @@ export default function WebsiteCard() {
                         height={16}
                         alt="check mark"
                         className="flex-shrink-0 mt-1 sm:w-[20px] sm:h-[20px]"
+                        draggable={false}
                       />
                       <p
                         className={`${geistSans.className} text-[#454545] tracking-[-0.01em] text-sm sm:text-base lg:text-lg font-normal leading-relaxed`}
@@ -208,6 +211,7 @@ export default function WebsiteCard() {
                       alt="button background"
                       fill
                       className="object-cover rounded-full"
+                      draggable={false}
                     />
                   </div>
 
@@ -239,6 +243,7 @@ export default function WebsiteCard() {
           width={380}
           height={100}
           alt="design2"
+          draggable={false}
         />
       </div>
     </>

@@ -196,6 +196,7 @@ export default function GreatSectionCard() {
                     height={100}
                     quality="auto"
                     format="auto"
+                    draggable={false}
                     // fill
                   />
 
@@ -212,6 +213,7 @@ export default function GreatSectionCard() {
                         quality="auto"
                         format="auto"
                         alt={`${value.title} icon`}
+                        draggable={false}
                       />
                     </div>
                     <div className="card-content">
