@@ -14,6 +14,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function page() {
   const lenisRef = useRef(null);
+  const heroRef = useRef(null);
+  const imageRefs = useRef([]);
+  const checklistRef = useRef(null);
+  const checklistRef1 = useRef(null);
+  const checklistRef2 = useRef(null);
+  const checklistRef3 = useRef(null); 
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -29,11 +35,89 @@ export default function page() {
     };
   }, []);
 
+  useGSAP(() => {
+    // Hero section animation
+    gsap.fromTo(
+      heroRef.current,
+      {
+        opacity: 0,
+        y: 60,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "power2.out",
+      }
+    );
+
+
+   // Create a function to handle checklist animations
+    const animateChecklist = (ref) => {
+      if (ref.current) {
+        const checkItems = ref.current.children;
+        gsap.fromTo(
+          checkItems,
+          {
+            opacity: 0,
+            x: -30,
+          },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.6,
+            ease: "power2.out",
+            stagger: 0.1,
+            scrollTrigger: {
+              trigger: ref.current,
+              start: "top 85%",
+              end: "bottom 20%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
+    };
+     // Apply animations to all checklist sections
+    animateChecklist(checklistRef);     // Tech Stack
+
+
+
+    // Images staggered animation
+    imageRefs.current.forEach((image, index) => {
+      if (image) {
+        gsap.fromTo(
+          image,
+          {
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.4,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: image,
+              start: "top 85%",
+              end: "bottom 20%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
+    });
+
+    
+  });
+
   return (
     <>
       <div className="text-white mt-10 lg:mt-16 mx-3 md:mx-10 xl:mx-20">
         {/* Hero Section */}
-        <div>
+        <div ref={heroRef}>
           <p
             className={`${geistSans.className} font-semibold text-white leading-[100%] tracking-[-0.04em] text-[30px] sm:text-[40px] md:text-[55px] lg:text-[63px]`}
           >
@@ -51,8 +135,9 @@ export default function page() {
           </p>
         </div>
         {/* First Image */}
-        <div className="my-10">
+        <div id="hero-image" className="my-10">
           <CldImage
+          ref={(el) => (imageRefs.current[0] = el)}
             className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
             src={
               "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760007777/trusty1_wlmlws.png"
@@ -72,7 +157,7 @@ export default function page() {
           >
             Tech Stack
           </h1>
-          <div className="flex flex-col gap-4 mt-2">
+          <div ref={checklistRef} className="flex flex-col gap-4 mt-2">
             <div className="flex items-center gap-2">
               <FaCircleCheck
                 color="#0E0E0F"
@@ -293,7 +378,7 @@ export default function page() {
           >
             Design System
           </h1>
-          <div className="flex flex-col gap-4 mt-2">
+          <div ref={checklistRef1} className="flex flex-col gap-4 mt-2">
             <div className="flex items-center gap-2">
               <FaCircleCheck
                 color="#0E0E0F"
@@ -364,7 +449,7 @@ export default function page() {
           >
             Challenges
           </h1>
-          <div className="flex flex-col gap-4 mt-2">
+          <div ref={checklistRef2} className="flex flex-col gap-4 mt-2">
             <div className="flex items-center gap-2">
               <FaCircleCheck
                 color="#0E0E0F"
@@ -421,7 +506,7 @@ export default function page() {
           >
             Use Case Highlights
           </h1>
-          <div className="flex flex-col gap-4 mt-2">
+          <div ref={checklistRef3} className="flex flex-col gap-4 mt-2">
             <div className="flex items-center gap-2">
               <FaCircleCheck
                 color="#0E0E0F"

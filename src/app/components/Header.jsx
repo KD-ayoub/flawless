@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { geistSans, instrumentSerif } from "../layout";
 import { FaArrowRight } from "react-icons/fa6";
 import { IoClose, IoReorderThree } from "react-icons/io5";
@@ -50,9 +50,53 @@ const handleScrollCase = (e, pathName, router) => {
   }
 };
 
+function getMarginForBP() {
+  if (window.matchMedia("(min-width: 1000px)").matches)
+    return "-80px 0px 0px 0px"; // desktop header height
+  if (window.matchMedia("(min-width: 640px)").matches)
+    return "-104px 0px 0px 0px"; // tablet
+  return "-120px 0px 0px 0px"; // mobile
+}
+
 export default function Header() {
   const router = useRouter();
   const pathName = usePathname();
+
+  const [observerColor, setObserverColor] = useState({
+    simple: "text-white",
+    long: "bg-gradient-to-r from-white to-white",
+  });
+  useEffect(() => {
+    const heroImage = document.getElementById("hero-image");
+    const rootMargin = getMarginForBP();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        console.log("entries: ", entries);
+        const entry = entries[0];
+        if (!entry.isIntersecting) {
+          const obj = {
+            simple: "text-black",
+            long: "bg-gradient-to-r from-black to-black",
+          };
+          setObserverColor(obj);
+        } else {
+          const obj = {
+            simple: "text-white",
+            long: "bg-gradient-to-r from-white to-white",
+          };
+          setObserverColor(obj);
+        }
+      },
+      {
+        threshold: 0,
+        rootMargin: rootMargin,
+      }
+    );
+    if (heroImage) {
+      observer.observe(heroImage);
+    }
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -79,7 +123,7 @@ export default function Header() {
                     pathName === "/arch"
                       ? "text-white"
                       : pathName === "/trustybite"
-                      ? "text-white"
+                      ? `${observerColor.simple}`
                       : "text-black"
                   } text-2xl font-normal`}
                 >
@@ -98,7 +142,7 @@ export default function Header() {
                     pathName === "/arch"
                       ? "bg-gradient-to-r from-white to-white"
                       : pathName === "/trustybite"
-                      ? "bg-gradient-to-r from-white to-white"
+                      ? `${observerColor.long}`
                       : "bg-gradient-to-r from-black to-black"
                   } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                 >
@@ -116,7 +160,7 @@ export default function Header() {
                     pathName === "/arch"
                       ? "bg-gradient-to-r from-white to-white"
                       : pathName === "/trustybite"
-                      ? "bg-gradient-to-r from-white to-white"
+                      ? `${observerColor.long}`
                       : "bg-gradient-to-r from-black to-black"
                   } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                 >
@@ -135,7 +179,7 @@ export default function Header() {
                       pathName === "/arch"
                         ? "bg-gradient-to-r from-white to-white"
                         : pathName === "/trustybite"
-                        ? "bg-gradient-to-r from-white to-white"
+                        ? `${observerColor.long}`
                         : "bg-gradient-to-r from-black to-black"
                     } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                   >
@@ -166,12 +210,12 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <MobileHeader pathName={pathName} />
+      <MobileHeader pathName={pathName} observerColor={observerColor} />
     </>
   );
 }
 
-function MobileHeader({ pathName }) {
+function MobileHeader({ pathName, observerColor }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
   const router = useRouter();
@@ -218,7 +262,7 @@ function MobileHeader({ pathName }) {
                       pathName === "/arch"
                         ? "text-white"
                         : pathName === "/trustybite"
-                        ? "text-white"
+                        ? `${observerColor.simple}`
                         : "text-black"
                     } text-xl font-normal`}
                   >
@@ -236,7 +280,7 @@ function MobileHeader({ pathName }) {
                       pathName === "/arch"
                         ? "text-white"
                         : pathName === "/trustybite"
-                        ? "text-white"
+                        ? `${observerColor.simple}`
                         : "text-black"
                     } text-3xl`}
                   />
@@ -246,7 +290,7 @@ function MobileHeader({ pathName }) {
                       pathName === "/arch"
                         ? "text-white"
                         : pathName === "/trustybite"
-                        ? "text-white"
+                        ? `${observerColor.simple}`
                         : "text-black"
                     } text-3xl`}
                   />
@@ -281,7 +325,7 @@ function MobileHeader({ pathName }) {
                         pathName === "/arch"
                           ? "bg-gradient-to-r from-white to-white"
                           : pathName === "/trustybite"
-                          ? "bg-gradient-to-r from-white to-white"
+                          ? `${observerColor.long}`
                           : "bg-gradient-to-r from-black to-black"
                       } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                       onClick={(e) => {
@@ -295,7 +339,8 @@ function MobileHeader({ pathName }) {
                       className={`h-px w-10 ${
                         pathName === "/arch"
                           ? "bg-[#F1F1F1]"
-                          : pathName === "/trustybite"
+                          : pathName === "/trustybite" &&
+                            observerColor.simple === "text-white"
                           ? "bg-[#F1F1F1]"
                           : "bg-[#818181]"
                       }`}
@@ -308,7 +353,7 @@ function MobileHeader({ pathName }) {
                         pathName === "/arch"
                           ? "bg-gradient-to-r from-white to-white"
                           : pathName === "/trustybite"
-                          ? "bg-gradient-to-r from-white to-white"
+                          ? `${observerColor.long}`
                           : "bg-gradient-to-r from-black to-black"
                       } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                       onClick={(e) => {
@@ -322,7 +367,8 @@ function MobileHeader({ pathName }) {
                       className={`h-px w-10 ${
                         pathName === "/arch"
                           ? "bg-[#F1F1F1]"
-                          : pathName === "/trustybite"
+                          : pathName === "/trustybite" &&
+                            observerColor.simple === "text-white"
                           ? "bg-[#F1F1F1]"
                           : "bg-[#818181]"
                       }`}
@@ -340,7 +386,7 @@ function MobileHeader({ pathName }) {
                           pathName === "/arch"
                             ? "bg-gradient-to-r from-white to-white"
                             : pathName === "/trustybite"
-                            ? "bg-gradient-to-r from-white to-white"
+                            ? `${observerColor.long}`
                             : "bg-gradient-to-r from-black to-black"
                         } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                       >
