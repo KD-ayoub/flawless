@@ -68,35 +68,35 @@ export default function Header() {
   });
   useEffect(() => {
     const heroImage = document.getElementById("hero-image");
-    const rootMargin = getMarginForBP();
-    const observer = new IntersectionObserver(
-      (entries) => {
-        console.log("entries: ", entries);
-        const entry = entries[0];
-        if (!entry.isIntersecting) {
-          const obj = {
-            simple: "text-black",
-            long: "bg-gradient-to-r from-black to-black",
-          };
-          setObserverColor(obj);
-        } else {
-          const obj = {
-            simple: "text-white",
-            long: "bg-gradient-to-r from-white to-white",
-          };
-          setObserverColor(obj);
-        }
-      },
-      {
-        threshold: 0,
-        rootMargin: rootMargin,
-      }
-    );
     if (heroImage) {
+      const rootMargin = getMarginForBP();
+      const observer = new IntersectionObserver(
+        (entries) => {
+          console.log("entries: ", entries);
+          const entry = entries[0];
+          if (!entry.isIntersecting) {
+            const obj = {
+              simple: "text-black",
+              long: "bg-gradient-to-r from-black to-black",
+            };
+            setObserverColor(obj);
+          } else {
+            const obj = {
+              simple: "text-white",
+              long: "bg-gradient-to-r from-white to-white",
+            };
+            setObserverColor(obj);
+          }
+        },
+        {
+          threshold: 0,
+          rootMargin: rootMargin,
+        }
+      );
       observer.observe(heroImage);
+      return () => observer.disconnect();
     }
-    return () => observer.disconnect();
-  }, []);
+  }, [pathName]);
 
   return (
     <>
