@@ -588,7 +588,7 @@ export default function page() {
               </div>
               <div className="mt-8">
                 <p
-                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#0E0E0F]/50`}
+                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#49494A]`}
                 >
                   Winning 3rd place in a 1M$ prize pool hackathon where only the
                   best compete.
@@ -611,7 +611,7 @@ export default function page() {
               </div>
               <div className="mt-8">
                 <p
-                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
+                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#49494A]`}
                 >
                   Beating more than 1500 teams from all around the world.
                 </p>
@@ -625,7 +625,7 @@ export default function page() {
               </div>
               <div className="mt-3">
                 <p
-                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
+                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#49494A]`}
                 >
                   Getting a ready to launch product in less than 1 month.
                 </p>
@@ -637,7 +637,7 @@ export default function page() {
               </div>
               <div className="mt-3">
                 <p
-                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
+                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#49494A]`}
                 >
                   Created a robust Product design and front-end code.
                 </p>
