@@ -15,20 +15,22 @@ import Lenis from "lenis";
 gsap.registerPlugin(useGSAP);
 
 const handleScrollService = (e, pathName, router) => {
-  // e.preventDefault();
+    e.preventDefault();
+
   // const onHome = pathName === "/";
-  // const hash = "#services";
-  // if (onHome) {
-  //   // same page → scroll now
-  //   window.lenis?.scrollTo(hash, {
-  //     offset: -80,
-  //     duration: 2.5,
-  //     easing: (t) => 1 - Math.pow(1 - t, 3),
-  //   });
-  // } else {
-  //   // different page → navigate with hash, scrolling happens on mount
-  //   router.push(`/${hash}`);
-  // }
+  const hash = "#services";
+  setTimeout(() => {
+    console.log("pushed");
+    router.push(`/${hash}`);
+    setTimeout(() => {
+      console.log("pushed");
+      router.push(`/${hash}`);
+      setTimeout(() => {
+        console.log("pushed");
+        router.push(`/${hash}`);
+      }, 500);
+    }, 490);
+  }, 10);
 };
 
 const handleScrollCase = (e, pathName, router) => {
