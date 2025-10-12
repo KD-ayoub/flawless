@@ -18,7 +18,7 @@ export default function MyApp() {
       const cal = await getCalApi({ namespace: "30min" });
       cal("ui", {
         cssVarsPerTheme: {
-          light: { "cal-brand": "#D79BF4" },
+          light: { "cal-brand": "#9876EC" },
           dark: { "cal-brand": "#0070F3" },
         },
         hideEventTypeDetails: false,
