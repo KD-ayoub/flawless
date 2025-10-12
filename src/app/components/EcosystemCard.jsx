@@ -3,6 +3,7 @@ import { geistSans, instrumentSerif } from "../layout";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa6";
 import { CldImage } from "next-cloudinary";
+import Link from "next/link";
 
 export default function EcosystemCard() {
   const values = [
@@ -95,44 +96,46 @@ export default function EcosystemCard() {
                 </p>
               </div>
             </div>
-            <div className="mt-3">
-              {/* Gradient Border Container */}
-              <div className="relative cursor-pointer w-full p-[1.5px] rounded-full bg-gradient-to-r from-[#00B25B] to-[#40f89f] transition-transform duration-300 hover:scale-[1.03] group shadow-[#00B25B] shadow-md">
-                {/* Inner Button Container */}
-                <div className="relative w-full flex justify-center items-center gap-2 sm:gap-3  px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-transparent overflow-hidden">
-                  {/* Background Image */}
-                  <div className="absolute inset-0  rounded-full overflow-hidden z-0">
-                    <Image
-                      src={
-                        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704992/design4_tad1ma.svg"
-                      }
-                      alt="button background"
-                      fill
-                      className="object-cover rounded-full"
-                      draggable={false}
-                    />
-                  </div>
+            <Link href={"/30-min"}>
+              <div className="mt-3">
+                {/* Gradient Border Container */}
+                <div className="relative cursor-pointer w-full p-[1.5px] rounded-full bg-gradient-to-r from-[#00B25B] to-[#40f89f] transition-transform duration-300 hover:scale-[1.03] group shadow-[#00B25B] shadow-md">
+                  {/* Inner Button Container */}
+                  <div className="relative w-full flex justify-center items-center gap-2 sm:gap-3  px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-transparent overflow-hidden">
+                    {/* Background Image */}
+                    <div className="absolute inset-0  rounded-full overflow-hidden z-0">
+                      <Image
+                        src={
+                          "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755704992/design4_tad1ma.svg"
+                        }
+                        alt="button background"
+                        fill
+                        className="object-cover rounded-full"
+                        draggable={false}
+                      />
+                    </div>
 
-                  {/* Moving blur on hover
+                    {/* Moving blur on hover
                          <div className="absolute z-[1] cursor-pointer -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-6 sm:h-8 bg-[#A6CFFF] blur-lg rounded-full transition-all duration-500 group-hover:bottom-0 group-hover:blur-[32px]" /> */}
 
-                  {/* Button Text */}
-                  <button
-                    className={`tracking-[-0.02em] cursor-pointer relative z-10 ml-1.5 sm:ml-2 ${geistSans.className} text-white text-sm sm:text-base font-semibold`}
-                  >
-                    Book a Call
-                  </button>
+                    {/* Button Text */}
+                    <button
+                      className={`tracking-[-0.02em] cursor-pointer relative z-10 ml-1.5 sm:ml-2 ${geistSans.className} text-white text-sm sm:text-base font-semibold`}
+                    >
+                      Book a Call
+                    </button>
 
-                  {/* Arrow Bubble with hover nudge */}
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white cursor-pointer relative z-10 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 [box-shadow:_rgba(255,255,255,0.1)_0px_1px_1px_0px_inset,_rgba(50,50,93,0.25)_0px_2px_3px_2px,_rgba(0,0,0,0.3)_0px_30px_60px_-30px]">
-                    <FaArrowRight
-                      color="#00B25B"
-                      className="w-3 h-3 sm:w-4 sm:h-4"
-                    />
+                    {/* Arrow Bubble with hover nudge */}
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white cursor-pointer relative z-10 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 [box-shadow:_rgba(255,255,255,0.1)_0px_1px_1px_0px_inset,_rgba(50,50,93,0.25)_0px_2px_3px_2px,_rgba(0,0,0,0.3)_0px_30px_60px_-30px]">
+                      <FaArrowRight
+                        color="#00B25B"
+                        className="w-3 h-3 sm:w-4 sm:h-4"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
         <Image

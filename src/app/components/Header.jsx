@@ -15,7 +15,7 @@ import Lenis from "lenis";
 gsap.registerPlugin(useGSAP);
 
 const handleScrollService = (e, pathName, router) => {
-    e.preventDefault();
+  e.preventDefault();
 
   // const onHome = pathName === "/";
   let hash = "#services";
@@ -190,25 +190,27 @@ export default function Header() {
                   </p>
                 </Link>
               </div>
-              <div className="relative cursor-pointer w-fit flex items-center gap-2 sm:gap-3 border border-[#0070F3] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-[#0070F3] overflow-hidden transition-transform duration-300 hover:scale-[1.03] group">
-                {/* Moving blur on hover */}
-                <div className="absolute z-0 cursor-pointer -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-6 sm:h-8 bg-[#A6CFFF] blur-lg rounded-full transition-all duration-500 group-hover:bottom-0 group-hover:blur-[32px]" />
+              <Link href={"/30-min"}>
+                <div className="relative cursor-pointer w-fit flex items-center gap-2 sm:gap-3 border border-[#0070F3] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-[#0070F3] overflow-hidden transition-transform duration-300 hover:scale-[1.03] group">
+                  {/* Moving blur on hover */}
+                  <div className="absolute z-0 cursor-pointer -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-6 sm:h-8 bg-[#A6CFFF] blur-lg rounded-full transition-all duration-500 group-hover:bottom-0 group-hover:blur-[32px]" />
 
-                {/* Button Text */}
-                <button
-                  className={`tracking-[-0.02em] cursor-pointer relative z-10 ml-1.5 sm:ml-2 ${geistSans.className} text-white text-sm sm:text-base font-semibold`}
-                >
-                  Let's work together
-                </button>
+                  {/* Button Text */}
+                  <button
+                    className={`tracking-[-0.02em] cursor-pointer relative z-10 ml-1.5 sm:ml-2 ${geistSans.className} text-white text-sm sm:text-base font-semibold`}
+                  >
+                    Let's work together
+                  </button>
 
-                {/* Arrow Bubble with hover nudge */}
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white cursor-pointer relative z-10 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 [box-shadow:_rgba(255,255,255,0.1)_0px_1px_1px_0px_inset,_rgba(50,50,93,0.25)_0px_2px_3px_2px,_rgba(0,0,0,0.3)_0px_30px_60px_-30px]">
-                  <FaArrowRight
-                    color="#0070F3"
-                    className="w-3 h-3 sm:w-4 sm:h-4"
-                  />
+                  {/* Arrow Bubble with hover nudge */}
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white cursor-pointer relative z-10 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 [box-shadow:_rgba(255,255,255,0.1)_0px_1px_1px_0px_inset,_rgba(50,50,93,0.25)_0px_2px_3px_2px,_rgba(0,0,0,0.3)_0px_30px_60px_-30px]">
+                    <FaArrowRight
+                      color="#0070F3"
+                      className="w-3 h-3 sm:w-4 sm:h-4"
+                    />
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -396,25 +398,27 @@ function MobileHeader({ pathName, observerColor }) {
                         Work
                       </p>
                     </Link>
-                    <div className="relative cursor-pointer w-fit flex items-center gap-2 sm:gap-3 border border-[#0070F3] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-[#0070F3] overflow-hidden transition-transform duration-300 hover:scale-[1.03] group">
-                      {/* Moving blur on hover */}
-                      <div className="absolute z-0 cursor-pointer -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-6 sm:h-8 bg-[#A6CFFF] blur-lg rounded-full transition-all duration-500 group-hover:bottom-0 group-hover:blur-[32px]" />
+                    <Link href={"/30-min"}>
+                      <div className="relative cursor-pointer w-fit flex items-center gap-2 sm:gap-3 border border-[#0070F3] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-[#0070F3] overflow-hidden transition-transform duration-300 hover:scale-[1.03] group">
+                        {/* Moving blur on hover */}
+                        <div className="absolute z-0 cursor-pointer -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-6 sm:h-8 bg-[#A6CFFF] blur-lg rounded-full transition-all duration-500 group-hover:bottom-0 group-hover:blur-[32px]" />
 
-                      {/* Button Text */}
-                      <button
-                        className={`tracking-[-0.02em] cursor-pointer relative z-10 ml-1.5 sm:ml-2 ${geistSans.className} text-white text-sm sm:text-xl font-semibold`}
-                      >
-                        Let's work together
-                      </button>
+                        {/* Button Text */}
+                        <button
+                          className={`tracking-[-0.02em] cursor-pointer relative z-10 ml-1.5 sm:ml-2 ${geistSans.className} text-white text-sm sm:text-xl font-semibold`}
+                        >
+                          Let's work together
+                        </button>
 
-                      {/* Arrow Bubble with hover nudge */}
-                      <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white cursor-pointer relative z-10 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 [box-shadow:_rgba(255,255,255,0.1)_0px_1px_1px_0px_inset,_rgba(50,50,93,0.25)_0px_2px_3px_2px,_rgba(0,0,0,0.3)_0px_30px_60px_-30px]">
-                        <FaArrowRight
-                          color="#0070F3"
-                          className="w-3 h-3 sm:w-4 sm:h-4"
-                        />
+                        {/* Arrow Bubble with hover nudge */}
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white cursor-pointer relative z-10 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 [box-shadow:_rgba(255,255,255,0.1)_0px_1px_1px_0px_inset,_rgba(50,50,93,0.25)_0px_2px_3px_2px,_rgba(0,0,0,0.3)_0px_30px_60px_-30px]">
+                          <FaArrowRight
+                            color="#0070F3"
+                            className="w-3 h-3 sm:w-4 sm:h-4"
+                          />
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>

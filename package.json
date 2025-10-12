@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@gsap/react": "^2.1.2",
     "@heroicons/react": "^2.2.0",
     "@react-three/drei": "^9.105.4",

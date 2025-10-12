@@ -4,6 +4,7 @@ import { geistSans, instrumentSerif } from "../layout";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { FaArrowRight } from "react-icons/fa6";
+import Link from "next/link";
 
 gsap.registerPlugin(useGSAP);
 
@@ -165,25 +166,27 @@ export default function HeroSection() {
           Ultra-precise design & code for Web3, AI, and mission-critical
           products that can't afford imperfections.
         </p>
-        <div
-          ref={buttonRef}
-          className="relative opacity-0 cursor-pointer w-fit flex items-center gap-2 sm:gap-3 border border-[#0070F3] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-[#0070F3] overflow-hidden  hover:scale-[1.03] group shadow-lg shadow-[#4075F0]/25"
-        >
-          {/* Moving blur on hover */}
-          <div className="absolute z-0 cursor-pointer -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-6 sm:h-8 bg-[#A6CFFF] blur-lg rounded-full transition-all duration-500 group-hover:bottom-0 group-hover:blur-[32px]" />
-
-          {/* Button Text */}
-          <button
-            className={`tracking-[-0.02em] cursor-pointer relative z-10 ml-1.5 sm:ml-2 ${geistSans.className} text-white text-sm sm:text-base font-semibold`}
+        <Link href={"/30-min"}>
+          <div
+            ref={buttonRef}
+            className="relative opacity-0 cursor-pointer w-fit flex items-center gap-2 sm:gap-3 border border-[#0070F3] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-[#0070F3] overflow-hidden  hover:scale-[1.03] group shadow-lg shadow-[#4075F0]/25"
           >
-            Book a Free Strategy Call
-          </button>
+            {/* Moving blur on hover */}
+            <div className="absolute z-0 cursor-pointer -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-6 sm:h-8 bg-[#A6CFFF] blur-lg rounded-full transition-all duration-500 group-hover:bottom-0 group-hover:blur-[32px]" />
 
-          {/* Arrow Bubble with hover nudge */}
-          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white cursor-pointer relative z-10 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 [box-shadow:_rgba(255,255,255,0.1)_0px_1px_1px_0px_inset,_rgba(50,50,93,0.25)_0px_2px_3px_2px,_rgba(0,0,0,0.3)_0px_30px_60px_-30px]">
-            <FaArrowRight color="#0070F3" className="w-3 h-3 sm:w-4 sm:h-4" />
+            {/* Button Text */}
+            <button
+              className={`tracking-[-0.02em] cursor-pointer relative z-10 ml-1.5 sm:ml-2 ${geistSans.className} text-white text-sm sm:text-base font-semibold`}
+            >
+              Book a Free Strategy Call
+            </button>
+
+            {/* Arrow Bubble with hover nudge */}
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white cursor-pointer relative z-10 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 [box-shadow:_rgba(255,255,255,0.1)_0px_1px_1px_0px_inset,_rgba(50,50,93,0.25)_0px_2px_3px_2px,_rgba(0,0,0,0.3)_0px_30px_60px_-30px]">
+              <FaArrowRight color="#0070F3" className="w-3 h-3 sm:w-4 sm:h-4" />
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
