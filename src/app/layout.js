@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { CldImage } from "next-cloudinary";
 import LenisWrapper from "./components/LenisWrapper";
 import ScrollReset from "./components/ScrollReset";
+import { Suspense } from "react";
 
 export const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,13 +66,17 @@ export default function RootLayout({ children }) {
           <BackgroundLayoutContent />
           {/* Foreground content */}
 
+          <Suspense>
             <LenisWrapper>
-              <ScrollReset/>
-          <div className={`relative z-10 mx-auto max-w-[1840px] text-black`}>
-            <Header />
-              {children}
-          </div>
-              </LenisWrapper>
+              <ScrollReset />
+              <div
+                className={`relative z-10 mx-auto max-w-[1840px] text-black`}
+              >
+                <Header />
+                {children}
+              </div>
+            </LenisWrapper>
+          </Suspense>
         </div>
       </body>
     </html>
