@@ -6,6 +6,8 @@ import Header from "./components/Header";
 import BackgroundLayoutContent from "./components/BackgroundLayoutContent";
 import { usePathname } from "next/navigation";
 import { CldImage } from "next-cloudinary";
+import LenisWrapper from "./components/LenisWrapper";
+import ScrollReset from "./components/ScrollReset";
 
 export const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,10 +65,13 @@ export default function RootLayout({ children }) {
           <BackgroundLayoutContent />
           {/* Foreground content */}
 
+            <LenisWrapper>
+              <ScrollReset/>
           <div className={`relative z-10 mx-auto max-w-[1840px] text-black`}>
             <Header />
-            {children}
+              {children}
           </div>
+              </LenisWrapper>
         </div>
       </body>
     </html>

@@ -37,19 +37,19 @@ export function useLenisScrollOnHash(offset = 80) {
 }
 
 export default function LandingPage() {
-  useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-    window.lenis = lenis;
-    requestAnimationFrame(() => requestAnimationFrame(() => scrollHash(80)));
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+  // useEffect(() => {
+  //   const lenis = new Lenis();
+  //   function raf(time) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+  //   requestAnimationFrame(raf);
+  //   window.lenis = lenis;
+  //   requestAnimationFrame(() => requestAnimationFrame(() => scrollHash(80)));
+  //   return () => {
+  //     lenis.destroy();
+  //   };
+  // }, []);
   // useLenisScrollOnHash();
   return (
     <div>
@@ -65,4 +65,5 @@ export default function LandingPage() {
     </div>
   );
 }
+
 

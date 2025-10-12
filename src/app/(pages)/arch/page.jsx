@@ -25,19 +25,19 @@ export default function page() {
   const lenisRef = useRef(null);
 
 
-  useEffect(() => {
-    const lenis = new Lenis();
-    lenisRef.current = lenis;
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-    lenis.on('scroll', ScrollTrigger.update);
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+  // useEffect(() => {
+  //   const lenis = new Lenis();
+  //   lenisRef.current = lenis;
+  //   function raf(time) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+  //   requestAnimationFrame(raf);
+  //   lenis.on('scroll', ScrollTrigger.update);
+  //   return () => {
+  //     lenis.destroy();
+  //   };
+  // }, []);
 
   useGSAP(() => {
     // Hero section animation

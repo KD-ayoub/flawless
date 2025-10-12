@@ -70,18 +70,18 @@ export default function WorkPage() {
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759412827/work49_bmaj8z.png",
   ];
 
-  useEffect(() => {
-    const lenis = new Lenis();
-    lenisRef.current = lenis;
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+  // useEffect(() => {
+  //   const lenis = new Lenis();
+  //   lenisRef.current = lenis;
+  //   function raf(time) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+  //   requestAnimationFrame(raf);
+  //   return () => {
+  //     lenis.destroy();
+  //   };
+  // }, []);
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -110,44 +110,7 @@ export default function WorkPage() {
     ); // Start 0.4s before previous animation ends
   }, []);
 
-  // const openModal = (img, index) => {
-  //   setSelectedImage({ src: img, index });
-  //   if (lenisRef.current) {
-  //     lenisRef.current.stop();
-  //   }
-  //   containerRef.current.style.overflow = "hidden"; // Prevent background scroll
-  //   document.documentElement.style.overflow = "hidden"; // Also set on html element
-  // };
 
-  // const closeModal = () => {
-  //   if (modalRef.current) {
-  //     gsap.to(modalRef.current, {
-  //       opacity: 0,
-  //       scale: 0.8,
-  //       duration: 0.2,
-  //       ease: "power2.in",
-  //       onComplete: () => {
-  //         setSelectedImage(null);
-  //         if (lenisRef.current) {
-  //           lenisRef.current.start();
-  //         }
-  //         containerRef.current.style.overflow = "unset"; // Prevent background scroll
-  //         document.documentElement.style.overflow = "unset"; // Also set on html element
-  //       },
-  //     });
-  //   }
-  // };
-
-  // // Close modal on escape key
-  // useEffect(() => {
-  //   const handleEsc = (e) => {
-  //     if (e.key === "Escape" && selectedImage) {
-  //       closeModal();
-  //     }
-  //   };
-  //   window.addEventListener("keydown", handleEsc);
-  //   return () => window.removeEventListener("keydown", handleEsc);
-  // }, [selectedImage]);
 
   return (
     <>
@@ -184,28 +147,6 @@ export default function WorkPage() {
           </div>
         </div>
       </div>
-      {/* Modal Popup
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center  justify-center p-4"
-          onClick={closeModal}
-        >
-          <div
-            ref={modalRef}
-            className="relative max-w-[95vw] max-h-[90vh] overflow-auto w-full h-full flex flex-col rounded-2xl"
-            // onClick={(e) => e.stopPropagation()}
-          >
-            <div className="">
-              <Image
-                className="object-contain rounded-2xl"
-                src={selectedImage.src}
-                fill
-                alt={`clicked img ${selectedImage.index}`}
-              />
-            </div>
-          </div>
-        </div>
-      )} */}
     </>
   );
 }
