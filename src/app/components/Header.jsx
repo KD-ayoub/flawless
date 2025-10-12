@@ -18,7 +18,7 @@ const handleScrollService = (e, pathName, router) => {
     e.preventDefault();
 
   // const onHome = pathName === "/";
-  const hash = "#services";
+  let hash = "#services";
   setTimeout(() => {
     console.log("pushed");
     router.push(`/${hash}`);
@@ -37,7 +37,7 @@ const handleScrollCase = (e, pathName, router) => {
   e.preventDefault();
 
   // const onHome = pathName === "/";
-  const hash = "#case-studies";
+  let hash = "#case-studies";
   setTimeout(() => {
     console.log("pushed");
     router.push(`/${hash}`);

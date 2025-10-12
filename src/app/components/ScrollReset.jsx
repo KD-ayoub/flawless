@@ -15,7 +15,7 @@ export default function ScrollReset({ respectHash = true }) {
 
   useEffect(() => {
     // If navigating to a hash (/#case-studies), let the hash handler do its thing.
-    if (respectHash && typeof window !== "undefined" && window.location.hash) return;
+    // if (respectHash && typeof window !== "undefined" && window.location.hash) return;
 
     const lenis = window.lenis;
 
