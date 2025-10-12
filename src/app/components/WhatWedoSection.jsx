@@ -19,7 +19,7 @@ export default function WhatWedoSection() {
   const subtitleRef = useRef(null);
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
-  // useLenisScrollOnHash();
+  useLenisScrollOnHash();
   useGSAP(() => {
     const subtitle = subtitleRef.current;
     const title = titleRef.current;

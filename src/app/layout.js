@@ -27,6 +27,7 @@ const metadata = {
 
 export default function RootLayout({ children }) {
   const pathName = usePathname();
+
   return (
     <html lang="en" className="">
       <head>

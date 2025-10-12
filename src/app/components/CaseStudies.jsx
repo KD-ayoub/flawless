@@ -7,7 +7,7 @@ import { CldImage } from "next-cloudinary";
 import { useLenisScrollOnHash } from "./LandingPage";
 
 export default function CaseStudies() {
-  // useLenisScrollOnHash();
+  useLenisScrollOnHash();
   return (
     <>
       <div id="case-studies" className="max-w-7xl mx-auto px-4">

@@ -15,39 +15,40 @@ import Lenis from "lenis";
 gsap.registerPlugin(useGSAP);
 
 const handleScrollService = (e, pathName, router) => {
-  e.preventDefault();
-  const onHome = pathName === "/";
-  const hash = "#services";
-
-  if (onHome) {
-    // same page → scroll now
-    window.lenis?.scrollTo(hash, {
-      offset: -80,
-      duration: 2.5,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-    });
-  } else {
-    // different page → navigate with hash, scrolling happens on mount
-    router.push(`/${hash}`);
-  }
+  // e.preventDefault();
+  // const onHome = pathName === "/";
+  // const hash = "#services";
+  // if (onHome) {
+  //   // same page → scroll now
+  //   window.lenis?.scrollTo(hash, {
+  //     offset: -80,
+  //     duration: 2.5,
+  //     easing: (t) => 1 - Math.pow(1 - t, 3),
+  //   });
+  // } else {
+  //   // different page → navigate with hash, scrolling happens on mount
+  //   router.push(`/${hash}`);
+  // }
 };
 
 const handleScrollCase = (e, pathName, router) => {
   e.preventDefault();
-  const onHome = pathName === "/";
-  const hash = "#case-studies";
 
-  if (onHome) {
-    // same page → scroll now
-    window.lenis?.scrollTo(hash, {
-      offset: -80,
-      duration: 2.5,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-    });
-  } else {
-    // different page → navigate with hash, scrolling happens on mount
+  // const onHome = pathName === "/";
+  const hash = "#case-studies";
+  setTimeout(() => {
+    console.log("pushed");
     router.push(`/${hash}`);
-  }
+    setTimeout(() => {
+      console.log("pushed");
+      router.push(`/${hash}`);
+      setTimeout(() => {
+        console.log("pushed");
+        router.push(`/${hash}`);
+      }, 500);
+    }, 490);
+  }, 10);
+  // }
 };
 
 function getMarginForBP() {
@@ -149,7 +150,7 @@ export default function Header() {
                   Services
                 </a>
 
-                <a
+                <Link
                   href="/#case-studies"
                   onClick={(e) => {
                     handleScrollCase(e, pathName, router);
@@ -165,7 +166,7 @@ export default function Header() {
                   } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                 >
                   Case Studies
-                </a>
+                </Link>
                 <Link href="/work">
                   <p
                     // onClick={() => {
