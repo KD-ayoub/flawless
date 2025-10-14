@@ -11,6 +11,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { ScrollToPlugin } from "gsap/all";
 import Lenis from "lenis";
+import useOutsideClick from "../hooks/useOutsideClick";
 
 gsap.registerPlugin(useGSAP);
 
@@ -225,6 +226,10 @@ function MobileHeader({ pathName, observerColor }) {
   const dropdownRef = useRef(null);
   const router = useRouter();
 
+  const menuRef = useRef();
+
+  useOutsideClick(menuRef, setMenuOpen);
+
   useGSAP(
     () => {
       if (menuOpen && dropdownRef.current) {
@@ -306,7 +311,10 @@ function MobileHeader({ pathName, observerColor }) {
           {/* Mobile Menu */}
           {menuOpen && (
             <>
-              <div className="sticky block min-[1000px]:hidden top-16 z-10 w-full max-w-[1640px] py-3 px-3 h-14">
+              <div
+                ref={menuRef}
+                className="sticky block min-[1000px]:hidden top-16 z-10 w-full max-w-[1640px] py-3 px-3 h-14"
+              >
                 <div className="relative p-2">
                   {/* Blurred background layer */}
                   <div
@@ -398,7 +406,7 @@ function MobileHeader({ pathName, observerColor }) {
                         Work
                       </p>
                     </Link>
-                    <Link href={"/30-min"}>
+                    <Link onClick={() => setMenuOpen(false)} href={"/30-min"}>
                       <div className="relative cursor-pointer w-fit flex items-center gap-2 sm:gap-3 border border-[#0070F3] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-[#0070F3] overflow-hidden transition-transform duration-300 hover:scale-[1.03] group">
                         {/* Moving blur on hover */}
                         <div className="absolute z-0 cursor-pointer -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-6 sm:h-8 bg-[#A6CFFF] blur-lg rounded-full transition-all duration-500 group-hover:bottom-0 group-hover:blur-[32px]" />
