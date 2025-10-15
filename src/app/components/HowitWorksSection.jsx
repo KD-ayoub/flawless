@@ -252,7 +252,7 @@ export default function HowitWorksSection() {
               quality="auto"
               format="auto"
               draggable={false}
-              className="w-[290px] h-[240px] sm:w-[320px] sm:h-[240px] md:w-[350px] md:h-[260px] lg:w-[300px] lg:h-[240px] xl:w-[320px] xl:h-[260px] absolute z-10 top-[6%] lg:top-[8%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
+              className="w-[290px] h-[280px] sm:w-[320px] sm:h-[290px] md:w-[350px] md:h-[300px] lg:w-[300px] lg:h-[290px] xl:w-[320px] xl:h-[300px] absolute z-10 top-[6%] lg:top-[8%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
             />
             <CldImage
               src={
