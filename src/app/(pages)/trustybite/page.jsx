@@ -3,12 +3,13 @@
 import { geistSans } from "@/app/layout";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import { FaCircleCheck } from "react-icons/fa6";
+import { FaCircleCheck, FaCopy } from "react-icons/fa6";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
 import { CldImage } from "next-cloudinary";
+import { FirstSnippet, SecondSnippet, ThirdSnippet } from "@/app/components/SnippetComponent";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +20,7 @@ export default function page() {
   const checklistRef = useRef(null);
   const checklistRef1 = useRef(null);
   const checklistRef2 = useRef(null);
-  const checklistRef3 = useRef(null); 
+  const checklistRef3 = useRef(null);
 
   // useEffect(() => {
   //   const lenis = new Lenis();
@@ -51,8 +52,7 @@ export default function page() {
       }
     );
 
-
-   // Create a function to handle checklist animations
+    // Create a function to handle checklist animations
     const animateChecklist = (ref) => {
       if (ref.current) {
         const checkItems = ref.current.children;
@@ -78,10 +78,8 @@ export default function page() {
         );
       }
     };
-     // Apply animations to all checklist sections
-    animateChecklist(checklistRef);     // Tech Stack
-
-
+    // Apply animations to all checklist sections
+    animateChecklist(checklistRef); // Tech Stack
 
     // Images staggered animation
     imageRefs.current.forEach((image, index) => {
@@ -109,8 +107,6 @@ export default function page() {
         );
       }
     });
-
-    
   });
 
   return (
@@ -137,7 +133,7 @@ export default function page() {
         {/* First Image */}
         <div id="hero-image" className="my-10">
           <CldImage
-          ref={(el) => (imageRefs.current[0] = el)}
+            ref={(el) => (imageRefs.current[0] = el)}
             className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
             src={
               "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760007777/trusty1_wlmlws.png"
@@ -247,18 +243,7 @@ export default function page() {
             />
           </div>
           <div className="mt-4">
-            <CldImage
-              className="w-full h-1/2 rounded-[8px] md:rounded-[20px]"
-              src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760118873/snippet1_wjxsfr.png"
-              }
-              width={1000}
-              height={600}
-              alt="snipet p1"
-              quality="auto"
-              format="auto"
-              draggable={false}
-            />
+            <FirstSnippet/>
           </div>
         </div>
         <div>
@@ -288,18 +273,7 @@ export default function page() {
             />
           </div>
           <div className="mt-4">
-            <CldImage
-              className="w-full h-1/2 rounded-[8px] md:rounded-[20px]"
-              src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760119539/snippet2_hxzdbz.png"
-              }
-              width={1000}
-              height={600}
-              alt="snipet p2"
-              quality="auto"
-              format="auto"
-              draggable={false}
-            />
+            <SecondSnippet/>
           </div>
         </div>
         <div className="my-10">
@@ -330,18 +304,7 @@ export default function page() {
             />
           </div>
           <div className="mt-4">
-            <CldImage
-              className="w-full h-1/2 rounded-[8px] md:rounded-[20px]"
-              src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1760119873/snippet3_lxc7do.png"
-              }
-              width={1000}
-              height={600}
-              alt="snipet p3"
-              quality="auto"
-              format="auto"
-              draggable={false}
-            />
+            <ThirdSnippet/>
           </div>
         </div>
         <div>
