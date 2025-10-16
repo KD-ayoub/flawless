@@ -12,6 +12,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { ScrollToPlugin } from "gsap/all";
 import Lenis from "lenis";
 import useOutsideClick from "../hooks/useOutsideClick";
+import GlassEffect from "./GlassEffect";
 
 gsap.registerPlugin(useGSAP);
 
@@ -107,7 +108,7 @@ export default function Header() {
       <div className="sticky  hidden min-[1000px]:block top-0 z-20 py-5 px-[60px] h-20">
         <div className="relative h-20">
           {/* Blurred background layer */}
-          <div
+          {/* <div
             className={`absolute inset-0  rounded-full ${
               pathName === "/arch"
                 ? "bg-[#171717]/60 border border-[#0C0C0C]"
@@ -115,7 +116,8 @@ export default function Header() {
                 ? "bg-white/6 border border-white/14 [box-shadow:0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(255,255,255,0.1),inset_0_0_2px_1px_rgba(255,255,255,0.1)]"
                 : "bg-[#FAFAFB]/40 border border-white"
             }  backdrop-blur-[10px] z-0`}
-          />
+          /> */}
+          <GlassEffect/>
           {/* Content layer */}
           <div
             className={`relative z-10 flex items-center p-5 h-full text-white`}
@@ -252,7 +254,7 @@ function MobileHeader({ pathName, observerColor }) {
     <>
       <div className="sticky block min-[1000px]:hidden top-0 z-20 w-full max-w-[1640px] py-5 px-3 min-[900px]:px-20 h-14">
         <div className="relative h-14">
-          {/* Blurred background layer */}
+          {/* Blurred background layer
           <div
             className={`absolute inset-0 rounded-full ${
               pathName === "/arch"
@@ -261,7 +263,8 @@ function MobileHeader({ pathName, observerColor }) {
                 ? "bg-white/6 border border-white/14 [box-shadow:0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(255,255,255,0.1),inset_0_0_2px_1px_rgba(255,255,255,0.1)]"
                 : "bg-[#FAFAFB]/40 border border-white"
             }  backdrop-blur-md z-0`}
-          />
+          /> */}
+          <GlassEffect/>
           {/* Content layer */}
           <div className="relative z-10 flex items-center px-3 h-full text-black">
             <div className="flex items-center justify-between w-full">
@@ -316,7 +319,7 @@ function MobileHeader({ pathName, observerColor }) {
                 className="sticky block min-[1000px]:hidden top-16 z-10 w-full max-w-[1640px] py-3 px-3 h-14"
               >
                 <div className="relative p-2">
-                  {/* Blurred background layer */}
+                  {/* Blurred background layer
                   <div
                     className={`absolute inset-0 rounded-2xl ${
                       pathName === "/arch"
@@ -325,7 +328,8 @@ function MobileHeader({ pathName, observerColor }) {
                         ? "bg-white/6 border border-white/14 [box-shadow:0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(255,255,255,0.1),inset_0_0_2px_1px_rgba(255,255,255,0.1)]"
                         : "bg-[#FAFAFB]/40 border border-white"
                     } backdrop-blur-md z-0`}
-                  />
+                  /> */}
+                  <GlassEffect/>
                   <div
                     ref={dropdownRef}
                     className="relative z-10 flex flex-col gap-3 justify-center items-center p-2 h-full text-black"

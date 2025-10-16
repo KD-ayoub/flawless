@@ -10,6 +10,7 @@ import LenisWrapper from "./components/LenisWrapper";
 import ScrollReset from "./components/ScrollReset";
 import { Suspense } from "react";
 import useHideBottomBlur from "./hooks/useHideBottomBlur";
+import GlassEffect from "./components/GlassEffect";
 
 export const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,6 +75,7 @@ export default function RootLayout({ children }) {
                 className={`relative z-10 mx-auto max-w-[1840px] text-black`}
               >
                 <Header />
+                {/* <GlassEffect/> */}
                 {children}
               </div>
             </LenisWrapper>
