@@ -5,13 +5,8 @@ import HorizontalCards from "./HorizontalCards";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLenisScrollOnHash } from "./LandingPage";
 
 gsap.registerPlugin(ScrollTrigger);
-
-
-
-
 
 
 export default function WhatWedoSection() {
@@ -19,49 +14,48 @@ export default function WhatWedoSection() {
   const subtitleRef = useRef(null);
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
-  useLenisScrollOnHash();
   useGSAP(() => {
-    const subtitle = subtitleRef.current;
-    const title = titleRef.current;
-    const description = descriptionRef.current;
+    // const subtitle = subtitleRef.current;
+    // const title = titleRef.current;
+    // const description = descriptionRef.current;
 
-    if (!subtitle || !title || !description) return;
+    // if (!subtitle || !title || !description) return;
 
-    // Set initial states
-    gsap.set([subtitle, title, description], {
-      opacity: 0,
-      y: 30
-    });
+    // // Set initial states
+    // gsap.set([subtitle, title, description], {
+    //   opacity: 0,
+    //   y: 30
+    // });
 
-    // Create animation timeline
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none none"
-      }
-    });
+    // // Create animation timeline
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: containerRef.current,
+    //     start: "top 80%",
+    //     end: "bottom 20%",
+    //     toggleActions: "play none none none"
+    //   }
+    // });
 
-    // Animate elements in sequence
-    tl.to(subtitle, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "power2.out"
-    })
-    .to(title, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "power2.out"
-    }, "-=0.4") // Start 0.4s before previous animation ends
-    .to(description, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "power2.out"
-    }, "-=0.4");
+    // // Animate elements in sequence
+    // tl.to(subtitle, {
+    //   opacity: 1,
+    //   y: 0,
+    //   duration: 0.6,
+    //   ease: "power2.out"
+    // })
+    // .to(title, {
+    //   opacity: 1,
+    //   y: 0,
+    //   duration: 0.6,
+    //   ease: "power2.out"
+    // }, "-=0.4") // Start 0.4s before previous animation ends
+    // .to(description, {
+    //   opacity: 1,
+    //   y: 0,
+    //   duration: 0.6,
+    //   ease: "power2.out"
+    // }, "-=0.4");
 
   }, { scope: containerRef });
 

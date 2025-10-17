@@ -264,7 +264,7 @@ function MobileHeader({ pathName, observerColor }) {
                 : "bg-[#FAFAFB]/40 border border-white"
             }  backdrop-blur-md z-0`}
           /> */}
-          <GlassEffect/>
+          <GlassEffect border="rounded-full"/>
           {/* Content layer */}
           <div className="relative z-10 flex items-center px-3 h-full text-black">
             <div className="flex items-center justify-between w-full">
@@ -318,7 +318,7 @@ function MobileHeader({ pathName, observerColor }) {
                 ref={menuRef}
                 className="sticky block min-[1000px]:hidden top-16 z-10 w-full max-w-[1640px] py-3 px-3 h-14"
               >
-                <div className="relative p-2">
+                <div className="relative p-2 ">
                   {/* Blurred background layer
                   <div
                     className={`absolute inset-0 rounded-2xl ${
@@ -329,7 +329,7 @@ function MobileHeader({ pathName, observerColor }) {
                         : "bg-[#FAFAFB]/40 border border-white"
                     } backdrop-blur-md z-0`}
                   /> */}
-                  <GlassEffect/>
+                  <GlassEffect border="rounded-2xl"/>
                   <div
                     ref={dropdownRef}
                     className="relative z-10 flex flex-col gap-3 justify-center items-center p-2 h-full text-black"

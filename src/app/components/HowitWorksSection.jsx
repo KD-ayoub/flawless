@@ -18,79 +18,79 @@ export default function HowitWorksSection() {
 
   useGSAP(
     () => {
-      const subtitle = subtitleRef.current;
-      const title = titleRef.current;
-      const description = descriptionRef.current;
-      const cards = cardsRef.current?.children;
+      // const subtitle = subtitleRef.current;
+      // const title = titleRef.current;
+      // const description = descriptionRef.current;
+      // const cards = cardsRef.current?.children;
 
-      if (!subtitle || !title || !description || !cards) return;
+      // if (!subtitle || !title || !description || !cards) return;
 
-      // Set initial states for text elements
-      gsap.set([subtitle, title, description], {
-        opacity: 0,
-        y: 30,
-      });
+      // // Set initial states for text elements
+      // gsap.set([subtitle, title, description], {
+      //   opacity: 0,
+      //   y: 30,
+      // });
 
-      // Set initial states for cards
-      gsap.set(cards, {
-        opacity: 0,
-        y: 60,
-        scale: 0.9,
-      });
+      // // Set initial states for cards
+      // gsap.set(cards, {
+      //   opacity: 0,
+      //   y: 60,
+      //   scale: 0.9,
+      // });
 
-      // Create animation timeline for text
-      const textTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none none",
-        },
-      });
+      // // Create animation timeline for text
+      // const textTl = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: containerRef.current,
+      //     start: "top 80%",
+      //     end: "bottom 20%",
+      //     toggleActions: "play none none none",
+      //   },
+      // });
 
-      // Animate text elements in sequence
-      textTl
-        .to(subtitle, {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power2.out",
-        })
-        .to(
-          title,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power2.out",
-          },
-          "-=0.4"
-        )
-        .to(
-          description,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power2.out",
-          },
-          "-=0.4"
-        );
+      // // Animate text elements in sequence
+      // textTl
+      //   .to(subtitle, {
+      //     opacity: 1,
+      //     y: 0,
+      //     duration: 0.6,
+      //     ease: "power2.out",
+      //   })
+      //   .to(
+      //     title,
+      //     {
+      //       opacity: 1,
+      //       y: 0,
+      //       duration: 0.6,
+      //       ease: "power2.out",
+      //     },
+      //     "-=0.4"
+      //   )
+      //   .to(
+      //     description,
+      //     {
+      //       opacity: 1,
+      //       y: 0,
+      //       duration: 0.6,
+      //       ease: "power2.out",
+      //     },
+      //     "-=0.4"
+      //   );
 
-      // Animate cards with stagger
-      gsap.to(cards, {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: cardsRef.current,
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
-      });
+      // // Animate cards with stagger
+      // gsap.to(cards, {
+      //   opacity: 1,
+      //   y: 0,
+      //   scale: 1,
+      //   duration: 1,
+      //   ease: "power3.out",
+      //   stagger: 0.2,
+      //   scrollTrigger: {
+      //     trigger: cardsRef.current,
+      //     start: "top 85%",
+      //     toggleActions: "play none none none",
+      //   },
+      // });
     },
     { scope: containerRef }
   );
@@ -140,7 +140,7 @@ export default function HowitWorksSection() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-10 max-w-7xl mx-auto px-4 sm:px-6"
         >
           {/* card 1 */}
-          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
+          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl group">
             {/* Top image with drop shadow */}
             <CldImage
               src={
@@ -193,7 +193,7 @@ export default function HowitWorksSection() {
           </div>
 
           {/* card 2 */}
-          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
+          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl group">
             <CldImage
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759338845/design22_q7ygff.png"
@@ -241,7 +241,7 @@ export default function HowitWorksSection() {
           </div>
 
           {/* card 3 */}
-          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] col-span-1 sm:col-span-2 lg:col-span-1 w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:-translate-y-2 group">
+          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] col-span-1 sm:col-span-2 lg:col-span-1 w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl group">
             <CldImage
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759339022/design33_kvoh1a.png"

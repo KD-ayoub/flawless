@@ -26,7 +26,7 @@ export default function SubscriptionCard() {
     "Unlimited Requests",
     "Unlimited revisions.",
     "Daily & Weekly updates",
-    "1 request is processed at a time",
+    "One request is processed at a time",
   ];
 
   // Dynamic first two items based on isChecked state

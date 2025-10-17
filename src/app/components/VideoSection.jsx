@@ -16,25 +16,25 @@ export default function VideoSection() {
 
   useGSAP(
     () => {
-      // Animate on scroll
-      gsap.fromTo(
-        containerRef.current,
-        {
-          opacity: 0,
-          y: 50,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
+      // // Animate on scroll
+      // gsap.fromTo(
+      //   containerRef.current,
+      //   {
+      //     opacity: 0,
+      //     y: 50,
+      //   },
+      //   {
+      //     opacity: 1,
+      //     y: 0,
+      //     duration: 0.8,
+      //     ease: "power2.out",
+      //     scrollTrigger: {
+      //       trigger: containerRef.current,
+      //       start: "top 80%",
+      //       toggleActions: "play none none none",
+      //     },
+      //   }
+      // );
 
       // Video autoplay/pause on scroll
       ScrollTrigger.create({

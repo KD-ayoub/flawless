@@ -57,82 +57,82 @@ export default function Trusted() {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      });
+      // const tl = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: containerRef.current,
+      //     start: "top 80%",
+      //     toggleActions: "play none none none",
+      //   },
+      // });
 
-      // Animate title first
-      tl.fromTo(
-        titleRef.current,
-        {
-          opacity: 0,
-          y: 20,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.4,
-          ease: "power2.out",
-        }
-      )
-        // Desktop: animate first row logos
-        .fromTo(
-          firstRowRef.current?.children,
-          {
-            opacity: 0,
-            y: 30,
-            scale: 0.9,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.3,
-            ease: "power2.out",
-            stagger: 0.08,
-          },
-          "-=0.2"
-        )
-        // Desktop: animate second row logos
-        .fromTo(
-          secondRowRef.current?.children,
-          {
-            opacity: 0,
-            y: 30,
-            scale: 0.9,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.3,
-            ease: "power2.out",
-            stagger: 0.08,
-          },
-          "-=0.3"
-        )
-        // Mobile: animate all mobile rows
-        .fromTo(
-          mobileRowsRef.current?.querySelectorAll(".mobile-logo"),
-          {
-            opacity: 0,
-            y: 30,
-            scale: 0.9,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.3,
-            ease: "power2.out",
-            stagger: 0.08,
-          },
-          "-=0.8"
-        );
+      // // Animate title first
+      // tl.fromTo(
+      //   titleRef.current,
+      //   {
+      //     opacity: 0,
+      //     y: 20,
+      //   },
+      //   {
+      //     opacity: 1,
+      //     y: 0,
+      //     duration: 0.4,
+      //     ease: "power2.out",
+      //   }
+      // )
+      //   // Desktop: animate first row logos
+      //   .fromTo(
+      //     firstRowRef.current?.children,
+      //     {
+      //       opacity: 0,
+      //       y: 30,
+      //       scale: 0.9,
+      //     },
+      //     {
+      //       opacity: 1,
+      //       y: 0,
+      //       scale: 1,
+      //       duration: 0.3,
+      //       ease: "power2.out",
+      //       stagger: 0.08,
+      //     },
+      //     "-=0.2"
+      //   )
+      //   // Desktop: animate second row logos
+      //   .fromTo(
+      //     secondRowRef.current?.children,
+      //     {
+      //       opacity: 0,
+      //       y: 30,
+      //       scale: 0.9,
+      //     },
+      //     {
+      //       opacity: 1,
+      //       y: 0,
+      //       scale: 1,
+      //       duration: 0.3,
+      //       ease: "power2.out",
+      //       stagger: 0.08,
+      //     },
+      //     "-=0.3"
+      //   )
+      //   // Mobile: animate all mobile rows
+      //   .fromTo(
+      //     mobileRowsRef.current?.querySelectorAll(".mobile-logo"),
+      //     {
+      //       opacity: 0,
+      //       y: 30,
+      //       scale: 0.9,
+      //     },
+      //     {
+      //       opacity: 1,
+      //       y: 0,
+      //       scale: 1,
+      //       duration: 0.3,
+      //       ease: "power2.out",
+      //       stagger: 0.08,
+      //     },
+      //     "-=0.8"
+      //   );
     },
     { scope: containerRef }
   );
@@ -142,7 +142,7 @@ export default function Trusted() {
       <div className="flex justify-center items-center">
         <p
           ref={titleRef}
-          className={`${geistSans.className} font-normal mb-6 text-sm md:text-base text-[#818181] opacity-0`}
+          className={`${geistSans.className} font-normal mb-6 text-sm md:text-base text-[#818181] `}
         >
           Trusted by industry leaders
         </p>
@@ -153,14 +153,14 @@ export default function Trusted() {
         {/* First row - 6 logos */}
         <div
           ref={firstRowRef}
-          className="flex gap-[8%] items-center w-full max-w-4xl"
+          className="flex gap-[8%] items-center w-full max-w-5xl"
         >
           {firstRowLogos.map((logo, index) => (
-            <div key={index} className="w-20 h-10 md:w-24 md:h-12 opacity-0">
+            <div key={index} className="scale-[1.2]">
               <CldImage
                 src={logo}
                 alt={`Logo ${index + 1}`}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain aspect-[4/2]"
                 width={1000}
                 height={1000}
                 quality="auto"
@@ -174,17 +174,17 @@ export default function Trusted() {
         {/* Second row - 6 logos */}
         <div
           ref={secondRowRef}
-          className="flex gap-[8%] items-center w-full max-w-[66rem] mx-auto"
+          className="flex gap-[8%] items-center w-full max-w-[68rem] mx-auto"
         >
           {secondRowLogos.map((logo, index) => (
             <div
               key={index + 6}
-              className="w-20 h-10 md:w-32 md:h-16 opacity-0"
+              className="  scale-[1.2]"
             >
               <CldImage
                 src={logo}
                 alt={`Logo ${index + 7}`}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain aspect-[4/2]"
                 width={1000}
                 height={1000}
                 quality="auto"
@@ -204,11 +204,11 @@ export default function Trusted() {
         {/* Mobile First row - 4 logos */}
         <div className="flex items-center justify-between w-full">
           {mobileFirstRow.map((logo, index) => (
-            <div key={index} className="mobile-logo w-16 h-8 opacity-0">
+            <div key={index} className="mobile-logo w-[15%] ">
               <CldImage
                 src={logo}
                 alt={`Logo ${index + 1}`}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain aspect-[4/2]"
                 width={1000}
                 height={1000}
                 quality="auto"
@@ -222,11 +222,11 @@ export default function Trusted() {
         {/* Mobile Second row - 4 logos */}
         <div className="flex items-center justify-between w-full">
           {mobileSecondRow.map((logo, index) => (
-            <div key={index + 4} className="mobile-logo w-16 h-8 opacity-0">
+            <div key={index + 4} className="mobile-logo w-[15%] ">
               <CldImage
                 src={logo}
                 alt={`Logo ${index + 5}`}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain aspect-[4/2]"
                 width={1000}
                 height={1000}
                 quality="auto"
@@ -240,11 +240,11 @@ export default function Trusted() {
         {/* Mobile Third row - 4 logos */}
         <div className="flex items-center justify-between w-full">
           {mobileThirdRow.map((logo, index) => (
-            <div key={index + 8} className="mobile-logo w-16 h-8 opacity-0">
+            <div key={index + 8} className="mobile-logo w-[15%] ">
               <CldImage
                 src={logo}
                 alt={`Logo ${index + 9}`}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain aspect-[4/2]"
                 width={1000}
                 height={1000}
                 quality="auto"
@@ -255,13 +255,13 @@ export default function Trusted() {
           ))}
         </div>
         <div className="flex items-center justify-center w-full">
-          <div className="mobile-logo w-16 h-8 opacity-0">
+          <div className="mobile-logo w-[15%] ">
             <CldImage
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253212/logo13_tz8me6.png"
               }
               alt={`Logo 13`}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain aspect-[4/2]"
               width={1000}
               height={1000}
               quality="auto"

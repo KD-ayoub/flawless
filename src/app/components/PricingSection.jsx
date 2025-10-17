@@ -12,28 +12,28 @@ export default function PricingSection() {
   const containerRef = useRef(null);
 
   useGSAP(() => {
-    const elements = containerRef.current.children;
+    // const elements = containerRef.current.children;
     
-    // Set initial state
-    gsap.set(elements, {
-      opacity: 0,
-      y: 50,
-    });
+    // // Set initial state
+    // gsap.set(elements, {
+    //   opacity: 0,
+    //   y: 50,
+    // });
 
-    // Create staggered animation
-    gsap.to(elements, {
-      opacity: 1,
-      y: 0,
-      duration: 0.3,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none none",
-      },
-    });
+    // // Create staggered animation
+    // gsap.to(elements, {
+    //   opacity: 1,
+    //   y: 0,
+    //   duration: 0.3,
+    //   stagger: 0.2,
+    //   ease: "power2.out",
+    //   scrollTrigger: {
+    //     trigger: containerRef.current,
+    //     start: "top 80%",
+    //     end: "bottom 20%",
+    //     toggleActions: "play none none none",
+    //   },
+    // });
   }, []);
 
   return (

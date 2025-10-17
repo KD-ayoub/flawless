@@ -4,7 +4,7 @@ import React from "react";
 import Header from "./Header";
 import { usePathname } from "next/navigation";
 
-export default function GlassEffect() {
+export default function GlassEffect({ border = "rounded-full"}) {
   const pathName = usePathname();
   return (
     <>
@@ -12,7 +12,7 @@ export default function GlassEffect() {
         <filter id="glass-distortion">
           <feTurbulence
             type="turbulence"
-            baseFrequency="0.008"
+            baseFrequency="0.001"
             numOctaves="2"
             result="noise"
           />
@@ -34,11 +34,11 @@ export default function GlassEffect() {
           <div className="glass-specular"></div>
         </div>
       </div>
-      <div className="glass-card block min-[1000px]:hidden">
-        <div className="relative h-full rounded-2xl ">
+      <div className="glass-card block min-[1000px]:hidden ">
+        <div className={`relative h-full ${border} `}>
           <div className="glass-filter "></div>
           <div
-            className={`glass-overlay absolute inset-0 ${
+            className={`glass-overlay absolute inset-0  ${
               pathName === "/arch"
                 ? "bg-[#171717]/60 border border-[#0C0C0C]"
                 : pathName === "/trustybite"
