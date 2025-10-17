@@ -27,16 +27,19 @@ export default function MyApp() {
     })();
   }, []);
   return (
-    <Cal
-      namespace="30min"
-      calLink="flawless/30min"
-      style={{
-        width: "100%",
-        height: "100%",
-        overflow: "scroll",
-        marginTop: "80px",
-      }}
-      config={{ layout: "month_view", theme: "light" }}
-    />
+    <div className=" flex items-center justify-center px-4 pt-[70px]">
+      <div className="w-full max-w-4xl mx-auto">
+        <Cal
+          namespace="30min"
+          calLink="flawless/30min"
+          style={{
+            width: "100%",
+            height: "100%", 
+            // overflow: "scroll",
+          }}
+          config={{ layout: "month_view", theme: "light" }}
+        />
+      </div>
+    </div>
   );
 }
