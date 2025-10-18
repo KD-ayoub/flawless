@@ -12,6 +12,7 @@ import TestimonialSection from "./TestimonialSection";
 import PricingSection from "./PricingSection";
 import Lenis from "lenis";
 import CaseStudies from "./CaseStudies";
+import FAQ from "./FAQ";
 
 
 export default function LandingPage() {
@@ -27,6 +28,7 @@ export default function LandingPage() {
       <TestimonialSection />
       <PricingSection />
       <CaseStudies />
+      <FAQ/>
     </div>
   );
 }

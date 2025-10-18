@@ -31,7 +31,7 @@ html.lenis body {
 .testing-bg {
   background-image: url("https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759423971/bg-carousel_oyzp6u.png");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   border-radius: 18px;
 }
