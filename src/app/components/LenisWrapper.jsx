@@ -1,5 +1,6 @@
 "use client";
 
+import { ScrollTrigger } from "gsap/all";
 import Lenis from "lenis";
 import React, { useEffect } from "react";
 
@@ -11,6 +12,7 @@ export default function LenisWrapper({ children }) {
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+    lenis.on("scroll", ScrollTrigger.update);
     window.lenis = lenis;
     // requestAnimationFrame(() => requestAnimationFrame(() => scrollHash(80)));
     return () => {
