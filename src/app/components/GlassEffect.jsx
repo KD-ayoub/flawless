@@ -12,11 +12,11 @@ export default function GlassEffect({ border = "rounded-full"}) {
         <filter id="glass-distortion">
           <feTurbulence
             type="turbulence"
-            baseFrequency="0.001"
+            baseFrequency="0.0001"
             numOctaves="2"
             result="noise"
           />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+          <feDisplacementMap in="SourceGraphic" in2="" scale="-77" />
         </filter>
       </svg>
       <div className="glass-card h-20 hidden min-[1000px]:block">

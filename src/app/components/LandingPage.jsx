@@ -13,6 +13,8 @@ import PricingSection from "./PricingSection";
 import Lenis from "lenis";
 import CaseStudies from "./CaseStudies";
 import FAQ from "./FAQ";
+import Footer from "./Footer";
+import SomeGallery from "./SomeGallery";
 
 
 export default function LandingPage() {
@@ -29,6 +31,8 @@ export default function LandingPage() {
       <PricingSection />
       <CaseStudies />
       <FAQ/>
+      <SomeGallery/>
+      <Footer/>
     </div>
   );
 }

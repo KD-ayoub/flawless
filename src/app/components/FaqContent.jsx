@@ -153,7 +153,7 @@ export function FaqList({ items }) {
         >
           <button
             onClick={() => toggle(i)}
-            className={`${geistSans.className} cursor-pointer w-full p-4 text-left text-black text-base md:text-[18px] tracking-[-0.04em] leading-none font-normal flex items-center justify-between`}
+            className={`${geistSans.className} cursor-pointer w-full p-4 text-left text-black text-base md:text-[20px] tracking-[-0.04em] leading-none font-normal flex items-center justify-between`}
           >
             <span>{value.title}</span>
 

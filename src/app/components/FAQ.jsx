@@ -6,7 +6,7 @@ export default function FAQ() {
   return (
     <>
       <div className="w-full max-w-7xl mx-auto px-4 my-20">
-        <div className="testing-bg relative overflow-hidden">
+        <div className=" rounded-[20px] relative overflow-hidden">
           <div className=" absolute w-[150px] h-[400px] left-0 -bottom-[180px]">
             <CldImage
               className=" w-full h-full object-fill"
