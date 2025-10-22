@@ -21,7 +21,7 @@ export default function useHideBottomBlur() {
         root: null,
         threshold: 0,
         // start hiding a bit before the sentinel fully enters
-        rootMargin: "0px 0px -40px 0px",
+        rootMargin: "0px 0px 0px 0px",
       }
     );
 
