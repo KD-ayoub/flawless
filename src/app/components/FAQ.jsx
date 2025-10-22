@@ -7,13 +7,13 @@ export default function FAQ() {
     <>
       <div className="w-full max-w-7xl mx-auto px-4 my-20">
         <div className=" rounded-[20px] relative overflow-hidden">
-          <div className=" absolute w-[150px] h-[400px] left-0 -bottom-[180px]">
+          <div className=" absolute w-[400px] h-[450px] -left-32 -bottom-[180px]">
             <CldImage
               className=" w-full h-full object-fill"
               width={1200}
-              height={220}
+              height={1220}
               src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759249229/Rectangle_nimvst.png"
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761129229/Rectangle_gfavsa.png"
               }
               alt="shape2"
               quality="auto"
