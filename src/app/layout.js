@@ -11,6 +11,7 @@ import ScrollReset from "./components/ScrollReset";
 import { Suspense } from "react";
 import useHideBottomBlur from "./hooks/useHideBottomBlur";
 import GlassEffect from "./components/GlassEffect";
+import Footer from "./components/Footer";
 
 export const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -81,6 +82,7 @@ export default function RootLayout({ children }) {
             </LenisWrapper>
           </Suspense>
         </div>
+        <Footer/>
         {/* <div id="bottom-fade-sentinel" className="h-5 hidden lg:block" /> */}
         {/* <div id="bottom-fade" className="fixed h-32 hidden lg:block transition-opacity duration-300 pointer-events-none w-full bg-transparent bottom-0 z-50">
           <div className="relative h-full w-full">

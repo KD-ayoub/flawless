@@ -32,7 +32,7 @@ export default function LandingPage() {
       <CaseStudies />
       <FAQ/>
       {/* <SomeGallery/> */}
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

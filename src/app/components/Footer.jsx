@@ -25,7 +25,7 @@ export default function Footer() {
             scrollEase={0.02}
           />
         </div> */}
-      <footer ref={footerRef} id="footerRef" className="relative z-10">
+      <footer  id="footerRef" className="relative z-10">
         {/* <div> */}
         <div className="mx-auto w-full max-w-7xl px-4 py-1.5 md:py-8">
           <div className="hidden md:flex flex-row  justify-between items-center gap-4">

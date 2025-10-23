@@ -43,6 +43,7 @@ export function useElementScrollProgress(
     // Fallback native listeners
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll, { passive: true });
+    document.addEventListener("visibilitychange", onScroll); // resync when navigating back
 
     // First compute
     compute();
@@ -54,6 +55,7 @@ export function useElementScrollProgress(
     return () => {
       cancelAnimationFrame(raf);
       ro.disconnect();
+      document.removeEventListener("visibilitychange", onScroll);
       if (lenis?.off) lenis.off("scroll", onScroll);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
