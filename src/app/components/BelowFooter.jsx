@@ -10,18 +10,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function BelowFooter({ scaleValue }) {
     const MAX = 10;
-  const scaleY = scaleValue * MAX;
+  const scaleY = scaleValue;
   console.log("scaleValue", scaleY);
   return (
     <>
-      <div className="h-[25vh]">
+      {/* <div className="h-[25vh]"> */}
           
 
       <div
         aria-hidden="true"
-        className="origin-bottom flex items-end  z-2 pointer-events-none h-175 md:h-300 lg:h-[6vh] bottom-0 left-0 right-0"
+        className="h-full origin-bottom"
         style={{
-          transform: `scaleY(${scaleY})`,
+          transform: `scaleY(${scaleY * 2})`,
         }}
       >
         <svg
@@ -458,7 +458,7 @@ export default function BelowFooter({ scaleValue }) {
           </defs>
         </svg>
       </div>
-      </div>
+      {/* </div> */}
     </>
   );
 }

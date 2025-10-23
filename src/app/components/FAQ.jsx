@@ -5,7 +5,7 @@ import FaqContent from "./FaqContent";
 export default function FAQ() {
   return (
     <>
-      <div className="w-full max-w-7xl mx-auto px-4 my-20">
+      <div className="w-full max-w-7xl mx-auto px-4 mt-20 mb-5">
         <div className=" rounded-[20px] relative overflow-hidden">
           <div className=" absolute w-[400px] h-[450px] -left-32 -bottom-[180px]">
             <CldImage
