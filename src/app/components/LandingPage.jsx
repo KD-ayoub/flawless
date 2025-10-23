@@ -31,8 +31,8 @@ export default function LandingPage() {
       <PricingSection />
       <CaseStudies />
       <FAQ/>
-      {/* <SomeGallery/> */}
-      <Footer/>
+      <SomeGallery/>
+      {/* <Footer/> */}
     </div>
   );
 }

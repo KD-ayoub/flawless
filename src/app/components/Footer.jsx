@@ -1,27 +1,38 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { geistSans } from "../layout";
 import Link from "next/link";
 import CircularGallery from "./Circular";
+import BelowFooter from "./BelowFooter";
+import useDetectScroll from "@smakss/react-scroll-direction";
+import { useElementScrollProgress } from "../hooks/useElementScrollProgress";
 
 export default function Footer() {
+  const footerRef = useRef(null);
+  // const res = useDetectScroll();
+  // const maxScale = 10; // Maximum scale value
+  // const scaleValue = Math.min(res.scrollPosition.top / 1200, 10000);
+  const progress = useElementScrollProgress(footerRef);
   return (
     <>
-      <div className="relative h-[400px]">
-        <div style={{ height: "100%", position: "relative" }}>
+      {/* <div className="relative h-[400px]"> */}
+      {/* <div style={{ height: "100%", position: "relative" }}>
           <CircularGallery
             bend={0.6}
             textColor="#ffffff"
             borderRadius={0.05}
             scrollEase={0.02}
           />
-        </div>
-        <footer  className=" md:px-14 w-full absolute -bottom-2 left-1/2 -translate-x-1/2">
+        </div> */}
+      <footer ref={footerRef} id="footerRef" className="">
+        <div>
           <div className="mx-auto max-w-7xl px-4 py-1.5 md:py-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2" style={{
+                transform: `translateY(${progress * 4}vh)`,
+              }}>
                   <div className="w-6 h-6 bg-gradient-to-br from-[#9876EC] to-[#6B46C1] rounded-md flex items-center justify-center">
                     <span
                       className={`${geistSans.className} text-white font-bold text-xs`}
@@ -58,8 +69,11 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </footer>
-      </div>
+
+          {/* <BelowFooter scaleValue={progress} /> */}
+        </div>
+      </footer>
+      {/* </div> */}
     </>
   );
 }

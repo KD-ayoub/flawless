@@ -81,8 +81,8 @@ export default function RootLayout({ children }) {
             </LenisWrapper>
           </Suspense>
         </div>
-        <div id="bottom-fade-sentinel" className="h-5 hidden lg:block" />
-        <div id="bottom-fade" className="fixed h-32 hidden lg:block transition-opacity duration-300 pointer-events-none w-full bg-transparent bottom-0 z-50">
+        {/* <div id="bottom-fade-sentinel" className="h-5 hidden lg:block" /> */}
+        {/* <div id="bottom-fade" className="fixed h-32 hidden lg:block transition-opacity duration-300 pointer-events-none w-full bg-transparent bottom-0 z-50">
           <div className="relative h-full w-full">
             <div className="absolute inset-0 z-[1] backdrop-blur-[0.5px] pointer-events-none [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_60%,rgba(0,0,0,1)_80%,rgba(0,0,0,1)_100%)] [-webkit-mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_60%,rgba(0,0,0,1)_80%,rgba(0,0,0,1)_100%)]"></div>
             <div className="absolute inset-0 z-[2] backdrop-blur-[0.156px] pointer-events-none [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_60%,rgba(0,0,0,1)_80%,rgba(0,0,0,1)_100%)] [-webkit-mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_60%,rgba(0,0,0,1)_80%,rgba(0,0,0,1)_100%)]"></div>
@@ -93,7 +93,7 @@ export default function RootLayout({ children }) {
             <div className="absolute inset-0 z-[7] backdrop-blur-[5px] pointer-events-none [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_60%,rgba(0,0,0,1)_80%,rgba(0,0,0,1)_100%)] [-webkit-mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_60%,rgba(0,0,0,1)_80%,rgba(0,0,0,1)_100%)]"></div>
             <div className="absolute inset-0 z-[8] backdrop-blur-[10px] pointer-events-none [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_60%,rgba(0,0,0,1)_80%,rgba(0,0,0,1)_100%)] [-webkit-mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_60%,rgba(0,0,0,1)_80%,rgba(0,0,0,1)_100%)]"></div>
           </div>
-        </div>
+        </div> */}
       </body>
     </html>
   );
