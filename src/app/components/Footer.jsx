@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { geistSans } from "../layout";
 import Link from "next/link";
 import CircularGallery from "./Circular";
@@ -16,6 +16,31 @@ export default function Footer() {
   // const scaleValue = Math.min(res.scrollPosition.top / 1200, 10000);
   const progress = useElementScrollProgress(footerRef);
   const pathName = usePathname();
+
+  // useEffect(() => {
+  //   const belowRainbow = document.getElementById("below-rainbow");
+  //   if (belowRainbow) {
+  //     const observer = new IntersectionObserver((entries) => {
+  //       const entry = entries[0];
+  //       if (entry.isIntersecting) {
+  //         const scrollTofooterRef = document
+  //           .getElementById("footerRef")
+  //           .getBoundingClientRect();
+  //         console.log("intersection", scrollTofooterRef.left, scrollTofooterRef.top) 
+  //         window.scrollTo({
+  //           top: scrollTofooterRef.top - 300,
+  //           behavior: "smooth"
+  //         });
+  //         observer.unobserve(belowRainbow);
+  //       }
+  //     });
+  //     observer.observe(belowRainbow);
+  //     return () => {
+  //       observer.disconnect();
+  //     };
+  //   }
+  // }, []);
+
   return (
     <>
       {/* <div className="relative h-[400px]"> */}
@@ -156,6 +181,10 @@ export default function Footer() {
         <div className="sticky bottom-0 h-[65vh] -z-10 pointer-events-none">
           <BelowFooter scaleValue={progress} />
         </div>
+        {/* <div
+          id="below-rainbow"
+          className="absolute bottom-0 w-full h-3 bg-red-600"
+        /> */}
       </section>
       {/* </div> */}
     </>
