@@ -115,7 +115,7 @@ export default function WorkGallery() {
                   return (
                     <div
                       key={`row1-${index * Math.random()}`}
-                      className="gallery-item relative flex-shrink-0 h-[180px] w-[250px] md:h-[220px] md:w-[300px] rounded-[16px] md:rounded-[20px] overflow-hidden"
+                      className="gallery-item relative flex-shrink-0 h-[200px] w-[280px] md:h-[240px] md:w-[360px] rounded-[16px] md:rounded-[20px] overflow-hidden"
                       style={{
                         padding: "2px",
                       }}
@@ -140,7 +140,7 @@ export default function WorkGallery() {
                 {images2.map((image, index) => (
                   <div
                     key={`row1-${index * Math.random()}`}
-                    className="gallery-item relative flex-shrink-0 h-[180px] w-[250px] md:h-[220px] md:w-[300px] rounded-[16px] md:rounded-[20px] overflow-hidden"
+                    className="gallery-item relative flex-shrink-0 h-[200px] w-[280px] md:h-[240px] md:w-[360px] rounded-[16px] md:rounded-[20px] overflow-hidden"
                     style={{
                       padding: "2px",
                     }}
@@ -171,7 +171,7 @@ export default function WorkGallery() {
                   return (
                     <div
                       key={`row1-${index * Math.random()}`}
-                      className="gallery-item relative flex-shrink-0 h-[180px] w-[250px] md:h-[220px] md:w-[300px] rounded-[16px] md:rounded-[20px] overflow-hidden"
+                      className="gallery-item relative flex-shrink-0 h-[200px] w-[280px] md:h-[240px] md:w-[360px] rounded-[16px] md:rounded-[20px] overflow-hidden"
                       style={{
                         padding: "2px",
                       }}
@@ -196,7 +196,7 @@ export default function WorkGallery() {
                 {images4.map((image, index) => (
                   <div
                     key={`row1-${index * Math.random()}`}
-                    className="gallery-item relative flex-shrink-0 h-[180px] w-[250px] md:h-[220px] md:w-[300px] rounded-[16px] md:rounded-[20px] overflow-hidden"
+                    className="gallery-item relative flex-shrink-0 h-[200px] w-[280px] md:h-[240px] md:w-[360px] rounded-[16px] md:rounded-[20px] overflow-hidden"
                     style={{
                       padding: "2px",
                     }}

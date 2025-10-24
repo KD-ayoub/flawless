@@ -7,6 +7,7 @@ import CircularGallery from "./Circular";
 import BelowFooter from "./BelowFooter";
 import useDetectScroll from "@smakss/react-scroll-direction";
 import { useElementScrollProgress } from "../hooks/useElementScrollProgress";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const footerRef = useRef(null);
@@ -14,6 +15,7 @@ export default function Footer() {
   // const maxScale = 10; // Maximum scale value
   // const scaleValue = Math.min(res.scrollPosition.top / 1200, 10000);
   const progress = useElementScrollProgress(footerRef);
+  const pathName = usePathname();
   return (
     <>
       {/* <div className="relative h-[400px]"> */}
@@ -25,7 +27,7 @@ export default function Footer() {
             scrollEase={0.02}
           />
         </div> */}
-      <footer  id="footerRef" className="relative z-10">
+      <footer id="footerRef" className="relative z-10">
         {/* <div> */}
         <div className="mx-auto w-full max-w-7xl px-4 py-1.5 md:py-8">
           <div className="hidden md:flex flex-row  justify-between items-center gap-4">
@@ -45,13 +47,17 @@ export default function Footer() {
                   </span>
                 </div>
                 <span
-                  className={`${geistSans.className} font-semibold text-black`}
+                  className={`${geistSans.className} font-semibold ${
+                    pathName === "/arch" ? "text-white" : "text-black"
+                  }`}
                 >
                   Flawless
                 </span>
               </div>
               <span
-                className={`${geistSans.className} text-[#0E0E0F]/50 text-sm`}
+                className={`${geistSans.className} ${
+                  pathName === "/arch" ? "text-white" : "text-[#0E0E0F]/50"
+                } text-sm`}
                 style={{
                   transform: `translateY(${progress * 45}vh)`,
                   willChange: "transform",
@@ -64,7 +70,9 @@ export default function Footer() {
             <div className="flex items-center gap-6">
               <Link
                 href="/privacy-policy"
-                className={`${geistSans.className} text-[#0E0E0F]/50 hover:text-[#9876EC] transition-colors text-sm`}
+                className={`${geistSans.className} ${
+                  pathName === "/arch" ? "text-white" : "text-[#0E0E0F]/50"
+                } hover:text-[#9876EC] transition-colors text-sm`}
                 style={{
                   transform: `translateY(${progress * 45}vh)`,
                   willChange: "transform",
@@ -74,7 +82,9 @@ export default function Footer() {
               </Link>
               <Link
                 href="/terms-conditions"
-                className={`${geistSans.className} text-[#0E0E0F]/50 hover:text-[#9876EC] transition-colors text-sm`}
+                className={`${geistSans.className} ${
+                  pathName === "/arch" ? "text-white" : "text-[#0E0E0F]/50"
+                } hover:text-[#9876EC] transition-colors text-sm`}
                 style={{
                   transform: `translateY(${progress * 68}vh)`,
                   willChange: "transform",
@@ -84,10 +94,13 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <div className="flex md:hidden flex-col justify-between items-center gap-4" style={{
-                  transform: `translateY(${progress * 38}vh)`,
-                  willChange: "transform",
-                }}>
+          <div
+            className="flex md:hidden flex-col justify-between items-center gap-4"
+            style={{
+              transform: `translateY(${progress * 38}vh)`,
+              willChange: "transform",
+            }}
+          >
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 bg-gradient-to-br from-[#9876EC] to-[#6B46C1] rounded-md flex items-center justify-center">
@@ -98,13 +111,17 @@ export default function Footer() {
                   </span>
                 </div>
                 <span
-                  className={`${geistSans.className} font-semibold text-black`}
+                  className={`${geistSans.className} font-semibold ${
+                    pathName === "/arch" ? "text-white" : "text-black"
+                  }`}
                 >
                   Flawless
                 </span>
               </div>
               <span
-                className={`${geistSans.className} text-[#0E0E0F]/50 text-sm`}
+                className={`${geistSans.className} ${
+                  pathName === "/arch" ? "text-white" : "text-[#0E0E0F]/50"
+                } text-sm`}
               >
                 © 2025 All rights reserved.
               </span>
@@ -113,13 +130,17 @@ export default function Footer() {
             <div className="flex items-center gap-6">
               <Link
                 href="/privacy-policy"
-                className={`${geistSans.className} text-[#0E0E0F]/50 hover:text-[#9876EC] transition-colors text-sm`}
+                className={`${geistSans.className} ${
+                  pathName === "/arch" ? "text-white" : "text-[#0E0E0F]/50"
+                } hover:text-[#9876EC] transition-colors text-sm`}
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms-conditions"
-                className={`${geistSans.className} text-[#0E0E0F]/50 hover:text-[#9876EC] transition-colors text-sm`}
+                className={`${geistSans.className} ${
+                  pathName === "/arch" ? "text-white" : "text-[#0E0E0F]/50"
+                } hover:text-[#9876EC] transition-colors text-sm`}
               >
                 Terms & Conditions
               </Link>

@@ -16,6 +16,10 @@ export default function FaqContent() {
   const rightRef = useRef(null);
   const questions = [
     {
+      title: "Why Flawless ?",
+      des: "We have 5+ years of experience in the Web3 space, worked with projects in Solana, Ethereum, Bitcoin, Hyperliquid, Cardano, Near, Polygon and more.",
+    },
+    {
       title: "What do you actually do?",
       des: "Brand identity, product, UI/UX, and marketing design, plus web development. Common outputs include brand systems, landing pages, dashboards, pitch decks, and product UI.",
     },
