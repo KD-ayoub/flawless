@@ -182,6 +182,7 @@ export default function Footer() {
         <div className="mx-3 relative" style={{
           height: `${progress * 150}%`
         }}>
+          <GlassEffect height="h-full" border="rounded-2xl"/>
         </div>
         <div className="sticky bottom-0 h-[65vh] -z-10 pointer-events-none">
           <BelowFooter scaleValue={progress} />
