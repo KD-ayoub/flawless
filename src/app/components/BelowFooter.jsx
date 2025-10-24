@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function BelowFooter({ scaleValue }) {
     const MAX = 10;
   const scaleY = scaleValue;
-  // console.log("scaleValue", scaleY);
+  console.log("scaleValue", scaleY);
   return (
     <>
       {/* <div className="h-[25vh]"> */}

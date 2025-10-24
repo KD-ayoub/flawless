@@ -4,7 +4,7 @@ import React from "react";
 import Header from "./Header";
 import { usePathname } from "next/navigation";
 
-export default function GlassEffect({ border = "rounded-full"}) {
+export default function GlassEffect({ border = "rounded-full", height = "h-20"}) {
   const pathName = usePathname();
   return (
     <>
@@ -19,8 +19,8 @@ export default function GlassEffect({ border = "rounded-full"}) {
           <feDisplacementMap in="SourceGraphic" in2="" scale="-77" />
         </filter>
       </svg>
-      <div className="glass-card h-20 hidden min-[1000px]:block">
-        <div className="relative h-20 rounded-full ">
+      <div className={`glass-card ${height} hidden min-[1000px]:block`}>
+        <div className={`relative ${height} ${border} `}>
           <div className="glass-filter "></div>
           <div
             className={`glass-overlay ${

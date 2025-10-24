@@ -8,6 +8,7 @@ import BelowFooter from "./BelowFooter";
 import useDetectScroll from "@smakss/react-scroll-direction";
 import { useElementScrollProgress } from "../hooks/useElementScrollProgress";
 import { usePathname } from "next/navigation";
+import GlassEffect from "./GlassEffect";
 
 export default function Footer() {
   const footerRef = useRef(null);
@@ -56,9 +57,9 @@ export default function Footer() {
         {/* <div> */}
         <div className="mx-auto w-full max-w-7xl px-4 py-1.5 md:py-8">
           <div className="hidden md:flex flex-row  justify-between items-center gap-4">
-            <div className="flex items-center gap-4">
+            <div className={`flex items-center gap-4 `}>
               <div
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 "
                 style={{
                   transform: `translateY(${progress * 68}vh)`,
                   willChange: "transform",
@@ -178,6 +179,10 @@ export default function Footer() {
       </footer>
       {/* spacer to create scrollable distance for the scale animation */}
       <section ref={footerRef} className="relative h-[60vh]">
+        <div className="mx-3 relative" style={{
+          height: `${progress * 150}%`
+        }}>
+        </div>
         <div className="sticky bottom-0 h-[65vh] -z-10 pointer-events-none">
           <BelowFooter scaleValue={progress} />
         </div>
