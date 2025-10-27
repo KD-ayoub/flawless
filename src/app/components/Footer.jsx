@@ -192,7 +192,7 @@ export default function Footer() {
         {/* </div> */}
       </footer>
       {/* spacer to create scrollable distance for the scale animation */}
-      <section ref={footerRef} className="relative  overflow-hidden mx-auto max-w-[1840px]">
+      <section ref={footerRef} className="relative overflow-hidden mx-auto max-w-[1840px]">
         {/* <div
           className="mx-3 relative"
           style={{

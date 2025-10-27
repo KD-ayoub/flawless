@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { CldImage } from "next-cloudinary";
 import LenisWrapper from "./components/LenisWrapper";
 import ScrollReset from "./components/ScrollReset";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import useHideBottomBlur from "./hooks/useHideBottomBlur";
 import GlassEffect from "./components/GlassEffect";
 import Footer from "./components/Footer";
@@ -34,6 +34,21 @@ const metadata = {
 export default function RootLayout({ children }) {
   const pathName = usePathname();
   useHideBottomBlur();
+  const [footerVisibility, setFooterVisibility] = useState(false);
+
+  useEffect(() => {
+    const heroRef = document.getElementById("heroRef");
+    if (!heroRef) return;
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        setFooterVisibility(true);
+      }
+    });
+    observer.observe(heroRef);
+    return () => observer.unobserve(heroRef);
+  }, []);
+
   return (
     <html lang="en" className="">
       <head>
@@ -65,7 +80,7 @@ export default function RootLayout({ children }) {
             />
           </div>
         )}
-        <div className="">
+        <div id="heroRef" className="">
           <BackgroundLayoutContent />
           {/* Foreground content */}
 
@@ -82,7 +97,9 @@ export default function RootLayout({ children }) {
             </LenisWrapper>
           </Suspense>
         </div>
-        <Footer/>
+        <div className={`${footerVisibility ? "opacity-100" : "opacity-0"}`}>
+          <Footer />
+        </div>
         {/* <div id="bottom-fade-sentinel" className="h-5 hidden lg:block" /> */}
         {/* <div id="bottom-fade" className="fixed h-32 hidden lg:block transition-opacity duration-300 pointer-events-none w-full bg-transparent bottom-0 z-50">
           <div className="relative h-full w-full">
