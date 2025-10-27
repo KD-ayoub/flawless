@@ -192,7 +192,7 @@ export default function Footer() {
         {/* </div> */}
       </footer>
       {/* spacer to create scrollable distance for the scale animation */}
-      <section ref={footerRef} className="relative  overflow-hidden">
+      <section ref={footerRef} className="relative  overflow-hidden mx-auto max-w-[1840px]">
         {/* <div
           className="mx-3 relative"
           style={{
@@ -206,12 +206,14 @@ export default function Footer() {
           <div
           style={{
             transform: `perspective(100px) rotateX(${
-              (180 - progress * 800) / 4
+              (180 - progress * 825) / 4
             }deg)`,
             lineHeight: "0.7",
     
           }}
-          className={`text-[22vw] ${geistSans.className}  text-[#0E0E0F]/10 text-center w-full h-[70%] md:h-full  font-black  perspective-origin-bottom flex justify-end md:justify-center flex-col`}
+          className={`text-[21vw] min-[1840px]:text-[400px] ${geistSans.className}  ${
+                  pathName === "/arch" ? "text-white/20" : "text-[#0E0E0F]/20"
+                } text-center w-full h-[70%] md:h-full  font-black  perspective-origin-bottom flex justify-end md:justify-center flex-col`}
         >
           Flawless
         </div>
