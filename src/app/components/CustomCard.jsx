@@ -31,7 +31,7 @@ export default function CustomCard() {
             <div className="w-2/3">
               <div className="flex items-center justify-between ">
                 <h3
-                  className={`text-black ${geistSans.className} text-2xl font-normal`}
+                  className={`text-black ${geistSans.className} tracking-[-0.04em] text-2xl font-normal`}
                 >
                   Custom
                   <span
@@ -233,7 +233,7 @@ function SmallVersion({ values }) {
                 })}
               </div>
             </div>
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <div className="bg-[#F4F6FE] p-2 rounded-xl border border-[#E9E9FF]">
                 <p
                   className={`${geistSans.className} font-normal text-[10px] text-[#737394]`}
@@ -242,7 +242,7 @@ function SmallVersion({ values }) {
                   scope.
                 </p>
               </div>
-            </div>
+            </div> */}
             <Link href={"/30-min"}>
               <div className="mt-3">
                 {/* Gradient Border Container */}

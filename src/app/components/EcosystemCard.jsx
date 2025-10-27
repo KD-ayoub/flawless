@@ -18,7 +18,7 @@ export default function EcosystemCard() {
     <>
       <div className="relative flex items-center justify-center mt-6">
         <div
-          className={`bg-[#F9F9FB] w-[350px] min-[400px]:w-[380px] h-[500px] md:h-[550px] rounded-3xl shadow-lg relative overflow-visible`}
+          className={`bg-[#F9F9FB] w-[350px] mt-3 min-[400px]:w-[380px] h-[500px] md:h-[550px] rounded-3xl shadow-lg relative overflow-visible`}
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
@@ -33,7 +33,7 @@ export default function EcosystemCard() {
           <div className="absolute inset-0 flex justify-between flex-col p-6 text-center z-10">
             <div className="flex items-center justify-between mb-4">
               <h3
-                className={`text-black ${geistSans.className} text-2xl font-normal`}
+                className={`text-black ${geistSans.className} tracking-[-0.04em] text-2xl font-normal`}
               >
                 Ecosystem
                 <span
@@ -86,7 +86,7 @@ export default function EcosystemCard() {
                 })}
               </div>
             </div>
-            <div className="mt-3 lg:mt-6">
+            {/* <div className="mt-3 lg:mt-6">
               <div className="bg-[#F4F6FE] p-2 rounded-xl border border-[#E9E9FF]">
                 <p
                   className={`${geistSans.className} font-normal text-[10px] text-[#737394]`}
@@ -95,7 +95,7 @@ export default function EcosystemCard() {
                   flexible pricing.
                 </p>
               </div>
-            </div>
+            </div> */}
             <Link href={"/30-min"}>
               <div className="mt-3">
                 {/* Gradient Border Container */}

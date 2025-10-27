@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { geistSans } from "../layout";
+import { geistSans, instrumentSerif } from "../layout";
 import Link from "next/link";
 import CircularGallery from "./Circular";
 import BelowFooter from "./BelowFooter";
@@ -17,30 +17,44 @@ export default function Footer() {
   // const scaleValue = Math.min(res.scrollPosition.top / 1200, 10000);
   const progress = useElementScrollProgress(footerRef);
   const pathName = usePathname();
+  const belowRainbowRef = useRef(null);
 
-  // useEffect(() => {
-  //   const belowRainbow = document.getElementById("below-rainbow");
-  //   if (belowRainbow) {
-  //     const observer = new IntersectionObserver((entries) => {
-  //       const entry = entries[0];
-  //       if (entry.isIntersecting) {
-  //         const scrollTofooterRef = document
-  //           .getElementById("footerRef")
-  //           .getBoundingClientRect();
-  //         console.log("intersection", scrollTofooterRef.left, scrollTofooterRef.top) 
-  //         window.scrollTo({
-  //           top: scrollTofooterRef.top - 300,
-  //           behavior: "smooth"
-  //         });
-  //         observer.unobserve(belowRainbow);
-  //       }
-  //     });
-  //     observer.observe(belowRainbow);
-  //     return () => {
-  //       observer.disconnect();
-  //     };
-  //   }
-  // }, []);
+
+  useEffect(() => {
+    const belowRainbowElement = belowRainbowRef.current;
+
+    if (!belowRainbowElement) return;
+    // window?.lenis?.on?.("scroll");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Scroll to FAQ section when below-rainbow div is reached
+            const faqSection = document.getElementById("faq");
+
+            if (faqSection) {
+              console.log("start scrolling");
+              // window.lenis.scrollTo("#faq", {
+              //   offset: -670, // Scroll to 50px above the section
+              //   // duration: 1.5, // Faster scroll
+              //   // easing: (t) => t * t * (3 - 2 * t), // Smoother easing
+              // });
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the element is visible
+        rootMargin: "0px",
+      }
+    );
+
+    observer.observe(belowRainbowElement);
+
+    return () => {
+      observer.unobserve(belowRainbowElement);
+    };
+  }, []);
 
   return (
     <>
@@ -53,17 +67,17 @@ export default function Footer() {
             scrollEase={0.02}
           />
         </div> */}
-      <footer id="footerRef" className="relative z-10">
+      <footer id="faq" className="relative z-10">
         {/* <div> */}
         <div className="mx-auto w-full max-w-7xl px-4 py-1.5 md:py-8">
           <div className="hidden md:flex flex-row  justify-between items-center gap-4">
             <div className={`flex items-center gap-4 `}>
               <div
                 className="flex items-center gap-2 "
-                style={{
-                  transform: `translateY(${progress * 68}vh)`,
-                  willChange: "transform",
-                }}
+                // style={{
+                //   transform: `translateY(${progress * 68}vh)`,
+                //   willChange: "transform",
+                // }}
               >
                 <div className="w-6 h-6 bg-gradient-to-br from-[#9876EC] to-[#6B46C1] rounded-md flex items-center justify-center">
                   <span
@@ -84,10 +98,10 @@ export default function Footer() {
                 className={`${geistSans.className} ${
                   pathName === "/arch" ? "text-white" : "text-[#0E0E0F]/50"
                 } text-sm`}
-                style={{
-                  transform: `translateY(${progress * 45}vh)`,
-                  willChange: "transform",
-                }}
+                // style={{
+                //   transform: `translateY(${progress * 45}vh)`,
+                //   willChange: "transform",
+                // }}
               >
                 © 2025 All rights reserved.
               </span>
@@ -99,10 +113,10 @@ export default function Footer() {
                 className={`${geistSans.className} ${
                   pathName === "/arch" ? "text-white" : "text-[#0E0E0F]/50"
                 } hover:text-[#9876EC] transition-colors text-sm`}
-                style={{
-                  transform: `translateY(${progress * 45}vh)`,
-                  willChange: "transform",
-                }}
+                // style={{
+                //   transform: `translateY(${progress * 45}vh)`,
+                //   willChange: "transform",
+                // }}
               >
                 Privacy Policy
               </Link>
@@ -111,10 +125,10 @@ export default function Footer() {
                 className={`${geistSans.className} ${
                   pathName === "/arch" ? "text-white" : "text-[#0E0E0F]/50"
                 } hover:text-[#9876EC] transition-colors text-sm`}
-                style={{
-                  transform: `translateY(${progress * 68}vh)`,
-                  willChange: "transform",
-                }}
+                // style={{
+                //   transform: `translateY(${progress * 68}vh)`,
+                //   willChange: "transform",
+                // }}
               >
                 Terms & Conditions
               </Link>
@@ -122,10 +136,10 @@ export default function Footer() {
           </div>
           <div
             className="flex md:hidden flex-col justify-between items-center gap-4"
-            style={{
-              transform: `translateY(${progress * 38}vh)`,
-              willChange: "transform",
-            }}
+            // style={{
+            //   transform: `translateY(${progress * 38}vh)`,
+            //   willChange: "transform",
+            // }}
           >
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
@@ -178,17 +192,33 @@ export default function Footer() {
         {/* </div> */}
       </footer>
       {/* spacer to create scrollable distance for the scale animation */}
-      <section ref={footerRef} className="relative h-[60vh]">
-        <div className="mx-3 relative" style={{
-          height: `${progress * 150}%`
-        }}>
-          <GlassEffect height="h-full" border="rounded-2xl"/>
+      <section ref={footerRef} className="relative  overflow-hidden">
+        {/* <div
+          className="mx-3 relative"
+          style={{
+            height: `${progress * 150}%`,
+          }}
+        >
+          <GlassEffect height="h-full" border="rounded-2xl" />
+        </div> */}
+        <div className=" -z-10 pointer-events-none">
+          {/* <BelowFooter scaleValue={progress} /> */}
+          <div
+          style={{
+            transform: `perspective(100px) rotateX(${
+              (180 - progress * 800) / 4
+            }deg)`,
+            lineHeight: "0.7",
+    
+          }}
+          className={`text-[22vw] ${geistSans.className}  text-[#0E0E0F]/10 text-center w-full h-[70%] md:h-full  font-black  perspective-origin-bottom flex justify-end md:justify-center flex-col`}
+        >
+          Flawless
         </div>
-        <div className="sticky bottom-0 h-[65vh] -z-10 pointer-events-none">
-          <BelowFooter scaleValue={progress} />
         </div>
         {/* <div
           id="below-rainbow"
+          ref={belowRainbowRef}
           className="absolute bottom-0 w-full h-3 bg-red-600"
         /> */}
       </section>

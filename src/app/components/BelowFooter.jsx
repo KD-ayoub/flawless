@@ -9,19 +9,15 @@ import React, { useEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function BelowFooter({ scaleValue }) {
-    const MAX = 10;
-  const scaleY = scaleValue;
-  console.log("scaleValue", scaleY);
+    
+  // console.log("scaleValue", scaleY);
   return (
     <>
-      {/* <div className="h-[25vh]"> */}
-          
-
       <div
         aria-hidden="true"
         className="h-full origin-bottom"
         style={{
-          transform: `scaleY(${scaleY * 2})`,
+          transform: `scaleY(${scaleValue * 2})`,
         }}
       >
         <svg
@@ -301,6 +297,8 @@ export default function BelowFooter({ scaleValue }) {
                 result="effect1_foregroundBlur_3283_101175"
               ></feGaussianBlur>
             </filter>
+            
+            {/* Flipped Color Scheme - White/Gray at Bottom */}
             <linearGradient
               id="paint0_linear_3283_101175"
               x1="1374"
@@ -309,15 +307,13 @@ export default function BelowFooter({ scaleValue }) {
               y2="937"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#340B05"></stop>
-              <stop offset="0.182709" stopColor="#0358F7"></stop>
-              <stop offset="0.283673" stopColor="#5092C7"></stop>
-              <stop offset="0.413484" stopColor="#E1ECFE"></stop>
-              <stop offset="0.586565" stopColor="#FFD400"></stop>
-              <stop offset="0.682722" stopColor="#FA3D1D"></stop>
-              <stop offset="0.802892" stopColor="#FD02F5"></stop>
-              <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              <stop stopColor="#FFFFFF"></stop>
+              <stop offset="0.25" stopColor="#F5F5F5"></stop>
+              <stop offset="0.5" stopColor="#9F9CF1"></stop>
+              <stop offset="0.75" stopColor="#7B79E3"></stop>
+              <stop offset="1" stopColor="#000080" stopOpacity="0"></stop>
             </linearGradient>
+            
             <linearGradient
               id="paint1_linear_3283_101175"
               x1="1233"
@@ -326,15 +322,14 @@ export default function BelowFooter({ scaleValue }) {
               y2="1018"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#340B05"></stop>
-              <stop offset="0.182709" stopColor="#0358F7"></stop>
-              <stop offset="0.283673" stopColor="#5092C7"></stop>
-              <stop offset="0.413484" stopColor="#E1ECFE"></stop>
-              <stop offset="0.586565" stopColor="#FFD400"></stop>
-              <stop offset="0.682722" stopColor="#FA3D1D"></stop>
-              <stop offset="0.802892" stopColor="#FD02F5"></stop>
-              <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              <stop stopColor="#FFFFFF"></stop>
+              <stop offset="0.2" stopColor="#E5E5E5"></stop>
+              <stop offset="0.4" stopColor="#C39EF1"></stop>
+              <stop offset="0.6" stopColor="#7B79E3"></stop>
+              <stop offset="0.8" stopColor="#5877E5"></stop>
+              <stop offset="1" stopColor="#000080" stopOpacity="0"></stop>
             </linearGradient>
+            
             <linearGradient
               id="paint2_linear_3283_101175"
               x1="1092"
@@ -343,15 +338,16 @@ export default function BelowFooter({ scaleValue }) {
               y2="1092"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#340B05"></stop>
-              <stop offset="0.182709" stopColor="#0358F7"></stop>
-              <stop offset="0.283673" stopColor="#5092C7"></stop>
-              <stop offset="0.413484" stopColor="#E1ECFE"></stop>
-              <stop offset="0.586565" stopColor="#FFD400"></stop>
-              <stop offset="0.682722" stopColor="#FA3D1D"></stop>
-              <stop offset="0.802892" stopColor="#FD02F5"></stop>
-              <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              <stop stopColor="#FFFFFF"></stop>
+              <stop offset="0.1" stopColor="#F8F8F8"></stop>
+              <stop offset="0.25" stopColor="#D3D3D3"></stop>
+              <stop offset="0.4" stopColor="#C39EF1"></stop>
+              <stop offset="0.55" stopColor="#9F9CF1"></stop>
+              <stop offset="0.7" stopColor="#7B79E3"></stop>
+              <stop offset="0.85" stopColor="#5877E5"></stop>
+              <stop offset="1" stopColor="#000080" stopOpacity="0"></stop>
             </linearGradient>
+            
             <linearGradient
               id="paint3_linear_3283_101175"
               x1="87.0001"
@@ -360,15 +356,13 @@ export default function BelowFooter({ scaleValue }) {
               y2="323"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#340B05"></stop>
-              <stop offset="0.182709" stopColor="#0358F7"></stop>
-              <stop offset="0.283673" stopColor="#5092C7"></stop>
-              <stop offset="0.413484" stopColor="#E1ECFE"></stop>
-              <stop offset="0.586565" stopColor="#FFD400"></stop>
-              <stop offset="0.682722" stopColor="#FA3D1D"></stop>
-              <stop offset="0.802892" stopColor="#FD02F5"></stop>
-              <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              <stop stopColor="#FFFFFF"></stop>
+              <stop offset="0.25" stopColor="#F5F5F5"></stop>
+              <stop offset="0.5" stopColor="#9F9CF1"></stop>
+              <stop offset="0.75" stopColor="#7B79E3"></stop>
+              <stop offset="1" stopColor="#000080" stopOpacity="0"></stop>
             </linearGradient>
+            
             <linearGradient
               id="paint4_linear_3283_101175"
               x1="87.0001"
@@ -377,15 +371,14 @@ export default function BelowFooter({ scaleValue }) {
               y2="404"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#340B05"></stop>
-              <stop offset="0.182709" stopColor="#0358F7"></stop>
-              <stop offset="0.283673" stopColor="#5092C7"></stop>
-              <stop offset="0.413484" stopColor="#E1ECFE"></stop>
-              <stop offset="0.586565" stopColor="#FFD400"></stop>
-              <stop offset="0.682722" stopColor="#FA3D1D"></stop>
-              <stop offset="0.802892" stopColor="#FD02F5"></stop>
-              <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              <stop stopColor="#FFFFFF"></stop>
+              <stop offset="0.2" stopColor="#E5E5E5"></stop>
+              <stop offset="0.4" stopColor="#C39EF1"></stop>
+              <stop offset="0.6" stopColor="#7B79E3"></stop>
+              <stop offset="0.8" stopColor="#5877E5"></stop>
+              <stop offset="1" stopColor="#000080" stopOpacity="0"></stop>
             </linearGradient>
+            
             <linearGradient
               id="paint5_linear_3283_101175"
               x1="87.0001"
@@ -394,15 +387,16 @@ export default function BelowFooter({ scaleValue }) {
               y2="478"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#340B05"></stop>
-              <stop offset="0.182709" stopColor="#0358F7"></stop>
-              <stop offset="0.283673" stopColor="#5092C7"></stop>
-              <stop offset="0.413484" stopColor="#E1ECFE"></stop>
-              <stop offset="0.586565" stopColor="#FFD400"></stop>
-              <stop offset="0.682722" stopColor="#FA3D1D"></stop>
-              <stop offset="0.802892" stopColor="#FD02F5"></stop>
-              <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              <stop stopColor="#FFFFFF"></stop>
+              <stop offset="0.1" stopColor="#F8F8F8"></stop>
+              <stop offset="0.25" stopColor="#D3D3D3"></stop>
+              <stop offset="0.4" stopColor="#C39EF1"></stop>
+              <stop offset="0.55" stopColor="#9F9CF1"></stop>
+              <stop offset="0.7" stopColor="#7B79E3"></stop>
+              <stop offset="0.85" stopColor="#5877E5"></stop>
+              <stop offset="1" stopColor="#000080" stopOpacity="0"></stop>
             </linearGradient>
+            
             <linearGradient
               id="paint6_linear_3283_101175"
               x1="87.5002"
@@ -411,15 +405,17 @@ export default function BelowFooter({ scaleValue }) {
               y2="530"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#340B05"></stop>
-              <stop offset="0.182709" stopColor="#0358F7"></stop>
-              <stop offset="0.283673" stopColor="#5092C7"></stop>
-              <stop offset="0.413484" stopColor="#E1ECFE"></stop>
-              <stop offset="0.586565" stopColor="#FFD400"></stop>
-              <stop offset="0.682722" stopColor="#FA3D1D"></stop>
-              <stop offset="0.802892" stopColor="#FD02F5"></stop>
-              <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              <stop stopColor="#FFFFFF"></stop>
+              <stop offset="0.12" stopColor="#FAFAFA"></stop>
+              <stop offset="0.25" stopColor="#F0F0F0"></stop>
+              <stop offset="0.38" stopColor="#E0E0E0"></stop>
+              <stop offset="0.5" stopColor="#C39EF1"></stop>
+              <stop offset="0.62" stopColor="#9F9CF1"></stop>
+              <stop offset="0.75" stopColor="#7B79E3"></stop>
+              <stop offset="0.88" stopColor="#5877E5"></stop>
+              <stop offset="1" stopColor="#000080" stopOpacity="0"></stop>
             </linearGradient>
+            
             <linearGradient
               id="paint7_linear_3283_101175"
               x1="951.5"
@@ -428,15 +424,17 @@ export default function BelowFooter({ scaleValue }) {
               y2="1144"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#340B05"></stop>
-              <stop offset="0.182709" stopColor="#0358F7"></stop>
-              <stop offset="0.283673" stopColor="#5092C7"></stop>
-              <stop offset="0.413484" stopColor="#E1ECFE"></stop>
-              <stop offset="0.586565" stopColor="#FFD400"></stop>
-              <stop offset="0.682722" stopColor="#FA3D1D"></stop>
-              <stop offset="0.802892" stopColor="#FD02F5"></stop>
-              <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              <stop stopColor="#FFFFFF"></stop>
+              <stop offset="0.12" stopColor="#FAFAFA"></stop>
+              <stop offset="0.25" stopColor="#F0F0F0"></stop>
+              <stop offset="0.38" stopColor="#E0E0E0"></stop>
+              <stop offset="0.5" stopColor="#C39EF1"></stop>
+              <stop offset="0.62" stopColor="#9F9CF1"></stop>
+              <stop offset="0.75" stopColor="#7B79E3"></stop>
+              <stop offset="0.88" stopColor="#5877E5"></stop>
+              <stop offset="1" stopColor="#000080" stopOpacity="0"></stop>
             </linearGradient>
+            
             <linearGradient
               id="paint8_linear_3283_101175"
               x1="86.5002"
@@ -445,20 +443,21 @@ export default function BelowFooter({ scaleValue }) {
               y2="584"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#340B05"></stop>
-              <stop offset="0.182709" stopColor="#0358F7"></stop>
-              <stop offset="0.283673" stopColor="#5092C7"></stop>
-              <stop offset="0.283673" stopColor="#5092C7"></stop>
-              <stop offset="0.413484" stopColor="#E1ECFE"></stop>
-              <stop offset="0.586565" stopColor="#FFD400"></stop>
-              <stop offset="0.682722" stopColor="#FA3D1D"></stop>
-              <stop offset="0.802892" stopColor="#FD02F5"></stop>
-              <stop offset="1" stopColor="#FFC0FD" stopOpacity="0"></stop>
+              <stop stopColor="#FFFFFF"></stop>
+              <stop offset="0.1" stopColor="#FCFCFC"></stop>
+              <stop offset="0.2" stopColor="#F5F5F5"></stop>
+              <stop offset="0.3" stopColor="#EEEEEE"></stop>
+              <stop offset="0.4" stopColor="#DDDDDD"></stop>
+              <stop offset="0.5" stopColor="#C8C8C8"></stop>
+              <stop offset="0.6" stopColor="#C39EF1"></stop>
+              <stop offset="0.7" stopColor="#9F9CF1"></stop>
+              <stop offset="0.8" stopColor="#7B79E3"></stop>
+              <stop offset="0.9" stopColor="#5877E5"></stop>
+              <stop offset="1" stopColor="#000080" stopOpacity="0"></stop>
             </linearGradient>
           </defs>
         </svg>
       </div>
-      {/* </div> */}
     </>
   );
 }

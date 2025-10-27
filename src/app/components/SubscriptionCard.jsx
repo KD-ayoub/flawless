@@ -166,13 +166,13 @@ export default function SubscriptionCard() {
       >
         <div className="absolute inset-0 flex justify-center p-2">
           <p
-            className={`${geistSans.className} leading-[180%] font-medium text-sm text-[#ECD9FF]`}
+            className={`${geistSans.className} leading-[250%] font-medium text-sm text-[#ECD9FF]`}
           >
             Best Value To Price
           </p>
           <Image
             ref={backgroundRef}
-            className={`absolute w-full h-[535px] md:h-[585px] object-cover brightness-125 rounded-4xl left-0 right-0 z-[-1]`}
+            className={`absolute w-full h-[545px] md:h-[595px] object-cover brightness-125 rounded-4xl left-0 right-0 z-[-1]`}
             src={
               "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"
             }
@@ -183,7 +183,7 @@ export default function SubscriptionCard() {
           />
         </div>
         <div
-          className={`bg-[#F9F9FB] w-[350px] min-[400px]:w-[380px] h-[500px] md:h-[550px] mx-2 mb-2 mt-8 rounded-3xl shadow-lg relative overflow-visible`}
+          className={`bg-[#F9F9FB] w-[350px] min-[400px]:w-[380px] h-[500px] md:h-[550px] mx-2 mb-2 mt-[2.7rem] rounded-3xl shadow-lg relative overflow-visible`}
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
@@ -198,7 +198,7 @@ export default function SubscriptionCard() {
           <div className="absolute inset-0 flex justify-between flex-col p-6 text-center z-10">
             <div className="flex items-center justify-between mb-4">
               <h3
-                className={`text-black ${geistSans.className} text-2xl font-normal`}
+                className={`text-black ${geistSans.className} tracking-[-0.04em] text-2xl font-normal`}
               >
                 Subscription
               </h3>
@@ -270,7 +270,7 @@ export default function SubscriptionCard() {
                 })}
               </div>
             </div>
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <div className="bg-[#F4F6FE] p-2 rounded-xl border border-[#E9E9FF]">
                 <p
                   className={`${geistSans.className} font-normal text-[10px] text-[#737394]`}
@@ -279,7 +279,7 @@ export default function SubscriptionCard() {
                   demand.
                 </p>
               </div>
-            </div>
+            </div> */}
             <Link href={"/30-min"}>
               <div className="mt-3">
                 {/* Gradient Border Container */}
