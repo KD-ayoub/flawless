@@ -137,10 +137,10 @@ export default function HowitWorksSection() {
         </div>
         <div
           ref={cardsRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-10 max-w-7xl mx-auto px-4 sm:px-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-14 my-10 max-w-7xl mx-auto px-4 sm:px-6"
         >
           {/* card 1 */}
-          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl group">
+          <div className="relative h-[430px] sm:h-[460px] lg:h-[510px] w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl group">
             {/* Top image with drop shadow */}
             <CldImage
               src={
@@ -151,7 +151,7 @@ export default function HowitWorksSection() {
               height={1000}
               quality="auto"
               format="auto"
-              className="w-[290px] h-[230px] sm:w-[320px] sm:h-[240px] md:w-[350px] md:h-[260px] lg:w-[300px] lg:h-[240px] xl:w-[320px] xl:h-[260px] absolute z-10 top-2 sm:top-4 lg:top-6 left-1/2 -translate-x-1/2 brightness-[80.5%] drop-shadow-[0_35px_35px_rgba(0,0,0,0.4)] object-cover rounded-2xl lg:rounded-3xl transition-transform duration-300 ease-out group-hover:scale-105"
+              className="w-[290px] h-[230px] sm:w-[320px] sm:h-[240px] md:w-[350px] md:h-[260px] lg:w-[300px] lg:h-[240px] xl:w-[300px] xl:h-[250px] absolute z-10 top-2 sm:top-4 lg:top-[9%] left-1/2 -translate-x-1/2 brightness-100 drop-shadow-[0px_20px_30px_rgba(0,0,0,0.9)] object-cover rounded-2xl lg:rounded-3xl transition-transform duration-300 ease-out group-hover:scale-105"
               draggable={false}
             />
 
@@ -165,16 +165,16 @@ export default function HowitWorksSection() {
               quality="auto"
               format="auto"
               alt="design1"
-              className="object-cover h-full transition-transform duration-300 ease-out group-hover:scale-110"
+              className="object-cover brightness-125 h-full transition-transform duration-300 ease-out group-hover:scale-110"
               draggable={false}
             />
 
             {/* Text content with blurred backdrop */}
             <div className="absolute h-full w-full bottom-0 bg-black/20 blur-[15px]" />
-            <div className="absolute h-1/3 w-full bottom-0 bg-gradient-to-t from-[#1C133A] to-transparent" />
+            <div className="absolute h-1/2 w-full bottom-0 bg-gradient-to-t from-[#1C133A] via-[#1C133A] to-transparent" />
             <div className="absolute bottom-0 z-10 w-full p-3 sm:p-4 lg:p-6 max-w-md lg:max-w-lg">
               <p
-                className={`${geistSans.className} font-normal text-2xl sm:text-3xl xl:text-3xl 2xl:text-4xl text-white mb-1 sm:mb-2`}
+                className={`${geistSans.className} font-normal tracking-[-0.04em] text-2xl sm:text-3xl xl:text-3xl 2xl:text-4xl text-white mb-1 sm:mb-2`}
               >
                 Discovery{" "}
                 <span
@@ -184,7 +184,7 @@ export default function HowitWorksSection() {
                 </span>
               </p>
               <p
-                className={`${geistSans.className} text-base sm:text-lg lg:text-base text-white leading-relaxed`}
+                className={`${geistSans.className} tracking-[-0.04em] text-base sm:text-lg lg:text-base text-white leading-[120%]`}
               >
                 We kick things off with a short intro call to understand your
                 goals and what you need help with, no pressure, just clarity.
@@ -193,7 +193,7 @@ export default function HowitWorksSection() {
           </div>
 
           {/* card 2 */}
-          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl group">
+          <div className="relative h-[430px] sm:h-[460px] lg:h-[510px] w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl group">
             <CldImage
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759338845/design22_q7ygff.png"
@@ -203,7 +203,7 @@ export default function HowitWorksSection() {
               height={1000}
               quality="auto"
               format="auto"
-              className="w-[290px] h-[230px] sm:w-[320px] sm:h-[240px] md:w-[350px] md:h-[260px] lg:w-[300px] lg:h-[240px] xl:w-[320px] xl:h-[260px] absolute z-10 top-[6%] lg:top-[8%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
+              className="w-[290px] h-[230px] sm:w-[320px] sm:h-[240px] md:w-[350px] md:h-[260px] lg:w-[300px] lg:h-[240px] xl:w-[300px] xl:h-[240px] absolute z-10 top-[6%] lg:top-[14%] left-1/2 -translate-x-1/2 brightness-100 drop-shadow-[0px_20px_30px_rgba(0,0,0,0.9)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
               draggable={false}
             />
             <CldImage
@@ -216,13 +216,13 @@ export default function HowitWorksSection() {
               format="auto"
               alt="design2"
               draggable={false}
-              className="object-cover h-full transition-transform duration-300 ease-out group-hover:scale-110"
+              className="object-cover brightness-125 h-full transition-transform duration-300 ease-out group-hover:scale-110"
             />
             <div className="absolute h-full w-full bottom-0 bg-black/20 blur-[15px]" />
-            <div className="absolute h-1/3 w-full bottom-0 bg-gradient-to-t from-[#1B304B] to-transparent" />
+            <div className="absolute h-1/2 w-full bottom-0 bg-gradient-to-t from-[#1B304B] via-[#1B304B] to-transparent" />
             <div className="absolute bottom-0 p-3 sm:p-4 lg:p-6 max-w-md lg:max-w-lg z-10">
               <p
-                className={`${geistSans.className} font-normal text-2xl sm:text-3xl xl:text-3xl 2xl:text-4xl text-white mb-1 sm:mb-2`}
+                className={`${geistSans.className} tracking-[-0.04em] font-normal text-2xl sm:text-3xl xl:text-3xl 2xl:text-4xl text-white mb-1 sm:mb-2`}
               >
                 Smooth{" "}
                 <span
@@ -232,7 +232,7 @@ export default function HowitWorksSection() {
                 </span>
               </p>
               <p
-                className={`${geistSans.className} text-base sm:text-lg lg:text-base text-white leading-relaxed`}
+                className={`${geistSans.className} tracking-[-0.04em] text-base sm:text-lg lg:text-base text-white leading-[120%]`}
               >
                 You get access to our shared workspace (Trello, Telegram, Slack,
                 etc.). We align on timelines and tasks, all set in under 24h.
@@ -241,7 +241,7 @@ export default function HowitWorksSection() {
           </div>
 
           {/* card 3 */}
-          <div className="relative h-[380px] sm:h-[430px] lg:h-[500px] col-span-1 sm:col-span-2 lg:col-span-1 w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl group">
+          <div className="relative h-[430px] sm:h-[430px] lg:h-[510px] col-span-1 sm:col-span-2 lg:col-span-1 w-full rounded-[20px] overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl group">
             <CldImage
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759339022/design33_kvoh1a.png"
@@ -252,7 +252,7 @@ export default function HowitWorksSection() {
               quality="auto"
               format="auto"
               draggable={false}
-              className="w-[290px] h-[280px] sm:w-[320px] sm:h-[290px] md:w-[350px] md:h-[300px] lg:w-[300px] lg:h-[290px] xl:w-[320px] xl:h-[300px] absolute z-10 top-[6%] lg:top-[8%] left-1/2 -translate-x-1/2 brightness-[89.5%] drop-shadow-[0_100px_50px_rgba(0,0,0,0.5)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
+              className="w-[290px] h-[280px] sm:w-[320px] sm:h-[290px] md:w-[350px] md:h-[300px] lg:w-[300px] lg:h-[290px] xl:w-[320px] xl:h-[300px] absolute z-10 top-[6%] lg:top-[8%] left-1/2 -translate-x-1/2 brightness-100 drop-shadow-[0px_20px_30px_rgba(0,0,0,0.9)] bg-transparent rounded-4xl transition-transform duration-300 ease-out group-hover:scale-105"
             />
             <CldImage
               src={
@@ -264,13 +264,13 @@ export default function HowitWorksSection() {
               format="auto"
               alt="design3"
               draggable={false}
-              className="object-cover h-full transition-transform duration-300 ease-out group-hover:scale-110"
+              className="object-cover brightness-125 h-full transition-transform duration-300 ease-out group-hover:scale-110"
             />
             <div className="absolute h-full w-full bottom-0 bg-black/20 blur-[15px]" />
-            <div className="absolute h-1/3 w-full bottom-0 bg-gradient-to-t from-[#4C2450] to-transparent" />
+            <div className="absolute h-1/2 w-full bottom-0 bg-gradient-to-t from-[#4C2450] via-[#4C2450] to-transparent" />
             <div className="absolute bottom-0 p-3 sm:p-4 lg:p-6 max-w-md lg:max-w-lg z-10">
               <p
-                className={`${geistSans.className} font-normal text-2xl sm:text-3xl xl:text-3xl 2xl:text-4xl text-white mb-1 sm:mb-2`}
+                className={`${geistSans.className} tracking-[-0.04em] font-normal text-2xl sm:text-3xl xl:text-3xl 2xl:text-4xl text-white mb-1 sm:mb-2`}
               >
                 We Start{" "}
                 <span
@@ -280,7 +280,7 @@ export default function HowitWorksSection() {
                 </span>
               </p>
               <p
-                className={`${geistSans.className} text-base sm:text-lg lg:text-base text-white leading-relaxed`}
+                className={`${geistSans.className} leading-[120%] tracking-[-0.04em] text-base sm:text-lg lg:text-base text-white`}
               >
                 We design, build, or animate based on your needs. Fast
                 turnarounds, real updates, and no back-and-forth headaches.
