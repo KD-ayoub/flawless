@@ -209,7 +209,7 @@ export default function Footer() {
           <div
             style={{
               transform: `perspective(100px) rotateX(${
-                (180 - progress * 825) / 4
+                (180 - progress * 700) / 4
               }deg)`,
               lineHeight: "0.7",
             }}
@@ -219,7 +219,14 @@ export default function Footer() {
               pathName === "/arch" ? "text-white/20" : "text-[#0E0E0F]/20"
             } text-center w-full h-[70%] md:h-full  font-black  perspective-origin-bottom flex justify-end md:justify-center flex-col`}
           >
-            Flawless
+            <CldImage
+              src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761843155/footer_cukzhs.png"
+              width={1000}
+              height={1000}
+              alt="footer image"
+              format="auto"
+              quality="auto"
+            />
           </div>
         </div>
         {/* <div
