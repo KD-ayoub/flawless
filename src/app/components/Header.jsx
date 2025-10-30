@@ -13,6 +13,7 @@ import { ScrollToPlugin } from "gsap/all";
 import Lenis from "lenis";
 import useOutsideClick from "../hooks/useOutsideClick";
 import GlassEffect from "./GlassEffect";
+import { CldImage } from "next-cloudinary";
 
 gsap.registerPlugin(useGSAP);
 
@@ -117,14 +118,24 @@ export default function Header() {
                 : "bg-[#FAFAFB]/40 border border-white"
             }  backdrop-blur-[10px] z-0`}
           /> */}
-          <GlassEffect/>
+          <GlassEffect />
           {/* Content layer */}
           <div
             className={`relative z-10 flex items-center p-5 h-full text-white`}
           >
             <div className="flex items-center justify-between w-full">
               <Link href={"/"}>
-                <p
+                <div className="w-32 h-10 flex items-center">
+                  <CldImage
+                    src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761841388/logo_xre9tr.png"
+                    width={1200}
+                    height={1200}
+                    alt="logo image"
+                    format="auto"
+                    quality="auto"
+                  />
+                </div>
+                {/* <p
                   className={`${instrumentSerif.className} ${
                     pathName === "/arch"
                       ? "text-white"
@@ -134,7 +145,7 @@ export default function Header() {
                   } text-2xl font-normal`}
                 >
                   flawless <span className="italic">Design</span>
-                </p>
+                </p> */}
               </Link>
               <div className="flex gap-8">
                 <a
@@ -264,23 +275,22 @@ function MobileHeader({ pathName, observerColor }) {
                 : "bg-[#FAFAFB]/40 border border-white"
             }  backdrop-blur-md z-0`}
           /> */}
-          <GlassEffect border="rounded-full"/>
+          <GlassEffect border="rounded-full" />
           {/* Content layer */}
           <div className="relative z-10 flex items-center px-3 h-full text-black">
             <div className="flex items-center justify-between w-full">
               <div className="flex items-center">
                 <Link href={"/"}>
-                  <p
-                    className={`${instrumentSerif.className} ${
-                      pathName === "/arch"
-                        ? "text-white"
-                        : pathName === "/trustybite"
-                        ? `${observerColor.simple}`
-                        : "text-black"
-                    } text-xl font-normal`}
-                  >
-                    flawless <span className="italic">Design</span>
-                  </p>
+                  <div className="w-32 h-10 ml-2 flex items-center">
+                    <CldImage
+                      src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761841388/logo_xre9tr.png"
+                      width={1200}
+                      height={1200}
+                      alt="logo image"
+                      format="auto"
+                      quality="auto"
+                    />
+                  </div>
                 </Link>
               </div>
               <button
@@ -329,7 +339,7 @@ function MobileHeader({ pathName, observerColor }) {
                         : "bg-[#FAFAFB]/40 border border-white"
                     } backdrop-blur-md z-0`}
                   /> */}
-                  <GlassEffect border="rounded-2xl"/>
+                  <GlassEffect border="rounded-2xl" />
                   <div
                     ref={dropdownRef}
                     className="relative z-10 flex flex-col gap-3 justify-center items-center p-2 h-full text-black"
