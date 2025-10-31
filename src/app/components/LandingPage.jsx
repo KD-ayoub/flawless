@@ -16,9 +16,7 @@ import FAQ from "./FAQ";
 import Footer from "./Footer";
 import SomeGallery from "./SomeGallery";
 
-
 export default function LandingPage() {
- 
   return (
     <div>
       <HeroSection />
@@ -30,11 +28,10 @@ export default function LandingPage() {
       <CaseStudies />
       <TestimonialSection />
       <PricingSection />
-      <FAQ/>
-      <SomeGallery/>
+      <FAQ />
+      <SomeGallery />
+      <Footer />
       {/* <Footer/> */}
     </div>
   );
 }
-
-

@@ -10,6 +10,7 @@ import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
 import { CldImage } from "next-cloudinary";
 import ArchVideoSection from "@/app/components/ArchVideoSection";
+import Footer from "@/app/components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
