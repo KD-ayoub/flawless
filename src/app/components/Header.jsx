@@ -71,6 +71,7 @@ export default function Header() {
   const [observerColor, setObserverColor] = useState({
     simple: "text-white",
     long: "bg-gradient-to-r from-white to-white",
+    logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761925285/logo-white_kksiem.png"
   });
   useEffect(() => {
     const heroImage = document.getElementById("hero-image");
@@ -84,12 +85,14 @@ export default function Header() {
             const obj = {
               simple: "text-black",
               long: "bg-gradient-to-r from-black to-black",
+              logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761841388/logo_xre9tr.png"
             };
             setObserverColor(obj);
           } else {
             const obj = {
               simple: "text-white",
               long: "bg-gradient-to-r from-white to-white",
+              logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761925285/logo-white_kksiem.png"
             };
             setObserverColor(obj);
           }
@@ -127,7 +130,13 @@ export default function Header() {
               <Link href={"/"}>
                 <div className="w-32 h-10 flex items-center">
                   <CldImage
-                    src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761841388/logo_xre9tr.png"
+                    src={`${
+                      pathName === "/arch"
+                        ? "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761925285/logo-white_kksiem.png"
+                        : pathName === "/trustybite"
+                        ? `${observerColor.logo}`
+                        : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761841388/logo_xre9tr.png"
+                    }`}
                     width={1200}
                     height={1200}
                     alt="logo image"
@@ -160,7 +169,7 @@ export default function Header() {
                       ? "bg-gradient-to-r from-white to-white"
                       : pathName === "/trustybite"
                       ? `${observerColor.long}`
-                      : "bg-gradient-to-r from-black/50 to-black/50"
+                      : "bg-gradient-to-r from-black to-black"
                   } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                 >
                   Services
@@ -283,7 +292,13 @@ function MobileHeader({ pathName, observerColor }) {
                 <Link href={"/"}>
                   <div className="w-32 h-10 ml-2 flex items-center">
                     <CldImage
-                      src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761841388/logo_xre9tr.png"
+                      src={`${
+                      pathName === "/arch"
+                        ? "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761925285/logo-white_kksiem.png"
+                        : pathName === "/trustybite"
+                        ? `${observerColor.logo}`
+                        : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761841388/logo_xre9tr.png"
+                    }`}
                       width={1200}
                       height={1200}
                       alt="logo image"
