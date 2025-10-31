@@ -99,7 +99,7 @@ export default function RootLayout({ children }) {
           </Suspense>
         </div>
         <div className={`${footerVisibility ? "opacity-100" : "opacity-0"}`}>
-          <Footer />
+          {pathName !== "/30-min" && <Footer />}
         </div>
         {/* <div id="bottom-fade-sentinel" className="h-5 hidden lg:block" /> */}
         {/* <div id="bottom-fade" className="fixed h-32 hidden lg:block transition-opacity duration-300 pointer-events-none w-full bg-transparent bottom-0 z-50">

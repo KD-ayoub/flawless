@@ -160,7 +160,7 @@ export default function Header() {
                       ? "bg-gradient-to-r from-white to-white"
                       : pathName === "/trustybite"
                       ? `${observerColor.long}`
-                      : "bg-gradient-to-r from-black to-black"
+                      : "bg-gradient-to-r from-black/50 to-black/50"
                   } hover:from-[#B1C8FF] hover:to-[#0070F3] transition-colors duration-300`}
                 >
                   Services

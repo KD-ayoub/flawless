@@ -27,9 +27,9 @@ export default function LandingPage() {
       <GreatIdeas />
       <WhatWedoSection />
       <HowitWorksSection />
+      <CaseStudies />
       <TestimonialSection />
       <PricingSection />
-      <CaseStudies />
       <FAQ/>
       <SomeGallery/>
       {/* <Footer/> */}
