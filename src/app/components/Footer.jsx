@@ -147,15 +147,15 @@ export default function Footer() {
             </div>
           </div>
         </div> */}
-        <footer className=" w-full z-0 ">
+        <footer className=" w-full z-0 mt-20">
           <div className="w-full">
             <CldImage
               src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761943405/footer-logo_ky4myy.png"
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761944186/footer-logo_doknwf.png"
               }
               className=" w-full h-full object-cover object-top "
-              width={1000}
-              height={1000}
+              width={1200}
+              height={1200}
               alt="footer image"
               format="auto"
               quality="auto"
