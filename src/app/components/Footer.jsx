@@ -151,7 +151,7 @@ export default function Footer() {
           <div className="w-full">
             <CldImage
               src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761944186/footer-logo_doknwf.png"
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761944617/footer-logo_btgxxu.png"
               }
               className=" w-full h-full object-cover object-top "
               width={1200}
