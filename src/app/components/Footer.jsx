@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { geistSans, instrumentSerif } from "../layout";
 import Link from "next/link";
 import CircularGallery from "./Circular";
@@ -13,11 +13,22 @@ import { CldImage } from "next-cloudinary";
 
 export default function Footer() {
   const pathName = usePathname();
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText("contact@flawless.design");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1000);
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  };
   return (
     <>
       {/* Fixed footer image at bottom - only half visible */}
       <div className=" ">
-        <div className=" mx-auto w-full max-w-7xl  px-4 pb-10 lg:pb-32 ">
+        <div className=" mx-auto w-full max-w-7xl  px-4 pb-8 lg:pb-14 ">
           <div
             className={` relative overflow-hidden backdrop-blur-[28px] rounded-[20px] p-4 lg:p-8 ${
               pathName === "/arch"
@@ -35,7 +46,7 @@ export default function Footer() {
                       pathName === "/arch"
                         ? "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761925285/logo-white_kksiem.png"
                         : pathName === "/trustybite"
-                        ? `${observerColor.logo}`
+                        ? `https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761841388/logo_xre9tr.png`
                         : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761841388/logo_xre9tr.png"
                     }`}
                     width={1200}
@@ -47,7 +58,11 @@ export default function Footer() {
                 </div>
                 <div>
                   <p
-                    className={`${geistSans.className} mt-2 md:whitespace-nowrap font-normal text-[20px] tracking-[-0.04em] text-[#505050]`}
+                    className={`${
+                      geistSans.className
+                    } mt-2 md:whitespace-nowrap font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                      pathName === "/arch" ? "text-white/70" : "text-[#505050]"
+                    }`}
                   >
                     Flawless design. Relentless execution
                   </p>
@@ -57,36 +72,71 @@ export default function Footer() {
                 <div className="flex flex-col justify-center items-start min-[1080px]:items-center ">
                   <div>
                     <p
-                      className={`${geistSans.className} mt-2 font-normal text-[20px] tracking-[-0.04em] text-black`}
+                      className={`${
+                        geistSans.className
+                      } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                        pathName === "/arch" ? "text-white" : "text-black"
+                      } `}
                     >
                       X ( Twitter)
                     </p>
                     <p
-                      className={`${geistSans.className} mt-2 font-normal text-[20px] tracking-[-0.04em] text-black`}
+                      className={`${
+                        geistSans.className
+                      } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                        pathName === "/arch" ? "text-white" : "text-black"
+                      }`}
                     >
                       Instagram
                     </p>
                     <p
-                      className={`${geistSans.className} mt-2 font-normal text-[20px] tracking-[-0.04em] text-black`}
+                      className={`${
+                        geistSans.className
+                      } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                        pathName === "/arch" ? "text-white" : "text-black"
+                      }`}
                     >
                       Linkedin
                     </p>
+                    <p
+                      className={`${
+                        geistSans.className
+                      } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                        pathName === "/arch" ? "text-white" : "text-black"
+                      }`}
+                    >
+                      Telegram
+                    </p>
                   </div>
                 </div>
-                <div className="flex flex-col justify-center items-start min-[1080px]:items-center">
+                <div className="flex flex-col justify-start items-start min-[1080px]:items-center">
                   <div>
+                    <Link href={"/work"}>
+                      <p
+                        className={`${
+                          geistSans.className
+                        } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                          pathName === "/arch" ? "text-white" : "text-black"
+                        }`}
+                      >
+                        Latest Projects
+                      </p>
+                    </Link>
                     <p
-                      className={`${geistSans.className} mt-2 font-normal text-[20px] tracking-[-0.04em] text-black`}
-                    >
-                      Latest Projects
-                    </p>
-                    <p
-                      className={`${geistSans.className} mt-2 font-normal text-[20px] tracking-[-0.04em] text-black`}
+                      className={`${
+                        geistSans.className
+                      } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                        pathName === "/arch" ? "text-white" : "text-black"
+                      }`}
                     >
                       Contra
                     </p>
                     <p
-                      className={`${geistSans.className} mt-2 font-normal text-[20px] tracking-[-0.04em] text-black`}
+                      className={`${
+                        geistSans.className
+                      } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                        pathName === "/arch" ? "text-white" : "text-black"
+                      }`}
                     >
                       Dribbble
                     </p>
@@ -94,24 +144,64 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col justify-start items-start min-[1080px]:items-center">
                   <div>
-                    <p
-                      className={`${geistSans.className} mt-2 font-normal text-[20px] tracking-[-0.04em] text-black`}
-                    >
-                      Book a call
-                    </p>
-                    <p
-                      className={`${geistSans.className} mt-2 font-normal text-[20px] tracking-[-0.04em] text-black`}
-                    >
-                      Contact Us
-                    </p>
+                    <Link href={"/30-min"}>
+                      <p
+                        className={`${
+                          geistSans.className
+                        } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                          pathName === "/arch" ? "text-white" : "text-black"
+                        }`}
+                      >
+                        Book a call
+                      </p>
+                    </Link>
+                    <div className="relative">
+                      <p
+                        onClick={copyToClipboard}
+                        title="Click to copy email"
+                        className={`${
+                          geistSans.className
+                        } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                          pathName === "/arch" ? "text-white" : "text-black"
+                        } `}
+                      >
+                        Contact Us
+                      </p>
+
+                      {/* Theme-aware tooltip */}
+                      <div
+                        className={`absolute -top-12 left-1/2 transform -translate-x-1/2 ${
+                          pathName === "/arch"
+                            ? "bg-white text-black"
+                            : "bg-black text-white"
+                        } text-sm px-3 py-2 rounded-lg whitespace-nowrap z-10 transition-all duration-300 ${
+                          copied
+                            ? "opacity-100 scale-100"
+                            : "opacity-0 scale-95 pointer-events-none"
+                        }`}
+                      >
+                        copied!
+                        <div
+                          className={`absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent ${
+                            pathName === "/arch"
+                              ? "border-t-white"
+                              : "border-t-black"
+                          }`}
+                        ></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="flex flex-col min-[1080px]:flex-row items-start gap-2 min-[1080px]:gap-8 mt-0 lg:mt-32">
+            <div className="flex flex-col min-[1080px]:flex-row items-start gap-2 min-[1080px]:gap-8 mt-0 lg:mt-20">
               <div>
                 <p
-                  className={`${geistSans.className} mt-2 font-normal text-[18px] tracking-[-0.04em] text-black/70`}
+                  className={`${
+                    geistSans.className
+                  } mt-2 font-normal text-[14px] md:text-[18px] tracking-[-0.04em] ${
+                    pathName === "/arch" ? "text-white" : "text-black/70"
+                  }`}
                 >
                   © 2025 Flawless Design. All rights reserved.
                 </p>
@@ -119,12 +209,20 @@ export default function Footer() {
               <div className="ml-4 min-[1080px]:ml-0">
                 <ul className="list-disc flex items-center gap-8">
                   <li
-                    className={`${geistSans.className} mt-2 font-normal text-[18px] tracking-[-0.04em] text-black/70`}
+                    className={`${
+                      geistSans.className
+                    } mt-2 font-normal text-[14px] md:text-[18px] tracking-[-0.04em] ${
+                      pathName === "/arch" ? "text-white" : "text-black/70"
+                    }`}
                   >
-                    Privacy Policy
+                    contact@flawless.design
                   </li>
                   <li
-                    className={`${geistSans.className} mt-2 font-normal text-[18px] tracking-[-0.04em] text-black/70`}
+                    className={`${
+                      geistSans.className
+                    } mt-2 font-normal text-[14px] md:text-[18px] tracking-[-0.04em] ${
+                      pathName === "/arch" ? "text-white" : "text-black/70"
+                    }`}
                   >
                     Terms of Service
                   </li>
@@ -147,7 +245,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 w-full overflow-hidden">
+        <div className="absolute bottom-0 w-full overflow-hidden pointer-events-none">
           <footer className=" w-full -z-10  relative ">
             {/* <div className="absolute blur-md md:blur-md -top-[185vw] -left-[55vw] min-[2000px]:-top-[190vw] min-[2000px]:-left-[68vw] min-[768px]:-top-[185vw] min-[768px]:-left-[50vw]  w-[200vw] h-[200vw] footer-bg rounded-full rotate-180"></div> */}
             <div className="w-full ">

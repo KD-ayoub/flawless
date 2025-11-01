@@ -7,6 +7,7 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { CldImage } from "next-cloudinary";
 import { IoClose } from "react-icons/io5";
+import Footer from "@/app/components/Footer";
 
 export default function WorkPage() {
   const containerRef = useRef(null);
@@ -147,6 +148,7 @@ export default function WorkPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

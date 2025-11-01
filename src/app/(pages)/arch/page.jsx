@@ -15,8 +15,6 @@ import Footer from "@/app/components/Footer";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function page() {
- 
-  
   const heroRef = useRef(null);
   const challengeRef = useRef(null);
   const approachRef = useRef(null);
@@ -24,7 +22,6 @@ export default function page() {
   const imageRefs = useRef([]);
   const checklistRef = useRef(null);
   const lenisRef = useRef(null);
-
 
   // useEffect(() => {
   //   const lenis = new Lenis();
@@ -170,340 +167,368 @@ export default function page() {
         );
       }
     });
-
-    
   });
 
   return (
-    <div className="text-white mt-10 lg:mt-16 mx-3 md:mx-10 xl:mx-20">
-      {/* Hero Section */}
-      <div ref={heroRef}>
-        <p
-          className={`${geistSans.className} font-semibold text-white leading-[100%] tracking-[-0.04em] text-[30px] sm:text-[40px] md:text-[55px] lg:text-[63px]`}
-        >
-          Designing the Future of Bitcoin: How Arch Raised{" "}
-          <span className="text-[#FF9900]">$20M+</span> and Grew to{" "}
-          <span className="text-[#FF9900]">500K+ </span>
-          Followers with Design People Believe In
-        </p>
-        <p
-          className={`${geistSans.className} mt-8 font-normal text-[#A7A7A7] leading-[120%] tracking-[-0.04em] text-[18px] md:text-[22px] lg:text-[32px]`}
-        >
-          Arch Network is building the permissionless financial rails for a
-          Bitcoin-denominated world. By enabling bridge-free programmability
-          directly on Bitcoin, they're solving the "Bitcoin Builder's Dilemma"
-          and unlocking new opportunities for developers and users.
-        </p>
-      </div>
-
-      {/* First Image */}
-      <div className="my-10">
-        <CldImage
-          ref={(el) => (imageRefs.current[0] = el)}
-          className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
-          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759241664/case1_fc0ahk.png"}
-          width={1000}
-          height={600}
-          alt="case p1"
-          quality="auto"
-          format="auto"
-          draggable={false}
-        />
-      </div>
-
-      {/* Challenge Section */}
-      <div ref={challengeRef}>
-        <h1
-          className={`${geistSans.className} font-normal text-white tracking-[-0.04em] sm:text-[30px] md:text-[40px] lg:text-[50px]`}
-        >
-          The Challenge
-        </h1>
-        <p
-          className={`${geistSans.className} font-normal leading-[120%] tracking-[-0.04em] text-[#A7A7A7] text-[18px] md:text-[22px] lg:text-[32px]`}
-        >
-          When the Arch team reached out, they already had a strong
-          infrastructure and a big vision for the future of Bitcoin. What they
-          needed was a design presence that could match that ambition. Together,
-          we set out to build a brand and user experience that not only looked
-          the part but also gave developers, partners, and investors the
-          confidence to get involved.
-        </p>
-      </div>
-
-      {/* Grid Images */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
-        <CldImage
-          ref={(el) => (imageRefs.current[1] = el)}
-          className="w-full h-full rounded-[16px] md:rounded-[20px]"
-          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242091/case2_xbcxpf.png"}
-          width={1000}
-          height={200}
-          alt="case p2"
-          quality="auto"
-          format="auto"
-          draggable={false}
-        />
-        <CldImage
-          ref={(el) => (imageRefs.current[2] = el)}
-          className="w-full h-full rounded-[16px] md:rounded-[20px]"
-          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242230/case3_pqicn7.png"}
-          width={1000}
-          height={200}
-          alt="case p3"
-          quality="auto"
-          format="auto"
-          draggable={false}
-        />
-      </div>
-
-      {/* Full Width Image */}
-      <div className="">
-        <CldImage
-          ref={(el) => (imageRefs.current[3] = el)}
-          className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
-          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242450/case4_suke5i.png"}
-          width={1200}
-          height={200}
-          alt="case p4"
-          quality="auto"
-          format="auto"
-          draggable={false}
-        />
-      </div>
-
-      {/* Approach Section */}
-      <div className="my-10" ref={approachRef}>
-        <h1
-          className={`${geistSans.className} font-normal text-white tracking-[-0.04em] sm:text-[30px] md:text-[40px] lg:text-[50px]`}
-        >
-          Our Approach
-        </h1>
-        <p
-          className={`${geistSans.className} font-normal leading-[120%] tracking-[-0.04em] text-[#A7A7A7] text-[18px] md:text-[22px] lg:text-[32px]`}
-        >
-          We embedded ourselves into Arch's team, making design accessible 24/7.
-          Starting with a branding exploration process, we defined a design
-          language that reflected their technical depth and bold vision. From
-          there, we delivered across every touchpoint:
-        </p>
-      </div>
-
-      {/* Checklist Section */}
-      <div ref={checklistRef}>
-        <div className="flex flex-col min-[1384px]:flex-row min-[1384px]:items-center min-[1384px]:gap-2">
-          <div className="flex items-center gap-2">
-            <FaCircleCheck color="#FF9900" className="w-4 h-4 md:w-6 md:h-6" />
-            <p
-              className={`${geistSans.className} font-normal text-[20px] md:text-[32px] tracking-[-0.04em]`}
-            >
-              Branding
-            </p>
-          </div>
-          <span
-            className={`${geistSans.className} ml-6 min-[1384px]:ml-0 font-normal text-[#A7A7A7] text-[18px] md:text-[26px] tracking-[-0.01em]`}
+    <>
+      <div className="text-white mt-10 lg:mt-16 mx-3 md:mx-10 xl:mx-20">
+        {/* Hero Section */}
+        <div ref={heroRef}>
+          <p
+            className={`${geistSans.className} font-semibold text-white leading-[100%] tracking-[-0.04em] text-[30px] sm:text-[40px] md:text-[55px] lg:text-[63px]`}
           >
-            Established Arch's visual identity and brand system
-          </span>
-        </div>
-        <div className="flex flex-col min-[1384px]:flex-row min-[1384px]:items-center min-[1384px]:gap-2">
-          <div className="flex items-center gap-2">
-            <FaCircleCheck color="#FF9900" className="w-4 h-4 md:w-6 md:h-6" />
-            <p
-              className={`${geistSans.className} font-normal text-[20px] md:text-[32px] tracking-[-0.04em]`}
-            >
-              Web Design
-            </p>
-          </div>
-          <span
-            className={`${geistSans.className} ml-6 min-[1384px]:ml-0 font-normal text-[#A7A7A7] text-[18px] md:text-[26px] tracking-[-0.01em]`}
+            Designing the Future of Bitcoin: How Arch Raised{" "}
+            <span className="text-[#FF9900]">$20M+</span> and Grew to{" "}
+            <span className="text-[#FF9900]">500K+ </span>
+            Followers with Design People Believe In
+          </p>
+          <p
+            className={`${geistSans.className} mt-8 font-normal text-[#A7A7A7] leading-[120%] tracking-[-0.04em] text-[18px] md:text-[22px] lg:text-[32px]`}
           >
-            Created their first website, then revamped it to reflect growth and
-            ecosystem expansion
-          </span>
+            Arch Network is building the permissionless financial rails for a
+            Bitcoin-denominated world. By enabling bridge-free programmability
+            directly on Bitcoin, they're solving the "Bitcoin Builder's Dilemma"
+            and unlocking new opportunities for developers and users.
+          </p>
         </div>
-        <div className="flex flex-col min-[1384px]:flex-row min-[1384px]:items-center min-[1384px]:gap-2">
-          <div className="flex items-center gap-2">
-            <FaCircleCheck color="#FF9900" className="w-4 h-4 md:w-6 md:h-6" />
-            <p
-              className={`${geistSans.className} font-normal text-[20px] md:text-[32px] tracking-[-0.04em]`}
-            >
-              Product Design
-            </p>
-          </div>
-          <span
-            className={`${geistSans.className} ml-6 min-[1384px]:ml-0 font-normal text-[#A7A7A7] text-[18px] md:text-[26px] tracking-[-0.01em]`}
-          >
-            Designed a dashboard to onboard and engage users
-          </span>
-        </div>
-        <div className="flex flex-col min-[1384px]:flex-row min-[1384px]:items-center min-[1384px]:gap-2">
-          <div className="flex items-center gap-2">
-            <FaCircleCheck color="#FF9900" className="w-4 h-4 md:w-6 md:h-6" />
-            <p
-              className={`${geistSans.className} font-normal text-[20px] md:text-[32px] tracking-[-0.04em]`}
-            >
-              Motion Design
-            </p>
-          </div>
-          <span
-            className={`${geistSans.className} ml-6 min-[1384px]:ml-0 font-normal text-[#A7A7A7] text-[18px] md:text-[26px] tracking-[-0.01em]`}
-          >
-            Animations and visuals to explain complex concepts simply
-          </span>
-        </div>
-        <div className="flex flex-col min-[1384px]:flex-row min-[1384px]:items-center min-[1384px]:gap-2">
-          <div className="flex items-center gap-2">
-            <FaCircleCheck color="#FF9900" className="w-4 h-4 md:w-6 md:h-6" />
-            <p
-              className={`${geistSans.className} font-normal text-[20px] md:text-[32px] tracking-[-0.04em]`}
-            >
-              Marketing Graphics
-            </p>
-          </div>
-          <span
-            className={`${geistSans.className} ml-6 min-[1384px]:ml-0 font-normal text-[#A7A7A7] text-[18px] md:text-[26px] tracking-[-0.01em]`}
-          >
-            Scalable assets for campaigns, social media, and community growth
-          </span>
-        </div>
-      </div>
 
-      {/* More Images */}
-      <div className="my-10">
-        <CldImage
-          ref={(el) => (imageRefs.current[4] = el)}
-          className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
-          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242651/case5_taimn8.png"}
-          width={1200}
-          height={200}
-          alt="case p5"
-          quality="auto"
-          format="auto"
-          draggable={false}
-        />
-      </div>
-      <div className="my-10">
-        <CldImage
-          ref={(el) => (imageRefs.current[5] = el)}
-          className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
-          src={"https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242795/case6_av26v4.png"}
-          width={1200}
-          height={200}
-          alt="case p6"
-          quality="auto"
-          format="auto"
-          draggable={false}
-        />
-      </div>
+        {/* First Image */}
+        <div className="my-10">
+          <CldImage
+            ref={(el) => (imageRefs.current[0] = el)}
+            className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759241664/case1_fc0ahk.png"
+            }
+            width={1000}
+            height={600}
+            alt="case p1"
+            quality="auto"
+            format="auto"
+            draggable={false}
+          />
+        </div>
 
-      <ArchVideoSection/>
+        {/* Challenge Section */}
+        <div ref={challengeRef}>
+          <h1
+            className={`${geistSans.className} font-normal text-white tracking-[-0.04em] sm:text-[30px] md:text-[40px] lg:text-[50px]`}
+          >
+            The Challenge
+          </h1>
+          <p
+            className={`${geistSans.className} font-normal leading-[120%] tracking-[-0.04em] text-[#A7A7A7] text-[18px] md:text-[22px] lg:text-[32px]`}
+          >
+            When the Arch team reached out, they already had a strong
+            infrastructure and a big vision for the future of Bitcoin. What they
+            needed was a design presence that could match that ambition.
+            Together, we set out to build a brand and user experience that not
+            only looked the part but also gave developers, partners, and
+            investors the confidence to get involved.
+          </p>
+        </div>
 
-      {/* Results Section */}
-      <div className="my-10" ref={resultsRef}>
-        <h1
-          className={`${geistSans.className} font-normal text-white tracking-[-0.04em] sm:text-[30px] md:text-[40px] lg:text-[50px]`}
-        >
-          The Results
-        </h1>
-        <p
-          className={`${geistSans.className} font-normal leading-[120%] tracking-[-0.04em] text-[#A7A7A7] text-[18px] md:text-[22px] lg:text-[32px]`}
-        >
-          Arch has quickly become one of the most recognized names in the
-          Bitcoin ecosystem, combining groundbreaking infrastructure with a
-          brand and design presence that reflects their ambition.
-        </p>
-      </div>
-      <div>
-        <div className="grid  md:grid-cols-2 gap-10">
-          <div className="bg-[#141415] rounded-[16px] md:rounded-[20px] p-6">
-            <div>
+        {/* Grid Images */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
+          <CldImage
+            ref={(el) => (imageRefs.current[1] = el)}
+            className="w-full h-full rounded-[16px] md:rounded-[20px]"
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242091/case2_xbcxpf.png"
+            }
+            width={1000}
+            height={200}
+            alt="case p2"
+            quality="auto"
+            format="auto"
+            draggable={false}
+          />
+          <CldImage
+            ref={(el) => (imageRefs.current[2] = el)}
+            className="w-full h-full rounded-[16px] md:rounded-[20px]"
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242230/case3_pqicn7.png"
+            }
+            width={1000}
+            height={200}
+            alt="case p3"
+            quality="auto"
+            format="auto"
+            draggable={false}
+          />
+        </div>
+
+        {/* Full Width Image */}
+        <div className="">
+          <CldImage
+            ref={(el) => (imageRefs.current[3] = el)}
+            className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242450/case4_suke5i.png"
+            }
+            width={1200}
+            height={200}
+            alt="case p4"
+            quality="auto"
+            format="auto"
+            draggable={false}
+          />
+        </div>
+
+        {/* Approach Section */}
+        <div className="my-10" ref={approachRef}>
+          <h1
+            className={`${geistSans.className} font-normal text-white tracking-[-0.04em] sm:text-[30px] md:text-[40px] lg:text-[50px]`}
+          >
+            Our Approach
+          </h1>
+          <p
+            className={`${geistSans.className} font-normal leading-[120%] tracking-[-0.04em] text-[#A7A7A7] text-[18px] md:text-[22px] lg:text-[32px]`}
+          >
+            We embedded ourselves into Arch's team, making design accessible
+            24/7. Starting with a branding exploration process, we defined a
+            design language that reflected their technical depth and bold
+            vision. From there, we delivered across every touchpoint:
+          </p>
+        </div>
+
+        {/* Checklist Section */}
+        <div ref={checklistRef}>
+          <div className="flex flex-col min-[1384px]:flex-row min-[1384px]:items-center min-[1384px]:gap-2">
+            <div className="flex items-center gap-2">
+              <FaCircleCheck
+                color="#FF9900"
+                className="w-4 h-4 md:w-6 md:h-6"
+              />
               <p
-                className={`${geistSans.className} text-[85px] lg:text-[102px] leading-[110%] tracking-[-0.04em] font-medium`}
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FFA500, #FFCC70, #FF7E00 50%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
+                className={`${geistSans.className} font-normal text-[20px] md:text-[32px] tracking-[-0.04em]`}
               >
-                $20M+
+                Branding
               </p>
             </div>
-            <div>
+            <span
+              className={`${geistSans.className} ml-6 min-[1384px]:ml-0 font-normal text-[#A7A7A7] text-[18px] md:text-[26px] tracking-[-0.01em]`}
+            >
+              Established Arch's visual identity and brand system
+            </span>
+          </div>
+          <div className="flex flex-col min-[1384px]:flex-row min-[1384px]:items-center min-[1384px]:gap-2">
+            <div className="flex items-center gap-2">
+              <FaCircleCheck
+                color="#FF9900"
+                className="w-4 h-4 md:w-6 md:h-6"
+              />
               <p
-                className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
+                className={`${geistSans.className} font-normal text-[20px] md:text-[32px] tracking-[-0.04em]`}
               >
-                Raised during their growth phase, supported by strong brand and
-                design presence
+                Web Design
               </p>
+            </div>
+            <span
+              className={`${geistSans.className} ml-6 min-[1384px]:ml-0 font-normal text-[#A7A7A7] text-[18px] md:text-[26px] tracking-[-0.01em]`}
+            >
+              Created their first website, then revamped it to reflect growth
+              and ecosystem expansion
+            </span>
+          </div>
+          <div className="flex flex-col min-[1384px]:flex-row min-[1384px]:items-center min-[1384px]:gap-2">
+            <div className="flex items-center gap-2">
+              <FaCircleCheck
+                color="#FF9900"
+                className="w-4 h-4 md:w-6 md:h-6"
+              />
+              <p
+                className={`${geistSans.className} font-normal text-[20px] md:text-[32px] tracking-[-0.04em]`}
+              >
+                Product Design
+              </p>
+            </div>
+            <span
+              className={`${geistSans.className} ml-6 min-[1384px]:ml-0 font-normal text-[#A7A7A7] text-[18px] md:text-[26px] tracking-[-0.01em]`}
+            >
+              Designed a dashboard to onboard and engage users
+            </span>
+          </div>
+          <div className="flex flex-col min-[1384px]:flex-row min-[1384px]:items-center min-[1384px]:gap-2">
+            <div className="flex items-center gap-2">
+              <FaCircleCheck
+                color="#FF9900"
+                className="w-4 h-4 md:w-6 md:h-6"
+              />
+              <p
+                className={`${geistSans.className} font-normal text-[20px] md:text-[32px] tracking-[-0.04em]`}
+              >
+                Motion Design
+              </p>
+            </div>
+            <span
+              className={`${geistSans.className} ml-6 min-[1384px]:ml-0 font-normal text-[#A7A7A7] text-[18px] md:text-[26px] tracking-[-0.01em]`}
+            >
+              Animations and visuals to explain complex concepts simply
+            </span>
+          </div>
+          <div className="flex flex-col min-[1384px]:flex-row min-[1384px]:items-center min-[1384px]:gap-2">
+            <div className="flex items-center gap-2">
+              <FaCircleCheck
+                color="#FF9900"
+                className="w-4 h-4 md:w-6 md:h-6"
+              />
+              <p
+                className={`${geistSans.className} font-normal text-[20px] md:text-[32px] tracking-[-0.04em]`}
+              >
+                Marketing Graphics
+              </p>
+            </div>
+            <span
+              className={`${geistSans.className} ml-6 min-[1384px]:ml-0 font-normal text-[#A7A7A7] text-[18px] md:text-[26px] tracking-[-0.01em]`}
+            >
+              Scalable assets for campaigns, social media, and community growth
+            </span>
+          </div>
+        </div>
+
+        {/* More Images */}
+        <div className="my-10">
+          <CldImage
+            ref={(el) => (imageRefs.current[4] = el)}
+            className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242651/case5_taimn8.png"
+            }
+            width={1200}
+            height={200}
+            alt="case p5"
+            quality="auto"
+            format="auto"
+            draggable={false}
+          />
+        </div>
+        <div className="my-10">
+          <CldImage
+            ref={(el) => (imageRefs.current[5] = el)}
+            className="w-full h-1/3 rounded-[16px] md:rounded-[20px]"
+            src={
+              "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759242795/case6_av26v4.png"
+            }
+            width={1200}
+            height={200}
+            alt="case p6"
+            quality="auto"
+            format="auto"
+            draggable={false}
+          />
+        </div>
+
+        <ArchVideoSection />
+
+        {/* Results Section */}
+        <div className="my-10" ref={resultsRef}>
+          <h1
+            className={`${geistSans.className} font-normal text-white tracking-[-0.04em] sm:text-[30px] md:text-[40px] lg:text-[50px]`}
+          >
+            The Results
+          </h1>
+          <p
+            className={`${geistSans.className} font-normal leading-[120%] tracking-[-0.04em] text-[#A7A7A7] text-[18px] md:text-[22px] lg:text-[32px]`}
+          >
+            Arch has quickly become one of the most recognized names in the
+            Bitcoin ecosystem, combining groundbreaking infrastructure with a
+            brand and design presence that reflects their ambition.
+          </p>
+        </div>
+        <div>
+          <div className="grid  md:grid-cols-2 gap-10">
+            <div className="bg-[#141415] rounded-[16px] md:rounded-[20px] p-6">
+              <div>
+                <p
+                  className={`${geistSans.className} text-[85px] lg:text-[102px] leading-[110%] tracking-[-0.04em] font-medium`}
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FFA500, #FFCC70, #FF7E00 50%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  $20M+
+                </p>
+              </div>
+              <div>
+                <p
+                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
+                >
+                  Raised during their growth phase, supported by strong brand
+                  and design presence
+                </p>
+              </div>
+            </div>
+            <div className="bg-[#141415] rounded-[16px] md:rounded-[20px] p-6">
+              <div>
+                <p
+                  className={`${geistSans.className} text-[85px] lg:text-[102px] leading-[110%] tracking-[-0.04em] font-medium`}
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FFA500, #FFCC70, #FF7E00 50%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  500K+
+                </p>
+              </div>
+              <div>
+                <p
+                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
+                >
+                  Raised during their growth phase, supported by strong brand
+                  and design presence
+                </p>
+              </div>
             </div>
           </div>
-          <div className="bg-[#141415] rounded-[16px] md:rounded-[20px] p-6">
-            <div>
-              <p
-                className={`${geistSans.className} text-[85px] lg:text-[102px] leading-[110%] tracking-[-0.04em] font-medium`}
-                style={{
-                  background:
-                    "linear-gradient(90deg, #FFA500, #FFCC70, #FF7E00 50%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                500K+
-              </p>
+          <div className="grid md:grid-cols-3 gap-10 my-10">
+            <div className="bg-[#141415] rounded-[16px] md:rounded-[20px] p-6">
+              <div>
+                <MarkIcon />
+              </div>
+              <div className="mt-3">
+                <p
+                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
+                >
+                  Grew from 0 users to a live ecosystem with active adoption.
+                </p>
+              </div>
             </div>
-            <div>
-              <p
-                className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
-              >
-                Raised during their growth phase, supported by strong brand and
-                design presence
-              </p>
+            <div className="bg-[#141415] rounded-[16px] md:rounded-[20px] p-6">
+              <div>
+                <MarkIcon />
+              </div>
+              <div className="mt-3">
+                <p
+                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
+                >
+                  Helped launch and grow ecosystem projects like Chaching and
+                  Saturn.
+                </p>
+              </div>
+            </div>
+            <div className="bg-[#141415] rounded-[16px] md:rounded-[20px] p-6">
+              <div>
+                <MarkIcon />
+              </div>
+              <div className="mt-3">
+                <p
+                  className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
+                >
+                  Created a brand presence that attracted both top-tier
+                  developers and investors.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div className="grid md:grid-cols-3 gap-10 my-10">
-          <div className="bg-[#141415] rounded-[16px] md:rounded-[20px] p-6">
-            <div>
-              <MarkIcon />
-            </div>
-            <div className="mt-3">
-              <p
-                className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
-              >
-                Grew from 0 users to a live ecosystem with active adoption.
-              </p>
-            </div>
-          </div>
-          <div className="bg-[#141415] rounded-[16px] md:rounded-[20px] p-6">
-            <div>
-              <MarkIcon />
-            </div>
-            <div className="mt-3">
-              <p
-                className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
-              >
-                Helped launch and grow ecosystem projects like Chaching and
-                Saturn.
-              </p>
-            </div>
-          </div>
-          <div className="bg-[#141415] rounded-[16px] md:rounded-[20px] p-6">
-            <div>
-              <MarkIcon />
-            </div>
-            <div className="mt-3">
-              <p
-                className={`${geistSans.className} font-light leading-[120%] text-[25px] tracking-[-0.04em] text-[#A7A7A7]`}
-              >
-                Created a brand presence that attracted both top-tier developers
-                and investors.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 

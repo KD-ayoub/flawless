@@ -10,6 +10,7 @@ import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
 import { CldImage } from "next-cloudinary";
 import { FirstSnippet, SecondSnippet, ThirdSnippet } from "@/app/components/SnippetComponent";
+import Footer from "@/app/components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -609,6 +610,7 @@ export default function page() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
