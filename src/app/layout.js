@@ -12,6 +12,7 @@ import { Suspense, useEffect, useState } from "react";
 import useHideBottomBlur from "./hooks/useHideBottomBlur";
 import GlassEffect from "./components/GlassEffect";
 import Footer from "./components/Footer";
+import Script from "next/script";
 
 export const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,6 +56,20 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <link rel="icon" type="image/png" href="/favicon.png"></link>
+        {/* GA4 loader */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-S4D4JWBJE4"
+          strategy="afterInteractive"
+        />
+        {/* GA4 init (disable auto page_view to avoid duplicates) */}
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-S4D4JWBJE4', { send_page_view: false });
+          `}
+        </Script>
       </head>
       <body
         className={`${
