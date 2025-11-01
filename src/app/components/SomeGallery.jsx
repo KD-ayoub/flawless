@@ -104,7 +104,7 @@ export default function WorkGallery() {
   );
 
   return (
-    <section className="overflow-hidden">
+    <section className="overflow-hidden mb-10">
       <div className="mx-auto">
         {/* Gallery Container */}
         <div ref={galleryRef} className="relative">

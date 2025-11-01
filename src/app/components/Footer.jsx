@@ -16,10 +16,10 @@ export default function Footer() {
   return (
     <>
       {/* Fixed footer image at bottom - only half visible */}
-      <div className="relative">
-        {/* <div className="absolute mx-auto w-full max-w-7xl left-1/2 -translate-x-1/2 px-4">
+      <div className=" ">
+        <div className=" mx-auto w-full max-w-7xl  px-4 my-2">
           <div
-            className={` relative overflow-hidden rounded-[20px] p-4 lg:p-8 ${
+            className={` relative overflow-hidden  rounded-[20px] p-4 lg:p-8 ${
               pathName === "/arch"
                 ? "bg-[#171717]/60 border border-[#0C0C0C]"
                 : pathName === "/trustybite"
@@ -27,7 +27,7 @@ export default function Footer() {
                 : "bg-[#FAFAFB]/20 border border-white"
             }`}
           >
-            <div className="grid grid-cols-3">
+            <div className="grid grid-cols-2 min-[1080px]:grid-cols-3">
               <div className="">
                 <div className="w-32 h-10 flex items-center">
                   <CldImage
@@ -47,14 +47,14 @@ export default function Footer() {
                 </div>
                 <div>
                   <p
-                    className={`${geistSans.className} mt-2 whitespace-nowrap font-normal text-[20px] tracking-[-0.04em] text-[#505050]`}
+                    className={`${geistSans.className} mt-2 md:whitespace-nowrap font-normal text-[20px] tracking-[-0.04em] text-[#505050]`}
                   >
                     Flawless design. Relentless execution
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-3 col-span-2">
-                <div className="flex flex-col justify-center items-center">
+              <div className="grid grid-cols-2 md:grid-cols-3 col-span-2 my-10">
+                <div className="flex flex-col justify-center items-start min-[1080px]:items-center ">
                   <div>
                     <p
                       className={`${geistSans.className} mt-2 font-normal text-[20px] tracking-[-0.04em] text-black`}
@@ -73,7 +73,7 @@ export default function Footer() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-col justify-center items-center">
+                <div className="flex flex-col justify-center items-start min-[1080px]:items-center">
                   <div>
                     <p
                       className={`${geistSans.className} mt-2 font-normal text-[20px] tracking-[-0.04em] text-black`}
@@ -92,7 +92,7 @@ export default function Footer() {
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-col justify-start items-center">
+                <div className="flex flex-col justify-start items-start min-[1080px]:items-center">
                   <div>
                     <p
                       className={`${geistSans.className} mt-2 font-normal text-[20px] tracking-[-0.04em] text-black`}
@@ -108,7 +108,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-8 mt-32">
+            <div className="flex flex-col min-[1080px]:flex-row items-start gap-2 min-[1080px]:gap-8 mt-0 lg:mt-32">
               <div>
                 <p
                   className={`${geistSans.className} mt-2 font-normal text-[18px] tracking-[-0.04em] text-black/70`}
@@ -116,7 +116,7 @@ export default function Footer() {
                   © 2025 Flawless Design. All rights reserved.
                 </p>
               </div>
-              <div className="">
+              <div className="ml-4 min-[1080px]:ml-0">
                 <ul className="list-disc flex items-center gap-8">
                   <li
                     className={`${geistSans.className} mt-2 font-normal text-[18px] tracking-[-0.04em] text-black/70`}
@@ -131,9 +131,9 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
-            <div className=" absolute w-[350px] h-[380px] -right-32 -bottom-[180px]">
+            <div className=" absolute w-[350px] h-[380px] -right-32 bottom-[420px] md:-bottom-[180px]">
               <CldImage
-                className=" w-full h-full object-fill rotate-12"
+                className=" w-full h-full object-fill rotate-90 md:rotate-12"
                 width={1200}
                 height={1220}
                 src={
@@ -146,23 +146,26 @@ export default function Footer() {
               />
             </div>
           </div>
-        </div> */}
-        <footer className=" w-full z-0 mt-20">
-          <div className="w-full">
-            <CldImage
-              src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761944617/footer-logo_btgxxu.png"
-              }
-              className=" w-full h-full object-cover object-top "
-              width={1200}
-              height={1200}
-              alt="footer image"
-              format="auto"
-              quality="auto"
-              priority
-            />
-          </div>
-        </footer>
+        </div>
+        <div className="absolute bottom-0 w-full overflow-hidden">
+          {/* <footer className=" w-full -z-10  relative ">
+            <div className="absolute blur-md md:blur-md -top-[185vw] -left-[45vw] min-[2000px]:-top-[190vw] min-[2000px]:-left-[68vw] min-[768px]:-top-[185vw] min-[768px]:-left-[50vw]  w-[200vw] h-[200vw] footer-bg rounded-full rotate-180"></div>
+            <div className="w-full ">
+              <CldImage
+                src={
+                  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1762006053/footer-logo_qsyor3.png"
+                }
+                className=" w-full h-full object-cover object-bottom "
+                width={1200}
+                height={1200}
+                alt="footer image"
+                format="auto"
+                quality="auto"
+                priority
+              />
+            </div>
+          </footer> */}
+        </div>
       </div>
     </>
   );

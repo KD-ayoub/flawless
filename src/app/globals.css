@@ -36,6 +36,14 @@ html.lenis body {
   border-radius: 18px;
 }
 
+.footer-bg {
+  background-image: url("https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: repeat-y;
+}
+
+
 
 
 /* Glass Card Container */
