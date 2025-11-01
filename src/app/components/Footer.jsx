@@ -17,17 +17,17 @@ export default function Footer() {
     <>
       {/* Fixed footer image at bottom - only half visible */}
       <div className=" ">
-        <div className=" mx-auto w-full max-w-7xl  px-4 my-2">
+        <div className=" mx-auto w-full max-w-7xl  px-4 pb-10 lg:pb-32 ">
           <div
-            className={` relative overflow-hidden  rounded-[20px] p-4 lg:p-8 ${
+            className={` relative overflow-hidden backdrop-blur-[28px] rounded-[20px] p-4 lg:p-8 ${
               pathName === "/arch"
                 ? "bg-[#171717]/60 border border-[#0C0C0C]"
                 : pathName === "/trustybite"
                 ? "bg-white/6 border border-white/14 [box-shadow:0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(255,255,255,0.1),inset_0_0_2px_1px_rgba(255,255,255,0.1)]"
-                : "bg-[#FAFAFB]/20 border border-white"
+                : "bg-[#FAFAFB]/20  border border-white"
             }`}
           >
-            <div className="grid grid-cols-2 min-[1080px]:grid-cols-3">
+            <div className="grid grid-cols-1 min-[1080px]:grid-cols-3">
               <div className="">
                 <div className="w-32 h-10 flex items-center">
                   <CldImage
@@ -53,7 +53,7 @@ export default function Footer() {
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 col-span-2 my-10">
+              <div className="grid grid-cols-2 md:grid-cols-3 col-span-2 my-10 min-[1080px]:my-0">
                 <div className="flex flex-col justify-center items-start min-[1080px]:items-center ">
                   <div>
                     <p
@@ -148,12 +148,12 @@ export default function Footer() {
           </div>
         </div>
         <div className="absolute bottom-0 w-full overflow-hidden">
-          {/* <footer className=" w-full -z-10  relative ">
-            <div className="absolute blur-md md:blur-md -top-[185vw] -left-[45vw] min-[2000px]:-top-[190vw] min-[2000px]:-left-[68vw] min-[768px]:-top-[185vw] min-[768px]:-left-[50vw]  w-[200vw] h-[200vw] footer-bg rounded-full rotate-180"></div>
+          <footer className=" w-full -z-10  relative ">
+            {/* <div className="absolute blur-md md:blur-md -top-[185vw] -left-[55vw] min-[2000px]:-top-[190vw] min-[2000px]:-left-[68vw] min-[768px]:-top-[185vw] min-[768px]:-left-[50vw]  w-[200vw] h-[200vw] footer-bg rounded-full rotate-180"></div> */}
             <div className="w-full ">
               <CldImage
                 src={
-                  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1762006053/footer-logo_qsyor3.png"
+                  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1762018400/footer-image_jjlcad.png"
                 }
                 className=" w-full h-full object-cover object-bottom "
                 width={1200}
@@ -164,7 +164,7 @@ export default function Footer() {
                 priority
               />
             </div>
-          </footer> */}
+          </footer>
         </div>
       </div>
     </>
