@@ -55,6 +55,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
+        <meta name="google-site-verification" content="j9rPmedqS4rKs7rL3hUyxO7-2_b9kUi401ekPh1YWfQ" />
         <link rel="icon" type="image/png" href="/favicon.png"></link>
         {/* GA4 loader */}
         <Script
