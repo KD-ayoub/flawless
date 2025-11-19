@@ -59,16 +59,17 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" href="/favicon.png"></link>
         {/* GA4 loader */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-S4D4JWBJE4"
+          src="https://www.googletagmanager.com/gtag/js?id=G-XHBSP08MJM"
           strategy="afterInteractive"
         />
-        {/* GA4 init (disable auto page_view to avoid duplicates) */}
+        {/* GA4 init (disable auto page_view to avoid duplicates. { send_page_view: false }) */}
         <Script id="ga4-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-S4D4JWBJE4', { send_page_view: false });
+
+            gtag('config', 'G-XHBSP08MJM', { send_page_view: false });
           `}
         </Script>
       </head>
