@@ -85,7 +85,7 @@ export default function Header() {
             const obj = {
               simple: "text-black",
               long: "bg-gradient-to-r from-black to-black",
-              logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761841388/logo_xre9tr.png"
+              logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747187/logo-f_avzipb.png"
             };
             setObserverColor(obj);
           } else {
@@ -135,7 +135,7 @@ export default function Header() {
                         ? "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761925285/logo-white_kksiem.png"
                         : pathName === "/trustybite"
                         ? `${observerColor.logo}`
-                        : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761841388/logo_xre9tr.png"
+                        : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747187/logo-f_avzipb.png"
                     }`}
                     width={1200}
                     height={1200}
@@ -297,7 +297,7 @@ function MobileHeader({ pathName, observerColor }) {
                         ? "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761925285/logo-white_kksiem.png"
                         : pathName === "/trustybite"
                         ? `${observerColor.logo}`
-                        : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761841388/logo_xre9tr.png"
+                        : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747187/logo-f_avzipb.png"
                     }`}
                       width={1200}
                       height={1200}

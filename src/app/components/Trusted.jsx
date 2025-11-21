@@ -13,17 +13,18 @@ export default function Trusted() {
   // Desktop layout: 6 logos per row
   const firstRowLogos = [
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252551/logo1_w1ruxk.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747481/masumi_xumuou.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252611/logo2_laaa1g.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252772/logo5_mcjlb2.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252672/logo3_inxvay.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252720/logo4_hgzecc.png",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252772/logo5_mcjlb2.png",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252816/logo6_iljsuh.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252897/logo7_mhiujo.png",
   ];
   const secondRowLogos = [
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252897/logo7_mhiujo.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252936/logo8_vl5olv.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252993/logo9_qb5lyq.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253036/logo10_ismv5d.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747511/Vector_niiltf.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253077/logo11_ggnlkd.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253156/logo12_mapmhe.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253212/logo13_tz8me6.png",
@@ -32,21 +33,21 @@ export default function Trusted() {
   // Mobile layout: 4 logos per row, 3 rows total
   const mobileFirstRow = [
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252551/logo1_w1ruxk.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747481/masumi_xumuou.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252611/logo2_laaa1g.png",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252672/logo3_inxvay.png",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252720/logo4_hgzecc.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252772/logo5_mcjlb2.png",
   ];
   const mobileSecondRow = [
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252772/logo5_mcjlb2.png",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252816/logo6_iljsuh.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252672/logo3_inxvay.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252720/logo4_hgzecc.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252897/logo7_mhiujo.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252936/logo8_vl5olv.png",
   ];
   const mobileThirdRow = [
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252993/logo9_qb5lyq.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253036/logo10_ismv5d.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747511/Vector_niiltf.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253077/logo11_ggnlkd.png",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253156/logo12_mapmhe.png",
   ];
 
   const containerRef = useRef(null);
@@ -64,7 +65,6 @@ export default function Trusted() {
       //     toggleActions: "play none none none",
       //   },
       // });
-
       // // Animate title first
       // tl.fromTo(
       //   titleRef.current,
@@ -153,10 +153,13 @@ export default function Trusted() {
         {/* First row - 6 logos */}
         <div
           ref={firstRowRef}
-          className="flex gap-[8%] items-center w-full max-w-5xl"
+          className="flex gap-[8%] items-center w-full max-w-6xl"
         >
           {firstRowLogos.map((logo, index) => (
-            <div key={index} className="scale-[1.2]">
+            <div
+              key={index}
+              className={`${index === 1 ? "scale-[2]" : "scale-[1.2]"}`}
+            >
               <CldImage
                 src={logo}
                 alt={`Logo ${index + 1}`}
@@ -174,12 +177,12 @@ export default function Trusted() {
         {/* Second row - 6 logos */}
         <div
           ref={secondRowRef}
-          className="flex gap-[8%] items-center w-full max-w-[68rem] mx-auto"
+          className="flex gap-[8%] items-center w-full max-w-[70rem] mx-auto"
         >
           {secondRowLogos.map((logo, index) => (
             <div
               key={index + 6}
-              className="  scale-[1.2]"
+              className={`${index === 3 ? "scale-[3]" : "scale-[1.2]"}`}
             >
               <CldImage
                 src={logo}
@@ -254,7 +257,21 @@ export default function Trusted() {
             </div>
           ))}
         </div>
-        <div className="flex items-center justify-center w-full">
+        <div className="flex items-center gap-10 justify-center w-full">
+          <div className="mobile-logo w-[15%] ">
+            <CldImage
+              src={
+                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759253156/logo12_mapmhe.png"
+              }
+              alt={`Logo 13`}
+              className="w-full h-full object-contain aspect-[4/2]"
+              width={1000}
+              height={1000}
+              quality="auto"
+              format="auto"
+              draggable={false}
+            />
+          </div>
           <div className="mobile-logo w-[15%] ">
             <CldImage
               src={

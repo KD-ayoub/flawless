@@ -201,6 +201,19 @@ export default function HeroSection() {
           ref={buttonRef}
           className="flex flex-col opacity-0 md:flex-row items-center gap-3"
         >
+          <Link href={"/"}>
+            <div className="bg-white cursor-pointer border border-[#E6E6E6] hover:scale-[1.03] transition-transform duration-300 drop-shadow-[0px_2px_13px_rgba(0,0,0,0.3)] relative flex gap-2 px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full">
+              {/* Arrow Bubble with hover nudge */}
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white cursor-pointer relative z-10 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 [box-shadow:_rgba(255,255,255,0.1)_0px_1px_1px_0px_inset,_rgba(50,50,93,0.25)_0px_2px_3px_2px,_rgba(0,0,0,0.3)_0px_30px_60px_-30px]">
+                <FigmaLogo />
+              </div>
+              <button
+                className={`${geistSans.className} cursor-pointer font-semibold tracking-[-0.02em] text-sm sm:text-base text-black`}
+              >
+                View Our Work
+              </button>
+            </div>
+          </Link>
           <Link href={"/30-min"}>
             <div className="relative  cursor-pointer w-fit flex items-center gap-2 sm:gap-3 border border-[#0070F3] px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full bg-[#0070F3] overflow-hidden  hover:scale-[1.03] group shadow-lg shadow-[#4075F0]/25 transition-transform duration-300">
               {/* Moving blur on hover */}
@@ -222,19 +235,7 @@ export default function HeroSection() {
               </div>
             </div>
           </Link>
-          <Link href={"/"}>
-            <div className="bg-white cursor-pointer border border-[#E6E6E6] hover:scale-[1.03] transition-transform duration-300 drop-shadow-[0px_2px_13px_rgba(0,0,0,0.3)] relative flex gap-2 px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full">
-              {/* Arrow Bubble with hover nudge */}
-              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white cursor-pointer relative z-10 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 [box-shadow:_rgba(255,255,255,0.1)_0px_1px_1px_0px_inset,_rgba(50,50,93,0.25)_0px_2px_3px_2px,_rgba(0,0,0,0.3)_0px_30px_60px_-30px]">
-                <FigmaLogo />
-              </div>
-              <button
-                className={`${geistSans.className} cursor-pointer font-semibold tracking-[-0.02em] text-sm sm:text-base text-black`}
-              >
-                View Our Work
-              </button>
-            </div>
-          </Link>
+          
         </div>
       </div>
     </div>

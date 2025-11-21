@@ -17,9 +17,12 @@ const testimonials = [
   "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994348/testimonial4_bsali9.png",
   "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759240530/testimonial5_ovbhlo.png",
   "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994351/testimonial6_gtgexp.png",
-  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994354/testimonial7_hdgq5y.png",
-  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994353/testimonial8_byupmv.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763749115/testimonial77_u5ayrl.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763749155/testimonial88_vwv30n.png",
   "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1758994352/testimonial9_swhwtv.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763749515/testimonial10_r6ne56.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763749546/testimonial11_mpemv1.png",
+  "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763749585/testimonial12_evrepm.png",
 ];
 
 export default function TestimonialGrid() {
@@ -73,8 +76,14 @@ export default function TestimonialGrid() {
               case 6:
                 margin = "lg:-mt-12";
                 break;
+              case 7:
+                margin = "lg:-mt-32";
+                break;
               case 8:
                 margin = "lg:-mt-12";
+                break;
+              case 10:
+                margin = "lg:-mt-[20rem]";
                 break;
             }
             return (
@@ -159,20 +168,20 @@ function MobileTestimonials() {
       text: "We've collaborated on several projects, and they consistently exceeded all our expectations. We highly recommend them for any design needs.",
     },
     {
-      name: "Ben Holzman",
-      work: "CTO, funkybit labs",
+      name: "KidPaddle",
+      work: "Cofounder, SolutioFi",
       image:
-        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759603385/testimo7_z0bvzy.png",
-      logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252816/logo6_iljsuh.png",
-      text: "We engaged them as a strategic partner on our Web3 platform. They thought like product owners, brought deep industry insight, and consistently delivered clean, intuitive interfaces backed by smart, strategic decisions. By anticipating user needs and proactively offering thoughtful solutions, they became an indispensable part of our team.",
+        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763749915/image7_clg4la.png",
+      logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763750996/logo9_pxtbfv.png",
+      text: "They delivered outstanding work for SolutioFi. I wasn't familiar with the branding process beforehand, and I was pleasantly surprised by how thorough and thoughtful their analysis and approach were. I’m now thrilled to use the branding they created across all aspects of our project. Every dollar spent on branding with them was more than worth it.",
     },
     {
-      name: "Andrew Lawrence",
-      work: "CEO, funkybit labs",
+      name: "Mike Kruz",
+      work: "Founder, IkonShop",
       image:
-        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759603526/testimo8_mpytas.png",
-      logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759252816/logo6_iljsuh.png",
-      text: "We couldn't ask for more. They listened to our vision, offered thoughtful and daring feedback, iterated swiftly, and helped us funkify our crypto project. On top of that, they were professional and approachable every step of the way. In short, they elevated everything we do.",
+        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763750095/image8_bjv53u.png",
+      logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763750943/logo8_l4nqbb.png",
+      text: "Design—creative was nailed, responsive, and great to work with. The process felt smooth from start to finish, and every request was handled with care and precision. The final result exceeded our expectations.",
     },
     {
       name: "Tim Samoylov",
@@ -182,6 +191,30 @@ function MobileTestimonials() {
       logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759603815/logo14_uxosoh.png",
       text: "We partnered on a full branding overhaul, and the outcome was spot-on. They took the time to understand our goals, introduced fresh creative ideas, and delivered a unified identity that truly stands out. Communication was clear throughout, and every milestone was met on time.",
     },
+    {
+      name: "Stefano Cavalieri",
+      work: "founder, Caw Studio",
+      image:
+        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763750291/image10_kwd7zb.png",
+      logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763750856/logo10_pby9qj.png",
+      text: "We collaborated on the SILICONS website and revamped our brand identity. They were a breeze to work with, offering insightful ideas that took our brand up a notch. Their attention to detail and design sensibility are rare finds. We enthusiastically endorse their work.",
+    },
+    {
+      name: "Birdm0n",
+      work: "founder, Caw Studio",
+      image:
+        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763750402/image11_a5fvng.png",
+      logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763750856/logo10_pby9qj.png",
+      text: "I’ve worked with many designers in the Solana ecosystem, but they were the first to truly blow me away with their professionalism and expertise. I’d recommend teaming up with them for any branding needs :)",
+    },
+    {
+      name: "Bridget de' Medici",
+      work: "Marketing Lead, AIE Labs",
+      image:
+        "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763750722/image12_jvxnvk.png",
+      logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763750729/logo12_o6s5n2.png",
+      text: "We approached with a rough rebrand idea, and they guided us through the entire process, shaping our vision into a clear visual identity. From logo to landing page, they brought everything to life with patience and expert direction. The result captured our vision perfectly. Highly recommended!",
+    },
   ];
   return (
     <>
@@ -189,7 +222,10 @@ function MobileTestimonials() {
         <div className="grid grid-cols-1 min-[580px]:grid-cols-2 gap-2 items-start">
           {mobileTestimo.map((value, idx) => {
             return (
-              <div key={value.name} className="relative overflow-hidden table bg-[radial-gradient(circle_at_top,#D3A7D080_60%,#7F7FFE60)] p-0.5 rounded-[20px] sm:hidden w-full ">
+              <div
+                key={value.name}
+                className="relative overflow-hidden table bg-[radial-gradient(circle_at_top,#D3A7D080_60%,#7F7FFE60)] p-0.5 rounded-[20px] sm:hidden w-full "
+              >
                 <div className=" p-6 float-left table-cell testing-bg">
                   <div className="flex items-center gap-3">
                     <div className=" w-20 h-20 rounded-full ">
@@ -239,7 +275,7 @@ function MobileTestimonials() {
                     </div>
                   </div>
                   <div className="flex justify-end">
-                    <div className="w-1/3 h-6">
+                    <div className="w-1/3 h-auto">
                       <CldImage
                         src={value.logo}
                         className="opacity-60"
