@@ -158,7 +158,7 @@ export default function Trusted() {
           {firstRowLogos.map((logo, index) => (
             <div
               key={index}
-              className={`${index === 1 ? "scale-[2]" : "scale-[1.2]"}`}
+              className={`${index === 1 ? "scale-[2.5]" : "scale-[1.2]"}`}
             >
               <CldImage
                 src={logo}
