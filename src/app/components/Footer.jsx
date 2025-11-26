@@ -105,15 +105,23 @@ export default function Footer() {
                         Instagram
                       </p>
                     </Link>
-                    <p
-                      className={`${
-                        geistSans.className
-                      } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
-                        pathName === "/arch" ? "text-white" : "text-black"
-                      }`}
+                    <Link
+                      href={
+                        "https://www.linkedin.com/in/flawless-design-008b47397/"
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      Linkedin
-                    </p>
+                      <p
+                        className={`${
+                          geistSans.className
+                        } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                          pathName === "/arch" ? "text-white" : "text-black"
+                        }`}
+                      >
+                        Linkedin
+                      </p>
+                    </Link>
                     <p
                       className={`${
                         geistSans.className
@@ -138,24 +146,38 @@ export default function Footer() {
                         Latest Projects
                       </p>
                     </Link>
-                    <p
-                      className={`${
-                        geistSans.className
-                      } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
-                        pathName === "/arch" ? "text-white" : "text-black"
-                      }`}
+                    <Link
+                      href={
+                        "https://contra.com/flawless_design_96se3ree/work?r=flawless_design_96se3ree"
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      Contra
-                    </p>
-                    <p
-                      className={`${
-                        geistSans.className
-                      } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
-                        pathName === "/arch" ? "text-white" : "text-black"
-                      }`}
+                      <p
+                        className={`${
+                          geistSans.className
+                        } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                          pathName === "/arch" ? "text-white" : "text-black"
+                        }`}
+                      >
+                        Contra
+                      </p>
+                    </Link>
+                    <Link
+                      href={"https://dribbble.com/flawless_design"}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      Dribbble
-                    </p>
+                      <p
+                        className={`${
+                          geistSans.className
+                        } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                          pathName === "/arch" ? "text-white" : "text-black"
+                        }`}
+                      >
+                        Dribbble
+                      </p>
+                    </Link>
                   </div>
                 </div>
                 <div className="flex flex-col justify-start items-start min-[1080px]:items-center">
@@ -171,7 +193,7 @@ export default function Footer() {
                         Book a call
                       </p>
                     </Link>
-                    <div  className="relative">
+                    <div className="relative">
                       <p
                         onClick={copyToClipboard}
                         title="Click to copy email"
