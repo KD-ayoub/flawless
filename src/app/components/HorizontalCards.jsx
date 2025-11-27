@@ -62,6 +62,19 @@ const cards = [
       "Onboarding Animations",
     ],
   },
+  {
+    icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1764269371/num_jp5ob9.png",
+    title: "Backend",
+    subtitle: "Scalable, secure, reliable systems.",
+    details: [
+      "Backend & distributed systems",
+      "Smart contracts & protocols",
+      "Web3 front-end (React/Wagmi)",
+      "AI automation & onchain",
+      "Product & systems design",
+      "dApp & AI architectures",
+    ],
+  },
 ];
 
 export default function HorizontalCards() {
@@ -107,7 +120,7 @@ export default function HorizontalCards() {
         }
 
         const totalWidth = (cardWidth + padding) * cards.length;
-        return -(totalWidth - screenWidth) * 0.6;
+        return -(totalWidth - screenWidth) * 0.7;
       }
 
       function getStartPosition() {
@@ -273,61 +286,69 @@ function HorizontalCardsMobile() {
   }, []);
 
   // ScrollTrigger for in-view animation
-  useGSAP(() => {
-    const scrollContainer = scrollRef.current;
-    const container = containerRef.current;
-    
-    if (!scrollContainer || !container || hasAnimated) return;
+  useGSAP(
+    () => {
+      const scrollContainer = scrollRef.current;
+      const container = containerRef.current;
 
-    ScrollTrigger.create({
-      trigger: container,
-      start: "top 80%", // Trigger when component is 80% visible
-      onEnter: () => {
-        if (hasAnimated) return;
-        
-        const sneakPeekAnimation = () => {
-          // Wait 1 second after entering view
-          setTimeout(() => {
-            if (!scrollContainer) return;
+      if (!scrollContainer || !container || hasAnimated) return;
 
-            // Calculate peek distance (show part of second card)
-            const cardWidth = window.innerWidth < 640 ? 300 : window.innerWidth < 768 ? 350 : 400;
-            const gap = window.innerWidth < 640 ? 16 : 24; // gap-4 sm:gap-6
-            const peekDistance = cardWidth * 0.25; // Show 25% of next card
+      ScrollTrigger.create({
+        trigger: container,
+        start: "top 80%", // Trigger when component is 80% visible
+        onEnter: () => {
+          if (hasAnimated) return;
 
-            // Temporarily disable scroll snap for smooth animation
-            scrollContainer.style.scrollSnapType = "none";
-            scrollContainer.style.scrollBehavior = "smooth";
-
-            // Scroll to peek at second card
-            scrollContainer.scrollTo({
-              left: peekDistance,
-              behavior: "smooth",
-            });
-
-            // Return to original position after 1.5 seconds
+          const sneakPeekAnimation = () => {
+            // Wait 1 second after entering view
             setTimeout(() => {
+              if (!scrollContainer) return;
+
+              // Calculate peek distance (show part of second card)
+              const cardWidth =
+                window.innerWidth < 640
+                  ? 300
+                  : window.innerWidth < 768
+                  ? 350
+                  : 400;
+              const gap = window.innerWidth < 640 ? 16 : 24; // gap-4 sm:gap-6
+              const peekDistance = cardWidth * 0.25; // Show 25% of next card
+
+              // Temporarily disable scroll snap for smooth animation
+              scrollContainer.style.scrollSnapType = "none";
+              scrollContainer.style.scrollBehavior = "smooth";
+
+              // Scroll to peek at second card
               scrollContainer.scrollTo({
-                left: 0,
+                left: peekDistance,
                 behavior: "smooth",
               });
 
-              // Re-enable scroll snap after animation
+              // Return to original position after 1.5 seconds
               setTimeout(() => {
-                if (scrollContainer) {
-                  scrollContainer.style.scrollSnapType = "x mandatory";
-                  setHasAnimated(true);
-                }
-              }, 500);
-            }, 300);
-          }, 900); // 1 second delay after entering view
-        };
+                scrollContainer.scrollTo({
+                  left: 0,
+                  behavior: "smooth",
+                });
 
-        sneakPeekAnimation();
-      },
-      once: true, // Only trigger once
-    });
-  }, { scope: containerRef });
+                // Re-enable scroll snap after animation
+                setTimeout(() => {
+                  if (scrollContainer) {
+                    scrollContainer.style.scrollSnapType = "x mandatory";
+                    setHasAnimated(true);
+                  }
+                }, 500);
+              }, 300);
+            }, 900); // 1 second delay after entering view
+          };
+
+          sneakPeekAnimation();
+        },
+        once: true, // Only trigger once
+      });
+    },
+    { scope: containerRef }
+  );
 
   return (
     <div ref={containerRef} className="relative py-8 lg:py-12 block xl:hidden">
