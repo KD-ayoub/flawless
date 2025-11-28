@@ -64,7 +64,7 @@ const cards = [
   },
   {
     icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1764269371/num_jp5ob9.png",
-    title: "Backend",
+    title: "Backend (Web3 & AI)",
     subtitle: "Scalable, secure, reliable systems.",
     details: [
       "Backend & distributed systems",
@@ -190,7 +190,7 @@ export default function HorizontalCards() {
 
                       {/* Header */}
                       <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 relative z-10">
-                        <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] flex items-center">
+                        <div className="w-[50px] h-[50px] sm:w-[55px] sm:h-[55px] flex items-center">
                           <CldImage
                             src={val.icon}
                             width={1500}
@@ -203,7 +203,7 @@ export default function HorizontalCards() {
                           />
                         </div>
                         <h3
-                          className={`${instrumentSerif.className} text-2xl sm:text-3xl lg:text-[54px] font-normal text-black`}
+                          className={`${instrumentSerif.className} text-2xl sm:text-3xl lg:text-[45px] font-normal text-black`}
                         >
                           {val.title}
                         </h3>

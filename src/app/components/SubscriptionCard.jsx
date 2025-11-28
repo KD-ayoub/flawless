@@ -23,18 +23,18 @@ export default function SubscriptionCard() {
 
   // Static items that never change
   const baseValues = [
-    "Unlimited Requests",
-    "Unlimited revisions.",
-    "Daily & Weekly updates",
+    "Unlimited requests",
+    "Unlimited revisions",
+    "Daily & weekly updates",
     "One request is processed at a time",
   ];
 
   // Dynamic first two items based on isChecked state
   const getFirstTwoItems = () => {
     if (isChecked) {
-      return ["Dedicated Designer & Dev.", "Unlimited Design & Dev Access"];
+      return ["Dedicated designer & dev", "Unlimited design & dev access"];
     } else {
-      return ["Dedicated designer.", "Unlimited Design Access"];
+      return ["Dedicated designer", "Unlimited design access"];
     }
   };
 

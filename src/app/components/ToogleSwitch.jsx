@@ -43,7 +43,7 @@ export default function ToogleSwitch({ card, isChecked, setIsChecked }) {
                   src={
                     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705052/devtoogle2_vmhsze.svg"
                   }
-                  alt="brush icon"
+                  alt="dev icon"
                   width={20}
                   height={20}
                   className="object-contain"

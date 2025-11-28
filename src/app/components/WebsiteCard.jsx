@@ -33,9 +33,9 @@ export default function WebsiteCard() {
   // Dynamic first two items based on isChecked state
   const getFirstItem = () => {
     if (isChecked) {
-      return ["Custom Design & Dev"];
+      return ["Custom design & dev"];
     } else {
-      return ["Custom Figma Design"];
+      return ["Custom figma design"];
     }
   };
 

@@ -201,7 +201,13 @@ export default function HeroSection() {
           ref={buttonRef}
           className="flex flex-col opacity-0 md:flex-row items-center gap-3"
         >
-          <Link href={"/"}>
+          <Link
+            href={
+              "https://www.figma.com/proto/QFyTEpqAUvIMxdN8uZxsjl/Portfolio?page-id=0%3A1&node-id=2-2369&p=f&viewport=960%2C583%2C0.02&t=5ApNob8LXDTkvan1-1&scaling=min-zoom&content-scaling=fixed"
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="bg-white cursor-pointer border border-[#E6E6E6] hover:scale-[1.03] transition-transform duration-300 drop-shadow-[0px_2px_13px_rgba(0,0,0,0.3)] relative flex gap-2 px-1.5 py-1 sm:px-2 sm:py-1.5 rounded-full">
               {/* Arrow Bubble with hover nudge */}
               <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white cursor-pointer relative z-10 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 [box-shadow:_rgba(255,255,255,0.1)_0px_1px_1px_0px_inset,_rgba(50,50,93,0.25)_0px_2px_3px_2px,_rgba(0,0,0,0.3)_0px_30px_60px_-30px]">
@@ -235,7 +241,6 @@ export default function HeroSection() {
               </div>
             </div>
           </Link>
-          
         </div>
       </div>
     </div>

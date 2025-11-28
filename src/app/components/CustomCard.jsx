@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function CustomCard() {
   const values = [
-    "Custom scope & timeline",
+    "Custom scope and timeline",
     "Optional development",
     "Unlimited revisions",
     "Branding or product design",
