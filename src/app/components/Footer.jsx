@@ -51,7 +51,7 @@ export default function Footer() {
                     }`}
                     width={1200}
                     height={1200}
-                    alt="logo image"
+                    alt="Flawless Design logo image"
                     format="auto"
                     quality="auto"
                   />
@@ -64,7 +64,7 @@ export default function Footer() {
                       pathName === "/arch" ? "text-white/70" : "text-[#505050]"
                     }`}
                   >
-                    Flawless design. Relentless execution
+                    Flawless Design. Relentless execution
                   </p>
                 </div>
               </div>

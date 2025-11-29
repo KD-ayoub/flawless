@@ -29,12 +29,13 @@ export default function BackgroundLayoutContent() {
           <div className="absolute w-[400px] h-[200px] min-[2500px]:w-[1000px]! min-[2500px]:h-[500px]! lg:w-[500px] lg:h-[300px]  right-0">
             <CldImage
               className=" w-full h-full object-cover"
-              width={2000}
+              width={100}
               height={200}
               src={
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759249445/shape1_gnjglp.png"
               }
               alt="shape1"
+              sizes="(min-width: 2500px) 1000px, (min-width: 1024px) 500px, 400px"
               quality="auto"
               format="auto"
               draggable={false}
@@ -51,17 +52,18 @@ export default function BackgroundLayoutContent() {
               priority
             />
           </div> */}
-          <div className=" absolute hidden min-[1000px]:block  w-[150px] h-[400px]  2xl:h-[600px]  md:top-20 xl:top-28  -left-5 min-[2500px]:hidden ">
+          <div className="absolute hidden min-[1000px]:block w-[180px] h-[600px] 2xl:h-[700px] md:top-20 xl:top-28 -left-5 min-[2500px]:hidden">
             <CldImage
-              className=" w-full h-auto object-cover"
-              width={1200}
-              height={220}
-              src={
-                "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759249229/Rectangle_nimvst.png"
-              }
-              alt="shape2"
+              className="w-full h-full object-cover"
+              src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759249229/Rectangle_nimvst.png"
+              alt=""
+              aria-hidden="true"
+              width={300} // ~2x your rendered width (150px)
+              height={1125} // keep similar vertical ratio
+              sizes="180px" // it’s always 150px wide when visible
               quality="auto"
               format="auto"
+              loading="lazy"
               draggable={false}
             />
           </div>

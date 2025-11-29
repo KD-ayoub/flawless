@@ -139,7 +139,7 @@ export default function Header() {
                     }`}
                     width={1200}
                     height={1200}
-                    alt="logo image"
+                    alt="Flawless Design logo image"
                     format="auto"
                     quality="auto"
                   />
@@ -301,7 +301,7 @@ function MobileHeader({ pathName, observerColor }) {
                     }`}
                       width={1200}
                       height={1200}
-                      alt="logo image"
+                      alt="Flawless Design logo image"
                       format="auto"
                       quality="auto"
                     />
