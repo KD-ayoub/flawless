@@ -71,7 +71,7 @@ export default function Header() {
   const [observerColor, setObserverColor] = useState({
     simple: "text-white",
     long: "bg-gradient-to-r from-white to-white",
-    logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763823479/logo-white_mspzr6.png"
+    logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763823479/logo-white_mspzr6.png",
   });
   useEffect(() => {
     const heroImage = document.getElementById("hero-image");
@@ -85,14 +85,14 @@ export default function Header() {
             const obj = {
               simple: "text-black",
               long: "bg-gradient-to-r from-black to-black",
-              logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747187/logo-f_avzipb.png"
+              logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747187/logo-f_avzipb.png",
             };
             setObserverColor(obj);
           } else {
             const obj = {
               simple: "text-white",
               long: "bg-gradient-to-r from-white to-white",
-              logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763823479/logo-white_mspzr6.png"
+              logo: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763823479/logo-white_mspzr6.png",
             };
             setObserverColor(obj);
           }
@@ -293,12 +293,12 @@ function MobileHeader({ pathName, observerColor }) {
                   <div className="w-32 h-10 ml-2 flex items-center">
                     <CldImage
                       src={`${
-                      pathName === "/arch"
-                        ? "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763823479/logo-white_mspzr6.png"
-                        : pathName === "/trustybite"
-                        ? `${observerColor.logo}`
-                        : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747187/logo-f_avzipb.png"
-                    }`}
+                        pathName === "/arch"
+                          ? "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763823479/logo-white_mspzr6.png"
+                          : pathName === "/trustybite"
+                          ? `${observerColor.logo}`
+                          : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747187/logo-f_avzipb.png"
+                      }`}
                       width={1200}
                       height={1200}
                       alt="Flawless Design logo image"
@@ -311,6 +311,8 @@ function MobileHeader({ pathName, observerColor }) {
               <button
                 className="cursor-pointer"
                 onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="Open navigation menu"
+                type="button"
               >
                 {menuOpen ? (
                   <IoClose

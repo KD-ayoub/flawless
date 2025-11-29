@@ -142,7 +142,7 @@ export default function Trusted() {
       <div className="flex justify-center items-center">
         <p
           ref={titleRef}
-          className={`${geistSans.className} font-normal mb-6 text-sm md:text-base text-[#818181] `}
+          className={`${geistSans.className} font-normal mb-6 text-sm md:text-base text-[#6B6B6B] `}
         >
           Trusted by industry leaders
         </p>

@@ -11,7 +11,7 @@ export default function CaseStudies() {
       <div id="case-studies" className="max-w-7xl mx-auto px-4">
         <div className="flex justify-center items-center">
           <p
-            className={`${geistSans.className} mt-3 lg:mt-6 uppercase font-normal text-xs sm:text-sm md:text-[18px] text-[#818181]`}
+            className={`${geistSans.className} mt-3 lg:mt-6 uppercase font-normal text-xs sm:text-sm md:text-[18px] text-[#6B6B6B]`}
           >
             Case Studies
           </p>

@@ -100,7 +100,7 @@ export default function HowitWorksSection() {
       <div ref={containerRef}>
         <div ref={subtitleRef} className="flex justify-center items-center">
           <p
-            className={`${geistSans.className} uppercase font-normal text-xs sm:text-sm md:text-[18px] text-[#818181]`}
+            className={`${geistSans.className} uppercase font-normal text-xs sm:text-sm md:text-[18px] text-[#6B6B6B]`}
           >
             How it works
           </p>
