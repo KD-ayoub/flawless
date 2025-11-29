@@ -46,8 +46,8 @@ export default function Footer() {
                       pathName === "/arch"
                         ? "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761925285/logo-white_kksiem.png"
                         : pathName === "/trustybite"
-                        ? `https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747187/logo-f_avzipb.png`
-                        : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747187/logo-f_avzipb.png"
+                        ? `https://res.cloudinary.com/dvaeb0mxy/image/upload/v1764438866/logo_vpdwhr.png`
+                        : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1764438866/logo_vpdwhr.png"
                     }`}
                     width={1200}
                     height={1200}

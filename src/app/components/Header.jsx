@@ -135,7 +135,7 @@ export default function Header() {
                         ? "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763823479/logo-white_mspzr6.png"
                         : pathName === "/trustybite"
                         ? `${observerColor.logo}`
-                        : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747187/logo-f_avzipb.png"
+                        : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1764438866/logo_vpdwhr.png"
                     }`}
                     width={1200}
                     height={1200}
@@ -297,7 +297,7 @@ function MobileHeader({ pathName, observerColor }) {
                           ? "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763823479/logo-white_mspzr6.png"
                           : pathName === "/trustybite"
                           ? `${observerColor.logo}`
-                          : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1763747187/logo-f_avzipb.png"
+                          : "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1764438866/logo_vpdwhr.png"
                       }`}
                       width={1200}
                       height={1200}

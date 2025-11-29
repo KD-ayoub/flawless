@@ -49,7 +49,9 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="E_pID0C5FOUVYSORdix769JON1Ax8J_fXWKgQuS-c5g"
         />
-        <link rel="icon" type="image/png" href="/favicon.png"></link>
+        <link rel="icon" type="image/png" href="/favicon16.png" sizes="16x16"></link>
+        <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32"></link>
+        <link rel="icon" type="image/png" href="/favicon180.png" sizes="180x180"></link>
         {/* GA4 loader */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XHBSP08MJM"
