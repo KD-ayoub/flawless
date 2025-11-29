@@ -39,7 +39,7 @@ export default function BackgroundLayoutContent() {
               quality="auto"
               format="auto"
               draggable={false}
-              property="true"
+              priority="true"
               fetchPriority="high"
             />
           </div>
@@ -65,7 +65,8 @@ export default function BackgroundLayoutContent() {
               sizes="180px" // it’s always 150px wide when visible
               quality="auto"
               format="auto"
-              loading="lazy"
+              priority="true"
+              fetchPriority="high"
               draggable={false}
             />
           </div>
