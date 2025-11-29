@@ -27,9 +27,9 @@ export const instrumentSerif = Instrument_Serif({
 });
 
 const metadata = {
-  title: "Flawless | Branding, Motion, and Web Development for Web3 and AI",
+  title: "Flawless Design | Branding, Motion, and Web Development for Web3 and AI",
   description:
-    "Flawless helps founders ship standout brands, product UI, motion content, and high-performing websites. Strategy to execution, built for Web3 and AI teams.",
+    "Flawless Design helps founders ship standout brands, product UI, motion content, and high-performing websites. Strategy to execution, built for Web3 and AI teams.",
 };
 
 export default function RootLayout({ children }) {
@@ -55,8 +55,14 @@ export default function RootLayout({ children }) {
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
+        <meta property="og:site_name" content="Flawless Design" />
+        <meta property="og:title" content={metadata.title} />
+        <meta name="twitter:title" content={metadata.title} />
         {/* <meta name="google-site-verification" content="j9rPmedqS4rKs7rL3hUyxO7-2_b9kUi401ekPh1YWfQ" /> old */}
-        <meta name="google-site-verification" content="E_pID0C5FOUVYSORdix769JON1Ax8J_fXWKgQuS-c5g" />
+        <meta
+          name="google-site-verification"
+          content="E_pID0C5FOUVYSORdix769JON1Ax8J_fXWKgQuS-c5g"
+        />
         <link rel="icon" type="image/png" href="/favicon.png"></link>
         {/* GA4 loader */}
         <Script
