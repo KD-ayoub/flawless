@@ -12,7 +12,7 @@ export default function BackgroundLayoutContent() {
       {/* Background image */}
       {pathName !== "/arch" && pathName !== "/trustybite" && (
         <>
-          <div className="fixed inset-0 -z-10">
+          <div className="fixed inset-0 ">
             <CldImage
               className="object-cover w-full h-full -scale-y-100"
               width={1000}
@@ -58,8 +58,8 @@ export default function BackgroundLayoutContent() {
               src="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759249229/Rectangle_nimvst.png"
               alt=""
               aria-hidden="true"
-              width={300} // ~2x your rendered width (150px)
-              height={1125} // keep similar vertical ratio
+              width={180} // ~2x your rendered width (150px)
+              height={676} // keep similar vertical ratio
               sizes="180px" // it’s always 150px wide when visible
               quality="auto"
               format="auto"

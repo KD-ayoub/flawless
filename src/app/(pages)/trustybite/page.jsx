@@ -534,7 +534,7 @@ export default function page() {
             that signals reliability at a glance.
           </p>
         </div>
-        <div className="my-10">
+        <div className="py-10">
           <div className="grid  md:grid-cols-2 gap-10">
             <div className="bg-[#F0F0F0] rounded-[16px] md:rounded-[20px] p-6">
               <div>

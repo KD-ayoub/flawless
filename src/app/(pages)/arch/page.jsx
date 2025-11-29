@@ -485,7 +485,7 @@ export default function page() {
               </div>
             </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-10 my-10">
+          <div className="grid md:grid-cols-3 gap-10 py-10">
             <div className="bg-[#141415] rounded-[16px] md:rounded-[20px] p-6">
               <div>
                 <MarkIcon />
