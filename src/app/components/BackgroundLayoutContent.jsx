@@ -39,6 +39,8 @@ export default function BackgroundLayoutContent() {
               quality="auto"
               format="auto"
               draggable={false}
+              property="true"
+              fetchPriority="high"
             />
           </div>
           {/* <div className=" absolute hidden min-[1000px]:block  w-[200px] h-[400px]  2xl:h-[600px]  md:top-60 xl:top-52  -left-5 min-[2500px]:hidden ">
