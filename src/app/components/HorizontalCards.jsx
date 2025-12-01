@@ -12,19 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 const cards = [
   {
     icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759328427/num1_plyj4m.png",
-    title: "Branding",
-    subtitle: "We build identities that stick and scale.",
-    details: [
-      "Logo design",
-      "Visual identity & color system",
-      "Brand guidelines & asset kit",
-      "Pitch-deck / investor slides",
-      "Social media brand assets",
-      "Full rebrand & refresh",
-    ],
-  },
-  {
-    icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759328430/num2_tth4en.png",
     title: "Product & UX",
     subtitle: "UI people love and understand AT first SIGHT.",
     details: [
@@ -36,6 +23,20 @@ const cards = [
       "dApp / AI product patterns",
     ],
   },
+  {
+    icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759328430/num2_tth4en.png",
+    title: "Branding",
+    subtitle: "We build identities that stick and scale.",
+    details: [
+      "Logo design",
+      "Visual identity & color system",
+      "Brand guidelines & asset kit",
+      "Pitch-deck / investor slides",
+      "Social media brand assets",
+      "Full rebrand & refresh",
+    ],
+  },
+
   {
     icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759328435/num3_w4a0d5.png",
     title: "Web & Front-End",
@@ -51,19 +52,6 @@ const cards = [
   },
   {
     icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759328439/num4_a7aadi.png",
-    title: "Motion",
-    subtitle: "Movement with meaning, not just decoration.",
-    details: [
-      "Logo & brand animations",
-      "Promo / explainer videos",
-      "Social teaser reels",
-      "Product Walkthroughs",
-      "Animated Visual Identities",
-      "Onboarding Animations",
-    ],
-  },
-  {
-    icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1764269371/num_jp5ob9.png",
     title: "Backend (Web3 & AI)",
     subtitle: "Scalable, secure, reliable systems.",
     details: [
@@ -73,6 +61,19 @@ const cards = [
       "AI automation & onchain",
       "Product & systems design",
       "dApp & AI architectures",
+    ],
+  },
+  {
+    icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1764269371/num_jp5ob9.png",
+    title: "Motion",
+    subtitle: "Movement with meaning, not just decoration.",
+    details: [
+      "Logo & brand animations",
+      "Promo / explainer videos",
+      "Social teaser reels",
+      "Product Walkthroughs",
+      "Animated Visual Identities",
+      "Onboarding Animations",
     ],
   },
 ];
