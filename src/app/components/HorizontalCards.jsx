@@ -52,7 +52,7 @@ const cards = [
   },
   {
     icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759328439/num4_a7aadi.png",
-    title: "Backend (Web3 & AI)",
+    title: "Back-End (Web3 & AI)",
     subtitle: "Scalable, secure, reliable systems.",
     details: [
       "Backend & distributed systems",
