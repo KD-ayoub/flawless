@@ -39,7 +39,7 @@ const cards = [
 
   {
     icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759328435/num3_w4a0d5.png",
-    title: "Web & Front-End",
+    title: "Front-End & Web",
     subtitle: "execution that stays fast, clean, and flexible.",
     details: [
       "React / Next.js front-end apps",
@@ -65,7 +65,7 @@ const cards = [
   },
   {
     icon: "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1764269371/num_jp5ob9.png",
-    title: "Motion",
+    title: "Motion Design",
     subtitle: "Movement with meaning, not just decoration.",
     details: [
       "Logo & brand animations",

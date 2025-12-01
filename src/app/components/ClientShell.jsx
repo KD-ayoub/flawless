@@ -8,6 +8,7 @@ import ScrollReset from "./ScrollReset";
 import Header from "./Header";
 import BackgroundLayoutContent from "./BackgroundLayoutContent";
 import useHideBottomBlur from "../hooks/useHideBottomBlur";
+import BackToTop from "./BackToTop";
 
 export default function ClientShell({ children }) {
   const pathName = usePathname();
@@ -65,6 +66,7 @@ export default function ClientShell({ children }) {
           </LenisWrapper>
         </Suspense>
       </div>
+      <BackToTop/>
     </div>
   );
 }
