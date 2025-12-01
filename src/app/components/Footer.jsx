@@ -122,15 +122,23 @@ export default function Footer() {
                         Linkedin
                       </p>
                     </Link>
-                    <p
-                      className={`${
-                        geistSans.className
-                      } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
-                        pathName === "/arch" ? "text-white" : "text-black"
-                      }`}
+                    <Link
+                      href={
+                        "https://t.me/axeldesigns"
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      Telegram
-                    </p>
+                      <p
+                        className={`${
+                          geistSans.className
+                        } mt-2 cursor-pointer font-normal text-[16px] md:text-[20px] tracking-[-0.04em] ${
+                          pathName === "/arch" ? "text-white" : "text-black"
+                        }`}
+                      >
+                        Telegram
+                      </p>
+                    </Link>
                   </div>
                 </div>
                 <div className="flex flex-col justify-start items-start min-[1080px]:items-center">
@@ -255,7 +263,7 @@ export default function Footer() {
                   >
                     contact@flawless.design
                   </li>
-                  <li
+                  {/* <li
                     className={`${
                       geistSans.className
                     } mt-2 font-normal text-[14px] md:text-[18px] tracking-[-0.04em] ${
@@ -263,7 +271,7 @@ export default function Footer() {
                     }`}
                   >
                     Terms of Service
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>
