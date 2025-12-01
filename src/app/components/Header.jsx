@@ -156,7 +156,7 @@ export default function Header() {
                   flawless <span className="italic">Design</span>
                 </p> */}
               </Link>
-              <div className="flex gap-8 ml-16">
+              <div className="flex gap-8 ml-[68px]">
                 <a
                   href="/#services"
                   onClick={(e) => {
