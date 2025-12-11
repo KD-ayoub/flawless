@@ -84,32 +84,32 @@ export default function WorkPage() {
   //   };
   // }, []);
 
-  useGSAP(() => {
-    const tl = gsap.timeline();
+  // useGSAP(() => {
+  //   const tl = gsap.timeline();
 
-    // Set initial states
-    gsap.set([containerRef.current, imageRef.current], {
-      opacity: 0,
-      y: 50,
-    });
+  //   // Set initial states
+  //   gsap.set([containerRef.current, imageRef.current], {
+  //     opacity: 0,
+  //     y: 50,
+  //   });
 
-    // Animate in sequence
-    tl.to(containerRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out",
-    }).to(
-      imageRef.current,
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power2.out",
-      },
-      "-=0.4"
-    ); // Start 0.4s before previous animation ends
-  }, []);
+  //   // Animate in sequence
+  //   tl.to(containerRef.current, {
+  //     opacity: 1,
+  //     y: 0,
+  //     duration: 0.8,
+  //     ease: "power2.out",
+  //   }).to(
+  //     imageRef.current,
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       duration: 0.6,
+  //       ease: "power2.out",
+  //     },
+  //     "-=0.4"
+  //   ); // Start 0.4s before previous animation ends
+  // }, []);
 
 
 
@@ -126,21 +126,22 @@ export default function WorkPage() {
             {images.map((img, index) => {
               return (
                 <div
-                  key={Math.random() * 2}
-                  ref={imageRef}
-                  className="relative w-full rounded-[16px] md:rounded-[28px] lg:rounded-[32px] overflow-hidden mt-4"
+                  key={img}
+                  // ref={imageRef}
+                  className="relative rounded-[16px] md:rounded-[28px] lg:rounded-[32px] overflow-hidden mt-4"
                   // onClick={() => openModal(img, index)}
                 >
                   <CldImage
                     src={img}
-                    width={1440}
-                    height={0}
+                    width={100}
+                    height={100}
                     alt="Work Background"
-                    className=" h-full "
-                    sizes=""
+                    className="w-full h-full "
+                    sizes="(min-width: 2500px) 1000px, (min-width: 1024px) 700px, 400px"
                     quality="auto"
                     format="auto"
                     draggable={false}
+                    loading="lazy"
                   />
                 </div>
               );
