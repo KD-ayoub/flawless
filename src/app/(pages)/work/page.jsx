@@ -133,15 +133,14 @@ export default function WorkPage() {
                 >
                   <CldImage
                     src={img}
-                    width={100}
-                    height={100}
+                    width={665}
+                    height={575}
                     alt="Work Background"
                     className="w-full h-full "
-                    sizes="(min-width: 2500px) 1000px, (min-width: 1024px) 700px, 400px"
+                    sizes="(min-width: 2500px) 1000px, (min-width: 1024px) 665px, 400px"
                     quality="auto"
                     format="auto"
                     draggable={false}
-                    loading="lazy"
                     fetchPriority="high"
                   />
                 </div>
