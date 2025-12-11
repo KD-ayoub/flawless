@@ -111,8 +111,6 @@ export default function WorkPage() {
   //   ); // Start 0.4s before previous animation ends
   // }, []);
 
-
-
   return (
     <>
       <div className="py-8 sm:py-12 lg:py-16">
@@ -136,8 +134,12 @@ export default function WorkPage() {
                     width={100}
                     height={100}
                     alt="Work Background"
-                    className="w-full h-auto "
-                    sizes="(min-width: 2500px) 1000px, (min-width: 1024px) 700, 500px"
+                    className="w-full h-full "
+                    sizes={`${
+                      index === 1
+                        ? "(min-width: 2500px) 1000px, (min-width: 1024px) 800, 300px"
+                        : "(min-width: 2500px) 1000px, (min-width: 1024px) 800, 500px"
+                    }`}
                     quality="auto"
                     format="auto"
                     draggable={false}
