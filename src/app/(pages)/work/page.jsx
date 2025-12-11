@@ -142,6 +142,7 @@ export default function WorkPage() {
                     format="auto"
                     draggable={false}
                     loading="lazy"
+                    fetchPriority="high"
                   />
                 </div>
               );
