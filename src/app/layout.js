@@ -2,16 +2,6 @@
 
 import { Geist, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-import BackgroundLayoutContent from "./components/BackgroundLayoutContent";
-// import { usePathname } from "next/navigation";
-import { CldImage } from "next-cloudinary";
-import LenisWrapper from "./components/LenisWrapper";
-import ScrollReset from "./components/ScrollReset";
-// import { Suspense, useEffect, useState } from "react";
-import useHideBottomBlur from "./hooks/useHideBottomBlur";
-import GlassEffect from "./components/GlassEffect";
-import Footer from "./components/Footer";
 import Script from "next/script";
 import ClientShell from "./components/ClientShell";
 
@@ -99,7 +89,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
         {/* GA4 init (disable auto page_view to avoid duplicates. { send_page_view: false }) */}
-        <Script id="ga4-init" strategy="afterInteractive">
+        <Script id="ga4-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
