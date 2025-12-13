@@ -21,9 +21,11 @@ export default function BackgroundLayoutContent() {
                 "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"
               }
               alt="Background"
-              quality="auto"
+              quality="auto:eco"
+              sizes="100vw"
               format="auto"
               draggable={false}
+              fetchPriority="high"
             />
           </div>
           <div className="absolute w-[400px] h-[200px] min-[2500px]:w-[1000px]! min-[2500px]:h-[500px]! lg:w-[500px] lg:h-[300px]  right-0">
