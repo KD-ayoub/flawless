@@ -140,28 +140,33 @@ export default function WorkPage() {
               />
             </div> */}
             {images.map((img, index) => {
+              const isMain = index === 1; // work0_dhy4ar: the one Lighthouse complains about
+
               return (
                 <div
                   key={img}
-                  // ref={imageRef}
                   className="relative rounded-[16px] md:rounded-[28px] lg:rounded-[32px] overflow-hidden mt-4"
-                  // onClick={() => openModal(img, index)}
                 >
                   <CldImage
                     src={img}
-                    width={400}
-                    height={200}
                     alt="Work Background"
-                    className="w-full h-full "
-                    sizes={`${
-                      index === 1
-                        ? "(min-width: 1536px) 480px,(min-width: 1280px) 400px,(min-width: 1024px) 360px,100vw"
-                        : "(min-width: 1536px) 480px,(min-width: 1280px) 500px,(min-width: 1024px) 360px,100vw"
-                    }`}
+                    // use a reasonable aspect ratio; for the main one we match the audit
+                    width={isMain ? 665 : 400}
+                    height={isMain ? 575 : 200}
+                    className="w-full h-auto" // 👈 IMPORTANT: no h-full
+                    sizes={
+                      isMain
+                        ? // this tells the browser: "slot ≈ 600px on desktop"
+                          "(min-width: 1024px) 600px, 100vw"
+                        : // others can be smaller, they’re not LCP / critical
+                          "(min-width: 1536px) 480px,(min-width: 1280px) 420px,(min-width: 1024px) 360px,100vw"
+                    }
                     quality="auto:eco"
                     format="auto"
                     draggable={false}
-                    fetchPriority="high"
+                    // only the main image is LCP candidate
+                    priority={isMain}
+                    fetchPriority={isMain ? "high" : "auto"}
                   />
                 </div>
               );
