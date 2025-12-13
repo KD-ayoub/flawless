@@ -121,6 +121,24 @@ export default function WorkPage() {
           {/* Responsive Image Container */}
           <div className="relative w-full  mx-auto">
             {/* Aspect ratio container */}
+            {/* <div
+              // ref={imageRef}
+              className="relative rounded-[16px] md:rounded-[28px] lg:rounded-[32px] overflow-hidden mt-4"
+              // onClick={() => openModal(img, index)}
+            >
+              <CldImage
+                src={images[0]}
+                width={400}
+                height={200}
+                alt="Work Background"
+                className="w-full h-auto "
+                sizes="(min-width: 1536px) 480px,(min-width: 1280px) 500px,(min-width: 1024px) 360px,100vw"
+                quality="auto:eco"
+                format="auto"
+                draggable={false}
+                fetchPriority="high"
+              />
+            </div> */}
             {images.map((img, index) => {
               return (
                 <div
@@ -131,16 +149,16 @@ export default function WorkPage() {
                 >
                   <CldImage
                     src={img}
-                    width={100}
-                    height={100}
+                    width={400}
+                    height={200}
                     alt="Work Background"
                     className="w-full h-full "
                     sizes={`${
                       index === 1
-                        ? "(min-width: 2500px) 1000px, (min-width: 1024px) 800, 300px"
-                        : "(min-width: 2500px) 1000px, (min-width: 1024px) 800, 500px"
+                        ? "(min-width: 1536px) 480px,(min-width: 1280px) 400px,(min-width: 1024px) 360px,100vw"
+                        : "(min-width: 1536px) 480px,(min-width: 1280px) 500px,(min-width: 1024px) 360px,100vw"
                     }`}
-                    quality="auto"
+                    quality="auto:eco"
                     format="auto"
                     draggable={false}
                     fetchPriority="high"
