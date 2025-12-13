@@ -18,7 +18,7 @@ export default function WorkPage() {
 
   const images = [
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759339695/IkonShopdark_yh0mxx.png",
-    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759340288/work0_dhy4ar.png",
+    "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1765658725/deh_jblvlk.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759339794/IkonShop_rxm2ks.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759340437/work1_q2htdk.png",
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759340561/work2_m9skgd.png",
@@ -140,7 +140,7 @@ export default function WorkPage() {
               />
             </div> */}
             {images.map((img, index) => {
-              const isMain = index === 1; // work0_dhy4ar: the one Lighthouse complains about
+              const isMain = index === 1 || index === 0; // work0_dhy4ar: the one Lighthouse complains about
 
               return (
                 <div
@@ -149,7 +149,7 @@ export default function WorkPage() {
                 >
                   <CldImage
                     src={img}
-                    alt="Work Background"
+                    alt={`Work Background${img}`}
                     // use a reasonable aspect ratio; for the main one we match the audit
                     width={isMain ? 665 : 400}
                     height={isMain ? 575 : 200}
