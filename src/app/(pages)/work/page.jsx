@@ -1,20 +1,11 @@
 "use client";
-import VideoSection from "@/app/components/VideoSection";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import Lenis from "lenis";
-import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+
+import React, { useRef, useState } from "react";
 import { CldImage } from "next-cloudinary";
-import { IoClose } from "react-icons/io5";
 import Footer from "@/app/components/Footer";
 
 export default function WorkPage() {
   const containerRef = useRef(null);
-  const imageRef = useRef(null);
-  const [selectedImage, setSelectedImage] = useState(null);
-  const modalRef = useRef(null);
-  const lenisRef = useRef(null); // Add Lenis ref
 
   const images = [
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759339695/IkonShopdark_yh0mxx.png",
@@ -71,45 +62,6 @@ export default function WorkPage() {
     "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1759412827/work49_bmaj8z.png",
   ];
 
-  // useEffect(() => {
-  //   const lenis = new Lenis();
-  //   lenisRef.current = lenis;
-  //   function raf(time) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-  //   requestAnimationFrame(raf);
-  //   return () => {
-  //     lenis.destroy();
-  //   };
-  // }, []);
-
-  // useGSAP(() => {
-  //   const tl = gsap.timeline();
-
-  //   // Set initial states
-  //   gsap.set([containerRef.current, imageRef.current], {
-  //     opacity: 0,
-  //     y: 50,
-  //   });
-
-  //   // Animate in sequence
-  //   tl.to(containerRef.current, {
-  //     opacity: 1,
-  //     y: 0,
-  //     duration: 0.8,
-  //     ease: "power2.out",
-  //   }).to(
-  //     imageRef.current,
-  //     {
-  //       opacity: 1,
-  //       y: 0,
-  //       duration: 0.6,
-  //       ease: "power2.out",
-  //     },
-  //     "-=0.4"
-  //   ); // Start 0.4s before previous animation ends
-  // }, []);
 
   return (
     <>
@@ -121,24 +73,6 @@ export default function WorkPage() {
           {/* Responsive Image Container */}
           <div className="relative w-full  mx-auto">
             {/* Aspect ratio container */}
-            {/* <div
-              // ref={imageRef}
-              className="relative rounded-[16px] md:rounded-[28px] lg:rounded-[32px] overflow-hidden mt-4"
-              // onClick={() => openModal(img, index)}
-            >
-              <CldImage
-                src={images[0]}
-                width={400}
-                height={200}
-                alt="Work Background"
-                className="w-full h-auto "
-                sizes="(min-width: 1536px) 480px,(min-width: 1280px) 500px,(min-width: 1024px) 360px,100vw"
-                quality="auto:eco"
-                format="auto"
-                draggable={false}
-                fetchPriority="high"
-              />
-            </div> */}
             {images.map((img, index) => {
               const isMain = index === 1 || index === 0; // work0_dhy4ar: the one Lighthouse complains about
 
