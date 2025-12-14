@@ -1,7 +1,15 @@
 "use client";
 
 import React from "react";
-import { CldImage } from "next-cloudinary";
+import dynamic from "next/dynamic";
+
+// Dynamically load CldImage from next-cloudinary
+const DynamicCldImage = dynamic(
+  () => import("next-cloudinary").then((mod) => mod.CldImage),
+  {
+    ssr: false, // ensures it only runs on the client
+  }
+);
 
 export default function DisplayImages() {
   const images = [
@@ -70,7 +78,7 @@ export default function DisplayImages() {
             key={img}
             className="relative rounded-[16px] md:rounded-[28px] lg:rounded-[32px] overflow-hidden mt-4"
           >
-            <CldImage
+            <DynamicCldImage
               src={img}
               alt={`Work Background${img}`}
               // use a reasonable aspect ratio; for the main one we match the audit

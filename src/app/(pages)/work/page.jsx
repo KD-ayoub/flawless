@@ -1,6 +1,7 @@
 // "use client";
 
 import Footer from "../../components/Footer";
+
 import DisplayImages from "./DisplayImages";
 
 export default function WorkPage() {

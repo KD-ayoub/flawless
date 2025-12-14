@@ -280,7 +280,7 @@ export default function Footer() {
                   "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1761129229/Rectangle_gfavsa.png"
                 }
                 alt="shape2"
-                quality="auto"
+                quality="auto:eco"
                 format="auto"
                 draggable={false}
               />
@@ -299,8 +299,9 @@ export default function Footer() {
                 width={1200}
                 height={1200}
                 alt="footer image"
+                sizes="100vw"
                 format="auto"
-                quality="auto"
+                quality="auto:eco"
                 priority
               />
             </div>
