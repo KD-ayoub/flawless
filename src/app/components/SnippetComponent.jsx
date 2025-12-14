@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCopy } from "react-icons/fa6";
-import { geistSans } from "../layout";
+import { geistSans } from "../fonts";
 
 export function FirstSnippet() {
   return (

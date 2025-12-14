@@ -1,10 +1,10 @@
 "use client";
 import React, { useRef } from "react";
-import { geistSans, instrumentSerif } from "../layout";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
+import { geistSans, instrumentSerif } from "../fonts";
 
 gsap.registerPlugin(useGSAP);
 

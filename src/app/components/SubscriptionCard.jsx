@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import { geistSans, instrumentSerif } from "../layout";
+import { geistSans, instrumentSerif } from "../fonts";
 import ToogleSwitch from "./ToogleSwitch";
 import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";

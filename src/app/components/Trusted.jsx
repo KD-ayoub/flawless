@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { geistSans } from "../layout";
+import { geistSans } from "../fonts";
 import { CldImage } from "next-cloudinary";
 
 gsap.registerPlugin(ScrollTrigger);

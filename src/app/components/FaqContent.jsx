@@ -5,10 +5,10 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { geistSans } from "../layout";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import { geistSans } from "../fonts";
 
 gsap.registerPlugin(ScrollTrigger);
 

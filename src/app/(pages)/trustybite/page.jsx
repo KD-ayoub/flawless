@@ -1,6 +1,6 @@
 "use client";
 
-import { geistSans } from "@/app/layout";
+import { geistSans } from "../../fonts";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { FaCircleCheck, FaCopy } from "react-icons/fa6";
@@ -9,8 +9,7 @@ import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
 import { CldImage } from "next-cloudinary";
-import { FirstSnippet, SecondSnippet, ThirdSnippet } from "@/app/components/SnippetComponent";
-import Footer from "@/app/components/Footer";
+import { FirstSnippet, SecondSnippet, ThirdSnippet } from "../../components/SnippetComponent";
 
 gsap.registerPlugin(ScrollTrigger);
 

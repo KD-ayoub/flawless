@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import { geistSans } from "../layout";
+import { geistSans } from "../fonts";
 import PricingCards from "./PricingCards";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";

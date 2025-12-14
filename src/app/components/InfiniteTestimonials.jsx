@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CldImage } from "next-cloudinary";
-import { geistSans, instrumentSerif } from "../layout";
+import { geistSans, instrumentSerif } from "../fonts";
 
 gsap.registerPlugin(ScrollTrigger);
 

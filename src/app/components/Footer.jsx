@@ -1,14 +1,10 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { geistSans, instrumentSerif } from "../layout";
+import React, { useState } from "react";
+import { geistSans } from "../fonts";
 import Link from "next/link";
-import CircularGallery from "./Circular";
-import BelowFooter from "./BelowFooter";
-import useDetectScroll from "@smakss/react-scroll-direction";
-import { useElementScrollProgress } from "../hooks/useElementScrollProgress";
 import { usePathname } from "next/navigation";
-import GlassEffect from "./GlassEffect";
+
 import { CldImage } from "next-cloudinary";
 
 export default function Footer() {

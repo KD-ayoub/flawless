@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState, useRef } from "react";
-import { geistSans, instrumentSerif } from "../layout";
+import { geistSans, instrumentSerif } from "../fonts";
 import { FaArrowRight } from "react-icons/fa6";
 import ToogleSwitch from "./ToogleSwitch";
 import { useGSAP } from "@gsap/react";

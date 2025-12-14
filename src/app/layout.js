@@ -1,21 +1,9 @@
 // "use client";
 
-import { Geist, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import ClientShell from "./components/ClientShell";
 
-export const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-export const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-});
 
 const metadata = {
   title:

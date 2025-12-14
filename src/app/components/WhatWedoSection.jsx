@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { geistSans } from "../layout";
+import { geistSans } from "../fonts";
 import HorizontalCards from "./HorizontalCards";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";

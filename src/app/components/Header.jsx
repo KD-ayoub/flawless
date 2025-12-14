@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { geistSans, instrumentSerif } from "../layout";
 import { FaArrowRight } from "react-icons/fa6";
 import { IoClose, IoReorderThree } from "react-icons/io5";
 import { useGSAP } from "@gsap/react";
@@ -14,6 +13,7 @@ import Lenis from "lenis";
 import useOutsideClick from "../hooks/useOutsideClick";
 import GlassEffect from "./GlassEffect";
 import { CldImage } from "next-cloudinary";
+import { geistSans } from "../fonts";
 
 gsap.registerPlugin(useGSAP);
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { geistSans } from "../layout";
+import { geistSans } from "../fonts";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { geistSans, instrumentSerif } from "../layout";
+import { geistSans, instrumentSerif } from "../fonts";
 import { FaArrowRight } from "react-icons/fa6";
 import { CldImage } from "next-cloudinary";
 import Link from "next/link";

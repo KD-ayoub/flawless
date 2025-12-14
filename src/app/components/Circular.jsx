@@ -10,8 +10,6 @@ import {
 import { useEffect, useRef } from "react";
 
 import "./CircularGallery.css";
-import Link from "next/link";
-import { geistSans } from "../layout";
 
 function debounce(func, wait) {
   let timeout;
