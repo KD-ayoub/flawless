@@ -54,7 +54,7 @@ export default function FaqContent() {
       <div className="h-full grid grid-cols-1 md:grid-cols-2">
         <div className="z-10">
           <p
-            className={`${geistSans.className} text-[#7E7E7E] text-sm md:text-base uppercase tracking-[-0.04em] leading-[100%] font-normal`}
+            className={`${geistSans.className} text-[#6B6B6B] text-sm md:text-base uppercase tracking-[-0.04em] leading-[100%] font-normal`}
           >
             The Flawless Playbook{" "}
           </p>

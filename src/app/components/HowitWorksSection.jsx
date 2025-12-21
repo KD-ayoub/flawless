@@ -151,7 +151,7 @@ export default function HowitWorksSection() {
               height={1000}
               quality="auto"
               format="auto"
-              className="w-[290px] h-[230px] sm:w-[320px] sm:h-[240px] md:w-[350px] md:h-[260px] lg:w-[300px] lg:h-[240px] xl:w-[300px] xl:h-[250px] absolute z-10 top-2 sm:top-4 lg:top-[9%] left-1/2 -translate-x-1/2 brightness-100 drop-shadow-[0px_20px_30px_rgba(0,0,0,0.9)] object-cover rounded-2xl lg:rounded-3xl transition-transform duration-300 ease-out group-hover:scale-105"
+              className="w-[290px] h-[230px] sm:w-[320px] sm:h-[240px] md:w-[350px] md:h-[260px] lg:w-[300px] lg:h-[240px] xl:w-[320px] xl:h-[250px] absolute z-10 top-2 sm:top-4 lg:top-[9%] left-1/2 -translate-x-1/2 brightness-100 drop-shadow-[0px_20px_30px_rgba(0,0,0,0.9)] object-cover rounded-2xl lg:rounded-3xl transition-transform duration-300 ease-out group-hover:scale-105"
               draggable={false}
             />
 
