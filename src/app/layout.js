@@ -28,10 +28,10 @@ export default function RootLayout({ children }) {
           content={metadata.description}
           property="og:description"
         />
-        {/* <meta
-          content="https://cdn.prod.website-files.com/68de2cda01fe05adb2852af1/68f0b9e83ad28aa39944986e_1967987b8eb867c821f34a95c01268e4_Link.png"
+        <meta
+          content="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1766317363/miniature_u9a6re.png"
           property="og:image"
-        /> */}
+        />
         <meta
           content="Flawless Design | Branding, Motion, and Web Development for Web3 and AI"
           property="twitter:title"
@@ -40,10 +40,10 @@ export default function RootLayout({ children }) {
           content={metadata.description}
           property="twitter:description"
         />
-        {/* <meta
-          content="https://cdn.prod.website-files.com/68de2cda01fe05adb2852af1/68f0b9e83ad28aa39944986e_1967987b8eb867c821f34a95c01268e4_Link.png"
+        <meta
+          content="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1766317363/miniature_u9a6re.png"
           property="twitter:image"
-        /> */}
+        />
         <meta property="og:type" content="website" />
         <meta content="summary_large_image" name="twitter:card" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
