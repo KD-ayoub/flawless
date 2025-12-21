@@ -402,11 +402,11 @@ function HorizontalCardsMobile() {
                       format="auto"
                       draggable={false}
                     />
-                    <h3
+                    <p
                       className={`${instrumentSerif.className} text-xl sm:text-2xl md:text-3xl font-normal text-black`}
                     >
                       {val.title}
-                    </h3>
+                    </p>
                   </div>
 
                   {/* Subtitle */}
