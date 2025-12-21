@@ -88,9 +88,9 @@ export default function DisplayImages() {
               sizes={
                 isMain
                   ? // this tells the browser: "slot ≈ 600px on desktop"
-                    "(min-width: 1024px) 600px, 100vw"
+                    "(min-width: 1024px) 900px, 100vw"
                   : // others can be smaller, they’re not LCP / critical
-                    "(min-width: 1536px) 480px,(min-width: 1280px) 420px,(min-width: 1024px) 360px,100vw"
+                    "(min-width: 1536px) 950px,(min-width: 1280px) 800px,(min-width: 1024px) 600px,100vw"
               }
               quality="auto:eco"
               format="auto"
