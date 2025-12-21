@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
           property="og:description"
         />
         <meta
-          content="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1766317363/miniature_u9a6re.png"
+          content="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1766330372/minia_b752ok.jpg"
           property="og:image"
         />
         <meta
@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
           property="twitter:description"
         />
         <meta
-          content="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1766317363/miniature_u9a6re.png"
+          content="https://res.cloudinary.com/dvaeb0mxy/image/upload/v1766330372/minia_b752ok.jpg"
           property="twitter:image"
         />
         <meta property="og:type" content="website" />
