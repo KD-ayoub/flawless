@@ -30,7 +30,7 @@ export default function CustomCard() {
           <div className="absolute inset-0 flex p-6  z-10">
             <div className="w-2/3">
               <div className="flex items-center justify-between ">
-                <h3
+                <p
                   className={`text-black ${geistSans.className} tracking-[-0.04em] text-2xl font-normal`}
                 >
                   Custom
@@ -39,7 +39,7 @@ export default function CustomCard() {
                   >
                     Package
                   </span>
-                </h3>
+                </p>
               </div>
               <div>
                 <p

@@ -203,11 +203,11 @@ export default function HorizontalCards() {
                             draggable={false}
                           />
                         </div>
-                        <h3
+                        <p
                           className={`${instrumentSerif.className} text-2xl sm:text-3xl lg:text-[45px] font-normal text-black`}
                         >
                           {val.title}
-                        </h3>
+                        </p>
                       </div>
 
                       {/* Subtitle */}

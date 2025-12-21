@@ -120,11 +120,11 @@ export default function WebsiteCard() {
           {/* Text Overlay */}
           <div className="absolute inset-0 flex justify-between flex-col p-6 text-center z-10">
             <div className="flex items-center justify-between mb-4">
-              <h3
+              <p
                 className={`text-black ${geistSans.className} tracking-[-0.04em] text-2xl font-normal`}
               >
                 Website
-              </h3>
+              </p>
               <div className="flex items-center gap-2">
                 <p
                   className={`${geistSans.className} text-base will-change-opacity`}
