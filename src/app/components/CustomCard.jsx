@@ -91,7 +91,7 @@ export default function CustomCard() {
                 <span
                   className={`${instrumentSerif.className} tracking-[-0.04em] leading-[50px] text-black text-7xl`}
                 >
-                  {8999}
+                  {9999}
                 </span>
                 <p
                   className={`self-start ${geistSans.className}  text-[#57576E]`}
@@ -199,7 +199,7 @@ function SmallVersion({ values }) {
               <span
                 className={`${instrumentSerif.className} tracking-[-0.04em] leading-[50px] text-black text-[53px]`}
               >
-                {8999}
+                {9999}
               </span>
               <p
                 className={`self-start ${geistSans.className}  text-[#57576E]`}

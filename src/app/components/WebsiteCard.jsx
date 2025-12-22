@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function WebsiteCard() {
   const [isChecked, setIsChecked] = useState(false);
-  const [currentPrice, setCurrentPrice] = useState("1999");
+  const [currentPrice, setCurrentPrice] = useState("2999");
   const [currentLabel, setCurrentLabel] = useState("Only");
   const [currentPrefix, setCurrentPrefix] = useState("Design ");
   const cardRef = useRef(null);
@@ -54,7 +54,7 @@ export default function WebsiteCard() {
         })
         // Change price, label, and prefix text
         .call(() => {
-          setCurrentPrice("2999");
+          setCurrentPrice("4999");
           setCurrentLabel("Dev");
           setCurrentPrefix("Design + ");
         })
@@ -66,7 +66,7 @@ export default function WebsiteCard() {
           delay: 0.1,
         });
     } else {
-      // Animation when switching back to "Design Only" (1999)
+      // Animation when switching back to "Design Only" (2999)
       gsap
         .timeline()
         // Fade out current price, label, and prefix simultaneously
@@ -77,7 +77,7 @@ export default function WebsiteCard() {
         })
         // Change price, label, and prefix text
         .call(() => {
-          setCurrentPrice("1999");
+          setCurrentPrice("2999");
           setCurrentLabel("Only");
           setCurrentPrefix("Design ");
         })

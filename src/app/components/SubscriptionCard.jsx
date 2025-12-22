@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function SubscriptionCard() {
   const [isChecked, setIsChecked] = useState(false);
-  const [currentPrice, setCurrentPrice] = useState("2999");
+  const [currentPrice, setCurrentPrice] = useState("4999");
   const [currentLabel, setCurrentLabel] = useState("Only");
   const [currentPrefix, setCurrentPrefix] = useState("Design ");
   const cardRef = useRef(null);
@@ -78,7 +78,7 @@ export default function SubscriptionCard() {
 
         // Change all text values
         .call(() => {
-          setCurrentPrice("4999");
+          setCurrentPrice("6999");
           setCurrentLabel("Dev");
           setCurrentPrefix("Design + ");
           // setValues(values2);
@@ -135,7 +135,7 @@ export default function SubscriptionCard() {
 
         // Change all text values
         .call(() => {
-          setCurrentPrice("2999");
+          setCurrentPrice("4999");
           setCurrentLabel("Only");
           setCurrentPrefix("Design ");
           // setValues(values1);

@@ -52,7 +52,7 @@ export default function EcosystemCard() {
               <span
                 className={`${instrumentSerif.className} tracking-[-0.04em] leading-[50px] text-black text-[53px]`}
               >
-                {6999}
+                {8999}
               </span>
               <p
                 className={`self-start ${geistSans.className}  text-[#57576E]`}
