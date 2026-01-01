@@ -160,8 +160,8 @@ export default function HeroSection() {
           <p
             className={`${geistSans.className} text-xs sm:text-sm text-[#306C3A] font-medium`}
           >
-            {/* Accepting new projects for {month} */}
-            One spot left for December
+            Accepting new projects for {month}
+            {/* One spot left for December */}
           </p>
         </div>
 
