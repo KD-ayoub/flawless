@@ -16,7 +16,7 @@ export default function HeroSection() {
   const heading3Ref = useRef(null);
   const paragraphRef = useRef(null);
   const buttonRef = useRef(null);
-  const month = new Date().toLocaleString("default", { month: "long" });
+  const month = new Date().toLocaleString("en", { month: "long" });
   useGSAP(
     () => {
       const tl = gsap.timeline();
