@@ -79,7 +79,7 @@ export default function Header() {
       const rootMargin = getMarginForBP();
       const observer = new IntersectionObserver(
         (entries) => {
-          console.log("entries: ", entries);
+          // console.log("entries: ", entries);
           const entry = entries[0];
           if (!entry.isIntersecting) {
             const obj = {

@@ -16,30 +16,25 @@ export default function SubscriptionCard() {
   const [currentPrefix, setCurrentPrefix] = useState("Design ");
   const cardRef = useRef(null);
   const backgroundRef = useRef(null);
-  const priceRef = useRef(null);
   const labelRef = useRef(null);
   const prefixRef = useRef(null);
   const valuesRef = useRef(null);
 
   // Static items that never change
   const baseValues = [
-    "Unlimited requests",
-    "Unlimited revisions",
-    "Daily & weekly updates",
-    "One request is processed at a time",
+    "Dedicated designer & developer",
+    "Unlimited design requests, any scope",
+    "Unlimited revisions, zero friction",
+    "Branding, UI, web, motion & social assets",
+    "Active production on one task at a time",
+    "Async-first, updates with or without meetings",
+    "Average 48–72h turnaround per request",
+    "Pause or cancel any month",
   ];
 
-  // Dynamic first two items based on isChecked state
-  const getFirstTwoItems = () => {
-    if (isChecked) {
-      return ["Dedicated designer & dev", "Unlimited design & dev access"];
-    } else {
-      return ["Dedicated designer", "Unlimited design access"];
-    }
-  };
 
   // Combined array that updates automatically
-  const values = [...getFirstTwoItems(), ...baseValues];
+  const values = [...baseValues];
 
   useGSAP(() => {
     if (isChecked) {
@@ -52,7 +47,6 @@ export default function SubscriptionCard() {
         // Fade out current text (price, prefix, label) and values
         .to(
           [
-            priceRef.current,
             prefixRef.current,
             labelRef.current,
             // valuesRef.current,
@@ -61,7 +55,7 @@ export default function SubscriptionCard() {
             opacity: 0,
             duration: 0.1,
             ease: "power1.out",
-          }
+          },
         )
         // .to(backgroundRef.current, {
         //   opacity: 1,
@@ -86,7 +80,6 @@ export default function SubscriptionCard() {
         // Fade in new text and values with slight delay
         .to(
           [
-            priceRef.current,
             prefixRef.current,
             labelRef.current,
             // valuesRef.current,
@@ -96,40 +89,23 @@ export default function SubscriptionCard() {
             duration: 0.2,
             delay: 0.1,
             ease: "power1.out",
-          }
+          },
         );
     } else {
       // Animate out when unchecked
       gsap
         .timeline()
         // Fade out current text (price, prefix, label) and values
-        .to(
-          [
-            priceRef.current,
-            prefixRef.current,
-            labelRef.current,
-            // valuesRef.current,
-          ],
-          {
-            opacity: 0,
-            duration: 0.1,
-            ease: "power1.out",
-          }
-        )
         // .to(
-        //   cardRef.current,
+        //   [
+        //     prefixRef.current,
+        //     labelRef.current,
+        //     // valuesRef.current,
+        //   ],
         //   {
-        //     scale: 1,
-        //     duration: 0.4,
-        //     ease: "power2.out",
-        //   },
-        // )
-        // .to(
-        //   backgroundRef.current,
-        //   {
-        //     opacity: 1,
-        //     duration: 0.4,
-        //     ease: "power2.out",
+        //     opacity: 0,
+        //     duration: 0.1,
+        //     ease: "power1.out",
         //   },
         // )
 
@@ -141,38 +117,34 @@ export default function SubscriptionCard() {
           // setValues(values1);
         })
         // Fade in new text and values with slight delay
-        .to(
-          [
-            priceRef.current,
-            prefixRef.current,
-            labelRef.current,
-            // valuesRef.current,
-          ],
-          {
-            opacity: 1,
-            duration: 0.2,
-            delay: 0.1,
-            ease: "power1.out",
-          }
-        );
+        // .to(
+        //   [
+        //     prefixRef.current,
+        //     labelRef.current,
+        //     // valuesRef.current,
+        //   ],
+        //   {
+        //     opacity: 1,
+        //     duration: 0.2,
+        //     delay: 0.1,
+        //     ease: "power1.out",
+        //   },
+        // );
     }
   }, [isChecked]);
 
   return (
     <>
-      <div
-        ref={cardRef}
-        className="relative flex items-center justify-center mt-6 min-[900px]:mt-0"
-      >
+      <div ref={cardRef} className="relative w-full mt-6 min-[900px]:mt-0">
         <div className="absolute inset-0 flex justify-center p-2">
           <p
             className={`${geistSans.className} leading-[250%] font-medium text-sm text-[#ECD9FF]`}
           >
-            Best Value To Price
+            Most Popular
           </p>
           <Image
             ref={backgroundRef}
-            className={`absolute w-full h-[545px] md:h-[595px] object-cover brightness-125 rounded-4xl left-0 right-0 z-[-1]`}
+            className={`absolute w-full max-[370px]:h-[645px] h-[545px] sm:h-[575px] md:h-[645px] object-cover brightness-125 rounded-4xl left-0 right-0 z-[-1]`}
             src={
               "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"
             }
@@ -183,7 +155,7 @@ export default function SubscriptionCard() {
           />
         </div>
         <div
-          className={`bg-[#F9F9FB] w-[350px] min-[400px]:w-[380px] h-[500px] md:h-[550px] mx-2 mb-2 mt-[2.7rem] rounded-3xl shadow-lg relative overflow-visible`}
+          className={`bg-[#F9F9FB] w-auto  max-[370px]:h-[600px] h-[500px]  sm:h-[530px] md:h-[600px] mx-2 mb-2 mt-[2.7rem] rounded-3xl shadow-lg relative overflow-visible`}
         >
           <Image
             className="w-full h-full rounded-3xl object-cover"
@@ -195,14 +167,19 @@ export default function SubscriptionCard() {
             draggable={false}
           />
           {/* Text Overlay */}
-          <div className="absolute inset-0 flex justify-between flex-col p-6 text-center z-10">
-            <div className="flex items-center justify-between mb-4">
+          <div className="absolute inset-0 flex justify-between flex-col p-4 sm:p-6  z-10">
+            <div className="flex items-center justify-between">
               <p
-                className={`text-black ${geistSans.className} tracking-[-0.04em] text-2xl font-normal`}
+                className={`text-black ${geistSans.className} tracking-[-0.04em] text-2xl lg:text-[36px] font-normal`}
               >
-                Subscription
+                Retainer
+                <span
+                  className={`${instrumentSerif.className} ml-1 text-black italic`}
+                >
+                  Unlimited
+                </span>
               </p>
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <p
                   className={`${geistSans.className} text-base will-change-opacity`}
                 >
@@ -221,24 +198,14 @@ export default function SubscriptionCard() {
                   isChecked={isChecked}
                   setIsChecked={setIsChecked}
                 />
-              </div>
+              </div> */}
             </div>
-            <div className="flex items-center gap-5">
+            <div className="">
               <p
-                className={`${geistSans.className} text-base text-[#57576E] tracking-[-0.04em]`}
+                className={`${geistSans.className} text-base leading-[130%] text-[#737394] tracking-[-0.04em]`}
               >
-                Starting at <span className="text-black">$</span>
-              </p>
-              <div className="flex items-center">
-                <span
-                  ref={priceRef}
-                  className={`${instrumentSerif.className} tracking-[-0.04em] text-black leading-[40px] text-[53px] will-change-opacity`}
-                >
-                  {currentPrice}
-                </span>
-              </div>
-              <p className={`self-start ${geistSans.className} text-[#57576E]`}>
-                /Month
+                Your dedicated design team, on demand. Ship faster without the
+                overhead of hiring in-house.
               </p>
             </div>
             <div className="mt-4">

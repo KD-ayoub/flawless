@@ -7,13 +7,13 @@ import CustomCard from "./CustomCard";
 
 export default function PricingCards() {
   return (
-    <div className=" grid grid-cols-1 min-[900px]:grid-cols-2 min-[1300px]:grid-cols-3 place-items-center gap-3 mt-8 mx-2">
-      <WebsiteCard />
+    <div className=" grid grid-cols-1 min-[830px]:grid-cols-2  place-items-center gap-5 mt-8 mx-2">
       <SubscriptionCard />
-      <EcosystemCard />
-      <div className="min-[1300px]:col-span-full min-[1300px]:w-full">
+      <WebsiteCard />
+      {/* <EcosystemCard /> */}
+
         <CustomCard/>
-      </div>
+
     </div>
   );
 }
