@@ -18,7 +18,7 @@ export default function CustomCard() {
     <>
       <div className="relative items-center justify-center mt-6 min-[830px]:col-span-2 w-full">
         <div className="bg-[#F9F9FB] w-full h-[475px] sm:h-[455px] md:h-[220px] rounded-3xl shadow-lg relative overflow-visible">
-          <Image
+          {/* <Image
             className="w-full h-full rounded-3xl object-cover object-bottom pointer-events-none"
             src={
               "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705258/fullbg_crrpgn.svg"
@@ -26,7 +26,7 @@ export default function CustomCard() {
             alt="design 3w"
             fill
             draggable={false}
-          />
+          /> */}
           <div>
             <div className="absolute inset-0 flex flex-col md:flex-row p-6  ">
               <div className="w-full md:w-2/3">

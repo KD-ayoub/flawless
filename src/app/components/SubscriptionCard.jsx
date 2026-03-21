@@ -257,11 +257,11 @@ export default function SubscriptionCard() {
                     <div className="absolute inset-0 rounded-full overflow-hidden z-0">
                       <Image
                         src={
-                          "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1755705017/design1_yyo7a7.svg"
+                          "https://res.cloudinary.com/dvaeb0mxy/image/upload/v1774092894/subbutton-image_d9zatn.png"
                         }
                         alt="button background"
                         fill
-                        className="object-cover rounded-full"
+                        className="object-cover rounded-full object-top-left"
                         draggable={false}
                       />
                     </div>
